@@ -1,13 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>sticky-node.github.io</title>
-  </head>
-  <body>
-    <main>
-      <h1>This works</h1>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: white;
+      transition: background-color 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const colors = ["white", "lightblue", "lightgreen", "lightyellow", "pink"];
+    let colorIndex = 0;
+
+    setInterval(() => {
+      colorIndex = (colorIndex + 1) % colors.length;
+      document.body.style.backgroundColor = colors[colorIndex];
+    }, 2000);
+  </script>
+</body>
 </html>
