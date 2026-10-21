@@ -1,14 +1,21 @@
 const storageKey = "drawingCanvas";
 const textStorageKey = "drawingCanvasText";
 const rectangleStorageKey = "drawingCanvasRectangles";
+const circleStorageKey = "drawingCanvasCircles";
 
-export function saveCanvas(canvas, textItems, rectangleItems) {
+export function saveCanvas(canvas, textItems, rectangleItems, circleItems) {
   localStorage.setItem(storageKey, canvas.toDataURL("image/png"));
   localStorage.setItem(textStorageKey, JSON.stringify(textItems));
   localStorage.setItem(rectangleStorageKey, JSON.stringify(rectangleItems));
+  localStorage.setItem(circleStorageKey, JSON.stringify(circleItems));
 }
 
-export function loadCanvas(canvas, context, textItems, rectangleItems) {
+export function loadCanvas(canvas, context, textItems, rectangleItems, circleItems) {
+  const savedCircle = localStorage.getItem(circleStorageKey);
+  if (savedCircle) {
+    circleItems.push(...JSON.parse(savedCircle));
+  }
+
   const savedText = localStorage.getItem(textStorageKey);
   if (savedText) {
     textItems.push(...JSON.parse(savedText));
@@ -27,12 +34,14 @@ export function loadCanvas(canvas, context, textItems, rectangleItems) {
   image.src = savedDrawing;
 }
 
-export function clearCanvas(canvas, context, textItems, rectangleItems) {
+export function clearCanvas(canvas, context, textItems, rectangleItems, circleItems) {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.globalCompositeOperation = "source-over";
   localStorage.removeItem(storageKey);
   localStorage.removeItem(textStorageKey);
   localStorage.removeItem(rectangleStorageKey);
+  localStorage.removeItem(circleStorageKey);
   textItems.length = 0;
   rectangleItems.length = 0;
+  circleItems.length = 0; 
 }

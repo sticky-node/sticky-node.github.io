@@ -3,6 +3,7 @@ import { startDrawing, drawStroke } from "../tools/draw.js";
 import { drawRectangle } from "../tools/rectangle.js";
 import { getMousePosition } from "./coordinates.js";
 import { createTextBox } from "../tools/text.js";
+import { drawCircle } from "../tools/circle.js";
 
 export function setupCanvasEvents({
   canvas,
@@ -14,6 +15,44 @@ export function setupCanvasEvents({
 }) {
   canvas.addEventListener("mousedown", (event) => {
     const position = getMousePosition(canvas, event);
+
+    if (state.tool === "circle") {
+      const existingCircle = [...state.circleItems]
+        .reverse()
+        .find(
+          ({ x, y, width, height }) => {
+            const centerX = x + width / 2;
+            const centerY = y + height / 2;
+            const radiusX = width / 2;
+            const radiusY = height / 2;
+
+            if (radiusX === 0 || radiusY === 0) return false;
+
+            const normalizedX = (position.x - centerX) / radiusX;
+            const normalizedY = (position.y - centerY) / radiusY;
+
+            return normalizedX ** 2 + normalizedY ** 2 <= 1;
+          });
+
+      if (existingCircle) {
+        state.editingCircle = existingCircle;
+        state.editOffset = {
+          x: position.x - existingCircle.x,
+          y: position.y - existingCircle.y
+        };
+        return;
+      }
+
+      state.startPosition = position;
+      state.lastPosition = position;
+      state.canvasSnapshot = context.getImageData(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+      return;
+    }
 
     if (state.tool === "text") {
       event.preventDefault();
@@ -93,6 +132,29 @@ export function setupCanvasEvents({
     const position = getMousePosition(canvas, event);
     state.lastPosition = position;
 
+    if (state.tool === "circle" && state.startPosition) {
+      context.putImageData(state.canvasSnapshot, 0, 0);
+      drawCircle(
+        context,
+        state.startPosition,
+        position,
+        state.selectedColor
+      );
+      return;
+    }
+
+    if (state.editingCircle) {
+      state.editingCircle.x = position.x - state.editOffset.x;
+      state.editingCircle.y = position.y - state.editOffset.y;
+      renderOverlay(
+        textContext,
+        state.textItems,
+        state.rectangleItems,
+        state.circleItems
+      );
+      return;
+    }
+
     if (state.tool === "rectangle" && state.startPosition) {
       context.putImageData(state.canvasSnapshot, 0, 0);
       drawRectangle(
@@ -121,6 +183,40 @@ export function setupCanvasEvents({
   });
 
   canvas.addEventListener("mouseup", () => {
+    if (state.tool === "circle") {
+      if (state.editingCircle) {
+        saveCanvas();
+        state.editingCircle = null;
+        state.editOffset = null;
+        return;
+      }
+
+      if (state.startPosition) {
+        const endPosition = state.lastPosition;
+
+        state.circleItems.push({
+          x: Math.min(state.startPosition.x, endPosition.x),
+          y: Math.min(state.startPosition.y, endPosition.y),
+          width: Math.abs(endPosition.x - state.startPosition.x),
+          height: Math.abs(endPosition.y - state.startPosition.y),
+          color: state.selectedColor
+        });
+
+        context.putImageData(state.canvasSnapshot, 0, 0);
+        renderOverlay(
+          textContext,
+          state.textItems,
+          state.rectangleItems,
+          state.circleItems
+        );
+        saveCanvas();
+      }
+
+      state.startPosition = null;
+      state.canvasSnapshot = null;
+      return;
+    }
+
     if (state.tool === "rectangle") {
       if (state.editingRectangle) {
         saveCanvas();

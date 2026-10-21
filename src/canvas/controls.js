@@ -4,11 +4,7 @@ export function setupControls({ state, clearCanvas }) {
   const colorPicker = document.getElementById("colorPicker");
   const eraserButton = document.getElementById("eraserButton");
   const textButton = document.getElementById("textButton");
-
-  textButton.addEventListener("click", () => {
-    state.tool = "text";
-    state.erasing = false;
-  });
+  const circleButton = document.getElementById("circleButton");
 
   clearButton.addEventListener("click", clearCanvas);
 
@@ -27,5 +23,15 @@ export function setupControls({ state, clearCanvas }) {
     eraserButton.textContent = state.erasing
       ? "Eraser: On"
       : "Eraser: Off";
+  });
+
+  textButton.addEventListener("click", () => {
+    state.tool = "text";
+    state.erasing = false;
+  });
+
+  circleButton.addEventListener("click", () => {
+    state.tool = "circle";
+    state.erasing = false;
   });
 }
