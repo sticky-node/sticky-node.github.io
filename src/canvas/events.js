@@ -86,7 +86,12 @@ export function setupCanvasEvents({
           } else {
             state.textItems.push(updatedText);
           }
-          renderText(textContext, state.textItems);
+          renderOverlay(
+            textContext,
+            state.textItems,
+            state.rectangleItems,
+            state.circleItems
+          );
           saveCanvas();
         }
       });
