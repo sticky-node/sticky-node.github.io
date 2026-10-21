@@ -1,3 +1,5 @@
+import { drawStoredPolygon } from "../../tools/polygon.js";
+
 function renderText(textContext, textItems) {
   textContext.font = "20px sans-serif";
   textContext.textBaseline = "top";
@@ -14,7 +16,8 @@ export function renderOverlay(
   textContext,
   textItems,
   rectangleItems,
-  circleItems
+  circleItems,
+  polygonItems
 ) {
   textContext.clearRect(0, 0, textContext.canvas.width, textContext.canvas.height);
 
@@ -37,6 +40,8 @@ export function renderOverlay(
     );
     textContext.stroke();
   });
+
+  polygonItems.forEach((polygon) => drawStoredPolygon(textContext, polygon));
 
   renderText(textContext, textItems);
 }

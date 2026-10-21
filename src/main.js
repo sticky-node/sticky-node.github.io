@@ -30,16 +30,19 @@ const state = {
   textItems: [],
   rectangleItems: [],
   circleItems: [],
+  polygonItems: [],
+  polygonSides: 5,
   editingCircle: null,
   editingRectangle: null,
+  editingPolygon: null,
   editOffset: null,
   lastPosition: null,
   editingText: null,
   textEditOffset: null,
 };
 
-loadCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems);
-renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems);
+loadCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
+renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
@@ -47,14 +50,14 @@ window.addEventListener("resize", () => {
   textCanvas.width = canvas.width;
   textCanvas.height = canvas.height;
   syncTextCanvasPosition();
-  renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems);
+  renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
 });
 
 setupControls({
   state,
   clearCanvas: () => {
-    clearCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems);
-    renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems);
+    clearCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
+    renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
   }
 });
 
@@ -65,5 +68,5 @@ setupCanvasEvents({
   textContext,
   renderOverlay,
   saveCanvas: () =>
-    saveCanvas(canvas, state.textItems, state.rectangleItems, state.circleItems)
+    saveCanvas(canvas, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems)
 });
