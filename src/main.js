@@ -1,95 +1,33 @@
 import "./style.css";
-    
-    const canvas = document.getElementById("drawingcanvas");
-    const context = canvas.getContext("2d");
+import { setupCanvasEvents } from "./canvas/events.js";
+import { setupControls } from "./canvas/controls.js";
+import { clearCanvas, loadCanvas, saveCanvas } from "./canvas/storage.js";
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+const canvas = document.getElementById("drawingcanvas");
+const context = canvas.getContext("2d");
 
-    const clearButton = document.getElementById("clearButton");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-    clearButton.addEventListener("click", () => {
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.globalCompositeOperation = "source-over";
-      localStorage.removeItem(storageKey);
-    });
+const state = {
+  tool: "draw",
+  selectedColor: "#000000",
+  erasing: false,
+  drawing: false,
+  startPosition: null,
+  canvasSnapshot: null
+};
 
-    const storageKey = "drawingCanvas";
+loadCanvas(canvas, context);
 
-    function saveCanvas() {
-      localStorage.setItem(storageKey, canvas.toDataURL("image/png"));
-    }
+setupControls({
+  state,
+  clearCanvas: () => clearCanvas(canvas, context)
+});
 
-    function loadCanvas() {
-      const savedDrawing = localStorage.getItem(storageKey);
-      if (!savedDrawing) return;
-
-      const image = new Image();
-      image.onload = () => {
-        context.drawImage(image, 0, 0);
-      };
-      image.src = savedDrawing;
-    }
-
-    loadCanvas();
-
-    const colorPicker = document.getElementById("colorPicker");
-    let selectedColor = "#000000";
-
-    colorPicker.addEventListener("input", () => {
-      selectedColor = colorPicker.value;
-    });
-
-    function getMousePosition(event) {
-      const rectangle = canvas.getBoundingClientRect();
-
-      return {
-        x: event.clientX - rectangle.left,
-        y: event.clientY - rectangle.top
-      }
-    }
-
-    const eraserButton = document.getElementById("eraserButton");
-    let erasing = false;
-
-    eraserButton.addEventListener("click", () => {
-      erasing = !erasing;
-      eraserButton.textContent = erasing ? "Eraser: On" : "Eraser: Off";
-    });
-
-    let drawing = false;
-
-    canvas.addEventListener("mousedown", (event) => {
-      drawing = true;
-
-      const position = getMousePosition(event);
-
-      context.beginPath();
-      context.moveTo(position.x, position.y);
-    });
-
-    canvas.addEventListener("mousemove", (event) => {
-      if (!drawing) return;
-
-      const position = getMousePosition(event);
-
-      context.lineTo(position.x, position.y);
-      context.globalCompositeOperation = erasing
-        ? "destination-out"
-        : "source-over";
-        context.strokeStyle = selectedColor;
-        context.lineWidth = erasing ? 25 : 3;
-        context.lineCap = "round";
-        context.lineJoin = "round";
-        context.stroke();
-    });
-
-    canvas.addEventListener("mouseup", () => {
-      drawing = false;
-      saveCanvas();
-    });
-
-    canvas.addEventListener("mouseleave", () => {
-      if (drawing) saveCanvas();
-      drawing = false;
-    });
+setupCanvasEvents({
+  canvas,
+  context,
+  state,
+  saveCanvas: () => saveCanvas(canvas)
+});
