@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <style>
-    canvas {
-      display: block;
-      background: white;
-    }
-  </style>
-</head>
-<body>
-  <input type="color" id="colorPicker" value="#000000">
-  <button id="eraserButton">Eraser: Off</button>
-  <button id="clearButton">Clear Canvas</button>
-
-  <canvas id="drawingcanvas"></canvas>
-
-  <script>
+import "./style.css";
+    
     const canvas = document.getElementById("drawingcanvas");
     const context = canvas.getContext("2d");
 
@@ -112,6 +93,3 @@
       if (drawing) saveCanvas();
       drawing = false;
     });
-  </script>
-</body>
-</html>
