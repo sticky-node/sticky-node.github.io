@@ -26,11 +26,14 @@ const state = {
   drawing: false,
   startPosition: null,
   canvasSnapshot: null,
-  textItems: []
+  textItems: [],
+  rectangleItems: [],
+  editingRectangle: null,
+  editOffset: null,
+  lastPosition: null
 };
 
 const renderText = (textContext, textItems) => {
-  textContext.clearRect(0, 0, textCanvas.width, textCanvas.height);
   textContext.font = "20px sans-serif";
   textContext.textBaseline = "top";
 
@@ -42,8 +45,17 @@ const renderText = (textContext, textItems) => {
   });
 };
 
-loadCanvas(canvas, context, state.textItems);
-renderText(textContext, state.textItems);
+const renderOverlay = (textContext, textItems, rectangleItems) => {
+  textContext.clearRect(0, 0, textCanvas.width, textCanvas.height);
+  rectangleItems.forEach(({ x, y, width, height, color }) => {
+    textContext.strokeStyle = color;
+    textContext.strokeRect(x, y, width, height);
+  });
+  renderText(textContext, textItems);
+};
+
+loadCanvas(canvas, context, state.textItems, state.rectangleItems);
+renderOverlay(textContext, state.textItems, state.rectangleItems);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
@@ -51,14 +63,14 @@ window.addEventListener("resize", () => {
   textCanvas.width = canvas.width;
   textCanvas.height = canvas.height;
   syncTextCanvasPosition();
-  renderText(textContext, state.textItems);
+  renderOverlay(textContext, state.textItems, state.rectangleItems);
 });
 
 setupControls({
   state,
   clearCanvas: () => {
-    clearCanvas(canvas, context, state.textItems);
-    renderText(textContext, state.textItems);
+    clearCanvas(canvas, context, state.textItems, state.rectangleItems);
+    renderOverlay(textContext, state.textItems, state.rectangleItems);
   }
 });
 
@@ -67,6 +79,7 @@ setupCanvasEvents({
   context,
   state,
   textContext,
-  renderText,
-  saveCanvas: () => saveCanvas(canvas, state.textItems)
+  renderOverlay,
+  saveCanvas: () =>
+    saveCanvas(canvas, state.textItems, state.rectangleItems)
 });

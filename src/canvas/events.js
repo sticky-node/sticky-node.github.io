@@ -10,7 +10,7 @@ export function setupCanvasEvents({
   textContext,
   state,
   saveCanvas,
-  renderText
+  renderOverlay
 }) {
   canvas.addEventListener("mousedown", (event) => {
     const position = getMousePosition(canvas, event);
@@ -55,7 +55,27 @@ export function setupCanvasEvents({
     }
 
     if (state.tool === "rectangle") {
+      const existingRectangle = [...state.rectangleItems]
+        .reverse()
+        .find(
+          ({ x, y, width, height }) =>
+            position.x >= x &&
+            position.x <= x + width &&
+            position.y >= y &&
+            position.y <= y + height
+        );
+
+      if (existingRectangle) {
+        state.editingRectangle = existingRectangle;
+        state.editOffset = {
+          x: position.x - existingRectangle.x,
+          y: position.y - existingRectangle.y
+        };
+        return;
+      }
+
       state.startPosition = position;
+      state.lastPosition = position;
       state.canvasSnapshot = context.getImageData(
         0,
         0,
@@ -71,6 +91,7 @@ export function setupCanvasEvents({
 
   canvas.addEventListener("mousemove", (event) => {
     const position = getMousePosition(canvas, event);
+    state.lastPosition = position;
 
     if (state.tool === "rectangle" && state.startPosition) {
       context.putImageData(state.canvasSnapshot, 0, 0);
@@ -80,6 +101,13 @@ export function setupCanvasEvents({
         position,
         state.selectedColor
       );
+      return;
+    }
+
+    if (state.editingRectangle) {
+      state.editingRectangle.x = position.x - state.editOffset.x;
+      state.editingRectangle.y = position.y - state.editOffset.y;
+      renderOverlay(textContext, state.textItems, state.rectangleItems);
       return;
     }
 
@@ -94,7 +122,26 @@ export function setupCanvasEvents({
 
   canvas.addEventListener("mouseup", () => {
     if (state.tool === "rectangle") {
-      if (state.startPosition) saveCanvas();
+      if (state.editingRectangle) {
+        saveCanvas();
+        state.editingRectangle = null;
+        state.editOffset = null;
+        return;
+      }
+
+      if (state.startPosition) {
+        const endPosition = state.lastPosition;
+        state.rectangleItems.push({
+          x: Math.min(state.startPosition.x, endPosition.x),
+          y: Math.min(state.startPosition.y, endPosition.y),
+          width: Math.abs(endPosition.x - state.startPosition.x),
+          height: Math.abs(endPosition.y - state.startPosition.y),
+          color: state.selectedColor
+        });
+        context.putImageData(state.canvasSnapshot, 0, 0);
+        renderOverlay(textContext, state.textItems, state.rectangleItems);
+        saveCanvas();
+      }
       state.startPosition = null;
       state.canvasSnapshot = null;
       return;
