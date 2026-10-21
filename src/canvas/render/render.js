@@ -1,6 +1,7 @@
 import { drawStoredPolygon } from "../../tools/polygon.js";
 import { drawStoredCircle } from "../../tools/circle.js";
 import { drawStoredRectangle } from "../../tools/rectangle.js";
+import { drawStoredArrow } from "../../tools/arrow.js";
 
 function renderText(textContext, textItems) {
   textContext.font = "20px sans-serif";
@@ -39,7 +40,8 @@ export function renderOverlay(
   rectangleItems,
   circleItems,
   polygonItems,
-  strokeItems
+  strokeItems,
+  arrowItems
 ) {
   textContext.clearRect(0, 0, textContext.canvas.width, textContext.canvas.height);
 
@@ -50,7 +52,8 @@ export function renderOverlay(
       rectangleItems,
       circleItems,
       polygonItems,
-      strokeItems
+      strokeItems,
+      arrowItems
     } = textItemsOrState);
   }
 
@@ -58,5 +61,6 @@ export function renderOverlay(
   (rectangleItems || []).forEach((rectangle) => drawStoredRectangle(textContext, rectangle));
   (circleItems || []).forEach((circle) => drawStoredCircle(textContext, circle));
   (polygonItems || []).forEach((polygon) => drawStoredPolygon(textContext, polygon));
+  (arrowItems || []).forEach((arrow) => drawStoredArrow(textContext, arrow));
   renderText(textContext, textItems || []);
 }

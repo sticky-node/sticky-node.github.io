@@ -1,4 +1,4 @@
-import { findCircleAt, findRectangleAt, findPolygonAt, findStrokeAt, findTextAt } from "../canvas/events/hit-testing.js";
+import { findCircleAt, findRectangleAt, findPolygonAt, findArrowAt, findStrokeAt, findTextAt } from "../canvas/events/hit-testing.js";
 
 function removeFirstMatching(array, predicate) {
   const index = array.findLastIndex ? array.findLastIndex(predicate) : (() => {
@@ -35,6 +35,11 @@ export function eraseAt(state, position, textContext) {
 
   const rect = findRectangleAt(state.rectangleItems, position);
   if (rect && removeFirstMatching(state.rectangleItems, (item) => item === rect)) {
+    return true;
+  }
+
+  const arrow = findArrowAt(state.arrowItems || [], position);
+  if (arrow && removeFirstMatching(state.arrowItems, (item) => item === arrow)) {
     return true;
   }
 

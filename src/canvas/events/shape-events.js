@@ -21,8 +21,8 @@ export function handleShapeMouseDown({ canvas, context, position, state }) {
   if (existingShape) {
     state[config.editingKey] = existingShape;
     state.editOffset = {
-      x: position.x - existingShape.x,
-      y: position.y - existingShape.y
+      x: position.x - (existingShape.startX ?? existingShape.x),
+      y: position.y - (existingShape.startY ?? existingShape.y)
     };
     return true;
   }
@@ -37,6 +37,20 @@ export function handleShapeMouseMove({ context, position, textContext, state, re
   if (config && state.startPosition) {
     context.putImageData(state.canvasSnapshot, 0, 0);
     config.drawPreview(context, state.startPosition, position, state);
+    return true;
+  }
+
+  if (state.editingArrow) {
+    const arrow = state.editingArrow;
+    const dx = arrow.endX - arrow.startX;
+    const dy = arrow.endY - arrow.startY;
+    const newStartX = position.x - state.editOffset.x;
+    const newStartY = position.y - state.editOffset.y;
+    arrow.startX = newStartX;
+    arrow.startY = newStartY;
+    arrow.endX = newStartX + dx;
+    arrow.endY = newStartY + dy;
+    renderOverlay(textContext, state);
     return true;
   }
 

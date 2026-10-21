@@ -64,6 +64,24 @@ export function findStrokeAt(strokeItems, position) {
   });
 }
 
+function pointToSegmentDistance(px, py, x1, y1, x2, y2) {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const lengthSq = dx * dx + dy * dy;
+  if (lengthSq === 0) return Math.hypot(px - x1, py - y1);
+
+  const t = Math.max(0, Math.min(1, ((px - x1) * dx + (py - y1) * dy) / lengthSq));
+  const projX = x1 + t * dx;
+  const projY = y1 + t * dy;
+  return Math.hypot(px - projX, py - projY);
+}
+
+export function findArrowAt(arrowItems, position, threshold = 8) {
+  return [...arrowItems].reverse().find(({ startX, startY, endX, endY }) => {
+    return pointToSegmentDistance(position.x, position.y, startX, startY, endX, endY) <= threshold;
+  });
+}
+
 export function findTextAt(textContext, textItems, position) {
   return [...textItems].reverse().find((textItem) => {
     const lines = textItem.text.split("\n");

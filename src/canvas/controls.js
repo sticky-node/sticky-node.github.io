@@ -1,14 +1,26 @@
 export function setupControls({ state, clearCanvas }) {
   const clearButton = document.getElementById("clearButton");
+  const drawButton = document.getElementById("drawButton");
   const rectangleButton = document.getElementById("rectangleButton");
   const colorPicker = document.getElementById("colorPicker");
   const eraserButton = document.getElementById("eraserButton");
   const textButton = document.getElementById("textButton");
   const circleButton = document.getElementById("circleButton");
+  const arrowButton = document.getElementById("arrowButton");
   const polygonButton = document.getElementById("polygonButton");
   const polygonSidesInput = document.getElementById("polygonSidesInput");
 
   clearButton.addEventListener("click", clearCanvas);
+
+  if (drawButton) {
+    drawButton.addEventListener("click", () => {
+      state.tool = "draw";
+      state.erasing = false;
+      if (eraserButton) {
+        eraserButton.textContent = "Eraser: Off";
+      }
+    });
+  }
 
   rectangleButton.addEventListener("click", () => {
     state.tool = "rectangle";
@@ -36,6 +48,13 @@ export function setupControls({ state, clearCanvas }) {
     state.tool = "circle";
     state.erasing = false;
   });
+
+  if (arrowButton) {
+    arrowButton.addEventListener("click", () => {
+      state.tool = "arrow";
+      state.erasing = false;
+    });
+  }
 
   polygonButton.addEventListener("click", () => {
     const sides = Number.parseInt(polygonSidesInput.value, 10);

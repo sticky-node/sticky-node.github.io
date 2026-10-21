@@ -1,10 +1,25 @@
 import { drawRectangle } from "../../tools/rectangle.js";
 import { drawCircle } from "../../tools/circle.js";
 import { drawPolygon } from "../../tools/polygon.js";
-import { findCircleAt, findRectangleAt, findPolygonAt } from "./hit-testing.js";
+import { drawArrow } from "../../tools/arrow.js";
+import { findCircleAt, findRectangleAt, findPolygonAt, findArrowAt } from "./hit-testing.js";
 import { getBoundingBox } from "../coordinates.js";
 
 export const SHAPE_CONFIGS = {
+  arrow: {
+    getItems: (state) => state.arrowItems,
+    findAt: findArrowAt,
+    editingKey: "editingArrow",
+    drawPreview: (context, start, current, state) =>
+      drawArrow(context, start, current, state.selectedColor),
+    createItem: (start, end, state) => ({
+      startX: start.x,
+      startY: start.y,
+      endX: end.x,
+      endY: end.y,
+      color: state.selectedColor
+    })
+  },
   circle: {
     getItems: (state) => state.circleItems,
     findAt: findCircleAt,
