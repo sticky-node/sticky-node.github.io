@@ -40,6 +40,11 @@ export function setupCanvasEvents({
   canvas.addEventListener("mousedown", (event) => {
     const position = getMousePosition(canvas, event);
 
+    if (state.erasing) {
+      handleFreehandMouseDown({ ...sharedHandlers, position });
+      return;
+    }
+
     if (handleTextMouseDown({ ...sharedHandlers, event, position })) return;
     if (handleShapeMouseDown({ ...sharedHandlers, position })) return;
 
@@ -50,6 +55,11 @@ export function setupCanvasEvents({
     const position = getMousePosition(canvas, event);
     state.lastPosition = position;
 
+    if (state.erasing) {
+      handleFreehandMouseMove({ ...sharedHandlers, position });
+      return;
+    }
+
     if (handleTextMouseMove({ ...sharedHandlers, position })) return;
     if (handleShapeMouseMove({ ...sharedHandlers, position })) return;
 
@@ -57,6 +67,11 @@ export function setupCanvasEvents({
   });
 
   canvas.addEventListener("mouseup", () => {
+    if (state.erasing) {
+      handleFreehandMouseUp(sharedHandlers);
+      return;
+    }
+
     if (handleTextMouseUp(sharedHandlers)) return;
     if (handleShapeMouseUp(sharedHandlers)) return;
 

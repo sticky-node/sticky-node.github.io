@@ -24,6 +24,16 @@ export function findRectangleAt(rectangleItems, position) {
   );
 }
 
+export function findPolygonAt(polygonItems, position) {
+  return [...polygonItems].reverse().find(({ x, y, width, height }) => {
+    const centerX = x + width / 2;
+    const centerY = y + height / 2;
+    const radius = Math.min(width, height) / 2;
+    if (radius === 0) return false;
+    return Math.hypot(position.x - centerX, position.y - centerY) <= radius;
+  });
+}
+
 export function findStrokeAt(strokeItems, position) {
   return [...strokeItems].reverse().find(({ points }) => {
     return points.some((point, index) => {

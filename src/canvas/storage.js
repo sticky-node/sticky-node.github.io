@@ -5,29 +5,57 @@ const circleStorageKey = "drawingCanvasCircles";
 const polygonStorageKey = "drawingCanvasPolygons";
 const strokeStorageKey = "drawingCanvasStrokes";
 
-export function saveCanvas(canvas, textItems, rectangleItems, circleItems, polygonItems, strokeItems) {
+export function saveCanvas(canvas, stateOrText, rectangleItems, circleItems, polygonItems, strokeItems) {
+  const {
+    textItems = [],
+    rectangleItems: rects = [],
+    circleItems: circles = [],
+    polygonItems: polys = [],
+    strokeItems: strokes = []
+  } = (stateOrText && !Array.isArray(stateOrText)) ? stateOrText : {
+    textItems: stateOrText,
+    rectangleItems,
+    circleItems,
+    polygonItems,
+    strokeItems
+  };
+
   localStorage.setItem(storageKey, canvas.toDataURL("image/png"));
   localStorage.setItem(textStorageKey, JSON.stringify(textItems));
-  localStorage.setItem(rectangleStorageKey, JSON.stringify(rectangleItems));
-  localStorage.setItem(circleStorageKey, JSON.stringify(circleItems));
-  localStorage.setItem(polygonStorageKey, JSON.stringify(polygonItems));
-  localStorage.setItem(strokeStorageKey, JSON.stringify(strokeItems));
+  localStorage.setItem(rectangleStorageKey, JSON.stringify(rects));
+  localStorage.setItem(circleStorageKey, JSON.stringify(circles));
+  localStorage.setItem(polygonStorageKey, JSON.stringify(polys));
+  localStorage.setItem(strokeStorageKey, JSON.stringify(strokes));
 }
 
-export function loadCanvas(canvas, context, textItems, rectangleItems, circleItems, polygonItems, strokeItems) {
+export function loadCanvas(canvas, context, stateOrText, rectangleItems, circleItems, polygonItems, strokeItems) {
+  const {
+    textItems = [],
+    rectangleItems: rects = [],
+    circleItems: circles = [],
+    polygonItems: polys = [],
+    strokeItems: strokes = []
+  } = (stateOrText && !Array.isArray(stateOrText)) ? stateOrText : {
+    textItems: stateOrText,
+    rectangleItems,
+    circleItems,
+    polygonItems,
+    strokeItems
+  };
+
   const savedCircle = localStorage.getItem(circleStorageKey);
   if (savedCircle) {
-    circleItems.push(...JSON.parse(savedCircle));
+    circles.push(...JSON.parse(savedCircle));
   }
 
   const savedPolygons = localStorage.getItem(polygonStorageKey);
   if (savedPolygons) {
-    polygonItems.push(...JSON.parse(savedPolygons));
+    polys.push(...JSON.parse(savedPolygons));
   }
 
   const savedStrokes = localStorage.getItem(strokeStorageKey);
   if (savedStrokes) {
-    strokeItems.push(...JSON.parse(savedStrokes));
+    strokes.push(...JSON.parse(savedStrokes));
   }
 
   const savedText = localStorage.getItem(textStorageKey);
@@ -37,7 +65,7 @@ export function loadCanvas(canvas, context, textItems, rectangleItems, circleIte
 
   const savedRectangles = localStorage.getItem(rectangleStorageKey);
   if (savedRectangles) {
-    rectangleItems.push(...JSON.parse(savedRectangles));
+    rects.push(...JSON.parse(savedRectangles));
   }
 
   const savedDrawing = localStorage.getItem(storageKey);
@@ -48,7 +76,21 @@ export function loadCanvas(canvas, context, textItems, rectangleItems, circleIte
   image.src = savedDrawing;
 }
 
-export function clearCanvas(canvas, context, textItems, rectangleItems, circleItems, polygonItems, strokeItems) {
+export function clearCanvas(canvas, context, stateOrText, rectangleItems, circleItems, polygonItems, strokeItems) {
+  const {
+    textItems = [],
+    rectangleItems: rects = [],
+    circleItems: circles = [],
+    polygonItems: polys = [],
+    strokeItems: strokes = []
+  } = (stateOrText && !Array.isArray(stateOrText)) ? stateOrText : {
+    textItems: stateOrText,
+    rectangleItems,
+    circleItems,
+    polygonItems,
+    strokeItems
+  };
+
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.globalCompositeOperation = "source-over";
   localStorage.removeItem(storageKey);
@@ -58,8 +100,8 @@ export function clearCanvas(canvas, context, textItems, rectangleItems, circleIt
   localStorage.removeItem(polygonStorageKey);
   localStorage.removeItem(strokeStorageKey);
   textItems.length = 0;
-  rectangleItems.length = 0;
-  circleItems.length = 0; 
-  polygonItems.length = 0;
-  strokeItems.length = 0;
+  rects.length = 0;
+  circles.length = 0;
+  polys.length = 0;
+  strokes.length = 0;
 }

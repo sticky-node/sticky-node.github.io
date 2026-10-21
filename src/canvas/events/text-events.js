@@ -1,17 +1,6 @@
 import { createTextBox } from "../../tools/text.js";
 import { findTextAt } from "./hit-testing.js";
 
-function redrawTextOverlay({ textContext, state, renderOverlay }) {
-  renderOverlay(
-    textContext,
-    state.textItems,
-    state.rectangleItems,
-    state.circleItems,
-    state.polygonItems,
-    state.strokeItems
-  );
-}
-
 export function handleTextMouseDown({ event, canvas, position, textContext, state, saveCanvas, renderOverlay }) {
   if (state.tool !== "text") return false;
 
@@ -20,7 +9,7 @@ export function handleTextMouseDown({ event, canvas, position, textContext, stat
   if (event.button === 0) {
     if (existingText) {
       state.editingText = existingText;
-      state.textEditOffset = {
+      state.editOffset = {
         x: position.x - existingText.x,
         y: position.y - existingText.y
       };
@@ -33,7 +22,7 @@ export function handleTextMouseDown({ event, canvas, position, textContext, stat
       color: state.selectedColor,
       onCommit: (updatedText) => {
         state.textItems.push(updatedText);
-        redrawTextOverlay({ textContext, state, renderOverlay });
+        renderOverlay(textContext, state);
         saveCanvas();
       }
     });
@@ -52,7 +41,7 @@ export function handleTextMouseDown({ event, canvas, position, textContext, stat
     textItem: existingText,
     onCommit: (updatedText) => {
       Object.assign(existingText, updatedText);
-      redrawTextOverlay({ textContext, state, renderOverlay });
+      renderOverlay(textContext, state);
       saveCanvas();
     }
   });
@@ -62,9 +51,9 @@ export function handleTextMouseDown({ event, canvas, position, textContext, stat
 export function handleTextMouseMove({ position, textContext, state, renderOverlay }) {
   if (!state.editingText) return false;
 
-  state.editingText.x = position.x - state.textEditOffset.x;
-  state.editingText.y = position.y - state.textEditOffset.y;
-  redrawTextOverlay({ textContext, state, renderOverlay });
+  state.editingText.x = position.x - state.editOffset.x;
+  state.editingText.y = position.y - state.editOffset.y;
+  renderOverlay(textContext, state);
   return true;
 }
 
@@ -74,7 +63,7 @@ export function handleTextMouseUp({ state, saveCanvas }) {
   if (state.editingText) {
     saveCanvas();
     state.editingText = null;
-    state.textEditOffset = null;
+    state.editOffset = null;
   }
   return true;
 }

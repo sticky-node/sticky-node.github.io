@@ -35,18 +35,16 @@ const state = {
   polygonSides: 5,
   currentStroke: null,
   editingStroke: null,
-  strokeEditOffset: null,
   editingCircle: null,
   editingRectangle: null,
   editingPolygon: null,
+  editingText: null,
   editOffset: null,
   lastPosition: null,
-  editingText: null,
-  textEditOffset: null,
 };
 
-loadCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
-renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
+loadCanvas(canvas, context, state);
+renderOverlay(textContext, state);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
@@ -54,14 +52,14 @@ window.addEventListener("resize", () => {
   textCanvas.width = canvas.width;
   textCanvas.height = canvas.height;
   syncTextCanvasPosition();
-  renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
+  renderOverlay(textContext, state);
 });
 
 setupControls({
   state,
   clearCanvas: () => {
-    clearCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
-    renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
+    clearCanvas(canvas, context, state);
+    renderOverlay(textContext, state);
   }
 });
 
@@ -71,6 +69,5 @@ setupCanvasEvents({
   state,
   textContext,
   renderOverlay,
-  saveCanvas: () =>
-    saveCanvas(canvas, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems)
+  saveCanvas: () => saveCanvas(canvas, state)
 });

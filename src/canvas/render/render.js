@@ -1,4 +1,6 @@
 import { drawStoredPolygon } from "../../tools/polygon.js";
+import { drawStoredCircle } from "../../tools/circle.js";
+import { drawStoredRectangle } from "../../tools/rectangle.js";
 
 function renderText(textContext, textItems) {
   textContext.font = "20px sans-serif";
@@ -33,7 +35,7 @@ function renderStrokes(context, strokeItems) {
 
 export function renderOverlay(
   textContext,
-  textItems,
+  textItemsOrState,
   rectangleItems,
   circleItems,
   polygonItems,
@@ -41,29 +43,20 @@ export function renderOverlay(
 ) {
   textContext.clearRect(0, 0, textContext.canvas.width, textContext.canvas.height);
 
-  renderStrokes(textContext, strokeItems);
+  let textItems = textItemsOrState;
+  if (textItemsOrState && !Array.isArray(textItemsOrState) && typeof textItemsOrState === "object") {
+    ({
+      textItems,
+      rectangleItems,
+      circleItems,
+      polygonItems,
+      strokeItems
+    } = textItemsOrState);
+  }
 
-  rectangleItems.forEach(({ x, y, width, height, color }) => {
-    textContext.strokeStyle = color;
-    textContext.strokeRect(x, y, width, height);
-  });
-
-  circleItems.forEach(({ x, y, width, height, color }) => {
-    textContext.strokeStyle = color;
-    textContext.beginPath();
-    textContext.ellipse(
-      x + width / 2,
-      y + height / 2,
-      width / 2,
-      height / 2,
-      0,
-      0,
-      2 * Math.PI
-    );
-    textContext.stroke();
-  });
-
-  polygonItems.forEach((polygon) => drawStoredPolygon(textContext, polygon));
-
-  renderText(textContext, textItems);
+  renderStrokes(textContext, strokeItems || []);
+  (rectangleItems || []).forEach((rectangle) => drawStoredRectangle(textContext, rectangle));
+  (circleItems || []).forEach((circle) => drawStoredCircle(textContext, circle));
+  (polygonItems || []).forEach((polygon) => drawStoredPolygon(textContext, polygon));
+  renderText(textContext, textItems || []);
 }

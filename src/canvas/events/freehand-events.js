@@ -1,67 +1,62 @@
-import { eraseStroke } from "../../tools/eraser.js";
+import { eraseAt } from "../../tools/eraser.js";
 import { findStrokeAt } from "./hit-testing.js";
 
-function redraw({ textContext, state, renderOverlay }) {
-  renderOverlay(
-    textContext,
-    state.textItems,
-    state.rectangleItems,
-    state.circleItems,
-    state.polygonItems,
-    state.strokeItems
-  );
-}
-
-export function handleFreehandMouseDown({ context, position, textContext, state, renderOverlay }) {
-  if (!state.erasing) {
-    const existingStroke = findStrokeAt(state.strokeItems, position);
-    if (existingStroke) {
-      state.editingStroke = existingStroke;
-      state.strokeEditOffset = {
-        x: position.x - existingStroke.points[0].x,
-        y: position.y - existingStroke.points[0].y
-      };
-      return;
+export function handleFreehandMouseDown({ position, textContext, state, saveCanvas, renderOverlay }) {
+  if (state.erasing) {
+    state.drawing = true;
+    const removed = eraseAt(state, position, textContext);
+    if (removed) {
+      renderOverlay(textContext, state);
+      saveCanvas();
     }
-
-    state.currentStroke = {
-      points: [position],
-      color: state.selectedColor
-    };
-    state.strokeItems.push(state.currentStroke);
-    redraw({ textContext, state, renderOverlay });
     return;
   }
 
-  state.drawing = true;
-  context.beginPath();
-  context.moveTo(position.x, position.y);
+  const existingStroke = findStrokeAt(state.strokeItems, position);
+  if (existingStroke) {
+    state.editingStroke = existingStroke;
+    state.editOffset = {
+      x: position.x - existingStroke.points[0].x,
+      y: position.y - existingStroke.points[0].y
+    };
+    return;
+  }
+
+  state.currentStroke = {
+    points: [position],
+    color: state.selectedColor
+  };
+  state.strokeItems.push(state.currentStroke);
+  renderOverlay(textContext, state);
 }
 
-export function handleFreehandMouseMove({ context, position, textContext, state, renderOverlay }) {
+export function handleFreehandMouseMove({ position, textContext, state, saveCanvas, renderOverlay }) {
+  if (state.erasing && state.drawing) {
+    const removed = eraseAt(state, position, textContext);
+    if (removed) {
+      renderOverlay(textContext, state);
+      saveCanvas();
+    }
+    return;
+  }
+
   if (state.editingStroke) {
     const firstPoint = state.editingStroke.points[0];
-    const deltaX = position.x - state.strokeEditOffset.x - firstPoint.x;
-    const deltaY = position.y - state.strokeEditOffset.y - firstPoint.y;
+    const deltaX = position.x - state.editOffset.x - firstPoint.x;
+    const deltaY = position.y - state.editOffset.y - firstPoint.y;
 
     state.editingStroke.points = state.editingStroke.points.map((point) => ({
       x: point.x + deltaX,
       y: point.y + deltaY
     }));
-    redraw({ textContext, state, renderOverlay });
+    renderOverlay(textContext, state);
     return;
   }
 
   if (!state.erasing && state.currentStroke) {
     state.currentStroke.points.push(position);
-    redraw({ textContext, state, renderOverlay });
+    renderOverlay(textContext, state);
     return;
-  }
-
-  if (!state.drawing) return;
-
-  if (state.erasing) {
-    eraseStroke(context, position);
   }
 }
 
@@ -69,7 +64,7 @@ export function handleFreehandMouseUp({ state, saveCanvas }) {
   if (state.editingStroke) {
     saveCanvas();
     state.editingStroke = null;
-    state.strokeEditOffset = null;
+    state.editOffset = null;
     return;
   }
 
@@ -80,7 +75,6 @@ export function handleFreehandMouseUp({ state, saveCanvas }) {
   }
 
   state.drawing = false;
-  saveCanvas();
 }
 
 export function handleFreehandMouseLeave({ state, saveCanvas }) {
@@ -88,5 +82,5 @@ export function handleFreehandMouseLeave({ state, saveCanvas }) {
   state.drawing = false;
   state.currentStroke = null;
   state.editingStroke = null;
-  state.strokeEditOffset = null;
+  state.editOffset = null;
 }

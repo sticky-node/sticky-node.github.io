@@ -9,3 +9,8 @@ export function drawRectangle(context, startPosition, currentPosition, color) {
     currentPosition.y - startPosition.y
   );
 }
+
+export function drawStoredRectangle(context, { x, y, width, height, color }) {
+  context.strokeStyle = color;
+  context.strokeRect(x, y, width, height);
+}
