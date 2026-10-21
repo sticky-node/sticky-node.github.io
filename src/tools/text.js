@@ -1,9 +1,9 @@
 export function createTextBox({
   canvas,
-  context,
   position,
   color,
-  saveCanvas
+  textItem,
+  onCommit
 }) {
   const bounds = canvas.getBoundingClientRect();
   const textBox = document.createElement("textarea");
@@ -19,6 +19,7 @@ export function createTextBox({
   textBox.style.color = color;
   textBox.style.font = "20px sans-serif";
   textBox.style.zIndex = "1000";
+  textBox.value = textItem?.text ?? "";
 
   document.body.appendChild(textBox);
   textBox.focus();
@@ -32,15 +33,13 @@ export function createTextBox({
     const text = textBox.value.trim();
 
     if (text) {
-      context.fillStyle = color;
-      context.font = "20px sans-serif";
-      context.textBaseline = "top";
-
-      text.split("\n").forEach((line, index) => {
-        context.fillText(line, position.x, position.y + index * 24);
+      onCommit({
+        ...(textItem ?? {}),
+        x: textItem?.x ?? position.x,
+        y: textItem?.y ?? position.y,
+        color: textItem?.color ?? color,
+        text
       });
-
-      saveCanvas();
     }
 
     textBox.remove();

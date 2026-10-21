@@ -4,21 +4,52 @@ import { drawRectangle } from "../tools/rectangle.js";
 import { getMousePosition } from "./coordinates.js";
 import { createTextBox } from "../tools/text.js";
 
-export function setupCanvasEvents({ canvas, context, state, saveCanvas }) {
+export function setupCanvasEvents({
+  canvas,
+  context,
+  textContext,
+  state,
+  saveCanvas,
+  renderText
+}) {
   canvas.addEventListener("mousedown", (event) => {
     const position = getMousePosition(canvas, event);
 
     if (state.tool === "text") {
       event.preventDefault();
 
-      console.log("text tool activated", position);
+      const existingText = [...state.textItems].reverse().find((textItem) => {
+        const lines = textItem.text.split("\n");
+        const width = Math.max(
+          ...lines.map((line) => textContext.measureText(line).width),
+          1
+        );
+        const height = lines.length * 24;
+
+        return (
+          position.x >= textItem.x &&
+          position.x <= textItem.x + width &&
+          position.y >= textItem.y &&
+          position.y <= textItem.y + height
+        );
+      });
 
       createTextBox({
         canvas,
-        context,
-        position,
+        position: existingText
+          ? { x: existingText.x, y: existingText.y }
+          : position,
         color: state.selectedColor,
-        saveCanvas
+        textItem: existingText,
+        onCommit: (updatedText) => {
+          if (existingText) {
+            Object.assign(existingText, updatedText);
+          } else {
+            state.textItems.push(updatedText);
+          }
+          renderText(textContext, state.textItems);
+          saveCanvas();
+        }
       });
       return;
     }
