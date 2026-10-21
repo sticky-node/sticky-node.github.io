@@ -5,23 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
+    canvas {
+      display: block;
       background: white;
-      transition: background-color 0.5s ease;
     }
   </style>
 </head>
 <body>
-  <script>
-    const colors = ["white", "lightblue", "lightgreen", "lightyellow", "pink"];
-    let colorIndex = 0;
+  <canvas id="drawingcanvas"></canvas>
 
-    setInterval(() => {
-      colorIndex = (colorIndex + 1) % colors.length;
-      document.body.style.backgroundColor = colors[colorIndex];
-    }, 2000);
+  <script>
+    const canvas = document.getElementById("drawingcanvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let drawing = false;
+
+    canvas.addEventListener("mousedown", (event) => {
+      drawing = true;
+      context.beginPath();
+      context.moveTo(event.clientX, event.clientY);
+    });
+
+    canvas.addEventListener("mousemove", (event) => {
+      if (!drawing) return;
+
+      context.lineTo(event.clientX, event.clientY);
+      context.strokeStyle = "black";
+      context.lineWidth = 3;
+      context.lineCap= "round";
+      context.stroke();
+    });
+
+    canvas.addEventListener("mouseup", () => {
+      drawing = false;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+      drawing = false;
+    });
   </script>
 </body>
 </html>
