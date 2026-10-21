@@ -12,12 +12,20 @@
   </style>
 </head>
 <body>
+  <input type="color" id="colorPicker" value="#000000">
 
   <button id="eraserButton">Eraser: Off</button>
 
   <canvas id="drawingcanvas"></canvas>
 
   <script>
+    const colorPicker = document.getElementById("colorPicker");
+    let selectedColor = "#000000";
+
+    colorPicker.addEventListener("input", () => {
+      selectedColor = colorPicker.value;
+    });
+
     function getMousePosition(event) {
       const rectangle = canvas.getBoundingClientRect();
 
@@ -63,7 +71,7 @@
       context.globalCompositeOperation = erasing
         ? "destination-out"
         : "source-over";
-        context.strokeStyle = "black";
+        context.strokeStyle = selectedColor;
         context.lineWidth = erasing ? 25 : 3;
         context.lineCap = "round";
         context.lineJoin = "round";
