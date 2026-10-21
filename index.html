@@ -30,7 +30,27 @@
     clearButton.addEventListener("click", () => {
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.globalCompositeOperation = "source-over";
+      localStorage.removeItem(storageKey);
     });
+
+    const storageKey = "drawingCanvas";
+
+    function saveCanvas() {
+      localStorage.setItem(storageKey, canvas.toDataURL("image/png"));
+    }
+
+    function loadCanvas() {
+      const savedDrawing = localStorage.getItem(storageKey);
+      if (!savedDrawing) return;
+
+      const image = new Image();
+      image.onload = () => {
+        context.drawImage(image, 0, 0);
+      };
+      image.src = savedDrawing;
+    }
+
+    loadCanvas();
 
     const colorPicker = document.getElementById("colorPicker");
     let selectedColor = "#000000";
@@ -85,9 +105,11 @@
 
     canvas.addEventListener("mouseup", () => {
       drawing = false;
+      saveCanvas();
     });
 
     canvas.addEventListener("mouseleave", () => {
+      if (drawing) saveCanvas();
       drawing = false;
     });
   </script>
