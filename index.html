@@ -12,9 +12,29 @@
   </style>
 </head>
 <body>
+
+  <button id="eraserButton">Eraser: Off</button>
+
   <canvas id="drawingcanvas"></canvas>
 
   <script>
+    function getMousePosition(event) {
+      const rectangle = canvas.getBoundingClientRect();
+
+      return {
+        x: event.clientX - rectangle.left,
+        y: event.clientY - rectangle.top
+      }
+    }
+
+    const eraserButton = document.getElementById("eraserButton");
+    let erasing = false;
+
+    eraserButton.addEventListener("click", () => {
+      erasing = !erasing;
+      eraserButton.textContent = erasing ? "Eraser: On" : "Eraser: Off";
+    });
+
     const canvas = document.getElementById("drawingcanvas");
     const context = canvas.getContext("2d");
 
@@ -25,18 +45,29 @@
 
     canvas.addEventListener("mousedown", (event) => {
       drawing = true;
+
+      const position = getMousePosition(event);
+
       context.beginPath();
-      context.moveTo(event.clientX, event.clientY);
+      context.moveTo(position.x, position.y);
     });
 
     canvas.addEventListener("mousemove", (event) => {
       if (!drawing) return;
 
-      context.lineTo(event.clientX, event.clientY);
-      context.strokeStyle = "black";
-      context.lineWidth = 3;
-      context.lineCap= "round";
-      context.stroke();
+      const position = getMousePosition(event);
+
+      context.lineTo(position.x, position.y);
+
+      context.lineTo(position.x, position.y);
+      context.globalCompositeOperation = erasing
+        ? "destination-out"
+        : "source-over";
+        context.strokeStyle = "black";
+        context.lineWidth = erasing ? 25 : 3;
+        context.lineCap = "round";
+        context.lineJoin = "round";
+        context.stroke();
     });
 
     canvas.addEventListener("mouseup", () => {
