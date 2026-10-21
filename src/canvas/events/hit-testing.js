@@ -24,6 +24,36 @@ export function findRectangleAt(rectangleItems, position) {
   );
 }
 
+export function findStrokeAt(strokeItems, position) {
+  return [...strokeItems].reverse().find(({ points }) => {
+    return points.some((point, index) => {
+      const nextPoint = points[index + 1];
+      if (!nextPoint) {
+        return Math.hypot(point.x - position.x, point.y - position.y) <= 8;
+      }
+
+      const segmentX = nextPoint.x - point.x;
+      const segmentY = nextPoint.y - point.y;
+      const segmentLengthSquared = segmentX ** 2 + segmentY ** 2;
+      const projection = segmentLengthSquared === 0
+        ? 0
+        : Math.max(
+            0,
+            Math.min(
+              1,
+              ((position.x - point.x) * segmentX +
+                (position.y - point.y) * segmentY) /
+                segmentLengthSquared
+            )
+          );
+      const closestX = point.x + projection * segmentX;
+      const closestY = point.y + projection * segmentY;
+
+      return Math.hypot(position.x - closestX, position.y - closestY) <= 8;
+    });
+  });
+}
+
 export function findTextAt(textContext, textItems, position) {
   return [...textItems].reverse().find((textItem) => {
     const lines = textItem.text.split("\n");

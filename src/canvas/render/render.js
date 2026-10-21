@@ -12,14 +12,36 @@ function renderText(textContext, textItems) {
   });
 }
 
+function renderStrokes(context, strokeItems) {
+  strokeItems.forEach(({ points, color }) => {
+    if (points.length < 2) return;
+
+    context.strokeStyle = color;
+    context.lineWidth = 3;
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.beginPath();
+    context.moveTo(points[0].x, points[0].y);
+
+    points.slice(1).forEach((point) => {
+      context.lineTo(point.x, point.y);
+    });
+
+    context.stroke();
+  });
+}
+
 export function renderOverlay(
   textContext,
   textItems,
   rectangleItems,
   circleItems,
-  polygonItems
+  polygonItems,
+  strokeItems
 ) {
   textContext.clearRect(0, 0, textContext.canvas.width, textContext.canvas.height);
+
+  renderStrokes(textContext, strokeItems);
 
   rectangleItems.forEach(({ x, y, width, height, color }) => {
     textContext.strokeStyle = color;

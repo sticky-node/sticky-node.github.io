@@ -20,7 +20,8 @@ function redrawShapes({ textContext, state, renderOverlay }) {
     state.textItems,
     state.rectangleItems,
     state.circleItems,
-    state.polygonItems
+    state.polygonItems,
+    state.strokeItems
   );
 }
 

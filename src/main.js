@@ -27,11 +27,15 @@ const state = {
   drawing: false,
   startPosition: null,
   canvasSnapshot: null,
+  strokeItems: [],
   textItems: [],
   rectangleItems: [],
   circleItems: [],
   polygonItems: [],
   polygonSides: 5,
+  currentStroke: null,
+  editingStroke: null,
+  strokeEditOffset: null,
   editingCircle: null,
   editingRectangle: null,
   editingPolygon: null,
@@ -41,8 +45,8 @@ const state = {
   textEditOffset: null,
 };
 
-loadCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
-renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
+loadCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
+renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
 
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
@@ -50,14 +54,14 @@ window.addEventListener("resize", () => {
   textCanvas.width = canvas.width;
   textCanvas.height = canvas.height;
   syncTextCanvasPosition();
-  renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
+  renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
 });
 
 setupControls({
   state,
   clearCanvas: () => {
-    clearCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
-    renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems);
+    clearCanvas(canvas, context, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
+    renderOverlay(textContext, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems);
   }
 });
 
@@ -68,5 +72,5 @@ setupCanvasEvents({
   textContext,
   renderOverlay,
   saveCanvas: () =>
-    saveCanvas(canvas, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems)
+    saveCanvas(canvas, state.textItems, state.rectangleItems, state.circleItems, state.polygonItems, state.strokeItems)
 });

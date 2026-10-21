@@ -6,7 +6,9 @@ function redrawTextOverlay({ textContext, state, renderOverlay }) {
     textContext,
     state.textItems,
     state.rectangleItems,
-    state.circleItems
+    state.circleItems,
+    state.polygonItems,
+    state.strokeItems
   );
 }
 
