@@ -13,12 +13,25 @@
 </head>
 <body>
   <input type="color" id="colorPicker" value="#000000">
-
   <button id="eraserButton">Eraser: Off</button>
+  <button id="clearButton">Clear Canvas</button>
 
   <canvas id="drawingcanvas"></canvas>
 
   <script>
+    const canvas = document.getElementById("drawingcanvas");
+    const context = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const clearButton = document.getElementById("clearButton");
+
+    clearButton.addEventListener("click", () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.globalCompositeOperation = "source-over";
+    });
+
     const colorPicker = document.getElementById("colorPicker");
     let selectedColor = "#000000";
 
@@ -43,12 +56,6 @@
       eraserButton.textContent = erasing ? "Eraser: On" : "Eraser: Off";
     });
 
-    const canvas = document.getElementById("drawingcanvas");
-    const context = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
     let drawing = false;
 
     canvas.addEventListener("mousedown", (event) => {
@@ -64,8 +71,6 @@
       if (!drawing) return;
 
       const position = getMousePosition(event);
-
-      context.lineTo(position.x, position.y);
 
       context.lineTo(position.x, position.y);
       context.globalCompositeOperation = erasing
