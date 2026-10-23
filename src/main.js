@@ -1,10 +1,5 @@
-import "./style.css";
-import { setupCanvasEvents } from "./canvas/events.js";
-import { setupControls } from "./canvas/controls.js";
-import { clearCanvas, loadCanvas, saveCanvas } from "./canvas/storage.js";
-import { renderOverlay } from "./canvas/render/render.js";
+import { createHistory } from "./canvas/history.js"
 
-const canvas = document.getElementById("drawingcanvas");
 const context = canvas.getContext("2d");
 const textCanvas = document.createElement("canvas");
 const textContext = textCanvas.getContext("2d");
@@ -43,25 +38,51 @@ const state = {
   editingText: null,
   editOffset: null,
   lastPosition: null,
+  // Undo/redo history stacks
+  undoStack: [],
+  redoStack: [],
 };
 
 loadCanvas(canvas, context, state);
 renderOverlay(textContext, state);
-
-window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   textCanvas.width = canvas.width;
   textCanvas.height = canvas.height;
   syncTextCanvasPosition();
   renderOverlay(textContext, state);
-});
+
+const history = createHistory(state);
+
+const persist = () => saveCanvas(canvas, state);
+
+const commit = () => {
+  persist();
+  history.record();
+};
+
+const isBusy = () =>
+  state.startPosition || state.currentStroke || state.editingStroke ||
+  state.editingCircle || state.editingRectangle || state.editingPolygon ||
+  state.editingArrow || state.editingText;
+
+const applyHistory = (action) => {
+  if (isBusy()) return;
+  if (action()) {
+    renderOverlay(textContext, state);
+    persist();
+  }
+};
+
+const undo = () => applyHistory(history.undo);
+const redo = () => applyHistory(history.redo);
 
 setupControls({
   state,
   clearCanvas: () => {
     clearCanvas(canvas, context, state);
     renderOverlay(textContext, state);
+    history.record();
   }
 });
 
@@ -71,5 +92,6 @@ setupCanvasEvents({
   state,
   textContext,
   renderOverlay,
-  saveCanvas: () => saveCanvas(canvas, state)
+  saveCanvas: commit,
 });
+

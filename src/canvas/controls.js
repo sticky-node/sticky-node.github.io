@@ -1,4 +1,4 @@
-export function setupControls({ state, clearCanvas }) {
+export function setupControls({ state, clearCanvas, undo, redo }) {
   const clearButton = document.getElementById("clearButton");
   const drawButton = document.getElementById("drawButton");
   const rectangleButton = document.getElementById("rectangleButton");
@@ -9,9 +9,30 @@ export function setupControls({ state, clearCanvas }) {
   const arrowButton = document.getElementById("arrowButton");
   const polygonButton = document.getElementById("polygonButton");
   const polygonSidesInput = document.getElementById("polygonSidesInput");
+  const undoButton = document.getElementById("undoButton");
+  const redoButton = document.getElementById("redoButton");
 
   clearButton.addEventListener("click", clearCanvas);
+  undoButton?.addEventListener("click", undo);
+  redoButton?.addEventListener("click", redo);
 
+  document.addEventListener("keydown", (event) => {
+    const tag = event.target.tagName;
+    if (tag === "TEXTAREA" || tag === "INPUT") return;
+
+    const mod = event.ctrlKey || event.metaKey;
+    if (!mod) return;
+
+    const key = event.key.toLowerCase();
+    if (key === "z" && !event.shiftKey) {
+      event.preventDefault();
+      undo();
+    } else if ((key === "z" && event.shiftKey) || key === "y") {
+      event.preventDefault();
+      redo();
+    }
+  });
+  
   if (drawButton) {
     drawButton.addEventListener("click", () => {
       state.tool = "draw";
