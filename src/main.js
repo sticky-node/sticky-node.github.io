@@ -42,6 +42,7 @@ const state = {
   editingPolygon: null,
   editingArrow: null,
   editingText: null,
+  pendingTextPosition: null,
   editOffset: null,
   lastPosition: null,
 };
@@ -60,7 +61,7 @@ const isBusy = () =>
   Boolean(
     state.startPosition || state.currentStroke || state.editingStroke ||
     state.editingCircle || state.editingRectangle || state.editingPolygon ||
-    state.editingArrow || state.editingText
+    state.editingArrow || state.editingText || state.pendingTextPosition
   );
 
 const applyHistory = (action) => {

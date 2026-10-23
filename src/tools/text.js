@@ -8,12 +8,14 @@ export function createTextBox({
   const bounds = canvas.getBoundingClientRect();
   const textBox = document.createElement("textarea");
 
-  textBox.style.position = "absolute";
-  textBox.style.left = `${bounds.left + position.x + window.scrollX}px`;
-  textBox.style.top = `${bounds.top + position.y + window.scrollY}px`;
+  textBox.className = "sticky-node-textbox";
+  textBox.style.position = "fixed";
+  textBox.style.left = `${bounds.left + position.x}px`;
+  textBox.style.top = `${bounds.top + position.y}px`;
   textBox.style.width = "180px";
   textBox.style.height = "70px";
   textBox.style.padding = "6px";
+  textBox.style.margin = "0";
   textBox.style.backgroundColor = "white";
   textBox.style.border = "2px solid red";
   textBox.style.color = color;
@@ -22,9 +24,9 @@ export function createTextBox({
   textBox.value = textItem?.text ?? "";
 
   document.body.appendChild(textBox);
-  textBox.focus();
 
   let committed = false;
+  let allowBlur = false;
 
   const commitText = () => {
     if (committed) return;
@@ -45,6 +47,14 @@ export function createTextBox({
     textBox.remove();
   };
 
+  requestAnimationFrame(() => {
+    textBox.focus();
+    textBox.select();
+    requestAnimationFrame(() => {
+      allowBlur = true;
+    });
+  });
+
   textBox.addEventListener("keydown", (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
@@ -57,5 +67,11 @@ export function createTextBox({
     }
   });
 
-  textBox.addEventListener("blur", commitText);
+  textBox.addEventListener("blur", () => {
+    if (!allowBlur) {
+      textBox.focus();
+      return;
+    }
+    commitText();
+  });
 }

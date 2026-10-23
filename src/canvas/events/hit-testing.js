@@ -83,7 +83,11 @@ export function findArrowAt(arrowItems, position, threshold = 8) {
 }
 
 export function findTextAt(textContext, textItems, position) {
+  textContext.font = "20px sans-serif";
+  textContext.textBaseline = "top";
+
   return [...textItems].reverse().find((textItem) => {
+    if (!textItem?.text) return false;
     const lines = textItem.text.split("\n");
     const width = Math.max(
       ...lines.map((line) => textContext.measureText(line).width),
