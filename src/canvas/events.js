@@ -15,6 +15,7 @@ import {
   handleTextMouseMove,
   handleTextMouseUp
 } from "./events/text-events.js";
+import { fillAt } from "../tools/fill.js";
 
 export function setupCanvasEvents({
   canvas,
@@ -33,6 +34,10 @@ export function setupCanvasEvents({
     renderOverlay
   };
 
+  canvas.addEventListener("contextMenu", (event) => {
+    if (state.tool === "text" || state.tool === "fill") event.preventDefault();
+  });
+
   canvas.addEventListener("contextmenu", (event) => {
     if (state.tool === "text") event.preventDefault();
   });
@@ -42,6 +47,16 @@ export function setupCanvasEvents({
 
     if (state.erasing) {
       handleFreehandMouseDown({ ...sharedHandlers, position });
+      return;
+    }
+
+    if (state.tool === "fill") {
+      event.preventDefault();
+      const color = event.button === 2 ? null : state.selectedColor;
+      if (fillAt(state, position, color)) {
+        renderOverlay(textContext, state);
+        saveCanvas();
+      }
       return;
     }
 

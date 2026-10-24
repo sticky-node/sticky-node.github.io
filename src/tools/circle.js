@@ -7,10 +7,10 @@ export function drawCircle(context, startPosition, currentPosition, color, lineW
   drawStoredCircle(context, { x, y, width, height, color, lineWidth });
 }
 
-export function drawStoredCircle(context, { x, y, width, height, color, lineWidth = 3 }) {
+export function drawStoredCircle(context, { x, y, width, height, color, lineWidth = 3, fill }) {
   context.globalCompositeOperation = "source-over";
   context.strokeStyle = color;
-  context.strokeWidth = lineWidth;
+  context.lineWidth = lineWidth;
   context.beginPath();
   context.ellipse(
     x + width / 2,
@@ -21,5 +21,9 @@ export function drawStoredCircle(context, { x, y, width, height, color, lineWidt
     0,
     2 * Math.PI
   );
+  if (fill) {
+    context.fillStyle = fill;
+    context.fill();
+  }
   context.stroke();
 }

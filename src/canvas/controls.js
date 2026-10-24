@@ -10,7 +10,8 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   const polygonButton = document.getElementById("polygonButton");
   const polygonSidesInput = document.getElementById("polygonSidesInput");
   const lineWidthInput = document.getElementById("lineWidthInput");
-  const lineWidthValue = document.getElementById("lineWidthValue")
+  const lineWidthValue = document.getElementById("lineWidthValue");
+  const fillButton = document.getElementById("fillButton");
 
   if (lineWidthInput) {
     lineWidthInput.addEventListener("input", () => {
@@ -57,6 +58,13 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
     state.tool = "circle";
     state.erasing = false;
   });
+
+  if (fillButton) {
+    fillButton.addEventListener("click", () => {
+      state.tool = "fill";
+      state.erasing = false;
+    });
+  }
 
   if (arrowButton) {
     arrowButton.addEventListener("click", () => {

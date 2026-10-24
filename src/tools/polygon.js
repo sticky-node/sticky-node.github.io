@@ -7,7 +7,7 @@ export function drawPolygon(context, startPosition, currentPosition, sides, colo
   drawStoredPolygon(context, { x, y, width, height, sides, color, lineWidth });
 }
 
-export function drawStoredPolygon(context, { x, y, width, height, sides, color, lineWidth = 3 }) {
+export function drawStoredPolygon(context, { x, y, width, height, sides, color, lineWidth = 3, fill }) {
   const centerX = x + width / 2;
   const centerY = y + height / 2;
   const radius = Math.min(width, height) / 2;
@@ -31,5 +31,9 @@ export function drawStoredPolygon(context, { x, y, width, height, sides, color, 
   }
 
   context.closePath();
+  if (fill) {
+    context.fillStyle = fill;
+    context.fill();
+  }
   context.stroke();
 }
