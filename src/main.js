@@ -46,6 +46,7 @@ const state = {
   pendingTextPosition: null,
   editOffset: null,
   lastPosition: null,
+  lineWidth: 3,
 };
 
 loadCanvas(canvas, context, state);

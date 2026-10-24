@@ -1,6 +1,12 @@
 import { eraseAt } from "../../tools/eraser.js";
 import { findStrokeAt } from "./hit-testing.js";
 
+state.currentStroke = {
+  points: [position],
+  color: state.selectedColor,
+  linewidth: state.lineWidth
+};
+
 export function handleFreehandMouseDown({ position, textContext, state, saveCanvas, renderOverlay }) {
   if (state.erasing) {
     state.drawing = true;

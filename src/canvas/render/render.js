@@ -16,11 +16,11 @@ function renderText(textContext, textItems) {
 }
 
 function renderStrokes(context, strokeItems) {
-  strokeItems.forEach(({ points, color }) => {
+  strokeItems.forEach(({ points, color, lineWidth = 3 }) => {
     if (points.length < 2) return;
 
     context.strokeStyle = color;
-    context.lineWidth = 3;
+    context.lineWidth = lineWidth;
     context.lineCap = "round";
     context.lineJoin = "round";
     context.beginPath();

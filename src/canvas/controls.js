@@ -9,6 +9,15 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   const arrowButton = document.getElementById("arrowButton");
   const polygonButton = document.getElementById("polygonButton");
   const polygonSidesInput = document.getElementById("polygonSidesInput");
+  const lineWidthInput = document.getElementById("lineWidthInput");
+  const lineWidthValue = document.getElementById("lineWidthValue")
+
+  if (lineWidthInput) {
+    lineWidthInput.addEventListener("input", () => {
+      state.lineWidth = Number(lineWidthInput.value);
+      if (lineWidthValue) lineWidthValue.textContext = lineWidthInput.value;
+    });
+  }
 
   clearButton.addEventListener("click", clearCanvas);
 
