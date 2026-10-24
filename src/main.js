@@ -7,7 +7,7 @@ import { createHistory } from "./canvas/history.js";
 import { saveToFile, openFromFile } from "./canvas/files.js"
 
 const canvas = document.getElementById("drawingcanvas");
-const context = canvas.getContext("2d");
+const context = canvas.getContext("2d", { willReadFrequently: true });
 const textCanvas = document.createElement("canvas");
 const textContext = textCanvas.getContext("2d");
 textCanvas.id = "textcanvas";
