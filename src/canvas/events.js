@@ -66,7 +66,8 @@ export function setupCanvasEvents({
     handleFreehandMouseMove({ ...sharedHandlers, position });
   });
 
-  canvas.addEventListener("mouseup", () => {
+  // window, not canvas: a release outside the canvas must still end the drag
+  window.addEventListener("mouseup", () => {
     if (state.erasing) {
       handleFreehandMouseUp(sharedHandlers);
       return;

@@ -19,6 +19,7 @@ function renderStrokes(context, strokeItems) {
   strokeItems.forEach(({ points, color, lineWidth = 3 }) => {
     if (points.length < 2) return;
 
+    context.globalCompositeOperation = "source-over";
     context.strokeStyle = color;
     context.lineWidth = lineWidth;
     context.lineCap = "round";

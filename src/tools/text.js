@@ -10,8 +10,10 @@ export function createTextBox({
 
   textBox.className = "sticky-node-textbox";
   textBox.style.position = "fixed";
-  textBox.style.left = `${bounds.left + position.x}px`;
-  textBox.style.top = `${bounds.top + position.y}px`;
+  textBox.style.left = `${bounds.left + position.x - 8}px`;
+  textBox.style.top = `${bounds.top + position.y - 8}px`;
+  textBox.style.boxSizing = "content-box";
+  textBox.style.lineHeight = "24px";
   textBox.style.width = "180px";
   textBox.style.height = "70px";
   textBox.style.padding = "6px";

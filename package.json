@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/sticky-node/sticky-node.github.io#readme",
   "devDependencies": {
-    "vite": "^6.4.1"
+    "vite": "^6.4.5"
   }
 }

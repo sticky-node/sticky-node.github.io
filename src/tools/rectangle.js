@@ -10,7 +10,7 @@ export function drawRectangle(context, startPosition, currentPosition, color, li
   );
 }
 
-export function drawStoredRectangle(context, { x, y, width, height, lineWidth = 3 }) {
+export function drawStoredRectangle(context, { x, y, width, height, color, lineWidth = 3 }) {
   context.globalCompositeOperation = "source-over";
   context.strokeWidth = lineWidth;
   context.strokeStyle = color;

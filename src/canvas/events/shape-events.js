@@ -83,7 +83,12 @@ export function handleShapeMouseUp({ context, textContext, state, saveCanvas, re
 
   if (state.startPosition) {
     const endPosition = state.lastPosition;
-    config.getItems(state).push(config.createItem(state.startPosition, endPosition, state));
+    const moved =
+      Math.hypot(endPosition.x - state.startPosition.x, endPosition.y - state.startPosition.y) > 3;
+
+    if (moved) {
+      config.getItems(state).push(config.createItem(state.startPosition, endPosition, state));
+    }
     context.putImageData(state.canvasSnapshot, 0, 0);
     renderOverlay(textContext, state);
     saveCanvas();

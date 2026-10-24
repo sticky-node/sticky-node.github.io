@@ -1,19 +1,18 @@
-export function drawArrowLine(context, fromX, fromY, toX, toY, color, headLength = 16) {
+export function drawArrowLine(context, fromX, fromY, toX, toY, color, lineWidth = 3) {
+  const headLength = Math.max(16, lineWidth * 4);
   const angle = Math.atan2(toY - fromY, toX - fromX);
 
   context.strokeStyle = color;
-  context.lineWidth = 3;
+  context.lineWidth = lineWidth;
   context.lineCap = "round";
   context.lineJoin = "round";
 
-  // Main stem line
   context.beginPath();
   context.moveTo(fromX, fromY);
   context.lineTo(toX, toY);
   context.stroke();
 
-  // Open Chevron / ">" head at the end
-  const arrowAngle = Math.PI / 6; // 30 degrees spread
+  const arrowAngle = Math.PI / 6;
   context.beginPath();
   context.moveTo(
     toX - headLength * Math.cos(angle - arrowAngle),
@@ -27,11 +26,11 @@ export function drawArrowLine(context, fromX, fromY, toX, toY, color, headLength
   context.stroke();
 }
 
-export function drawArrow(context, startPosition, currentPosition, color) {
+export function drawArrow(context, startPosition, currentPosition, color, lineWidth = 3) {
   context.globalCompositeOperation = "source-over";
-  drawArrowLine(context, startPosition.x, startPosition.y, currentPosition.x, currentPosition.y, color);
+  drawArrowLine(context, startPosition.x, startPosition.y, currentPosition.x, currentPosition.y, color, lineWidth);
 }
 
-export function drawStoredArrow(context, { startX, startY, endX, endY, color }) {
-  drawArrowLine(context, startX, startY, endX, endY, color);
+export function drawStoredArrow(context, { startX, startY, endX, endY, color, lineWidth = 3 }) {
+  drawArrowLine(context, startX, startY, endX, endY, color, lineWidth);
 }

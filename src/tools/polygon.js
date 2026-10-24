@@ -1,13 +1,13 @@
-export function drawPolygon(context, startPosition, currentPosition, sides, color) {
+export function drawPolygon(context, startPosition, currentPosition, sides, color, lineWidth = 3) {
   const x = Math.min(startPosition.x, currentPosition.x);
   const y = Math.min(startPosition.y, currentPosition.y);
   const width = Math.abs(currentPosition.x - startPosition.x);
   const height = Math.abs(currentPosition.y - startPosition.y);
 
-  drawStoredPolygon(context, { x, y, width, height, sides, color });
+  drawStoredPolygon(context, { x, y, width, height, sides, color, lineWidth });
 }
 
-export function drawStoredPolygon(context, { x, y, width, height, sides, color }) {
+export function drawStoredPolygon(context, { x, y, width, height, sides, color, lineWidth = 3 }) {
   const centerX = x + width / 2;
   const centerY = y + height / 2;
   const radius = Math.min(width, height) / 2;
@@ -15,7 +15,7 @@ export function drawStoredPolygon(context, { x, y, width, height, sides, color }
 
   context.globalCompositeOperation = "source-over";
   context.strokeStyle = color;
-  context.lineWidth = 3;
+  context.lineWidth = lineWidth;
   context.beginPath();
 
   for (let index = 0; index < sides; index += 1) {

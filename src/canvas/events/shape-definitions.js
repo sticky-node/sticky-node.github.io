@@ -11,13 +11,14 @@ export const SHAPE_CONFIGS = {
     findAt: findArrowAt,
     editingKey: "editingArrow",
     drawPreview: (context, start, current, state) =>
-      drawArrow(context, start, current, state.selectedColor),
+      drawArrow(context, start, current, state.selectedColor, state.lineWidth),
     createItem: (start, end, state) => ({
       startX: start.x,
       startY: start.y,
       endX: end.x,
       endY: end.y,
-      color: state.selectedColor
+      color: state.selectedColor,
+      lineWidth: state.lineWidth
     })
   },
   circle: {
@@ -25,10 +26,11 @@ export const SHAPE_CONFIGS = {
     findAt: findCircleAt,
     editingKey: "editingCircle",
     drawPreview: (context, start, current, state) =>
-      drawCircle(context, start, current, state.selectedColor),
+      drawCircle(context, start, current, state.selectedColor, state.lineWidth),
     createItem: (start, end, state) => ({
       ...getBoundingBox(start, end),
-      color: state.selectedColor
+      color: state.selectedColor,
+      lineWidth: state.lineWidth
     })
   },
   rectangle: {
@@ -36,10 +38,11 @@ export const SHAPE_CONFIGS = {
     findAt: findRectangleAt,
     editingKey: "editingRectangle",
     drawPreview: (context, start, current, state) =>
-      drawRectangle(context, start, current, state.selectedColor),
+      drawRectangle(context, start, current, state.selectedColor, state.lineWidth),
     createItem: (start, end, state) => ({
       ...getBoundingBox(start, end),
-      color: state.selectedColor
+      color: state.selectedColor,
+      lineWidth: state.lineWidth
     })
   },
   polygon: {
@@ -47,11 +50,12 @@ export const SHAPE_CONFIGS = {
     findAt: findPolygonAt,
     editingKey: "editingPolygon",
     drawPreview: (context, start, current, state) =>
-      drawPolygon(context, start, current, state.polygonSides, state.selectedColor),
+      drawPolygon(context, start, current, state.polygonSides, state.selectedColor, state.lineWidth),
     createItem: (start, end, state) => ({
       ...getBoundingBox(start, end),
       sides: state.polygonSides,
-      color: state.selectedColor
+      color: state.selectedColor,
+      lineWidth: state.lineWidth
     })
   }
 };
