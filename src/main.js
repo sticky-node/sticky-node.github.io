@@ -103,6 +103,7 @@ document.getElementById("openFileButton").addEventListener("click", async () => 
     context.clearRect(0, 0, canvas.width, canvas.height);
     renderOverlay(textContext, state);
     saveCanvas(canvas, state);
+    history.record();
   }
 });
 

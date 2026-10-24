@@ -16,7 +16,7 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   if (lineWidthInput) {
     lineWidthInput.addEventListener("input", () => {
       state.lineWidth = Number(lineWidthInput.value);
-      if (lineWidthValue) lineWidthValue.textContext = lineWidthInput.value;
+      if (lineWidthValue) lineWidthValue.textContent = lineWidthInput.value;
     });
   }
 
@@ -87,12 +87,12 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   document.getElementById("redoButton")?.addEventListener("click", redo);
 
   document.addEventListener("keydown", (event) => {
-    const target = event.target;
-    const isTyping =
-      target.tagName === "TEXTAREA" ||
-      (target.tagName === "INPUT" && target.type !== "color");
-    if (isTyping) return;
-    if (!(event.ctrlKey || event.metaKey)) return;
+  const target = event.target;
+  const isTyping =
+    target.tagName === "TEXTAREA" ||
+    (target.tagName === "INPUT" && !["color", "range"].includes(target.type));
+  if (isTyping) return;
+  if (!(event.ctrlKey || event.metaKey)) return;
 
     const key = event.key.toLowerCase();
     if (key === "z" && !event.shiftKey) {

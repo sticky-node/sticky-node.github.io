@@ -70,6 +70,7 @@ export function handleFreehandMouseUp({ state, saveCanvas }) {
   }
 
   if (state.currentStroke) {
+    if (state.currentStroke.points.length < 2) state.strokeItems.pop();
     saveCanvas();
     state.currentStroke = null;
     return;
@@ -79,6 +80,9 @@ export function handleFreehandMouseUp({ state, saveCanvas }) {
 }
 
 export function handleFreehandMouseLeave({ state, saveCanvas }) {
+  if (state.currentStroke && state.currentStroke.points.length < 2) {
+    state.strokeItems.pop();
+  }
   if (state.drawing || state.currentStroke || state.editingStroke) saveCanvas();
   state.drawing = false;
   state.currentStroke = null;
