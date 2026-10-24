@@ -4,6 +4,7 @@ import { setupControls } from "./canvas/controls.js";
 import { clearCanvas, loadCanvas, saveCanvas } from "./canvas/storage.js";
 import { renderOverlay } from "./canvas/render/render.js";
 import { createHistory } from "./canvas/history.js";
+import { saveToFile, openFromFile } from "./canvas/files.js"
 
 const canvas = document.getElementById("drawingcanvas");
 const context = canvas.getContext("2d");
@@ -90,6 +91,18 @@ setupControls({
     renderOverlay(textContext, state);
     history.record();
   },
+});
+
+document.getElementById("saveFileButton").addEventListener("click", () => {
+  saveToFile(state);
+});
+
+document.getElementById("openFileButton").addEventListener("click", async () => {
+  if (await openFromFile(state)) {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    renderOverlay(textContext, state);
+    saveCanvas(canvas, state);
+  }
 });
 
 setupCanvasEvents({

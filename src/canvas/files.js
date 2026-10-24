@@ -5,13 +5,14 @@ const KEYS = [
 
 export function serialize(state) {
     const doc = { app: "sticky-node", version: 1 };
-    KEYS.forEach((key => (doc[key] = state[key])));
+    KEYS.forEach((key) => (doc[key] = state[key]));
     return JSON.stringify(doc, null, 2);
 }
 
 export function applyDocument(state, json) {
+    if (!json.trim()) throw new Error("The file is empty");
     const doc = JSON.parse(json);
-    if (doc.app !== "sticky-node") throw new error("Not a Sticky Node file");
+    if (doc.app !== "sticky-node") throw new Error("Not a Sticky Node file");
     
     KEYS.forEach((key) => {
         state[key].length = 0;
@@ -33,7 +34,7 @@ export async function saveToFile(state, suggestedName = "drawing.sticky.json") {
             })
             const writable = await handle.createWritable();
             await writable.write(json);
-            await writable.close;
+            await writable.close();
         } catch (error) {
             if (error.name !== "AbortError") throw error;
         }
@@ -44,8 +45,10 @@ export async function saveToFile(state, suggestedName = "drawing.sticky.json") {
     const link = document.createElement("a");
     link.href = url;
     link.download = suggestedName;
+    document.body.appendChild(link);
     link.click();
-    URL.revokeObjectURL(url);
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 export function openFromFile(state) {
@@ -58,7 +61,7 @@ export function openFromFile(state) {
             if (!file) return resolve(false);
             try {
                 applyDocument(state, await file.text());
-                resoilve(true);
+                resolve(true);
             } catch (error) {
                 alert("Couldn't open that file: " + error.message);
                 resolve(false);
