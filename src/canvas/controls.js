@@ -7,6 +7,7 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   const textButton = document.getElementById("textButton");
   const circleButton = document.getElementById("circleButton");
   const arrowButton = document.getElementById("arrowButton");
+  const fillButton = document.getElementById("fillButton");
   const polygonButton = document.getElementById("polygonButton");
   const polygonSidesInput = document.getElementById("polygonSidesInput");
   const lineWidthInput = document.getElementById("lineWidthInput");
@@ -17,14 +18,14 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   if (fontSizeInput) {
     fontSizeInput.addEventListener("input", () => {
       state.fontSize = Number(fontSizeInput.value);
-      if (fontSizeValue) fontSizeValue.textContext = fontSizeInput.value;
+      if (fontSizeValue) fontSizeValue.textContent = fontSizeInput.value;
     });
   }
 
   if (lineWidthInput) {
     lineWidthInput.addEventListener("input", () => {
       state.lineWidth = Number(lineWidthInput.value);
-      if (lineWidthValue) lineWidthValue.textContext = lineWidthInput.value;
+      if (lineWidthValue) lineWidthValue.textContent = lineWidthInput.value;
     });
   }
 
@@ -71,6 +72,16 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
     arrowButton.addEventListener("click", () => {
       state.tool = "arrow";
       state.erasing = false;
+    });
+  }
+
+  if (fillButton) {
+    fillButton.addEventListener("click", () => {
+      state.tool = "fill";
+      state.erasing = false;
+      if (eraserButton) {
+        eraserButton.textContent = "Eraser: Off";
+      }
     });
   }
 

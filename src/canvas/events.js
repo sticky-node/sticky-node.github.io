@@ -34,12 +34,8 @@ export function setupCanvasEvents({
     renderOverlay
   };
 
-  canvas.addEventListener("contextMenu", (event) => {
-    if (state.tool === "text" || state.tool === "fill") event.preventDefault();
-  });
-
   canvas.addEventListener("contextmenu", (event) => {
-    if (state.tool === "text") event.preventDefault();
+    if (state.tool === "text" || state.tool === "fill") event.preventDefault();
   });
 
   canvas.addEventListener("mousedown", (event) => {

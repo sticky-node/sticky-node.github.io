@@ -1,3 +1,4 @@
+import { DEFAULT_FONT_SIZE, getLineHeight } from "../../tools/text.js";
 export function findCircleAt(circleItems, position) {
   return [...circleItems].reverse().find(({ x, y, width, height }) => {
     const centerX = x + width / 2;
@@ -83,17 +84,18 @@ export function findArrowAt(arrowItems, position, threshold = 8) {
 }
 
 export function findTextAt(textContext, textItems, position) {
-  textContext.font = "20px sans-serif";
   textContext.textBaseline = "top";
 
   return [...textItems].reverse().find((textItem) => {
     if (!textItem?.text) return false;
+    const fontSize = textItem.fontSize ?? DEFAULT_FONT_SIZE;
+    textContext.font = `${fontSize}px sans-serif`;
     const lines = textItem.text.split("\n");
     const width = Math.max(
       ...lines.map((line) => textContext.measureText(line).width),
       1
     );
-    const height = lines.length * 24;
+    const height = lines.length * getLineHeight(fontSize);
 
     return (
       position.x >= textItem.x &&

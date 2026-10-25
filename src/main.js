@@ -47,6 +47,7 @@ const state = {
   editOffset: null,
   lastPosition: null,
   lineWidth: 3,
+  fontSize: 20,
 };
 
 loadCanvas(canvas, context, state);
