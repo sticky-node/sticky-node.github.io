@@ -8,6 +8,7 @@ function openNewTextBox({ canvas, position, textContext, state, saveCanvas, rend
     canvas,
     position,
     color: state.selectedColor,
+    fontSize: state.fontSize,
     onCommit: (updatedText) => {
       state.textItems.push(updatedText);
       renderOverlay(textContext, state);
@@ -45,6 +46,7 @@ export function handleTextMouseDown({ event, canvas, position, textContext, stat
     canvas,
     position: { x: existingText.x, y: existingText.y },
     color: state.selectedColor,
+    fontSize: state.fontSize,
     textItem: existingText,
     onCommit: (updatedText) => {
       Object.assign(existingText, updatedText);

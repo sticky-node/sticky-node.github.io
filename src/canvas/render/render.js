@@ -2,6 +2,20 @@ import { drawStoredPolygon } from "../../tools/polygon.js";
 import { drawStoredCircle } from "../../tools/circle.js";
 import { drawStoredRectangle } from "../../tools/rectangle.js";
 import { drawStoredArrow } from "../../tools/arrow.js";
+import { DEFAULT_FONT_SIZE, getLineHeight } from "../../tools/text.js"
+
+function renderText(textContext, textItems) {
+  textContext.textBaseline = "top";
+
+  textItems.forEach(({ text, x, y, color, fontsize = DEFAULT_FONT_SIZE }) => {
+    text.Context.font = `${fontSize}px sans-serif`;
+    textContext.fillStyle = color;
+    const lineHeight = getLineHeight(fontSize);
+    text.split("/n").forEach((line, index) => {
+      textContext.fillText(line, x, y + index * lineHeight);
+    });
+  });
+}
 
 function renderText(textContext, textItems) {
   textContext.font = "20px sans-serif";

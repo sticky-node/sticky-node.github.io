@@ -1,19 +1,22 @@
+export const DEFAULT_FONT_SIZE = 20;
+export const getLineHeight = (fontSize = DEFAULT_FONT_SIZE) => Math.round(fontSize * 1.2);
+
 export function createTextBox({
   canvas,
   position,
   color,
   textItem,
+  fontSize = DEFAULT_FONT_SIZE,
   onCommit
 }) {
   const bounds = canvas.getBoundingClientRect();
   const textBox = document.createElement("textarea");
-
+  
   textBox.className = "sticky-node-textbox";
   textBox.style.position = "fixed";
   textBox.style.left = `${bounds.left + position.x - 8}px`;
   textBox.style.top = `${bounds.top + position.y - 8}px`;
   textBox.style.boxSizing = "content-box";
-  textBox.style.lineHeight = "24px";
   textBox.style.width = "180px";
   textBox.style.height = "70px";
   textBox.style.padding = "6px";
@@ -21,7 +24,6 @@ export function createTextBox({
   textBox.style.backgroundColor = "white";
   textBox.style.border = "2px solid red";
   textBox.style.color = color;
-  textBox.style.font = "20px sans-serif";
   textBox.style.zIndex = "1000";
   textBox.value = textItem?.text ?? "";
 
@@ -42,6 +44,7 @@ export function createTextBox({
         x: textItem?.x ?? position.x,
         y: textItem?.y ?? position.y,
         color: textItem?.color ?? color,
+        fontSize,
         text
       });
     }

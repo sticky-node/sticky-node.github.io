@@ -11,12 +11,20 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   const polygonSidesInput = document.getElementById("polygonSidesInput");
   const lineWidthInput = document.getElementById("lineWidthInput");
   const lineWidthValue = document.getElementById("lineWidthValue");
-  const fillButton = document.getElementById("fillButton");
+  const fontSizeInput = document.getElementById("fontSizeInput");
+  const fontSizeValue = document.getElementById("fontSizeValue");
+
+  if (fontSizeInput) {
+    fontSizeInput.addEventListener("input", () => {
+      state.fontSize = Number(fontSizeInput.value);
+      if (fontSizeValue) fontSizeValue.textContext = fontSizeInput.value;
+    });
+  }
 
   if (lineWidthInput) {
     lineWidthInput.addEventListener("input", () => {
       state.lineWidth = Number(lineWidthInput.value);
-      if (lineWidthValue) lineWidthValue.textContent = lineWidthInput.value;
+      if (lineWidthValue) lineWidthValue.textContext = lineWidthInput.value;
     });
   }
 
@@ -59,13 +67,6 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
     state.erasing = false;
   });
 
-  if (fillButton) {
-    fillButton.addEventListener("click", () => {
-      state.tool = "fill";
-      state.erasing = false;
-    });
-  }
-
   if (arrowButton) {
     arrowButton.addEventListener("click", () => {
       state.tool = "arrow";
@@ -87,12 +88,12 @@ export function setupControls({ state, clearCanvas, undo, redo }) {
   document.getElementById("redoButton")?.addEventListener("click", redo);
 
   document.addEventListener("keydown", (event) => {
-  const target = event.target;
-  const isTyping =
-    target.tagName === "TEXTAREA" ||
-    (target.tagName === "INPUT" && !["color", "range"].includes(target.type));
-  if (isTyping) return;
-  if (!(event.ctrlKey || event.metaKey)) return;
+    const target = event.target;
+    const isTyping =
+      target.tagName === "TEXTAREA" ||
+      (target.tagName === "INPUT" && target.type !== "color");
+    if (isTyping) return;
+    if (!(event.ctrlKey || event.metaKey)) return;
 
     const key = event.key.toLowerCase();
     if (key === "z" && !event.shiftKey) {
