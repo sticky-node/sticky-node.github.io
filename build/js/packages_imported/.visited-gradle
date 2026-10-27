@@ -1,0 +1,26 @@
+{
+  "version": "9",
+  "items": {
+    "2b81f950c862b3f76a0dcf1eda5d7c14": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/2.1.0/fd28fb7924ae2c52bc9a665118b38ffcbcd545f6/kotlin-stdlib-js-2.1.0.klib"
+    },
+    "da2498cb322f3066e609531d5c6babd6": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-dom-api-compat/2.1.0/40b26bd1544634256a38fa11cd8b9c0afbc82d01/kotlin-dom-api-compat-2.1.0.klib"
+    },
+    "033b9af10b19a6087cdbc28f1223400d": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-json-js/1.7.3/92c31de812b738c71e960bda7f14aea05ad75434/kotlinx-serialization-json-js-1.7.3.klib"
+    },
+    "5ba9660c3ffb77bd50c286cc40b89beb": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-core-js/1.7.3/566909fa3fcb9d24bf9414499c4d19fa87d6df1/kotlinx-serialization-core-js-1.7.3.klib"
+    },
+    "7323f2e101d0df459c3ca907e65ee2ca": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.9.0/155bfdad6f6ebdde0a8049053675623eb3a1e36f/kotlinx-coroutines-core-js-1.9.0.klib"
+    },
+    "dd02831410adcddecefea4c35d5f321e": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.25.0/913782d5387faf78c6ceab08ed19a290bcd000f9/atomicfu-js-0.25.0.klib"
+    },
+    "53e4d184e3f599ec39ce21b9cfb9f9dc": {
+      "src": "/home/sanjith/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlinx-atomicfu-runtime/2.0.0/5dd3b6879cd1d19249083132503a739f8558426d/kotlinx-atomicfu-runtime-2.0.0.klib"
+    }
+  }
+}

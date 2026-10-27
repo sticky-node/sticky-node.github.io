@@ -1,0 +1,10 @@
+abi_version=1.201.0
+builtins_platform=JS
+compiler_version=2.1.0
+depends=org.jetbrains.kotlinx\:kotlinx-serialization-json org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:kotlinx-serialization-core org.jetbrains.kotlin\:kotlin-dom-api-compat kotlin org.jetbrains.kotlinx\:atomicfu
+ir_signature_versions=1,2
+jsOutputName=sticky-node
+metadata_version=1.4.1
+serializedIrFileFingerprints=x55e7d2zsr3h.2tz08baxp6n49 2gg68d4uyebvv.3ng002tel5slo 2jckh5tswd9q6.z0duzvvgkxub 2lgntqo59m4o7.26c2ikdpeknwq 3q26zd08c9qhm.nauzo82usqiy j0b83wyoage7.1tk4dad5hql5k 3ofcnzjjttbj2.m7f41mc89pzf 102ryft8i0mkz.3uoqg22kxgreh 2y11dao49smvn.2eygyb7si85ka 1xsgsdfpxptb1.2xt5i0h53rsrm 3ecw2tafox046.1bt5vdw73ioka 1cvhyeoguh6nn.yz3rl0oxizu2 2qsfgepe3k6ug.2r5j67i4l45f6 2sh3wdoy0ccxp.1wwsqe06rknqv 1iges4vm9oozc.27f0zx8eakcuy 2gqrnl10yhl64.2g2ndiushaweo 14fxzzy54vgt7.3apt9vnki3iws 2g158ah6eg0pe.34grrf4b84dth 25mx6ixq7zsl2.3gadl9h3ytfpi 12xxmchrswz8i.3ib1xg3040hb7 1n29uuan24j0x.28whvoyzoym8r 26ct4p4xl43si.1hf7sk7uso4gy
+serializedKlibFingerprint=3nknuqsffcrw8.38chq4xw9fh9n
+unique_name=sticky-node

@@ -1,0 +1,15 @@
+{
+  "name": "sticky-node",
+  "version": "unspecified",
+  "private": true,
+  "workspaces": [
+    "packages/sticky-node",
+    "packages/sticky-node-test"
+  ],
+  "devDependencies": {},
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "resolutions": {}
+}
