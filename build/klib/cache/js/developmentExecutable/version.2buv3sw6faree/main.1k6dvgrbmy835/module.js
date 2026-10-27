@@ -1,14 +1,11 @@
 (function (factory) {
   if (typeof define === 'function' && define.amd)
-    define(['exports', './kotlin-kotlin-stdlib.js', './kotlinx-coroutines-core.js', './kotlinx-serialization-kotlinx-serialization-core.js', './kotlinx-serialization-kotlinx-serialization-json.js'], factory);
+    define(['exports', './kotlin-kotlin-stdlib.js', './kotlinx-serialization-kotlinx-serialization-core.js', './kotlinx-serialization-kotlinx-serialization-json.js', './kotlinx-coroutines-core.js'], factory);
   else if (typeof exports === 'object')
-    factory(module.exports, require('./kotlin-kotlin-stdlib.js'), require('./kotlinx-coroutines-core.js'), require('./kotlinx-serialization-kotlinx-serialization-core.js'), require('./kotlinx-serialization-kotlinx-serialization-json.js'));
+    factory(module.exports, require('./kotlin-kotlin-stdlib.js'), require('./kotlinx-serialization-kotlinx-serialization-core.js'), require('./kotlinx-serialization-kotlinx-serialization-json.js'), require('./kotlinx-coroutines-core.js'));
   else {
     if (typeof globalThis['kotlin-kotlin-stdlib'] === 'undefined') {
       throw new Error("Error loading module 'sticky-node'. Its dependency 'kotlin-kotlin-stdlib' was not found. Please, check whether 'kotlin-kotlin-stdlib' is loaded prior to 'sticky-node'.");
-    }
-    if (typeof globalThis['kotlinx-coroutines-core'] === 'undefined') {
-      throw new Error("Error loading module 'sticky-node'. Its dependency 'kotlinx-coroutines-core' was not found. Please, check whether 'kotlinx-coroutines-core' is loaded prior to 'sticky-node'.");
     }
     if (typeof globalThis['kotlinx-serialization-kotlinx-serialization-core'] === 'undefined') {
       throw new Error("Error loading module 'sticky-node'. Its dependency 'kotlinx-serialization-kotlinx-serialization-core' was not found. Please, check whether 'kotlinx-serialization-kotlinx-serialization-core' is loaded prior to 'sticky-node'.");
@@ -16,806 +13,1029 @@
     if (typeof globalThis['kotlinx-serialization-kotlinx-serialization-json'] === 'undefined') {
       throw new Error("Error loading module 'sticky-node'. Its dependency 'kotlinx-serialization-kotlinx-serialization-json' was not found. Please, check whether 'kotlinx-serialization-kotlinx-serialization-json' is loaded prior to 'sticky-node'.");
     }
-    globalThis['sticky-node'] = factory(typeof globalThis['sticky-node'] === 'undefined' ? {} : globalThis['sticky-node'], globalThis['kotlin-kotlin-stdlib'], globalThis['kotlinx-coroutines-core'], globalThis['kotlinx-serialization-kotlinx-serialization-core'], globalThis['kotlinx-serialization-kotlinx-serialization-json']);
+    if (typeof globalThis['kotlinx-coroutines-core'] === 'undefined') {
+      throw new Error("Error loading module 'sticky-node'. Its dependency 'kotlinx-coroutines-core' was not found. Please, check whether 'kotlinx-coroutines-core' is loaded prior to 'sticky-node'.");
+    }
+    globalThis['sticky-node'] = factory(typeof globalThis['sticky-node'] === 'undefined' ? {} : globalThis['sticky-node'], globalThis['kotlin-kotlin-stdlib'], globalThis['kotlinx-serialization-kotlinx-serialization-core'], globalThis['kotlinx-serialization-kotlinx-serialization-json'], globalThis['kotlinx-coroutines-core']);
   }
-}(function (_, kotlin_kotlin, kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core, kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core, kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json) {
+}(function (_, kotlin_kotlin, kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core, kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json, kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core) {
   'use strict';
   //region block: imports
-  var imul = Math.imul;
   var hypot = Math.hypot;
-  var THROW_CCE = kotlin_kotlin.$_$.qb;
-  var ensureNotNull = kotlin_kotlin.$_$.gc;
-  var Unit_getInstance = kotlin_kotlin.$_$.g4;
-  var CoroutineImpl = kotlin_kotlin.$_$.l7;
-  var protoOf = kotlin_kotlin.$_$.g9;
-  var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
-  var isInterface = kotlin_kotlin.$_$.v8;
-  var VOID = kotlin_kotlin.$_$.d;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.v6;
-  var initMetadataForLambda = kotlin_kotlin.$_$.l8;
-  var MainScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
-  var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
-  var SuspendFunction1 = kotlin_kotlin.$_$.m7;
-  var toDouble = kotlin_kotlin.$_$.pa;
-  var numberToInt = kotlin_kotlin.$_$.d9;
-  var toDoubleOrNull = kotlin_kotlin.$_$.oa;
-  var initMetadataForClass = kotlin_kotlin.$_$.h8;
-  var ArrayListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o1;
-  var initMetadataForCompanion = kotlin_kotlin.$_$.i8;
-  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.v1;
-  var emptyList = kotlin_kotlin.$_$.o5;
-  var equals = kotlin_kotlin.$_$.a8;
-  var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.c;
-  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n;
-  var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
-  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.q1;
-  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r1;
-  var initMetadataForObject = kotlin_kotlin.$_$.m8;
-  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.y1;
-  var objectCreate = kotlin_kotlin.$_$.f9;
-  var Exception_init_$Create$ = kotlin_kotlin.$_$.c1;
-  var isBlank = kotlin_kotlin.$_$.ca;
-  var intercepted = kotlin_kotlin.$_$.x6;
-  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.x;
-  var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
-  var Companion_getInstance = kotlin_kotlin.$_$.b4;
-  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.z1;
-  var initMetadataForCoroutine = kotlin_kotlin.$_$.j8;
-  var Json = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.a;
-  var mutableListOf = kotlin_kotlin.$_$.f6;
-  var toMutableList = kotlin_kotlin.$_$.r6;
-  var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.l;
-  var getNumberHashCode = kotlin_kotlin.$_$.d8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.k8;
-  var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.q;
+  var imul = Math.imul;
+  var THROW_CCE = kotlin_kotlin.$_$.nb;
+  var Unit_getInstance = kotlin_kotlin.$_$.f4;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
-  var ListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o;
-  var collectionSizeOrDefault = kotlin_kotlin.$_$.a5;
+  var protoOf = kotlin_kotlin.$_$.a9;
+  var VOID = kotlin_kotlin.$_$.d;
+  var emptyList = kotlin_kotlin.$_$.l5;
+  var initMetadataForClass = kotlin_kotlin.$_$.b8;
+  var ArrayDeque_init_$Create$ = kotlin_kotlin.$_$.f;
+  var get_lastIndex = kotlin_kotlin.$_$.t5;
+  var isCharSequence = kotlin_kotlin.$_$.l8;
+  var trim = kotlin_kotlin.$_$.wa;
+  var toString = kotlin_kotlin.$_$.e9;
+  var ensureNotNull = kotlin_kotlin.$_$.dc;
+  var initMetadataForObject = kotlin_kotlin.$_$.g8;
+  var initMetadataForInterface = kotlin_kotlin.$_$.e8;
+  var mutableListOf = kotlin_kotlin.$_$.a6;
+  var last = kotlin_kotlin.$_$.v5;
+  var charSequenceLength = kotlin_kotlin.$_$.q7;
+  var isInterface = kotlin_kotlin.$_$.p8;
+  var ArrayListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p1;
+  var initMetadataForCompanion = kotlin_kotlin.$_$.c8;
+  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.w1;
+  var equals = kotlin_kotlin.$_$.u7;
+  var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.d;
+  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o;
+  var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n;
+  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r1;
+  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.s1;
+  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.z1;
+  var objectCreate = kotlin_kotlin.$_$.z8;
+  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.f1;
+  var isBlank = kotlin_kotlin.$_$.z9;
+  var Json = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.a;
+  var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
+  var getNumberHashCode = kotlin_kotlin.$_$.x7;
+  var coerceIn = kotlin_kotlin.$_$.j9;
+  var roundToInt = kotlin_kotlin.$_$.f9;
+  var getKClass = kotlin_kotlin.$_$.c;
+  var SealedClassSerializer_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.a;
+  var LazyThreadSafetyMode_PUBLICATION_getInstance = kotlin_kotlin.$_$.e;
+  var lazy = kotlin_kotlin.$_$.hc;
+  var SerializerFactory = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.x1;
+  var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r;
+  var coerceAtLeast = kotlin_kotlin.$_$.h9;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.g;
-  var get_lastIndex = kotlin_kotlin.$_$.y5;
-  var asReversed = kotlin_kotlin.$_$.y4;
-  var get_indices = kotlin_kotlin.$_$.v5;
-  var Collection = kotlin_kotlin.$_$.i4;
-  var getOrNull = kotlin_kotlin.$_$.r5;
-  var charSequenceLength = kotlin_kotlin.$_$.w7;
-  var split = kotlin_kotlin.$_$.ja;
-  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.m1;
-  var to = kotlin_kotlin.$_$.rc;
-  var mapOf = kotlin_kotlin.$_$.e6;
-  var checkIndexOverflow = kotlin_kotlin.$_$.z4;
-  var drop = kotlin_kotlin.$_$.n5;
-  var isCharSequence = kotlin_kotlin.$_$.r8;
-  var trim = kotlin_kotlin.$_$.za;
-  var toString = kotlin_kotlin.$_$.k9;
+  var split = kotlin_kotlin.$_$.ga;
+  var checkIndexOverflow = kotlin_kotlin.$_$.x4;
+  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.l1;
+  var KProperty0 = kotlin_kotlin.$_$.p9;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.y7;
+  var lazy_0 = kotlin_kotlin.$_$.ic;
+  var intercepted = kotlin_kotlin.$_$.r6;
+  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.x;
+  var Companion_getInstance = kotlin_kotlin.$_$.a4;
+  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.y1;
+  var CoroutineImpl = kotlin_kotlin.$_$.f7;
+  var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
+  var initMetadataForCoroutine = kotlin_kotlin.$_$.d8;
+  var Collection = kotlin_kotlin.$_$.h4;
+  var listOf = kotlin_kotlin.$_$.x5;
+  var toIntOrNull = kotlin_kotlin.$_$.na;
+  var toDoubleOrNull = kotlin_kotlin.$_$.la;
+  var numberToInt = kotlin_kotlin.$_$.x8;
+  var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
+  var initMetadataForLambda = kotlin_kotlin.$_$.f8;
+  var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
+  var MainScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
+  var setOf = kotlin_kotlin.$_$.f6;
+  var SuspendFunction1 = kotlin_kotlin.$_$.g7;
   //endregion
   //region block: pre-declaration
-  initMetadataForLambda(main$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForLambda(main$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForClass(BoundingBox, 'BoundingBox');
+  initMetadataForClass(Editor, 'Editor');
+  initMetadataForClass(History, 'History');
+  initMetadataForObject(TextBox, 'TextBox');
+  function get_claimsMouse() {
+    return false;
+  }
+  function get_busy() {
+    return false;
+  }
+  initMetadataForInterface(Tool, 'Tool');
+  initMetadataForClass(Dragger, 'Dragger', Dragger);
+  initMetadataForClass(FreehandTool, 'FreehandTool', FreehandTool, VOID, [Tool]);
+  initMetadataForClass(ShapeTool, 'ShapeTool', VOID, VOID, [Tool]);
+  initMetadataForClass(TextTool, 'TextTool', TextTool, VOID, [Tool]);
+  initMetadataForClass(FillTool, 'FillTool', FillTool, VOID, [Tool]);
+  initMetadataForClass(EraserTool, 'EraserTool', EraserTool, VOID, [Tool]);
+  initMetadataForClass(ToolSet, 'ToolSet', ToolSet);
   initMetadataForCompanion(Companion);
   initMetadataForObject($serializer, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(StickyDocument, 'StickyDocument', StickyDocument, VOID, VOID, VOID, VOID, {0: $serializer_getInstance});
-  initMetadataForLambda(openFromFile$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForCoroutine($saveToFileCOROUTINE$0, CoroutineImpl);
-  initMetadataForClass(History, 'History');
+  initMetadataForClass(DrawingFile, 'DrawingFile', DrawingFile, VOID, VOID, VOID, VOID, {0: $serializer_getInstance});
   initMetadataForCompanion(Companion_0);
   initMetadataForObject($serializer_0, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(Point, 'Point', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_0});
-  initMetadataForInterface(Fillable, 'Fillable');
+  initMetadataForClass(LegacyDrawing, 'LegacyDrawing', LegacyDrawing, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_0});
   initMetadataForCompanion(Companion_1);
   initMetadataForObject($serializer_1, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(Stroke, 'Stroke', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_1});
-  initMetadataForCompanion(Companion_2);
-  initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(TextItem, 'TextItem', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_2});
+  initMetadataForClass(Point, 'Point', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_1});
+  initMetadataForClass(BoundingBox, 'BoundingBox');
+  initMetadataForInterface(Fillable, 'Fillable');
+  initMetadataForInterface(Boxed, 'Boxed');
+  initMetadataForCompanion(Companion_2, VOID, [SerializerFactory]);
+  initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_3});
   initMetadataForCompanion(Companion_3);
-  initMetadataForObject($serializer_3, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, VOID, [Fillable], VOID, VOID, {0: $serializer_getInstance_3});
+  initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_2});
   initMetadataForCompanion(Companion_4);
-  initMetadataForObject($serializer_4, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(CircleItem, 'CircleItem', VOID, VOID, [Fillable], VOID, VOID, {0: $serializer_getInstance_4});
+  initMetadataForObject($serializer_3, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_3});
   initMetadataForCompanion(Companion_5);
-  initMetadataForObject($serializer_5, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, VOID, [Fillable], VOID, VOID, {0: $serializer_getInstance_5});
+  initMetadataForObject($serializer_4, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(CircleItem, 'CircleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_4});
   initMetadataForCompanion(Companion_6);
-  initMetadataForObject($serializer_6, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(ArrowItem, 'ArrowItem', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_6});
+  initMetadataForObject($serializer_5, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_5});
   initMetadataForCompanion(Companion_7);
+  initMetadataForObject($serializer_6, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(ArrowItem, 'ArrowItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_6});
+  initMetadataForCompanion(Companion_8);
   initMetadataForObject($serializer_7, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(Items, 'Items', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_7});
-  initMetadataForClass(State, 'State', State);
-  initMetadataForClass(Handlers, 'Handlers');
-  initMetadataForClass(ShapeConfig, 'ShapeConfig');
-  initMetadataForClass(TypedShapeConfig, 'TypedShapeConfig', VOID, ShapeConfig);
+  initMetadataForClass(TextItem, 'TextItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_7});
+  initMetadataForCoroutine($saveToFileCOROUTINE$0, CoroutineImpl);
+  initMetadataForCoroutine($pickFileTextCOROUTINE$1, CoroutineImpl);
+  initMetadataForObject(Storage, 'Storage');
+  initMetadataForLambda(setupControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(setupControls$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
   //endregion
   function main() {
     var tmp = document.getElementById('drawingcanvas');
     var canvas = tmp instanceof HTMLCanvasElement ? tmp : THROW_CCE();
-    var tmp_0 = canvas.getContext('2d', {willReadFrequently: true});
-    var context = tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
-    var tmp_1 = document.createElement('canvas');
-    var textCanvas = tmp_1 instanceof HTMLCanvasElement ? tmp_1 : THROW_CCE();
-    var tmp_2 = textCanvas.getContext('2d');
-    var textContext = tmp_2 instanceof CanvasRenderingContext2D ? tmp_2 : THROW_CCE();
-    textCanvas.id = 'textcanvas';
-    // Inline function 'kotlin.js.asDynamic' call
-    canvas.after(textCanvas);
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    textCanvas.width = canvas.width;
-    textCanvas.height = canvas.height;
-    var syncTextCanvasPosition = main$lambda(textCanvas, canvas);
-    syncTextCanvasPosition();
-    var state = new State();
-    loadCanvas(canvas, context, state);
-    renderOverlay(textContext, state);
-    var history = new History(state);
-    var persist = main$lambda_0(canvas, state);
-    var commit = main$lambda_1(persist, history);
-    var isBusy = main$lambda_2(state);
-    var applyHistory = main$lambda_3(isBusy, textContext, state, persist);
-    var tmp_3 = window;
-    tmp_3.addEventListener('resize', main$lambda_4(canvas, textCanvas, syncTextCanvasPosition, textContext, state));
-    var tmp_4 = main$lambda_5(canvas, context, state, textContext, history);
-    var tmp_5 = main$lambda_6(applyHistory, history);
-    setupControls(state, tmp_4, tmp_5, main$lambda_7(applyHistory, history));
-    var tmp_6 = ensureNotNull(document.getElementById('saveFileButton'));
-    tmp_6.addEventListener('click', main$lambda_8(state));
-    var tmp_7 = ensureNotNull(document.getElementById('openFileButton'));
-    tmp_7.addEventListener('click', main$lambda_9(state, context, canvas, textContext, history));
-    setupCanvasEvents(canvas, context, textContext, state, commit, renderOverlay$ref());
+    var editor = new Editor(canvas);
+    editor.fitToWindow_u790h8_k$();
+    setupCanvasEvents(editor);
+    setupControls(editor);
+    var tmp_0 = window;
+    tmp_0.addEventListener('resize', main$lambda(editor));
   }
-  function main$lambda($textCanvas, $canvas) {
-    return function () {
-      $textCanvas.style.top = '' + $canvas.offsetTop + 'px';
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda_0($canvas, $state) {
-    return function () {
-      saveCanvas($canvas, $state);
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda_1($persist, $history) {
-    return function () {
-      $persist();
-      $history.record_fgmca7_k$();
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda_2($state) {
-    return function () {
-      return !($state.get_startPosition_d95qiq_k$() == null) || !($state.get_currentStroke_z58r2w_k$() == null) || !($state.get_editingStroke_bi8r0n_k$() == null) || !($state.get_editingCircle_3rgtb3_k$() == null) || !($state.get_editingRectangle_ldge4g_k$() == null) || !($state.get_editingPolygon_q3jmob_k$() == null) || !($state.get_editingArrow_mtg0o6_k$() == null) || !($state.get_editingText_lck0p0_k$() == null) || !($state.get_pendingTextPosition_5yd58c_k$() == null);
-    };
-  }
-  function main$lambda_3($isBusy, $textContext, $state, $persist) {
-    return function (action) {
-      var tmp;
-      if (!$isBusy()) {
-        var tmp_0;
-        if (action()) {
-          renderOverlay($textContext, $state);
-          tmp_0 = $persist();
-        }
-        tmp = tmp_0;
-      }
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda_4($canvas, $textCanvas, $syncTextCanvasPosition, $textContext, $state) {
+  function main$lambda($editor) {
     return function (it) {
-      $canvas.width = window.innerWidth;
-      $canvas.height = window.innerHeight;
-      $textCanvas.width = $canvas.width;
-      $textCanvas.height = $canvas.height;
-      $syncTextCanvasPosition();
-      renderOverlay($textContext, $state);
+      $editor.fitToWindow_u790h8_k$();
       return Unit_getInstance();
     };
-  }
-  function main$lambda_5($canvas, $context, $state, $textContext, $history) {
-    return function () {
-      clearCanvas($canvas, $context, $state);
-      renderOverlay($textContext, $state);
-      $history.record_fgmca7_k$();
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda$lambda($history) {
-    return function () {
-      return $history.undo_251ic_k$();
-    };
-  }
-  function main$lambda_6($applyHistory, $history) {
-    return function () {
-      $applyHistory(main$lambda$lambda($history));
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda$lambda_0($history) {
-    return function () {
-      return $history.redo_22xvi_k$();
-    };
-  }
-  function main$lambda_7($applyHistory, $history) {
-    return function () {
-      $applyHistory(main$lambda$lambda_0($history));
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda$slambda($state, resultContinuation) {
-    this.$state_1 = $state;
-    CoroutineImpl.call(this, resultContinuation);
-  }
-  protoOf(main$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
-  };
-  protoOf(main$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
-  };
-  protoOf(main$lambda$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
-    $sm: do
-      try {
-        var tmp = this.get_state_iypx7s_k$();
-        switch (tmp) {
-          case 0:
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = saveToFile(this.$state_1, VOID, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 1:
-            return Unit_getInstance();
-          case 2:
-            throw this.get_exception_x0n6w6_k$();
-        }
-      } catch ($p) {
-        var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 2) {
-          throw e;
-        } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
-        }
-      }
-     while (true);
-  };
-  protoOf(main$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new main$lambda$slambda(this.$state_1, completion);
-    i.$this$launch_1 = $this$launch;
-    return i;
-  };
-  protoOf(main$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
-  };
-  function main$lambda$slambda_0($state, resultContinuation) {
-    var i = new main$lambda$slambda($state, resultContinuation);
-    var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
-    };
-    l.$arity = 1;
-    return l;
-  }
-  function main$lambda_8($state) {
-    return function (it) {
-      var tmp = MainScope();
-      launch(tmp, VOID, VOID, main$lambda$slambda_0($state, null));
-      return Unit_getInstance();
-    };
-  }
-  function main$lambda$slambda_1($state, $context, $canvas, $textContext, $history, resultContinuation) {
-    this.$state_1 = $state;
-    this.$context_1 = $context;
-    this.$canvas_1 = $canvas;
-    this.$textContext_1 = $textContext;
-    this.$history_1 = $history;
-    CoroutineImpl.call(this, resultContinuation);
-  }
-  protoOf(main$lambda$slambda_1).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
-  };
-  protoOf(main$lambda$slambda_1).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
-  };
-  protoOf(main$lambda$slambda_1).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
-    $sm: do
-      try {
-        var tmp = this.get_state_iypx7s_k$();
-        switch (tmp) {
-          case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = openFromFile(this.$state_1, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 1:
-            if (suspendResult) {
-              this.$context_1.clearRect(0.0, 0.0, this.$canvas_1.width, this.$canvas_1.height);
-              renderOverlay(this.$textContext_1, this.$state_1);
-              saveCanvas(this.$canvas_1, this.$state_1);
-              this.$history_1.record_fgmca7_k$();
-              this.set_state_rjd8d0_k$(2);
-              continue $sm;
-            } else {
-              this.set_state_rjd8d0_k$(2);
-              continue $sm;
-            }
-
-          case 2:
-            return Unit_getInstance();
-          case 3:
-            throw this.get_exception_x0n6w6_k$();
-        }
-      } catch ($p) {
-        var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
-          throw e;
-        } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
-        }
-      }
-     while (true);
-  };
-  protoOf(main$lambda$slambda_1).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new main$lambda$slambda_1(this.$state_1, this.$context_1, this.$canvas_1, this.$textContext_1, this.$history_1, completion);
-    i.$this$launch_1 = $this$launch;
-    return i;
-  };
-  protoOf(main$lambda$slambda_1).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
-  };
-  function main$lambda$slambda_2($state, $context, $canvas, $textContext, $history, resultContinuation) {
-    var i = new main$lambda$slambda_1($state, $context, $canvas, $textContext, $history, resultContinuation);
-    var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
-    };
-    l.$arity = 1;
-    return l;
-  }
-  function main$lambda_9($state, $context, $canvas, $textContext, $history) {
-    return function (it) {
-      var tmp = MainScope();
-      launch(tmp, VOID, VOID, main$lambda$slambda_2($state, $context, $canvas, $textContext, $history, null));
-      return Unit_getInstance();
-    };
-  }
-  function renderOverlay$ref() {
-    var l = function (p0, p1) {
-      renderOverlay(p0, p1);
-      return Unit_getInstance();
-    };
-    l.callableName = 'renderOverlay';
-    return l;
   }
   function mainWrapper() {
     main();
   }
-  function setupControls(state, clearCanvas, undo, redo) {
-    // Inline function 'stickynode.canvas.byId' call
-    var id = 'clearButton';
-    var tmp = document.getElementById(id);
-    var tmp$ret$0 = tmp instanceof HTMLButtonElement ? tmp : null;
-    var clearButton = ensureNotNull(tmp$ret$0);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_0 = 'drawButton';
-    var tmp_0 = document.getElementById(id_0);
-    var drawButton = tmp_0 instanceof HTMLButtonElement ? tmp_0 : null;
-    // Inline function 'stickynode.canvas.byId' call
-    var id_1 = 'rectangleButton';
-    var tmp_1 = document.getElementById(id_1);
-    var tmp$ret$2 = tmp_1 instanceof HTMLButtonElement ? tmp_1 : null;
-    var rectangleButton = ensureNotNull(tmp$ret$2);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_2 = 'colorPicker';
-    var tmp_2 = document.getElementById(id_2);
-    var tmp$ret$3 = tmp_2 instanceof HTMLInputElement ? tmp_2 : null;
-    var colorPicker = ensureNotNull(tmp$ret$3);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_3 = 'eraserButton';
-    var tmp_3 = document.getElementById(id_3);
-    var tmp$ret$4 = tmp_3 instanceof HTMLButtonElement ? tmp_3 : null;
-    var eraserButton = ensureNotNull(tmp$ret$4);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_4 = 'textButton';
-    var tmp_4 = document.getElementById(id_4);
-    var tmp$ret$5 = tmp_4 instanceof HTMLButtonElement ? tmp_4 : null;
-    var textButton = ensureNotNull(tmp$ret$5);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_5 = 'circleButton';
-    var tmp_5 = document.getElementById(id_5);
-    var tmp$ret$6 = tmp_5 instanceof HTMLButtonElement ? tmp_5 : null;
-    var circleButton = ensureNotNull(tmp$ret$6);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_6 = 'arrowButton';
-    var tmp_6 = document.getElementById(id_6);
-    var arrowButton = tmp_6 instanceof HTMLButtonElement ? tmp_6 : null;
-    // Inline function 'stickynode.canvas.byId' call
-    var id_7 = 'fillButton';
-    var tmp_7 = document.getElementById(id_7);
-    var fillButton = tmp_7 instanceof HTMLButtonElement ? tmp_7 : null;
-    // Inline function 'stickynode.canvas.byId' call
-    var id_8 = 'polygonButton';
-    var tmp_8 = document.getElementById(id_8);
-    var tmp$ret$9 = tmp_8 instanceof HTMLButtonElement ? tmp_8 : null;
-    var polygonButton = ensureNotNull(tmp$ret$9);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_9 = 'polygonSidesInput';
-    var tmp_9 = document.getElementById(id_9);
-    var tmp$ret$10 = tmp_9 instanceof HTMLInputElement ? tmp_9 : null;
-    var polygonSidesInput = ensureNotNull(tmp$ret$10);
-    // Inline function 'stickynode.canvas.byId' call
-    var id_10 = 'lineWidthInput';
-    var tmp_10 = document.getElementById(id_10);
-    var lineWidthInput = tmp_10 instanceof HTMLInputElement ? tmp_10 : null;
-    var lineWidthValue = document.getElementById('lineWidthValue');
-    // Inline function 'stickynode.canvas.byId' call
-    var id_11 = 'fontSizeInput';
-    var tmp_11 = document.getElementById(id_11);
-    var fontSizeInput = tmp_11 instanceof HTMLInputElement ? tmp_11 : null;
-    var fontSizeValue = document.getElementById('fontSizeValue');
-    if (fontSizeInput == null)
-      null;
-    else {
-      fontSizeInput.addEventListener('input', setupControls$lambda(state, fontSizeInput, fontSizeValue));
-    }
-    if (lineWidthInput == null)
-      null;
-    else {
-      lineWidthInput.addEventListener('input', setupControls$lambda_0(state, lineWidthInput, lineWidthValue));
-    }
-    clearButton.addEventListener('click', setupControls$lambda_1(clearCanvas));
-    if (drawButton == null)
-      null;
-    else {
-      drawButton.addEventListener('click', setupControls$lambda_2(state, eraserButton));
-    }
-    rectangleButton.addEventListener('click', setupControls$lambda_3(state));
-    colorPicker.addEventListener('input', setupControls$lambda_4(state, colorPicker));
-    eraserButton.addEventListener('click', setupControls$lambda_5(state, eraserButton));
-    textButton.addEventListener('click', setupControls$lambda_6(state));
-    circleButton.addEventListener('click', setupControls$lambda_7(state));
-    if (arrowButton == null)
-      null;
-    else {
-      arrowButton.addEventListener('click', setupControls$lambda_8(state));
-    }
-    if (fillButton == null)
-      null;
-    else {
-      fillButton.addEventListener('click', setupControls$lambda_9(state, eraserButton));
-    }
-    polygonButton.addEventListener('click', setupControls$lambda_10(polygonSidesInput, state));
-    var tmp5_safe_receiver = document.getElementById('undoButton');
-    if (tmp5_safe_receiver == null)
-      null;
-    else {
-      tmp5_safe_receiver.addEventListener('click', setupControls$lambda_11(undo));
-    }
-    var tmp6_safe_receiver = document.getElementById('redoButton');
-    if (tmp6_safe_receiver == null)
-      null;
-    else {
-      tmp6_safe_receiver.addEventListener('click', setupControls$lambda_12(redo));
-    }
-    var tmp_12 = document;
-    tmp_12.addEventListener('keydown', setupControls$lambda_13(undo, redo));
+  function _get_ctx__e66oga($this) {
+    return $this.ctx_1;
   }
-  function setupControls$lambda($state, $fontSizeInput, $fontSizeValue) {
+  function _set_tool__9ujw73($this, _set____db54di) {
+    $this.tool_1 = _set____db54di;
+  }
+  function _get_history__d61b7h($this) {
+    return $this.history_1;
+  }
+  function _set_renderQueued__nr3wvm($this, _set____db54di) {
+    $this.renderQueued_1 = _set____db54di;
+  }
+  function _get_renderQueued__87d6bi($this) {
+    return $this.renderQueued_1;
+  }
+  function drawItem($this, item) {
+    $this.ctx_1.save();
+    item.draw_rpid3c_k$($this.ctx_1);
+    $this.ctx_1.restore();
+  }
+  function restore($this, snapshot) {
+    if (snapshot == null)
+      return Unit_getInstance();
+    replaceItems($this, decodeDrawing(snapshot));
+    Storage_getInstance().save_kr09ot_k$(snapshot);
+    $this.render_dje1iy_k$();
+  }
+  function replaceItems($this, newItems) {
+    $this.preview_1 = null;
+    $this.items_1.clear_j9egeb_k$();
+    $this.items_1.addAll_4lagoh_k$(newItems);
+  }
+  function Editor$findTop$lambda(it) {
+    return true;
+  }
+  function Editor$requestRender$lambda(this$0) {
     return function (it) {
-      $state.set_fontSize_6szsfv_k$(numberToInt(toDouble($fontSizeInput.value)));
-      var tmp0_safe_receiver = $fontSizeValue;
-      if (tmp0_safe_receiver == null)
-        null;
-      else {
-        tmp0_safe_receiver.textContent = $fontSizeInput.value;
+      this$0.renderQueued_1 = false;
+      this$0.render_dje1iy_k$();
+      return Unit_getInstance();
+    };
+  }
+  function Editor(canvas) {
+    this.canvas_1 = canvas;
+    var tmp = this;
+    var tmp_0 = this.canvas_1.getContext('2d');
+    tmp.ctx_1 = tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
+    var tmp_1 = this;
+    // Inline function 'kotlin.collections.mutableListOf' call
+    tmp_1.items_1 = ArrayList_init_$Create$();
+    this.preview_1 = null;
+    this.color_1 = '#000000';
+    this.lineWidth_1 = 3;
+    this.fontSize_1 = 20;
+    this.polygonSides_1 = 5;
+    this.tools_1 = new ToolSet();
+    this.tool_1 = this.tools_1.get_freehand_dsmxlw_k$();
+    this.onToolChanged_1 = null;
+    this.renderQueued_1 = false;
+    this.items_1.addAll_4lagoh_k$(Storage_getInstance().load_1zbae_k$());
+    this.history_1 = new History(encodeDrawing(this.items_1));
+  }
+  protoOf(Editor).get_canvas_bshgm9_k$ = function () {
+    return this.canvas_1;
+  };
+  protoOf(Editor).get_items_it823b_k$ = function () {
+    return this.items_1;
+  };
+  protoOf(Editor).set_preview_zhisal_k$ = function (_set____db54di) {
+    this.preview_1 = _set____db54di;
+  };
+  protoOf(Editor).get_preview_3zvuox_k$ = function () {
+    return this.preview_1;
+  };
+  protoOf(Editor).set_color_ayzg4c_k$ = function (_set____db54di) {
+    this.color_1 = _set____db54di;
+  };
+  protoOf(Editor).get_color_ipu8u2_k$ = function () {
+    return this.color_1;
+  };
+  protoOf(Editor).set_lineWidth_97ta37_k$ = function (_set____db54di) {
+    this.lineWidth_1 = _set____db54di;
+  };
+  protoOf(Editor).get_lineWidth_lbeliv_k$ = function () {
+    return this.lineWidth_1;
+  };
+  protoOf(Editor).set_fontSize_6szsfv_k$ = function (_set____db54di) {
+    this.fontSize_1 = _set____db54di;
+  };
+  protoOf(Editor).get_fontSize_pr9n47_k$ = function () {
+    return this.fontSize_1;
+  };
+  protoOf(Editor).set_polygonSides_7fzqbb_k$ = function (_set____db54di) {
+    this.polygonSides_1 = _set____db54di;
+  };
+  protoOf(Editor).get_polygonSides_rm31lh_k$ = function () {
+    return this.polygonSides_1;
+  };
+  protoOf(Editor).get_tools_iz6t2q_k$ = function () {
+    return this.tools_1;
+  };
+  protoOf(Editor).get_tool_wov2zl_k$ = function () {
+    return this.tool_1;
+  };
+  protoOf(Editor).set_onToolChanged_3f4ytg_k$ = function (_set____db54di) {
+    this.onToolChanged_1 = _set____db54di;
+  };
+  protoOf(Editor).get_onToolChanged_aze2yc_k$ = function () {
+    return this.onToolChanged_1;
+  };
+  protoOf(Editor).selectTool_nfpv6_k$ = function (next) {
+    this.preview_1 = null;
+    this.tool_1 = next;
+    var tmp0_safe_receiver = this.onToolChanged_1;
+    if (tmp0_safe_receiver == null)
+      null;
+    else
+      tmp0_safe_receiver(next);
+    this.requestRender_xvw6ob_k$();
+  };
+  protoOf(Editor).findTop_jleozl_k$ = function (p, accept) {
+    var tmp0 = this.items_1;
+    var tmp$ret$1;
+    $l$block: {
+      // Inline function 'kotlin.collections.lastOrNull' call
+      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
+      while (iterator.hasPrevious_qh0629_k$()) {
+        var element = iterator.previous_l2dfd5_k$();
+        // Inline function 'stickynode.editor.Editor.findTop.<anonymous>' call
+        if (accept(element) && element.hitTest_1gxtur_k$(p)) {
+          tmp$ret$1 = element;
+          break $l$block;
+        }
       }
+      tmp$ret$1 = null;
+    }
+    return tmp$ret$1;
+  };
+  protoOf(Editor).findTop$default_fnknud_k$ = function (p, accept, $super) {
+    var tmp;
+    if (accept === VOID) {
+      tmp = Editor$findTop$lambda;
+    } else {
+      tmp = accept;
+    }
+    accept = tmp;
+    return $super === VOID ? this.findTop_jleozl_k$(p, accept) : $super.findTop_jleozl_k$.call(this, p, accept);
+  };
+  protoOf(Editor).render_dje1iy_k$ = function () {
+    this.ctx_1.clearRect(0.0, 0.0, this.canvas_1.width, this.canvas_1.height);
+    var _iterator__ex2g4s = this.items_1.iterator_jk1svi_k$();
+    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+      var item = _iterator__ex2g4s.next_20eer_k$();
+      drawItem(this, item);
+    }
+    var tmp0_safe_receiver = this.preview_1;
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlin.let' call
+      // Inline function 'stickynode.editor.Editor.render.<anonymous>' call
+      drawItem(this, tmp0_safe_receiver);
+    }
+  };
+  protoOf(Editor).requestRender_xvw6ob_k$ = function () {
+    if (this.renderQueued_1)
       return Unit_getInstance();
-    };
+    this.renderQueued_1 = true;
+    var tmp = window;
+    tmp.requestAnimationFrame(Editor$requestRender$lambda(this));
+  };
+  protoOf(Editor).fitToWindow_u790h8_k$ = function () {
+    this.canvas_1.width = window.innerWidth;
+    this.canvas_1.height = window.innerHeight;
+    this.render_dje1iy_k$();
+  };
+  protoOf(Editor).commit_vpt10n_k$ = function () {
+    var snapshot = encodeDrawing(this.items_1);
+    if (this.history_1.record_guryq1_k$(snapshot)) {
+      Storage_getInstance().save_kr09ot_k$(snapshot);
+    }
+  };
+  protoOf(Editor).undo_t6j8bw_k$ = function () {
+    if (!this.tool_1.get_busy_wojps2_k$()) {
+      restore(this, this.history_1.undo_251ic_k$());
+    }
+  };
+  protoOf(Editor).redo_p9k3wy_k$ = function () {
+    if (!this.tool_1.get_busy_wojps2_k$()) {
+      restore(this, this.history_1.redo_22xvi_k$());
+    }
+  };
+  protoOf(Editor).clear_j9egeb_k$ = function () {
+    replaceItems(this, emptyList());
+    this.render_dje1iy_k$();
+    this.commit_vpt10n_k$();
+  };
+  protoOf(Editor).load_fth14d_k$ = function (newItems) {
+    replaceItems(this, newItems);
+    this.render_dje1iy_k$();
+    this.commit_vpt10n_k$();
+  };
+  protoOf(Editor).exportJson_3gdc58_k$ = function () {
+    return encodeDrawing(this.items_1, true);
+  };
+  function _get_limit__eq4zuy($this) {
+    return $this.limit_1;
   }
-  function setupControls$lambda_0($state, $lineWidthInput, $lineWidthValue) {
+  function _get_stack__b8zp2v($this) {
+    return $this.stack_1;
+  }
+  function _set_index__fyfqnn($this, _set____db54di) {
+    $this.index_1 = _set____db54di;
+  }
+  function _get_index__g2optt($this) {
+    return $this.index_1;
+  }
+  function History(initial, limit) {
+    limit = limit === VOID ? 100 : limit;
+    this.limit_1 = limit;
+    var tmp = this;
+    // Inline function 'kotlin.apply' call
+    var this_0 = ArrayDeque_init_$Create$();
+    // Inline function 'stickynode.editor.History.stack.<anonymous>' call
+    this_0.addLast_gaaijb_k$(initial);
+    tmp.stack_1 = this_0;
+    this.index_1 = 0;
+  }
+  protoOf(History).record_guryq1_k$ = function (snapshot) {
+    if (snapshot === this.stack_1.get_c1px32_k$(this.index_1))
+      return false;
+    while (this.stack_1.get_size_woubt6_k$() > (this.index_1 + 1 | 0)) {
+      this.stack_1.removeLast_i5wx8a_k$();
+    }
+    this.stack_1.addLast_gaaijb_k$(snapshot);
+    if (this.stack_1.get_size_woubt6_k$() > this.limit_1) {
+      this.stack_1.removeFirst_58pi0k_k$();
+    }
+    this.index_1 = get_lastIndex(this.stack_1);
+    return true;
+  };
+  protoOf(History).undo_251ic_k$ = function () {
+    if (this.index_1 === 0)
+      return null;
+    this.index_1 = this.index_1 - 1 | 0;
+    return this.stack_1.get_c1px32_k$(this.index_1);
+  };
+  protoOf(History).redo_22xvi_k$ = function () {
+    if (this.index_1 === get_lastIndex(this.stack_1))
+      return null;
+    this.index_1 = this.index_1 + 1 | 0;
+    return this.stack_1.get_c1px32_k$(this.index_1);
+  };
+  function _get_CLASS_NAME__cp9395($this) {
+    return $this.CLASS_NAME_1;
+  }
+  function show$finish(finished, box, $onCommit, commit) {
+    if (finished._v)
+      return Unit_getInstance();
+    finished._v = true;
+    // Inline function 'kotlin.text.trim' call
+    var this_0 = box.value;
+    var text = toString(trim(isCharSequence(this_0) ? this_0 : THROW_CCE()));
+    box.remove();
+    if (commit)
+      $onCommit(text);
+  }
+  function TextBox$show$lambda$lambda($armed) {
     return function (it) {
-      $state.set_lineWidth_97ta37_k$(numberToInt(toDouble($lineWidthInput.value)));
-      var tmp0_safe_receiver = $lineWidthValue;
-      if (tmp0_safe_receiver == null)
-        null;
-      else {
-        tmp0_safe_receiver.textContent = $lineWidthInput.value;
-      }
+      $armed._v = true;
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_1($clearCanvas) {
+  function TextBox$show$lambda($box, $armed) {
     return function (it) {
-      $clearCanvas();
+      $box.focus();
+      $box.select();
+      var tmp = window;
+      tmp.requestAnimationFrame(TextBox$show$lambda$lambda($armed));
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_2($state, $eraserButton) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('draw');
-      $state.set_erasing_9bfbf3_k$(false);
-      $eraserButton.textContent = 'Eraser: Off';
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_3($state) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('rectangle');
-      $state.set_erasing_9bfbf3_k$(false);
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_4($state, $colorPicker) {
-    return function (it) {
-      $state.set_selectedColor_xursdb_k$($colorPicker.value);
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_5($state, $eraserButton) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('draw');
-      $state.set_erasing_9bfbf3_k$(!$state.get_erasing_ng9ybq_k$());
-      $eraserButton.textContent = $state.get_erasing_ng9ybq_k$() ? 'Eraser: On' : 'Eraser: Off';
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_6($state) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('text');
-      $state.set_erasing_9bfbf3_k$(false);
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_7($state) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('circle');
-      $state.set_erasing_9bfbf3_k$(false);
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_8($state) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('arrow');
-      $state.set_erasing_9bfbf3_k$(false);
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_9($state, $eraserButton) {
-    return function (it) {
-      $state.set_tool_ony1u3_k$('fill');
-      $state.set_erasing_9bfbf3_k$(false);
-      $eraserButton.textContent = 'Eraser: Off';
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_10($polygonSidesInput, $state) {
-    return function (it) {
-      var tmp0_safe_receiver = toDoubleOrNull($polygonSidesInput.value);
-      var sides = tmp0_safe_receiver == null ? null : numberToInt(tmp0_safe_receiver);
-      var tmp;
-      if (!(sides == null) && sides >= 3) {
-        $state.set_polygonSides_7fzqbb_k$(sides);
-        $state.set_tool_ony1u3_k$('polygon');
-        $state.set_erasing_9bfbf3_k$(false);
-        tmp = Unit_getInstance();
-      }
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_11($undo) {
-    return function (it) {
-      $undo();
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_12($redo) {
-    return function (it) {
-      $redo();
-      return Unit_getInstance();
-    };
-  }
-  function setupControls$lambda_13($undo, $redo) {
+  function TextBox$show$lambda_0($finished, $box, $onCommit) {
     return function (e) {
       var event = e instanceof KeyboardEvent ? e : THROW_CCE();
-      var tmp = event.target;
-      var target = tmp instanceof Element ? tmp : null;
+      var tmp;
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault();
+        show$finish($finished, $box, $onCommit, true);
+        tmp = Unit_getInstance();
+      }
       var tmp_0;
-      if (!(target == null)) {
-        var tmp_1;
-        if (target.tagName === 'TEXTAREA') {
-          tmp_1 = true;
-        } else {
-          var tmp_2;
-          if (target.tagName === 'INPUT') {
-            tmp_2 = !((target instanceof HTMLInputElement ? target : THROW_CCE()).type === 'color');
-          } else {
-            tmp_2 = false;
-          }
-          tmp_1 = tmp_2;
-        }
-        tmp_0 = tmp_1;
-      } else {
-        tmp_0 = false;
-      }
-      var isTyping = tmp_0;
-      var tmp_3;
-      if (isTyping) {
-        return Unit_getInstance();
-      }
-      var tmp_4;
-      if (!(event.ctrlKey || event.metaKey)) {
-        return Unit_getInstance();
-      }
-      // Inline function 'kotlin.text.lowercase' call
-      // Inline function 'kotlin.js.asDynamic' call
-      var key = event.key.toLowerCase();
-      var tmp_5;
-      if (key === 'z' && !event.shiftKey) {
-        event.preventDefault();
-        tmp_5 = $undo();
-      } else if (key === 'z' && event.shiftKey || key === 'y') {
-        event.preventDefault();
-        tmp_5 = $redo();
+      if (event.key === 'Escape') {
+        show$finish($finished, $box, $onCommit, false);
+        tmp_0 = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function getMousePosition(canvas, event) {
-    var rectangle = canvas.getBoundingClientRect();
-    return new Point(event.clientX - rectangle.left, event.clientY - rectangle.top);
-  }
-  function BoundingBox(x, y, width, height) {
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-  }
-  protoOf(BoundingBox).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(BoundingBox).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(BoundingBox).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
-  };
-  protoOf(BoundingBox).get_height_e7t92o_k$ = function () {
-    return this.height_1;
-  };
-  function getBoundingBox(start, end) {
-    var tmp0 = start.get_x_1mhr67_k$();
-    // Inline function 'kotlin.math.min' call
-    var b = end.get_x_1mhr67_k$();
-    var tmp = Math.min(tmp0, b);
-    var tmp2 = start.get_y_1mhr68_k$();
-    // Inline function 'kotlin.math.min' call
-    var b_0 = end.get_y_1mhr68_k$();
-    var tmp_0 = Math.min(tmp2, b_0);
-    // Inline function 'kotlin.math.abs' call
-    var x = end.get_x_1mhr67_k$() - start.get_x_1mhr67_k$();
-    var tmp_1 = Math.abs(x);
-    // Inline function 'kotlin.math.abs' call
-    var x_0 = end.get_y_1mhr68_k$() - start.get_y_1mhr68_k$();
-    var tmp$ret$3 = Math.abs(x_0);
-    return new BoundingBox(tmp, tmp_0, tmp_1, tmp$ret$3);
-  }
-  function setupCanvasEvents(canvas, context, textContext, state, saveCanvas, renderOverlay) {
-    var h = new Handlers(canvas, context, textContext, state, saveCanvas, renderOverlay);
-    canvas.addEventListener('contextmenu', setupCanvasEvents$lambda(state));
-    canvas.addEventListener('mousedown', setupCanvasEvents$lambda_0(canvas, state, h, saveCanvas));
-    canvas.addEventListener('mousemove', setupCanvasEvents$lambda_1(canvas, state, h));
-    var tmp = window;
-    tmp.addEventListener('mouseup', setupCanvasEvents$lambda_2(state, h));
-    canvas.addEventListener('mouseleave', setupCanvasEvents$lambda_3(h));
-  }
-  function setupCanvasEvents$lambda($state) {
-    return function (event) {
+  function TextBox$show$lambda_1($armed, $box, $finished, $onCommit) {
+    return function (it) {
       var tmp;
-      if ($state.get_tool_wov2zl_k$() === 'text' || $state.get_tool_wov2zl_k$() === 'fill') {
-        event.preventDefault();
+      if ($armed._v) {
+        show$finish($finished, $box, $onCommit, true);
+        tmp = Unit_getInstance();
+      } else {
+        $box.focus();
         tmp = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function setupCanvasEvents$lambda_0($canvas, $state, $h, $saveCanvas) {
-    return function (e) {
-      var event = e instanceof MouseEvent ? e : THROW_CCE();
-      var position = getMousePosition($canvas, event);
+  function TextBox() {
+    TextBox_instance = this;
+    this.CLASS_NAME_1 = 'sticky-node-textbox';
+  }
+  protoOf(TextBox).isOpen_jiokto_k$ = function () {
+    return !(document.querySelector('textarea.sticky-node-textbox') == null);
+  };
+  protoOf(TextBox).show_aamyt0_k$ = function (canvas, at, color, initialText, onCommit) {
+    if (this.isOpen_jiokto_k$())
+      return Unit_getInstance();
+    var bounds = canvas.getBoundingClientRect();
+    var tmp = document.createElement('textarea');
+    var box = tmp instanceof HTMLTextAreaElement ? tmp : THROW_CCE();
+    box.className = 'sticky-node-textbox';
+    // Inline function 'kotlin.with' call
+    // Inline function 'stickynode.editor.TextBox.show.<anonymous>' call
+    var $this$with = box.style;
+    $this$with.position = 'fixed';
+    $this$with.left = '' + (bounds.left + at.get_x_1mhr67_k$() - 8) + 'px';
+    $this$with.top = '' + (bounds.top + at.get_y_1mhr68_k$() - 8) + 'px';
+    $this$with.boxSizing = 'content-box';
+    $this$with.width = '180px';
+    $this$with.height = '70px';
+    $this$with.padding = '6px';
+    $this$with.margin = '0';
+    $this$with.backgroundColor = 'white';
+    $this$with.border = '2px solid red';
+    $this$with.color = color;
+    $this$with.zIndex = '1000';
+    box.value = initialText;
+    ensureNotNull(document.body).appendChild(box);
+    var finished = {_v: false};
+    var armed = {_v: false};
+    var tmp_0 = window;
+    tmp_0.requestAnimationFrame(TextBox$show$lambda(box, armed));
+    box.addEventListener('keydown', TextBox$show$lambda_0(finished, box, onCommit));
+    box.addEventListener('blur', TextBox$show$lambda_1(armed, box, finished, onCommit));
+  };
+  protoOf(TextBox).show$default_8t5ky5_k$ = function (canvas, at, color, initialText, onCommit, $super) {
+    initialText = initialText === VOID ? '' : initialText;
+    var tmp;
+    if ($super === VOID) {
+      this.show_aamyt0_k$(canvas, at, color, initialText, onCommit);
+      tmp = Unit_getInstance();
+    } else {
+      tmp = $super.show_aamyt0_k$.call(this, canvas, at, color, initialText, onCommit);
+    }
+    return tmp;
+  };
+  var TextBox_instance;
+  function TextBox_getInstance() {
+    if (TextBox_instance == null)
+      new TextBox();
+    return TextBox_instance;
+  }
+  function get_MIN_SHAPE_DRAG() {
+    return MIN_SHAPE_DRAG;
+  }
+  var MIN_SHAPE_DRAG;
+  function Tool() {
+  }
+  function _set_target__aw1jfq($this, _set____db54di) {
+    $this.target_1 = _set____db54di;
+  }
+  function _get_target__ccs42i($this) {
+    return $this.target_1;
+  }
+  function _set_last__9pwosh($this, _set____db54di) {
+    $this.last_1 = _set____db54di;
+  }
+  function _get_last__d9oodx($this) {
+    return $this.last_1;
+  }
+  function Dragger() {
+    this.target_1 = null;
+    this.last_1 = new Point(0.0, 0.0);
+  }
+  protoOf(Dragger).get_active_avldsf_k$ = function () {
+    return !(this.target_1 == null);
+  };
+  protoOf(Dragger).start_lvwrrj_k$ = function (item, at) {
+    this.target_1 = item;
+    this.last_1 = at;
+  };
+  protoOf(Dragger).move_m5bngx_k$ = function (to) {
+    var tmp0_elvis_lhs = this.target_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return false;
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var item = tmp;
+    item.moveBy_hp42rs_k$(to.get_x_1mhr67_k$() - this.last_1.get_x_1mhr67_k$(), to.get_y_1mhr68_k$() - this.last_1.get_y_1mhr68_k$());
+    this.last_1 = to;
+    return true;
+  };
+  protoOf(Dragger).end_25ln_k$ = function () {
+    var wasActive = !(this.target_1 == null);
+    this.target_1 = null;
+    return wasActive;
+  };
+  function _get_drag__d5ksrb($this) {
+    return $this.drag_1;
+  }
+  function _set_stroke__57naov($this, _set____db54di) {
+    $this.stroke_1 = _set____db54di;
+  }
+  function _get_stroke__6odvbn($this) {
+    return $this.stroke_1;
+  }
+  function FreehandTool$onDown$lambda(it) {
+    return it instanceof StrokeItem;
+  }
+  function FreehandTool() {
+    this.drag_1 = new Dragger();
+    this.stroke_1 = null;
+  }
+  protoOf(FreehandTool).get_busy_wojps2_k$ = function () {
+    return this.drag_1.get_active_avldsf_k$() || !(this.stroke_1 == null);
+  };
+  protoOf(FreehandTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    var existing = ed.findTop_jleozl_k$(p, FreehandTool$onDown$lambda);
+    if (!(existing == null)) {
+      this.drag_1.start_lvwrrj_k$(existing, p);
+      return Unit_getInstance();
+    }
+    var fresh = new StrokeItem(mutableListOf([p]), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+    this.stroke_1 = fresh;
+    ed.set_preview_zhisal_k$(fresh);
+  };
+  protoOf(FreehandTool).onMove_580z7b_k$ = function (ed, p) {
+    if (this.drag_1.move_m5bngx_k$(p)) {
+      ed.requestRender_xvw6ob_k$();
+      return Unit_getInstance();
+    }
+    var tmp0_elvis_lhs = this.stroke_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var current = tmp;
+    if (!last(current.get_points_i5obn0_k$()).equals(p)) {
+      current.get_points_i5obn0_k$().add_utx5q5_k$(p);
+      ed.requestRender_xvw6ob_k$();
+    }
+  };
+  protoOf(FreehandTool).onUp_lz9rfn_k$ = function (ed) {
+    if (this.drag_1.end_25ln_k$()) {
+      ed.commit_vpt10n_k$();
+      return Unit_getInstance();
+    }
+    var tmp0_elvis_lhs = this.stroke_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var finished = tmp;
+    this.stroke_1 = null;
+    ed.set_preview_zhisal_k$(null);
+    if (finished.get_points_i5obn0_k$().get_size_woubt6_k$() >= 2) {
+      ed.get_items_it823b_k$().add_utx5q5_k$(finished);
+    }
+    ed.render_dje1iy_k$();
+    ed.commit_vpt10n_k$();
+  };
+  function _get_owns__dbq05a($this) {
+    return $this.owns_1;
+  }
+  function _get_create__g83typ($this) {
+    return $this.create_1;
+  }
+  function _get_drag__d5ksrb_0($this) {
+    return $this.drag_1;
+  }
+  function _set_start__ks52qr($this, _set____db54di) {
+    $this.start_1 = _set____db54di;
+  }
+  function _get_start__b8zdqp($this) {
+    return $this.start_1;
+  }
+  function _set_current__qj3kk($this, _set____db54di) {
+    $this.current_1 = _set____db54di;
+  }
+  function _get_current__qcrdxk($this) {
+    return $this.current_1;
+  }
+  function ShapeTool(owns, create) {
+    this.owns_1 = owns;
+    this.create_1 = create;
+    this.drag_1 = new Dragger();
+    this.start_1 = null;
+    this.current_1 = null;
+  }
+  protoOf(ShapeTool).get_busy_wojps2_k$ = function () {
+    return this.drag_1.get_active_avldsf_k$() || !(this.start_1 == null);
+  };
+  protoOf(ShapeTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    var existing = ed.findTop_jleozl_k$(p, this.owns_1);
+    if (!(existing == null)) {
+      this.drag_1.start_lvwrrj_k$(existing, p);
+    } else {
+      this.start_1 = p;
+      this.current_1 = p;
+    }
+  };
+  protoOf(ShapeTool).onMove_580z7b_k$ = function (ed, p) {
+    if (this.drag_1.move_m5bngx_k$(p)) {
+      ed.requestRender_xvw6ob_k$();
+      return Unit_getInstance();
+    }
+    var tmp0_elvis_lhs = this.start_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var origin = tmp;
+    this.current_1 = p;
+    ed.set_preview_zhisal_k$(this.create_1(ed, origin, p));
+    ed.requestRender_xvw6ob_k$();
+  };
+  protoOf(ShapeTool).onUp_lz9rfn_k$ = function (ed) {
+    if (this.drag_1.end_25ln_k$()) {
+      ed.commit_vpt10n_k$();
+      return Unit_getInstance();
+    }
+    var tmp0_elvis_lhs = this.start_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var origin = tmp;
+    var tmp1_elvis_lhs = this.current_1;
+    var end = tmp1_elvis_lhs == null ? origin : tmp1_elvis_lhs;
+    this.start_1 = null;
+    this.current_1 = null;
+    ed.set_preview_zhisal_k$(null);
+    var tmp0 = end.get_x_1mhr67_k$() - origin.get_x_1mhr67_k$();
+    // Inline function 'kotlin.math.hypot' call
+    var y = end.get_y_1mhr68_k$() - origin.get_y_1mhr68_k$();
+    if (hypot(tmp0, y) > 3.0) {
+      ed.get_items_it823b_k$().add_utx5q5_k$(this.create_1(ed, origin, end));
+    }
+    ed.render_dje1iy_k$();
+    ed.commit_vpt10n_k$();
+  };
+  function _get_drag__d5ksrb_1($this) {
+    return $this.drag_1;
+  }
+  function _set_pending__51snjm($this, _set____db54di) {
+    $this.pending_1 = _set____db54di;
+  }
+  function _get_pending__uo0xwm($this) {
+    return $this.pending_1;
+  }
+  function addNew($this, ed, at) {
+    var color = ed.get_color_ipu8u2_k$();
+    var fontSize = ed.get_fontSize_pr9n47_k$();
+    var tmp = TextBox_getInstance();
+    var tmp_0 = ed.get_canvas_bshgm9_k$();
+    tmp.show$default_8t5ky5_k$(tmp_0, at, color, VOID, TextTool$addNew$lambda(ed, at, color, fontSize));
+  }
+  function edit($this, ed, item) {
+    var fontSize = ed.get_fontSize_pr9n47_k$();
+    var tmp = TextBox_getInstance();
+    var tmp_0 = ed.get_canvas_bshgm9_k$();
+    var tmp_1 = new Point(item.get_x_1mhr67_k$(), item.get_y_1mhr68_k$());
+    var tmp_2 = item.get_color_ipu8u2_k$();
+    var tmp_3 = item.get_text_wouvsm_k$();
+    tmp.show_aamyt0_k$(tmp_0, tmp_1, tmp_2, tmp_3, TextTool$edit$lambda(ed, item, fontSize));
+  }
+  function TextTool$onDown$lambda(it) {
+    return it instanceof TextItem;
+  }
+  function TextTool$addNew$lambda($ed, $at, $color, $fontSize) {
+    return function (text) {
       var tmp;
-      if ($state.get_erasing_ng9ybq_k$()) {
-        handleFreehandMouseDown($h, position);
-        return Unit_getInstance();
+      // Inline function 'kotlin.text.isNotEmpty' call
+      if (charSequenceLength(text) > 0) {
+        $ed.get_items_it823b_k$().add_utx5q5_k$(new TextItem($at.get_x_1mhr67_k$(), $at.get_y_1mhr68_k$(), $color, text, $fontSize));
+        $ed.render_dje1iy_k$();
+        $ed.commit_vpt10n_k$();
+        tmp = Unit_getInstance();
       }
-      var tmp_0;
-      if ($state.get_tool_wov2zl_k$() === 'fill') {
-        event.preventDefault();
-        var color = event.button === 2 ? null : $state.get_selectedColor_mfz4gv_k$();
-        if (fillAt($state, position, color)) {
-          $h.render_dje1iy_k$();
-          $saveCanvas();
+      return Unit_getInstance();
+    };
+  }
+  function TextTool$edit$lambda($ed, $item, $fontSize) {
+    return function (text) {
+      // Inline function 'kotlin.text.isEmpty' call
+      if (charSequenceLength(text) === 0) {
+        $ed.get_items_it823b_k$().remove_cedx0m_k$($item);
+      } else {
+        $item.set_text_oy06f4_k$(text);
+        $item.set_fontSize_6szsfv_k$($fontSize);
+      }
+      $ed.render_dje1iy_k$();
+      $ed.commit_vpt10n_k$();
+      return Unit_getInstance();
+    };
+  }
+  function TextTool() {
+    this.claimsMouse_1 = true;
+    this.drag_1 = new Dragger();
+    this.pending_1 = null;
+  }
+  protoOf(TextTool).get_claimsMouse_54sth7_k$ = function () {
+    return this.claimsMouse_1;
+  };
+  protoOf(TextTool).get_busy_wojps2_k$ = function () {
+    return this.drag_1.get_active_avldsf_k$() || !(this.pending_1 == null);
+  };
+  protoOf(TextTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    var tmp = ed.findTop_jleozl_k$(p, TextTool$onDown$lambda);
+    var existing = tmp instanceof TextItem ? tmp : null;
+    switch (button) {
+      case 0:
+        if (!(existing == null)) {
+          this.drag_1.start_lvwrrj_k$(existing, p);
+        } else {
+          this.pending_1 = p;
         }
-        return Unit_getInstance();
-      }
-      var tmp_1;
-      if (handleTextMouseDown($h, event, position)) {
-        return Unit_getInstance();
-      }
+
+        break;
+      case 2:
+        if (!(existing == null)) {
+          edit(this, ed, existing);
+        }
+
+        break;
+      default:
+        break;
+    }
+  };
+  protoOf(TextTool).onMove_580z7b_k$ = function (ed, p) {
+    if (this.drag_1.move_m5bngx_k$(p)) {
+      ed.requestRender_xvw6ob_k$();
+    }
+  };
+  protoOf(TextTool).onUp_lz9rfn_k$ = function (ed) {
+    if (this.drag_1.end_25ln_k$()) {
+      ed.commit_vpt10n_k$();
+      return Unit_getInstance();
+    }
+    var tmp0_elvis_lhs = this.pending_1;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var at = tmp;
+    this.pending_1 = null;
+    addNew(this, ed, at);
+  };
+  function FillTool$onDown$lambda(it) {
+    return isInterface(it, Fillable);
+  }
+  function FillTool() {
+    this.claimsMouse_1 = true;
+  }
+  protoOf(FillTool).get_claimsMouse_54sth7_k$ = function () {
+    return this.claimsMouse_1;
+  };
+  protoOf(FillTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    var tmp = ed.findTop_jleozl_k$(p, FillTool$onDown$lambda);
+    var tmp0_elvis_lhs = (!(tmp == null) ? isInterface(tmp, Fillable) : false) ? tmp : null;
+    var tmp_0;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp_0 = tmp0_elvis_lhs;
+    }
+    var target = tmp_0;
+    var newFill = button === 2 ? null : ed.get_color_ipu8u2_k$();
+    var tmp_1;
+    if (newFill == target.get_fill_wom0ng_k$()) {
+      tmp_1 = true;
+    } else {
       var tmp_2;
-      if (handleShapeMouseDown($h, position)) {
-        return Unit_getInstance();
+      if (newFill == null) {
+        // Inline function 'kotlin.text.isNullOrEmpty' call
+        var this_0 = target.get_fill_wom0ng_k$();
+        tmp_2 = this_0 == null || charSequenceLength(this_0) === 0;
+      } else {
+        tmp_2 = false;
       }
-      handleFreehandMouseDown($h, position);
+      tmp_1 = tmp_2;
+    }
+    if (tmp_1)
       return Unit_getInstance();
-    };
+    target.set_fill_sosdnb_k$(newFill);
+    ed.render_dje1iy_k$();
+    ed.commit_vpt10n_k$();
+  };
+  protoOf(FillTool).onMove_580z7b_k$ = function (ed, p) {
+    return Unit_getInstance();
+  };
+  protoOf(FillTool).onUp_lz9rfn_k$ = function (ed) {
+    return Unit_getInstance();
+  };
+  function _set_active__h46tap($this, _set____db54di) {
+    $this.active_1 = _set____db54di;
   }
-  function setupCanvasEvents$lambda_1($canvas, $state, $h) {
-    return function (e) {
-      var position = getMousePosition($canvas, e instanceof MouseEvent ? e : THROW_CCE());
-      $state.set_lastPosition_mmd7ci_k$(position);
-      var tmp;
-      if ($state.get_erasing_ng9ybq_k$()) {
-        handleFreehandMouseMove($h, position);
-        return Unit_getInstance();
+  function _get_active__ikxdxh($this) {
+    return $this.active_1;
+  }
+  function _set_erased__bm263d($this, _set____db54di) {
+    $this.erased_1 = _set____db54di;
+  }
+  function _get_erased__d2sqq5($this) {
+    return $this.erased_1;
+  }
+  function erase($this, ed, p) {
+    var tmp0 = ed.get_items_it823b_k$();
+    var tmp$ret$1;
+    $l$block: {
+      // Inline function 'kotlin.collections.indexOfLast' call
+      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
+      while (iterator.hasPrevious_qh0629_k$()) {
+        // Inline function 'stickynode.editor.EraserTool.erase.<anonymous>' call
+        if (iterator.previous_l2dfd5_k$().hitTest_1gxtur_k$(p)) {
+          tmp$ret$1 = iterator.nextIndex_jshxun_k$();
+          break $l$block;
+        }
       }
-      var tmp_0;
-      if (handleTextMouseMove($h, position)) {
-        return Unit_getInstance();
-      }
-      var tmp_1;
-      if (handleShapeMouseMove($h, position)) {
-        return Unit_getInstance();
-      }
-      handleFreehandMouseMove($h, position);
+      tmp$ret$1 = -1;
+    }
+    var index = tmp$ret$1;
+    if (index < 0)
       return Unit_getInstance();
-    };
+    ed.get_items_it823b_k$().removeAt_6niowx_k$(index);
+    $this.erased_1 = true;
+    ed.requestRender_xvw6ob_k$();
   }
-  function setupCanvasEvents$lambda_2($state, $h) {
-    return function (it) {
-      var tmp;
-      if ($state.get_erasing_ng9ybq_k$()) {
-        handleFreehandMouseUp($h);
-        return Unit_getInstance();
-      }
-      var tmp_0;
-      if (handleTextMouseUp($h)) {
-        return Unit_getInstance();
-      }
-      var tmp_1;
-      if (handleShapeMouseUp($h)) {
-        return Unit_getInstance();
-      }
-      handleFreehandMouseUp($h);
+  function EraserTool() {
+    this.active_1 = false;
+    this.erased_1 = false;
+  }
+  protoOf(EraserTool).get_busy_wojps2_k$ = function () {
+    return this.active_1;
+  };
+  protoOf(EraserTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    this.active_1 = true;
+    erase(this, ed, p);
+  };
+  protoOf(EraserTool).onMove_580z7b_k$ = function (ed, p) {
+    if (this.active_1) {
+      erase(this, ed, p);
+    }
+  };
+  protoOf(EraserTool).onUp_lz9rfn_k$ = function (ed) {
+    if (!this.active_1)
       return Unit_getInstance();
-    };
+    this.active_1 = false;
+    if (this.erased_1) {
+      this.erased_1 = false;
+      ed.commit_vpt10n_k$();
+    }
+  };
+  function ToolSet$rectangle$lambda(it) {
+    return it instanceof RectangleItem;
   }
-  function setupCanvasEvents$lambda_3($h) {
-    return function (it) {
-      handleFreehandMouseLeave($h);
-      return Unit_getInstance();
-    };
+  function ToolSet$rectangle$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new RectangleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
   }
+  function ToolSet$circle$lambda(it) {
+    return it instanceof CircleItem;
+  }
+  function ToolSet$circle$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new CircleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet$polygon$lambda(it) {
+    return it instanceof PolygonItem;
+  }
+  function ToolSet$polygon$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new PolygonItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_polygonSides_rm31lh_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet$arrow$lambda(it) {
+    return it instanceof ArrowItem;
+  }
+  function ToolSet$arrow$lambda_0(ed, start, end) {
+    return new ArrowItem(start.get_x_1mhr67_k$(), start.get_y_1mhr68_k$(), end.get_x_1mhr67_k$(), end.get_y_1mhr68_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet() {
+    this.freehand_1 = new FreehandTool();
+    this.eraser_1 = new EraserTool();
+    this.text_1 = new TextTool();
+    this.fill_1 = new FillTool();
+    var tmp = this;
+    var tmp_0 = ToolSet$rectangle$lambda;
+    tmp.rectangle_1 = new ShapeTool(tmp_0, ToolSet$rectangle$lambda_0);
+    var tmp_1 = this;
+    var tmp_2 = ToolSet$circle$lambda;
+    tmp_1.circle_1 = new ShapeTool(tmp_2, ToolSet$circle$lambda_0);
+    var tmp_3 = this;
+    var tmp_4 = ToolSet$polygon$lambda;
+    tmp_3.polygon_1 = new ShapeTool(tmp_4, ToolSet$polygon$lambda_0);
+    var tmp_5 = this;
+    var tmp_6 = ToolSet$arrow$lambda;
+    tmp_5.arrow_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
+  }
+  protoOf(ToolSet).get_freehand_dsmxlw_k$ = function () {
+    return this.freehand_1;
+  };
+  protoOf(ToolSet).get_eraser_czouj9_k$ = function () {
+    return this.eraser_1;
+  };
+  protoOf(ToolSet).get_text_wouvsm_k$ = function () {
+    return this.text_1;
+  };
+  protoOf(ToolSet).get_fill_wom0ng_k$ = function () {
+    return this.fill_1;
+  };
+  protoOf(ToolSet).get_rectangle_r245om_k$ = function () {
+    return this.rectangle_1;
+  };
+  protoOf(ToolSet).get_circle_bwxzh5_k$ = function () {
+    return this.circle_1;
+  };
+  protoOf(ToolSet).get_polygon_5b4a0f_k$ = function () {
+    return this.polygon_1;
+  };
+  protoOf(ToolSet).get_arrow_iosp28_k$ = function () {
+    return this.arrow_1;
+  };
+  function get_json() {
+    _init_properties_Drawing_kt__mbw8h8();
+    return json;
+  }
+  var json;
   function get_prettyJson() {
-    _init_properties_Files_kt__abgarp();
+    _init_properties_Drawing_kt__mbw8h8();
     return prettyJson;
   }
   var prettyJson;
+  function get_APP_ID() {
+    return APP_ID;
+  }
+  var APP_ID;
+  function get_FORMAT_VERSION() {
+    return FORMAT_VERSION;
+  }
+  var FORMAT_VERSION;
   function _get_$childSerializers__r2zwns($this) {
     return $this.$childSerializers_1;
   }
@@ -825,7 +1045,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [null, null, new ArrayListSerializer($serializer_getInstance_1()), new ArrayListSerializer($serializer_getInstance_2()), new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6())];
+    tmp.$childSerializers_1 = [null, null, new ArrayListSerializer(Companion_getInstance_3().serializer_9w0wvi_k$())];
   }
   protoOf(Companion).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance();
@@ -838,18 +1058,13 @@
   }
   function $serializer() {
     $serializer_instance = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.StickyDocument', this, 8);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.DrawingFile', this, 3);
     tmp0_serialDesc.addElement_5pzumi_k$('app', true);
     tmp0_serialDesc.addElement_5pzumi_k$('version', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('strokeItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('textItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('rectangleItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('circleItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('polygonItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('arrowItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('items', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer).serialize_htk3u2_k$ = function (encoder, value) {
+  protoOf($serializer).serialize_cc7qi9_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     var tmp2_cached = Companion_getInstance_0().$childSerializers_1;
@@ -859,28 +1074,13 @@
     if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 1) ? true : !(value.version_1 === 1)) {
       tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 1, value.version_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.strokeItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.strokeItems_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !equals(value.textItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 3, tmp2_cached[3], value.textItems_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !equals(value.rectangleItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 4, tmp2_cached[4], value.rectangleItems_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !equals(value.circleItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 5, tmp2_cached[5], value.circleItems_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !equals(value.polygonItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 6, tmp2_cached[6], value.polygonItems_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 7) ? true : !equals(value.arrowItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 7, tmp2_cached[7], value.arrowItems_1);
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.items_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.items_1);
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_htk3u2_k$(encoder, value instanceof StickyDocument ? value : THROW_CCE());
+    return this.serialize_cc7qi9_k$(encoder, value instanceof DrawingFile ? value : THROW_CCE());
   };
   protoOf($serializer).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -890,75 +1090,40 @@
     var tmp4_local0 = null;
     var tmp5_local1 = 0;
     var tmp6_local2 = null;
-    var tmp7_local3 = null;
-    var tmp8_local4 = null;
-    var tmp9_local5 = null;
-    var tmp10_local6 = null;
-    var tmp11_local7 = null;
-    var tmp12_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp13_cached = Companion_getInstance_0().$childSerializers_1;
-    if (tmp12_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp12_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
+    var tmp7_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    var tmp8_cached = Companion_getInstance_0().$childSerializers_1;
+    if (tmp7_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp7_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp13_cached[2], tmp6_local2);
+      tmp6_local2 = tmp7_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp8_cached[2], tmp6_local2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp13_cached[3], tmp7_local3);
-      tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp13_cached[4], tmp8_local4);
-      tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp13_cached[5], tmp9_local5);
-      tmp3_bitMask0 = tmp3_bitMask0 | 32;
-      tmp10_local6 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 6, tmp13_cached[6], tmp10_local6);
-      tmp3_bitMask0 = tmp3_bitMask0 | 64;
-      tmp11_local7 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 7, tmp13_cached[7], tmp11_local7);
-      tmp3_bitMask0 = tmp3_bitMask0 | 128;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp12_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp7_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp12_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp7_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp13_cached[2], tmp6_local2);
+            tmp6_local2 = tmp7_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp8_cached[2], tmp6_local2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
-            break;
-          case 3:
-            tmp7_local3 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp13_cached[3], tmp7_local3);
-            tmp3_bitMask0 = tmp3_bitMask0 | 8;
-            break;
-          case 4:
-            tmp8_local4 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp13_cached[4], tmp8_local4);
-            tmp3_bitMask0 = tmp3_bitMask0 | 16;
-            break;
-          case 5:
-            tmp9_local5 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp13_cached[5], tmp9_local5);
-            tmp3_bitMask0 = tmp3_bitMask0 | 32;
-            break;
-          case 6:
-            tmp10_local6 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 6, tmp13_cached[6], tmp10_local6);
-            tmp3_bitMask0 = tmp3_bitMask0 | 64;
-            break;
-          case 7:
-            tmp11_local7 = tmp12_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 7, tmp13_cached[7], tmp11_local7);
-            tmp3_bitMask0 = tmp3_bitMask0 | 128;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp12_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return StickyDocument_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, null);
+    tmp7_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return DrawingFile_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
   protoOf($serializer).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
@@ -968,7 +1133,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [StringSerializer_getInstance(), IntSerializer_getInstance(), tmp0_cached[2], tmp0_cached[3], tmp0_cached[4], tmp0_cached[5], tmp0_cached[6], tmp0_cached[7]];
+    return [StringSerializer_getInstance(), IntSerializer_getInstance(), tmp0_cached[2]];
   };
   var $serializer_instance;
   function $serializer_getInstance() {
@@ -976,7 +1141,7 @@
       new $serializer();
     return $serializer_instance;
   }
-  function StickyDocument_init_$Init$(seen0, app, version, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker, $this) {
+  function DrawingFile_init_$Init$(seen0, app, version, items, serializationConstructorMarker, $this) {
     if (!(0 === (0 & seen0))) {
       throwMissingFieldException(seen0, 0, $serializer_getInstance().descriptor_1);
     }
@@ -989,447 +1154,42 @@
     else
       $this.version_1 = version;
     if (0 === (seen0 & 4))
-      $this.strokeItems_1 = emptyList();
+      $this.items_1 = emptyList();
     else
-      $this.strokeItems_1 = strokeItems;
-    if (0 === (seen0 & 8))
-      $this.textItems_1 = emptyList();
-    else
-      $this.textItems_1 = textItems;
-    if (0 === (seen0 & 16))
-      $this.rectangleItems_1 = emptyList();
-    else
-      $this.rectangleItems_1 = rectangleItems;
-    if (0 === (seen0 & 32))
-      $this.circleItems_1 = emptyList();
-    else
-      $this.circleItems_1 = circleItems;
-    if (0 === (seen0 & 64))
-      $this.polygonItems_1 = emptyList();
-    else
-      $this.polygonItems_1 = polygonItems;
-    if (0 === (seen0 & 128))
-      $this.arrowItems_1 = emptyList();
-    else
-      $this.arrowItems_1 = arrowItems;
+      $this.items_1 = items;
     return $this;
   }
-  function StickyDocument_init_$Create$(seen0, app, version, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker) {
-    return StickyDocument_init_$Init$(seen0, app, version, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker, objectCreate(protoOf(StickyDocument)));
+  function DrawingFile_init_$Create$(seen0, app, version, items, serializationConstructorMarker) {
+    return DrawingFile_init_$Init$(seen0, app, version, items, serializationConstructorMarker, objectCreate(protoOf(DrawingFile)));
   }
-  function StickyDocument(app, version, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems) {
+  function DrawingFile(app, version, items) {
     Companion_getInstance_0();
     app = app === VOID ? '' : app;
     version = version === VOID ? 1 : version;
-    strokeItems = strokeItems === VOID ? emptyList() : strokeItems;
-    textItems = textItems === VOID ? emptyList() : textItems;
-    rectangleItems = rectangleItems === VOID ? emptyList() : rectangleItems;
-    circleItems = circleItems === VOID ? emptyList() : circleItems;
-    polygonItems = polygonItems === VOID ? emptyList() : polygonItems;
-    arrowItems = arrowItems === VOID ? emptyList() : arrowItems;
+    items = items === VOID ? emptyList() : items;
     this.app_1 = app;
     this.version_1 = version;
-    this.strokeItems_1 = strokeItems;
-    this.textItems_1 = textItems;
-    this.rectangleItems_1 = rectangleItems;
-    this.circleItems_1 = circleItems;
-    this.polygonItems_1 = polygonItems;
-    this.arrowItems_1 = arrowItems;
+    this.items_1 = items;
   }
-  protoOf(StickyDocument).get_app_18j9e0_k$ = function () {
+  protoOf(DrawingFile).get_app_18j9e0_k$ = function () {
     return this.app_1;
   };
-  protoOf(StickyDocument).get_version_72w4j3_k$ = function () {
+  protoOf(DrawingFile).get_version_72w4j3_k$ = function () {
     return this.version_1;
   };
-  protoOf(StickyDocument).get_strokeItems_pivh8h_k$ = function () {
-    return this.strokeItems_1;
+  protoOf(DrawingFile).get_items_it823b_k$ = function () {
+    return this.items_1;
   };
-  protoOf(StickyDocument).get_textItems_8zbevq_k$ = function () {
-    return this.textItems_1;
-  };
-  protoOf(StickyDocument).get_rectangleItems_npge3q_k$ = function () {
-    return this.rectangleItems_1;
-  };
-  protoOf(StickyDocument).get_circleItems_cgj3on_k$ = function () {
-    return this.circleItems_1;
-  };
-  protoOf(StickyDocument).get_polygonItems_rrdxqp_k$ = function () {
-    return this.polygonItems_1;
-  };
-  protoOf(StickyDocument).get_arrowItems_lx0j40_k$ = function () {
-    return this.arrowItems_1;
-  };
-  function serialize(state) {
-    _init_properties_Files_kt__abgarp();
-    return get_prettyJson().encodeToString_k0apqx_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), new StickyDocument('sticky-node', 1, state.get_strokeItems_pivh8h_k$(), state.get_textItems_8zbevq_k$(), state.get_rectangleItems_npge3q_k$(), state.get_circleItems_cgj3on_k$(), state.get_polygonItems_rrdxqp_k$(), state.get_arrowItems_lx0j40_k$()));
+  function _get_$childSerializers__r2zwns_0($this) {
+    return $this.$childSerializers_1;
   }
-  function applyDocument(state, text) {
-    _init_properties_Files_kt__abgarp();
-    if (isBlank(text))
-      throw Exception_init_$Create$('The file is empty');
-    var doc = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), text);
-    if (!(doc.app_1 === 'sticky-node'))
-      throw Exception_init_$Create$('Not a Sticky Node file');
-    state.get_strokeItems_pivh8h_k$().clear_j9egeb_k$();
-    state.get_strokeItems_pivh8h_k$().addAll_4lagoh_k$(doc.strokeItems_1);
-    state.get_textItems_8zbevq_k$().clear_j9egeb_k$();
-    state.get_textItems_8zbevq_k$().addAll_4lagoh_k$(doc.textItems_1);
-    state.get_rectangleItems_npge3q_k$().clear_j9egeb_k$();
-    state.get_rectangleItems_npge3q_k$().addAll_4lagoh_k$(doc.rectangleItems_1);
-    state.get_circleItems_cgj3on_k$().clear_j9egeb_k$();
-    state.get_circleItems_cgj3on_k$().addAll_4lagoh_k$(doc.circleItems_1);
-    state.get_polygonItems_rrdxqp_k$().clear_j9egeb_k$();
-    state.get_polygonItems_rrdxqp_k$().addAll_4lagoh_k$(doc.polygonItems_1);
-    state.get_arrowItems_lx0j40_k$().clear_j9egeb_k$();
-    state.get_arrowItems_lx0j40_k$().addAll_4lagoh_k$(doc.arrowItems_1);
-  }
-  function saveToFile(state, suggestedName, $completion) {
-    suggestedName = suggestedName === VOID ? 'drawing.sticky.json' : suggestedName;
-    var tmp = new $saveToFileCOROUTINE$0(state, suggestedName, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
-  }
-  function openFromFile(state, $completion) {
-    // Inline function 'kotlin.coroutines.suspendCoroutine.<anonymous>' call
-    var safe = SafeContinuation_init_$Create$(intercepted($completion));
-    // Inline function 'stickynode.canvas.openFromFile.<anonymous>' call
-    var tmp = document.createElement('input');
-    var input = tmp instanceof HTMLInputElement ? tmp : THROW_CCE();
-    input.type = 'file';
-    input.accept = '.json,application/json';
-    input.onchange = openFromFile$lambda(input, safe, state);
-    input.click();
-    return safe.getOrThrow_23gqzp_k$();
-  }
-  function prettyJson$lambda($this$Json) {
-    _init_properties_Files_kt__abgarp();
-    $this$Json.set_prettyPrint_v2gnff_k$(true);
-    $this$Json.set_prettyPrintIndent_ab0258_k$('  ');
-    return Unit_getInstance();
-  }
-  function saveToFile$lambda($url) {
-    return function () {
-      // Inline function 'kotlin.js.asDynamic' call
-      window.URL.revokeObjectURL($url);
-      return Unit_getInstance();
-    };
-  }
-  function openFromFile$lambda$slambda($file, $state, $continuation, resultContinuation) {
-    this.$file_1 = $file;
-    this.$state_1 = $state;
-    this.$continuation_1 = $continuation;
-    CoroutineImpl.call(this, resultContinuation);
-  }
-  protoOf(openFromFile$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
-  };
-  protoOf(openFromFile$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
-  };
-  protoOf(openFromFile$lambda$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
-    $sm: do
-      try {
-        var tmp = this.get_state_iypx7s_k$();
-        switch (tmp) {
-          case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            var this_0 = this.$file_1.text();
-            suspendResult = await_0(this_0, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 1:
-            var text = suspendResult;
-            applyDocument(this.$state_1, text);
-            var this_1 = this.$continuation_1;
-            Companion_getInstance();
-            this_1.resumeWith_dtxwbr_k$(_Result___init__impl__xyqfz8(true));
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(4);
-            continue $sm;
-          case 2:
-            this.set_exceptionState_fex74n_k$(3);
-            var tmp_0 = this.get_exception_x0n6w6_k$();
-            if (tmp_0 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
-              window.alert("Couldn't open that file: " + error.message);
-              var this_2 = this.$continuation_1;
-              Companion_getInstance();
-              this_2.resumeWith_dtxwbr_k$(_Result___init__impl__xyqfz8(false));
-              this.set_state_rjd8d0_k$(4);
-              continue $sm;
-            } else {
-              throw this.get_exception_x0n6w6_k$();
-            }
-
-          case 3:
-            throw this.get_exception_x0n6w6_k$();
-          case 4:
-            this.set_exceptionState_fex74n_k$(3);
-            return Unit_getInstance();
-        }
-      } catch ($p) {
-        var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
-          throw e;
-        } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
-        }
-      }
-     while (true);
-  };
-  protoOf(openFromFile$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new openFromFile$lambda$slambda(this.$file_1, this.$state_1, this.$continuation_1, completion);
-    i.$this$launch_1 = $this$launch;
-    return i;
-  };
-  protoOf(openFromFile$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
-  };
-  function openFromFile$lambda$slambda_0($file, $state, $continuation, resultContinuation) {
-    var i = new openFromFile$lambda$slambda($file, $state, $continuation, resultContinuation);
-    var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
-    };
-    l.$arity = 1;
-    return l;
-  }
-  function openFromFile$lambda($input, $continuation, $state) {
-    return function (it) {
-      var tmp0_safe_receiver = $input.files;
-      var file = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.item(0);
-      if (file == null) {
-        // Inline function 'kotlin.coroutines.resume' call
-        var this_0 = $continuation;
-        // Inline function 'kotlin.Companion.success' call
-        Companion_getInstance();
-        var tmp$ret$0 = _Result___init__impl__xyqfz8(false);
-        this_0.resumeWith_dtxwbr_k$(tmp$ret$0);
-      } else {
-        var tmp = MainScope();
-        launch(tmp, VOID, VOID, openFromFile$lambda$slambda_0(file, $state, $continuation, null));
-      }
-      return null;
-    };
-  }
-  function $saveToFileCOROUTINE$0(state, suggestedName, resultContinuation) {
-    CoroutineImpl.call(this, resultContinuation);
-    this.state_2 = state;
-    this.suggestedName_1 = suggestedName;
-  }
-  protoOf($saveToFileCOROUTINE$0).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
-    $sm: do
-      try {
-        var tmp = this.get_state_iypx7s_k$();
-        switch (tmp) {
-          case 0:
-            this.set_exceptionState_fex74n_k$(7);
-            this.content0__1 = serialize(this.state_2);
-            if (window.showSaveFilePicker != undefined) {
-              this.set_exceptionState_fex74n_k$(6);
-              this.accept2__1 = {};
-              var this_0 = ['.json'];
-              this.accept2__1['application/json'] = this_0;
-              this.type3__1 = {};
-              this.type3__1.description = 'Sticky Node drawing';
-              this.type3__1.accept = this.accept2__1;
-              this.options4__1 = {};
-              this.options4__1.suggestedName = this.suggestedName_1;
-              var this_1 = [this.type3__1];
-              this.options4__1.types = this_1;
-              this.set_state_rjd8d0_k$(2);
-              var this_2 = window.showSaveFilePicker(this.options4__1);
-              suspendResult = await_0(this_2, this);
-              if (suspendResult === get_COROUTINE_SUSPENDED()) {
-                return suspendResult;
-              }
-              continue $sm;
-            } else {
-              this.set_state_rjd8d0_k$(1);
-              continue $sm;
-            }
-
-          case 1:
-            var tmp_0 = this;
-            var this_3 = [this.content0__1];
-            var type = 'application/json';
-            var o = {};
-            o['type'] = type;
-            tmp_0.blob5__1 = new Blob(this_3, o);
-            var tmp_1 = this;
-            tmp_1.url6__1 = window.URL.createObjectURL(this.blob5__1);
-            var tmp_2 = this;
-            var tmp_3 = document.createElement('a');
-            tmp_2.link7__1 = tmp_3 instanceof HTMLAnchorElement ? tmp_3 : THROW_CCE();
-            this.link7__1.href = this.url6__1;
-            this.link7__1.download = this.suggestedName_1;
-            ensureNotNull(document.body).appendChild(this.link7__1);
-            this.link7__1.click();
-            this.link7__1.remove();
-            var tmp_4 = window;
-            tmp_4.setTimeout(saveToFile$lambda(this.url6__1), 1000);
-            return Unit_getInstance();
-          case 2:
-            this.handle8__1 = suspendResult;
-            this.set_state_rjd8d0_k$(3);
-            var this_4 = this.handle8__1.createWritable();
-            suspendResult = await_0(this_4, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 3:
-            this.writable9__1 = suspendResult;
-            this.set_state_rjd8d0_k$(4);
-            var this_5 = this.writable9__1.write(this.content0__1);
-            suspendResult = await_0(this_5, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 4:
-            this.set_state_rjd8d0_k$(5);
-            var this_6 = this.writable9__1.close();
-            suspendResult = await_0(this_6, this);
-            if (suspendResult === get_COROUTINE_SUSPENDED()) {
-              return suspendResult;
-            }
-
-            continue $sm;
-          case 5:
-            this.TRY_RESULT1__1 = suspendResult;
-            this.set_exceptionState_fex74n_k$(7);
-            this.set_state_rjd8d0_k$(8);
-            continue $sm;
-          case 6:
-            this.set_exceptionState_fex74n_k$(7);
-            var tmp_5 = this.get_exception_x0n6w6_k$();
-            if (tmp_5 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
-              var tmp_6 = this;
-              if (error.name != 'AbortError')
-                throw error;
-              tmp_6.TRY_RESULT1__1 = Unit_getInstance();
-              this.set_state_rjd8d0_k$(8);
-              continue $sm;
-            } else {
-              throw this.get_exception_x0n6w6_k$();
-            }
-
-          case 7:
-            throw this.get_exception_x0n6w6_k$();
-          case 8:
-            this.set_exceptionState_fex74n_k$(7);
-            return Unit_getInstance();
-        }
-      } catch ($p) {
-        var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 7) {
-          throw e;
-        } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
-        }
-      }
-     while (true);
-  };
-  var properties_initialized_Files_kt_9myqk9;
-  function _init_properties_Files_kt__abgarp() {
-    if (!properties_initialized_Files_kt_9myqk9) {
-      properties_initialized_Files_kt_9myqk9 = true;
-      var tmp = get_json();
-      prettyJson = Json(tmp, prettyJson$lambda);
-    }
-  }
-  function get_MAX_HISTORY() {
-    return MAX_HISTORY;
-  }
-  var MAX_HISTORY;
-  function _get_state__b8zcm8($this) {
-    return $this.state_1;
-  }
-  function serialize_0($this) {
-    return get_json().encodeToString_k0apqx_k$(Companion_getInstance_8().serializer_9w0wvi_k$(), new Items($this.state_1.get_strokeItems_pivh8h_k$(), $this.state_1.get_textItems_8zbevq_k$(), $this.state_1.get_rectangleItems_npge3q_k$(), $this.state_1.get_circleItems_cgj3on_k$(), $this.state_1.get_polygonItems_rrdxqp_k$(), $this.state_1.get_arrowItems_lx0j40_k$()));
-  }
-  function _set_stack__ks4rel($this, _set____db54di) {
-    $this.stack_1 = _set____db54di;
-  }
-  function _get_stack__b8zp2v($this) {
-    return $this.stack_1;
-  }
-  function _set_index__fyfqnn($this, _set____db54di) {
-    $this.index_1 = _set____db54di;
-  }
-  function _get_index__g2optt($this) {
-    return $this.index_1;
-  }
-  function restore($this, snapshot) {
-    var data = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_8().serializer_9w0wvi_k$(), snapshot);
-    $this.state_1.get_strokeItems_pivh8h_k$().clear_j9egeb_k$();
-    $this.state_1.get_strokeItems_pivh8h_k$().addAll_4lagoh_k$(data.get_strokeItems_pivh8h_k$());
-    $this.state_1.get_textItems_8zbevq_k$().clear_j9egeb_k$();
-    $this.state_1.get_textItems_8zbevq_k$().addAll_4lagoh_k$(data.get_textItems_8zbevq_k$());
-    $this.state_1.get_rectangleItems_npge3q_k$().clear_j9egeb_k$();
-    $this.state_1.get_rectangleItems_npge3q_k$().addAll_4lagoh_k$(data.get_rectangleItems_npge3q_k$());
-    $this.state_1.get_circleItems_cgj3on_k$().clear_j9egeb_k$();
-    $this.state_1.get_circleItems_cgj3on_k$().addAll_4lagoh_k$(data.get_circleItems_cgj3on_k$());
-    $this.state_1.get_polygonItems_rrdxqp_k$().clear_j9egeb_k$();
-    $this.state_1.get_polygonItems_rrdxqp_k$().addAll_4lagoh_k$(data.get_polygonItems_rrdxqp_k$());
-    $this.state_1.get_arrowItems_lx0j40_k$().clear_j9egeb_k$();
-    $this.state_1.get_arrowItems_lx0j40_k$().addAll_4lagoh_k$(data.get_arrowItems_lx0j40_k$());
-  }
-  function History(state) {
-    this.state_1 = state;
-    this.stack_1 = mutableListOf([serialize_0(this)]);
-    this.index_1 = 0;
-  }
-  protoOf(History).record_fgmca7_k$ = function () {
-    var snapshot = serialize_0(this);
-    if (snapshot === this.stack_1.get_c1px32_k$(this.index_1))
-      return false;
-    this.stack_1 = toMutableList(this.stack_1.subList_xle3r2_k$(0, this.index_1 + 1 | 0));
-    this.stack_1.add_utx5q5_k$(snapshot);
-    if (this.stack_1.get_size_woubt6_k$() > 100) {
-      this.stack_1.removeAt_6niowx_k$(0);
-    }
-    this.index_1 = this.stack_1.get_size_woubt6_k$() - 1 | 0;
-    return true;
-  };
-  protoOf(History).undo_251ic_k$ = function () {
-    if (this.index_1 === 0)
-      return false;
-    this.index_1 = this.index_1 - 1 | 0;
-    restore(this, this.stack_1.get_c1px32_k$(this.index_1));
-    return true;
-  };
-  protoOf(History).redo_22xvi_k$ = function () {
-    if (this.index_1 === (this.stack_1.get_size_woubt6_k$() - 1 | 0))
-      return false;
-    this.index_1 = this.index_1 + 1 | 0;
-    restore(this, this.stack_1.get_c1px32_k$(this.index_1));
-    return true;
-  };
-  function get_json() {
-    _init_properties_Model_kt__1gdqdl();
-    return json;
-  }
-  var json;
   function Companion_0() {
     Companion_instance_0 = this;
+    var tmp = this;
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_2()), new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6()), new ArrayListSerializer($serializer_getInstance_7())];
   }
   protoOf(Companion_0).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_0();
@@ -1442,22 +1202,271 @@
   }
   function $serializer_0() {
     $serializer_instance_0 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.Point', this, 2);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.LegacyDrawing', this, 6);
+    tmp0_serialDesc.addElement_5pzumi_k$('strokeItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('rectangleItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('circleItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('polygonItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('arrowItems', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('textItems', true);
+    this.descriptor_1 = tmp0_serialDesc;
+  }
+  protoOf($serializer_0).serialize_ovog22_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
+    var tmp2_cached = Companion_getInstance_1().$childSerializers_1;
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 0) ? true : !equals(value.strokeItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.strokeItems_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 1) ? true : !equals(value.rectangleItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 1, tmp2_cached[1], value.rectangleItems_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.circleItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.circleItems_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !equals(value.polygonItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 3, tmp2_cached[3], value.polygonItems_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !equals(value.arrowItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 4, tmp2_cached[4], value.arrowItems_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !equals(value.textItems_1, emptyList())) {
+      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 5, tmp2_cached[5], value.textItems_1);
+    }
+    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+  };
+  protoOf($serializer_0).serialize_5ase3y_k$ = function (encoder, value) {
+    return this.serialize_ovog22_k$(encoder, value instanceof LegacyDrawing ? value : THROW_CCE());
+  };
+  protoOf($serializer_0).deserialize_sy6x50_k$ = function (decoder) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = null;
+    var tmp5_local1 = null;
+    var tmp6_local2 = null;
+    var tmp7_local3 = null;
+    var tmp8_local4 = null;
+    var tmp9_local5 = null;
+    var tmp10_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    var tmp11_cached = Companion_getInstance_1().$childSerializers_1;
+    if (tmp10_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+      tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+      tmp3_bitMask0 = tmp3_bitMask0 | 2;
+      tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+      tmp3_bitMask0 = tmp3_bitMask0 | 4;
+      tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+      tmp3_bitMask0 = tmp3_bitMask0 | 8;
+      tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+      tmp3_bitMask0 = tmp3_bitMask0 | 16;
+      tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
+      tmp3_bitMask0 = tmp3_bitMask0 | 32;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp10_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          case 1:
+            tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+            tmp3_bitMask0 = tmp3_bitMask0 | 2;
+            break;
+          case 2:
+            tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+            tmp3_bitMask0 = tmp3_bitMask0 | 4;
+            break;
+          case 3:
+            tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+            tmp3_bitMask0 = tmp3_bitMask0 | 8;
+            break;
+          case 4:
+            tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+            tmp3_bitMask0 = tmp3_bitMask0 | 16;
+            break;
+          case 5:
+            tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
+            tmp3_bitMask0 = tmp3_bitMask0 | 32;
+            break;
+          default:
+            throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp10_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return LegacyDrawing_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
+  };
+  protoOf($serializer_0).get_descriptor_wjt6a0_k$ = function () {
+    return this.descriptor_1;
+  };
+  protoOf($serializer_0).childSerializers_5ghqw5_k$ = function () {
+    var tmp0_cached = Companion_getInstance_1().$childSerializers_1;
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return [tmp0_cached[0], tmp0_cached[1], tmp0_cached[2], tmp0_cached[3], tmp0_cached[4], tmp0_cached[5]];
+  };
+  var $serializer_instance_0;
+  function $serializer_getInstance_0() {
+    if ($serializer_instance_0 == null)
+      new $serializer_0();
+    return $serializer_instance_0;
+  }
+  function LegacyDrawing_init_$Init$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker, $this) {
+    if (!(0 === (0 & seen0))) {
+      throwMissingFieldException(seen0, 0, $serializer_getInstance_0().descriptor_1);
+    }
+    if (0 === (seen0 & 1))
+      $this.strokeItems_1 = emptyList();
+    else
+      $this.strokeItems_1 = strokeItems;
+    if (0 === (seen0 & 2))
+      $this.rectangleItems_1 = emptyList();
+    else
+      $this.rectangleItems_1 = rectangleItems;
+    if (0 === (seen0 & 4))
+      $this.circleItems_1 = emptyList();
+    else
+      $this.circleItems_1 = circleItems;
+    if (0 === (seen0 & 8))
+      $this.polygonItems_1 = emptyList();
+    else
+      $this.polygonItems_1 = polygonItems;
+    if (0 === (seen0 & 16))
+      $this.arrowItems_1 = emptyList();
+    else
+      $this.arrowItems_1 = arrowItems;
+    if (0 === (seen0 & 32))
+      $this.textItems_1 = emptyList();
+    else
+      $this.textItems_1 = textItems;
+    return $this;
+  }
+  function LegacyDrawing_init_$Create$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker) {
+    return LegacyDrawing_init_$Init$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker, objectCreate(protoOf(LegacyDrawing)));
+  }
+  function LegacyDrawing(strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems) {
+    Companion_getInstance_1();
+    strokeItems = strokeItems === VOID ? emptyList() : strokeItems;
+    rectangleItems = rectangleItems === VOID ? emptyList() : rectangleItems;
+    circleItems = circleItems === VOID ? emptyList() : circleItems;
+    polygonItems = polygonItems === VOID ? emptyList() : polygonItems;
+    arrowItems = arrowItems === VOID ? emptyList() : arrowItems;
+    textItems = textItems === VOID ? emptyList() : textItems;
+    this.strokeItems_1 = strokeItems;
+    this.rectangleItems_1 = rectangleItems;
+    this.circleItems_1 = circleItems;
+    this.polygonItems_1 = polygonItems;
+    this.arrowItems_1 = arrowItems;
+    this.textItems_1 = textItems;
+  }
+  protoOf(LegacyDrawing).get_strokeItems_pivh8h_k$ = function () {
+    return this.strokeItems_1;
+  };
+  protoOf(LegacyDrawing).get_rectangleItems_npge3q_k$ = function () {
+    return this.rectangleItems_1;
+  };
+  protoOf(LegacyDrawing).get_circleItems_cgj3on_k$ = function () {
+    return this.circleItems_1;
+  };
+  protoOf(LegacyDrawing).get_polygonItems_rrdxqp_k$ = function () {
+    return this.polygonItems_1;
+  };
+  protoOf(LegacyDrawing).get_arrowItems_lx0j40_k$ = function () {
+    return this.arrowItems_1;
+  };
+  protoOf(LegacyDrawing).get_textItems_8zbevq_k$ = function () {
+    return this.textItems_1;
+  };
+  protoOf(LegacyDrawing).toItems_jfj6d7_k$ = function () {
+    // Inline function 'kotlin.collections.buildList' call
+    // Inline function 'kotlin.collections.buildListInternal' call
+    // Inline function 'kotlin.apply' call
+    var this_0 = ArrayList_init_$Create$();
+    // Inline function 'stickynode.model.LegacyDrawing.toItems.<anonymous>' call
+    this_0.addAll_4lagoh_k$(this.strokeItems_1);
+    this_0.addAll_4lagoh_k$(this.rectangleItems_1);
+    this_0.addAll_4lagoh_k$(this.circleItems_1);
+    this_0.addAll_4lagoh_k$(this.polygonItems_1);
+    this_0.addAll_4lagoh_k$(this.arrowItems_1);
+    this_0.addAll_4lagoh_k$(this.textItems_1);
+    return this_0.build_nmwvly_k$();
+  };
+  function encodeDrawing(items, pretty) {
+    pretty = pretty === VOID ? false : pretty;
+    _init_properties_Drawing_kt__mbw8h8();
+    var file = new DrawingFile('sticky-node', 2, items);
+    return (pretty ? get_prettyJson() : get_json()).encodeToString_k0apqx_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), file);
+  }
+  function decodeDrawing(text) {
+    _init_properties_Drawing_kt__mbw8h8();
+    if (isBlank(text))
+      throw IllegalArgumentException_init_$Create$('The file is empty');
+    var file = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), text);
+    if (!(file.app_1 === 'sticky-node'))
+      throw IllegalArgumentException_init_$Create$('Not a Sticky Node file');
+    if (file.version_1 >= 2)
+      return file.items_1;
+    return get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_1().serializer_9w0wvi_k$(), text).toItems_jfj6d7_k$();
+  }
+  function json$lambda($this$Json) {
+    _init_properties_Drawing_kt__mbw8h8();
+    $this$Json.set_ignoreUnknownKeys_pzvtne_k$(true);
+    $this$Json.set_encodeDefaults_c5evsg_k$(true);
+    $this$Json.set_explicitNulls_mtj2ai_k$(false);
+    return Unit_getInstance();
+  }
+  function prettyJson$lambda($this$Json) {
+    _init_properties_Drawing_kt__mbw8h8();
+    $this$Json.set_prettyPrint_v2gnff_k$(true);
+    $this$Json.set_prettyPrintIndent_ab0258_k$('  ');
+    return Unit_getInstance();
+  }
+  var properties_initialized_Drawing_kt_6zzioe;
+  function _init_properties_Drawing_kt__mbw8h8() {
+    if (!properties_initialized_Drawing_kt_6zzioe) {
+      properties_initialized_Drawing_kt_6zzioe = true;
+      json = Json(VOID, json$lambda);
+      var tmp = get_json();
+      prettyJson = Json(tmp, prettyJson$lambda);
+    }
+  }
+  function Companion_1() {
+    Companion_instance_1 = this;
+  }
+  protoOf(Companion_1).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_1();
+  };
+  var Companion_instance_1;
+  function Companion_getInstance_2() {
+    if (Companion_instance_1 == null)
+      new Companion_1();
+    return Companion_instance_1;
+  }
+  function $serializer_1() {
+    $serializer_instance_1 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.Point', this, 2);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_0).serialize_9ceelk_k$ = function (encoder, value) {
+  protoOf($serializer_1).serialize_gsogbp_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_0).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_9ceelk_k$(encoder, value instanceof Point ? value : THROW_CCE());
+  protoOf($serializer_1).serialize_5ase3y_k$ = function (encoder, value) {
+    return this.serialize_gsogbp_k$(encoder, value instanceof Point ? value : THROW_CCE());
   };
-  protoOf($serializer_0).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_1).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -1492,24 +1501,24 @@
     tmp6_input.endStructure_1xqz0n_k$(tmp0_desc);
     return Point_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
-  protoOf($serializer_0).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_1).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_0).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_1).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance()];
   };
-  var $serializer_instance_0;
-  function $serializer_getInstance_0() {
-    if ($serializer_instance_0 == null)
-      new $serializer_0();
-    return $serializer_instance_0;
+  var $serializer_instance_1;
+  function $serializer_getInstance_1() {
+    if ($serializer_instance_1 == null)
+      new $serializer_1();
+    return $serializer_instance_1;
   }
   function Point_init_$Init$(seen0, x, y, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_0().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_1().descriptor_1);
     }
     $this.x_1 = x;
     $this.y_1 = y;
@@ -1519,7 +1528,7 @@
     return Point_init_$Init$(seen0, x, y, serializationConstructorMarker, objectCreate(protoOf(Point)));
   }
   function Point(x, y) {
-    Companion_getInstance_1();
+    Companion_getInstance_2();
     this.x_1 = x;
     this.y_1 = y;
   }
@@ -1528,6 +1537,12 @@
   };
   protoOf(Point).get_y_1mhr68_k$ = function () {
     return this.y_1;
+  };
+  protoOf(Point).distanceTo_kno8q6_k$ = function (other) {
+    var tmp0 = this.x_1 - other.x_1;
+    // Inline function 'kotlin.math.hypot' call
+    var y = this.y_1 - other.y_1;
+    return hypot(tmp0, y);
   };
   protoOf(Point).component1_7eebsc_k$ = function () {
     return this.x_1;
@@ -1538,7 +1553,7 @@
   protoOf(Point).copy_6r5gqz_k$ = function (x, y) {
     return new Point(x, y);
   };
-  protoOf(Point).copy$default_c9rj7e_k$ = function (x, y, $super) {
+  protoOf(Point).copy$default_dadsmd_k$ = function (x, y, $super) {
     x = x === VOID ? this.x_1 : x;
     y = y === VOID ? this.y_1 : y;
     return $super === VOID ? this.copy_6r5gqz_k$(x, y) : $super.copy_6r5gqz_k$.call(this, x, y);
@@ -1563,40 +1578,191 @@
       return false;
     return true;
   };
+  function BoundingBox(x, y, width, height) {
+    this.x_1 = x;
+    this.y_1 = y;
+    this.width_1 = width;
+    this.height_1 = height;
+  }
+  protoOf(BoundingBox).get_x_1mhr67_k$ = function () {
+    return this.x_1;
+  };
+  protoOf(BoundingBox).get_y_1mhr68_k$ = function () {
+    return this.y_1;
+  };
+  protoOf(BoundingBox).get_width_j0q4yl_k$ = function () {
+    return this.width_1;
+  };
+  protoOf(BoundingBox).get_height_e7t92o_k$ = function () {
+    return this.height_1;
+  };
+  function boundingBox(a, b) {
+    var tmp0 = a.x_1;
+    // Inline function 'kotlin.math.min' call
+    var b_0 = b.x_1;
+    var tmp = Math.min(tmp0, b_0);
+    var tmp2 = a.y_1;
+    // Inline function 'kotlin.math.min' call
+    var b_1 = b.y_1;
+    var tmp_0 = Math.min(tmp2, b_1);
+    // Inline function 'kotlin.math.abs' call
+    var x = b.x_1 - a.x_1;
+    var tmp_1 = Math.abs(x);
+    // Inline function 'kotlin.math.abs' call
+    var x_0 = b.y_1 - a.y_1;
+    var tmp$ret$3 = Math.abs(x_0);
+    return new BoundingBox(tmp, tmp_0, tmp_1, tmp$ret$3);
+  }
+  function distanceToSegment(p, a, b) {
+    var dx = b.x_1 - a.x_1;
+    var dy = b.y_1 - a.y_1;
+    var lengthSquared = dx * dx + dy * dy;
+    if (lengthSquared === 0.0)
+      return p.distanceTo_kno8q6_k$(a);
+    var t = coerceIn(((p.x_1 - a.x_1) * dx + (p.y_1 - a.y_1) * dy) / lengthSquared, 0.0, 1.0);
+    var tmp0 = p.x_1 - (a.x_1 + t * dx);
+    // Inline function 'kotlin.math.hypot' call
+    var y = p.y_1 - (a.y_1 + t * dy);
+    return hypot(tmp0, y);
+  }
+  function get_measureContext() {
+    _init_properties_Items_kt__3bnoaa();
+    var tmp0 = measureContext$delegate;
+    // Inline function 'kotlin.getValue' call
+    measureContext$factory();
+    return tmp0.get_value_j01efc_k$();
+  }
+  var measureContext$delegate;
+  function get_DEFAULT_LINE_WIDTH() {
+    return DEFAULT_LINE_WIDTH;
+  }
+  var DEFAULT_LINE_WIDTH;
+  function get_DEFAULT_FONT_SIZE() {
+    return DEFAULT_FONT_SIZE;
+  }
+  var DEFAULT_FONT_SIZE;
+  function get_MIN_HIT_RADIUS() {
+    return MIN_HIT_RADIUS;
+  }
+  var MIN_HIT_RADIUS;
   function Fillable() {
   }
-  function _get_$childSerializers__r2zwns_0($this) {
+  function Boxed() {
+  }
+  function get_centerX(_this__u8e3s4) {
+    _init_properties_Items_kt__3bnoaa();
+    return _this__u8e3s4.get_x_1mhr67_k$() + _this__u8e3s4.get_width_j0q4yl_k$() / 2;
+  }
+  function get_centerY(_this__u8e3s4) {
+    _init_properties_Items_kt__3bnoaa();
+    return _this__u8e3s4.get_y_1mhr68_k$() + _this__u8e3s4.get_height_e7t92o_k$() / 2;
+  }
+  function lineHeight(fontSize) {
+    _init_properties_Items_kt__3bnoaa();
+    return roundToInt(fontSize * 1.2);
+  }
+  function hitRadius(lineWidth) {
+    _init_properties_Items_kt__3bnoaa();
+    // Inline function 'kotlin.math.max' call
+    var b = lineWidth / 2.0 + 2.0;
+    return Math.max(8.0, b);
+  }
+  function roundStroke(_this__u8e3s4) {
+    _init_properties_Items_kt__3bnoaa();
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.lineCap = 'round';
+    // Inline function 'kotlin.js.asDynamic' call
+    _this__u8e3s4.lineJoin = 'round';
+  }
+  function paint(_this__u8e3s4, fillColor, strokeColor, width) {
+    _init_properties_Items_kt__3bnoaa();
+    // Inline function 'kotlin.text.isNullOrEmpty' call
+    if (!(fillColor == null || charSequenceLength(fillColor) === 0)) {
+      _this__u8e3s4.fillStyle = fillColor;
+      _this__u8e3s4.fill();
+    }
+    _this__u8e3s4.strokeStyle = strokeColor;
+    _this__u8e3s4.lineWidth = width;
+    _this__u8e3s4.stroke();
+  }
+  function _get_$cachedSerializer__te6jhj($this) {
+    return $this.$cachedSerializer$delegate_1.get_value_j01efc_k$();
+  }
+  function Item$Companion$_anonymous__jaim2s() {
+    var tmp = getKClass(Item);
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp_0 = [getKClass(ArrowItem), getKClass(CircleItem), getKClass(PolygonItem), getKClass(RectangleItem), getKClass(StrokeItem), getKClass(TextItem)];
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp_1 = [$serializer_getInstance_6(), $serializer_getInstance_4(), $serializer_getInstance_5(), $serializer_getInstance_3(), $serializer_getInstance_2(), $serializer_getInstance_7()];
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    var tmp$ret$8 = [];
+    return SealedClassSerializer_init_$Create$('stickynode.model.Item', tmp, tmp_0, tmp_1, tmp$ret$8);
+  }
+  function Companion_2() {
+    Companion_instance_2 = this;
+    var tmp = this;
+    var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
+    tmp.$cachedSerializer$delegate_1 = lazy(tmp_0, Item$Companion$_anonymous__jaim2s);
+  }
+  protoOf(Companion_2).serializer_9w0wvi_k$ = function () {
+    return _get_$cachedSerializer__te6jhj(this);
+  };
+  protoOf(Companion_2).serializer_nv39qc_k$ = function (typeParamsSerializers) {
+    return this.serializer_9w0wvi_k$();
+  };
+  var Companion_instance_2;
+  function Companion_getInstance_3() {
+    if (Companion_instance_2 == null)
+      new Companion_2();
+    return Companion_instance_2;
+  }
+  function Item_init_$Init$(seen0, serializationConstructorMarker, $this) {
+    return $this;
+  }
+  function Item_init_$Create$(seen0, serializationConstructorMarker) {
+    return Item_init_$Init$(seen0, serializationConstructorMarker, objectCreate(protoOf(Item)));
+  }
+  function Item() {
+    Companion_getInstance_3();
+  }
+  function _get_$childSerializers__r2zwns_1($this) {
     return $this.$childSerializers_1;
   }
-  function Companion_1() {
-    Companion_instance_1 = this;
+  function Companion_3() {
+    Companion_instance_3 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_0()), null, null];
+    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null];
   }
-  protoOf(Companion_1).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_1();
+  protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_2();
   };
-  var Companion_instance_1;
-  function Companion_getInstance_2() {
-    if (Companion_instance_1 == null)
-      new Companion_1();
-    return Companion_instance_1;
+  var Companion_instance_3;
+  function Companion_getInstance_4() {
+    if (Companion_instance_3 == null)
+      new Companion_3();
+    return Companion_instance_3;
   }
-  function $serializer_1() {
-    $serializer_instance_1 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.Stroke', this, 3);
+  function $serializer_2() {
+    $serializer_instance_2 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stroke', this, 3);
     tmp0_serialDesc.addElement_5pzumi_k$('points', false);
     tmp0_serialDesc.addElement_5pzumi_k$('color', false);
     tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_1).serialize_5cow16_k$ = function (encoder, value) {
+  protoOf($serializer_2).serialize_z9e00k_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_2().$childSerializers_1;
+    var tmp2_cached = Companion_getInstance_4().$childSerializers_1;
     tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.points_1);
     tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.color_1);
     if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !(value.lineWidth_1 === 3)) {
@@ -1604,10 +1770,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_1).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_5cow16_k$(encoder, value instanceof Stroke ? value : THROW_CCE());
+  protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
+    return this.serialize_z9e00k_k$(encoder, value instanceof StrokeItem ? value : THROW_CCE());
   };
-  protoOf($serializer_1).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -1616,7 +1782,7 @@
     var tmp5_local1 = null;
     var tmp6_local2 = 0;
     var tmp7_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp8_cached = Companion_getInstance_2().$childSerializers_1;
+    var tmp8_cached = Companion_getInstance_4().$childSerializers_1;
     if (tmp7_input.decodeSequentially_xlblqy_k$()) {
       tmp4_local0 = tmp7_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp8_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -1648,149 +1814,7 @@
         }
       }
     tmp7_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return Stroke_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
-  };
-  protoOf($serializer_1).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
-  };
-  protoOf($serializer_1).childSerializers_5ghqw5_k$ = function () {
-    // Inline function 'kotlin.arrayOf' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_2().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance()];
-  };
-  var $serializer_instance_1;
-  function $serializer_getInstance_1() {
-    if ($serializer_instance_1 == null)
-      new $serializer_1();
-    return $serializer_instance_1;
-  }
-  function Stroke_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, $this) {
-    if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_1().descriptor_1);
-    }
-    $this.points_1 = points;
-    $this.color_1 = color;
-    if (0 === (seen0 & 4))
-      $this.lineWidth_1 = 3;
-    else
-      $this.lineWidth_1 = lineWidth;
-    return $this;
-  }
-  function Stroke_init_$Create$(seen0, points, color, lineWidth, serializationConstructorMarker) {
-    return Stroke_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(Stroke)));
-  }
-  function Stroke(points, color, lineWidth) {
-    Companion_getInstance_2();
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    this.points_1 = points;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-  }
-  protoOf(Stroke).set_points_w0ahkm_k$ = function (_set____db54di) {
-    this.points_1 = _set____db54di;
-  };
-  protoOf(Stroke).get_points_i5obn0_k$ = function () {
-    return this.points_1;
-  };
-  protoOf(Stroke).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(Stroke).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  function Companion_2() {
-    Companion_instance_2 = this;
-  }
-  protoOf(Companion_2).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_2();
-  };
-  var Companion_instance_2;
-  function Companion_getInstance_3() {
-    if (Companion_instance_2 == null)
-      new Companion_2();
-    return Companion_instance_2;
-  }
-  function $serializer_2() {
-    $serializer_instance_2 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.TextItem', this, 5);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('text', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('fontSize', true);
-    this.descriptor_1 = tmp0_serialDesc;
-  }
-  protoOf($serializer_2).serialize_vt40ha_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 2, value.color_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 3, value.text_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !(value.fontSize_1 === 20)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 4, value.fontSize_1);
-    }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
-  };
-  protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_vt40ha_k$(encoder, value instanceof TextItem ? value : THROW_CCE());
-  };
-  protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_flag = true;
-    var tmp2_index = 0;
-    var tmp3_bitMask0 = 0;
-    var tmp4_local0 = 0.0;
-    var tmp5_local1 = 0.0;
-    var tmp6_local2 = null;
-    var tmp7_local3 = null;
-    var tmp8_local4 = 0;
-    var tmp9_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
-      tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
-      tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
-      tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
-      tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
-      tmp3_bitMask0 = tmp3_bitMask0 | 16;
-    } else
-      while (tmp1_flag) {
-        tmp2_index = tmp9_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
-        switch (tmp2_index) {
-          case -1:
-            tmp1_flag = false;
-            break;
-          case 0:
-            tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
-            tmp3_bitMask0 = tmp3_bitMask0 | 1;
-            break;
-          case 1:
-            tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
-            tmp3_bitMask0 = tmp3_bitMask0 | 2;
-            break;
-          case 2:
-            tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
-            tmp3_bitMask0 = tmp3_bitMask0 | 4;
-            break;
-          case 3:
-            tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
-            tmp3_bitMask0 = tmp3_bitMask0 | 8;
-            break;
-          case 4:
-            tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
-            tmp3_bitMask0 = tmp3_bitMask0 | 16;
-            break;
-          default:
-            throw UnknownFieldException_init_$Create$(tmp2_index);
-        }
-      }
-    tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return TextItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
+    return StrokeItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
   protoOf($serializer_2).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
@@ -1799,7 +1823,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance()];
+    return [Companion_getInstance_4().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance()];
   };
   var $serializer_instance_2;
   function $serializer_getInstance_2() {
@@ -1807,77 +1831,101 @@
       new $serializer_2();
     return $serializer_instance_2;
   }
-  function TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, $this) {
-    if (!(15 === (15 & seen0))) {
-      throwMissingFieldException(seen0, 15, $serializer_getInstance_2().descriptor_1);
+  function StrokeItem_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, $this) {
+    if (!(3 === (3 & seen0))) {
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_2().descriptor_1);
     }
-    $this.x_1 = x;
-    $this.y_1 = y;
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
+    $this.points_1 = points;
     $this.color_1 = color;
-    $this.text_1 = text;
-    if (0 === (seen0 & 16))
-      $this.fontSize_1 = 20;
+    if (0 === (seen0 & 4))
+      $this.lineWidth_1 = 3;
     else
-      $this.fontSize_1 = fontSize;
+      $this.lineWidth_1 = lineWidth;
     return $this;
   }
-  function TextItem_init_$Create$(seen0, x, y, color, text, fontSize, serializationConstructorMarker) {
-    return TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, objectCreate(protoOf(TextItem)));
+  function StrokeItem_init_$Create$(seen0, points, color, lineWidth, serializationConstructorMarker) {
+    return StrokeItem_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(StrokeItem)));
   }
-  function TextItem(x, y, color, text, fontSize) {
-    Companion_getInstance_3();
-    fontSize = fontSize === VOID ? 20 : fontSize;
-    this.x_1 = x;
-    this.y_1 = y;
+  function StrokeItem(points, color, lineWidth) {
+    Companion_getInstance_4();
+    lineWidth = lineWidth === VOID ? 3 : lineWidth;
+    Item.call(this);
+    this.points_1 = points;
     this.color_1 = color;
-    this.text_1 = text;
-    this.fontSize_1 = fontSize;
+    this.lineWidth_1 = lineWidth;
   }
-  protoOf(TextItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
+  protoOf(StrokeItem).get_points_i5obn0_k$ = function () {
+    return this.points_1;
   };
-  protoOf(TextItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(TextItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(TextItem).set_color_ayzg4c_k$ = function (_set____db54di) {
-    this.color_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_color_ipu8u2_k$ = function () {
+  protoOf(StrokeItem).get_color_ipu8u2_k$ = function () {
     return this.color_1;
   };
-  protoOf(TextItem).set_text_oy06f4_k$ = function (_set____db54di) {
-    this.text_1 = _set____db54di;
+  protoOf(StrokeItem).get_lineWidth_lbeliv_k$ = function () {
+    return this.lineWidth_1;
   };
-  protoOf(TextItem).get_text_wouvsm_k$ = function () {
-    return this.text_1;
+  protoOf(StrokeItem).draw_rpid3c_k$ = function (ctx) {
+    if (this.points_1.get_size_woubt6_k$() < 2)
+      return Unit_getInstance();
+    ctx.strokeStyle = this.color_1;
+    ctx.lineWidth = this.lineWidth_1;
+    roundStroke(ctx);
+    ctx.beginPath();
+    ctx.moveTo(this.points_1.get_c1px32_k$(0).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(0).get_y_1mhr68_k$());
+    var inductionVariable = 1;
+    var last = this.points_1.get_size_woubt6_k$();
+    if (inductionVariable < last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        ctx.lineTo(this.points_1.get_c1px32_k$(i).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(i).get_y_1mhr68_k$());
+      }
+       while (inductionVariable < last);
+    ctx.stroke();
   };
-  protoOf(TextItem).set_fontSize_6szsfv_k$ = function (_set____db54di) {
-    this.fontSize_1 = _set____db54di;
+  protoOf(StrokeItem).hitTest_1gxtur_k$ = function (p) {
+    var radius = hitRadius(this.lineWidth_1);
+    if (this.points_1.get_size_woubt6_k$() === 1)
+      return p.distanceTo_kno8q6_k$(this.points_1.get_c1px32_k$(0)) <= radius;
+    var inductionVariable = 0;
+    var last = this.points_1.get_size_woubt6_k$() - 1 | 0;
+    if (inductionVariable < last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        if (distanceToSegment(p, this.points_1.get_c1px32_k$(i), this.points_1.get_c1px32_k$(i + 1 | 0)) <= radius)
+          return true;
+      }
+       while (inductionVariable < last);
+    return false;
   };
-  protoOf(TextItem).get_fontSize_pr9n47_k$ = function () {
-    return this.fontSize_1;
+  protoOf(StrokeItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    var inductionVariable = 0;
+    var last = this.points_1.get_size_woubt6_k$() - 1 | 0;
+    if (inductionVariable <= last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var point = this.points_1.get_c1px32_k$(i);
+        this.points_1.set_82063s_k$(i, new Point(point.get_x_1mhr67_k$() + dx, point.get_y_1mhr68_k$() + dy));
+      }
+       while (inductionVariable <= last);
   };
-  function Companion_3() {
-    Companion_instance_3 = this;
+  function Companion_4() {
+    Companion_instance_4 = this;
   }
-  protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_4).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_3();
   };
-  var Companion_instance_3;
-  function Companion_getInstance_4() {
-    if (Companion_instance_3 == null)
-      new Companion_3();
-    return Companion_instance_3;
+  var Companion_instance_4;
+  function Companion_getInstance_5() {
+    if (Companion_instance_4 == null)
+      new Companion_4();
+    return Companion_instance_4;
   }
   function $serializer_3() {
     $serializer_instance_3 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.RectangleItem', this, 7);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('rectangle', this, 7);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
     tmp0_serialDesc.addElement_5pzumi_k$('width', false);
@@ -1887,7 +1935,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_3).serialize_niovmh_k$ = function (encoder, value) {
+  protoOf($serializer_3).serialize_aff1o_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -1904,7 +1952,7 @@
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_3).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_niovmh_k$(encoder, value instanceof RectangleItem ? value : THROW_CCE());
+    return this.serialize_aff1o_k$(encoder, value instanceof RectangleItem ? value : THROW_CCE());
   };
   protoOf($serializer_3).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -1995,6 +2043,7 @@
     if (!(31 === (31 & seen0))) {
       throwMissingFieldException(seen0, 31, $serializer_getInstance_3().descriptor_1);
     }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
     $this.y_1 = y;
     $this.width_1 = width;
@@ -2014,9 +2063,10 @@
     return RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(RectangleItem)));
   }
   function RectangleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_4();
+    Companion_getInstance_5();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
+    Item.call(this);
     this.x_1 = x;
     this.y_1 = y;
     this.width_1 = width;
@@ -2055,21 +2105,45 @@
   protoOf(RectangleItem).get_fill_wom0ng_k$ = function () {
     return this.fill_1;
   };
-  function Companion_4() {
-    Companion_instance_4 = this;
+  protoOf(RectangleItem).draw_rpid3c_k$ = function (ctx) {
+    ctx.beginPath();
+    ctx.rect(this.x_1, this.y_1, this.width_1, this.height_1);
+    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+  };
+  protoOf(RectangleItem).hitTest_1gxtur_k$ = function (p) {
+    var tmp;
+    var containsLower = this.x_1;
+    var containsUpper = this.x_1 + this.width_1;
+    var containsArg = p.get_x_1mhr67_k$();
+    if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
+      var containsLower_0 = this.y_1;
+      var containsUpper_0 = this.y_1 + this.height_1;
+      var containsArg_0 = p.get_y_1mhr68_k$();
+      tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
+    } else {
+      tmp = false;
+    }
+    return tmp;
+  };
+  protoOf(RectangleItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
+  function Companion_5() {
+    Companion_instance_5 = this;
   }
-  protoOf(Companion_4).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_5).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_4();
   };
-  var Companion_instance_4;
-  function Companion_getInstance_5() {
-    if (Companion_instance_4 == null)
-      new Companion_4();
-    return Companion_instance_4;
+  var Companion_instance_5;
+  function Companion_getInstance_6() {
+    if (Companion_instance_5 == null)
+      new Companion_5();
+    return Companion_instance_5;
   }
   function $serializer_4() {
     $serializer_instance_4 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.CircleItem', this, 7);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('circle', this, 7);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
     tmp0_serialDesc.addElement_5pzumi_k$('width', false);
@@ -2079,7 +2153,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_4).serialize_662i2k_k$ = function (encoder, value) {
+  protoOf($serializer_4).serialize_4h19cz_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -2096,7 +2170,7 @@
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_4).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_662i2k_k$(encoder, value instanceof CircleItem ? value : THROW_CCE());
+    return this.serialize_4h19cz_k$(encoder, value instanceof CircleItem ? value : THROW_CCE());
   };
   protoOf($serializer_4).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -2187,6 +2261,7 @@
     if (!(31 === (31 & seen0))) {
       throwMissingFieldException(seen0, 31, $serializer_getInstance_4().descriptor_1);
     }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
     $this.y_1 = y;
     $this.width_1 = width;
@@ -2206,9 +2281,10 @@
     return CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(CircleItem)));
   }
   function CircleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_5();
+    Companion_getInstance_6();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
+    Item.call(this);
     this.x_1 = x;
     this.y_1 = y;
     this.width_1 = width;
@@ -2247,21 +2323,70 @@
   protoOf(CircleItem).get_fill_wom0ng_k$ = function () {
     return this.fill_1;
   };
-  function Companion_5() {
-    Companion_instance_5 = this;
+  protoOf(CircleItem).draw_rpid3c_k$ = function (ctx) {
+    ctx.beginPath();
+    ctx.ellipse(get_centerX(this), get_centerY(this), this.width_1 / 2, this.height_1 / 2, 0.0, 0.0, 2 * 3.141592653589793);
+    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+  };
+  protoOf(CircleItem).hitTest_1gxtur_k$ = function (p) {
+    var radiusX = this.width_1 / 2;
+    var radiusY = this.height_1 / 2;
+    if (radiusX === 0.0 || radiusY === 0.0)
+      return false;
+    var nx = (p.get_x_1mhr67_k$() - get_centerX(this)) / radiusX;
+    var ny = (p.get_y_1mhr68_k$() - get_centerY(this)) / radiusY;
+    return nx * nx + ny * ny <= 1.0;
+  };
+  protoOf(CircleItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
+  function vertices($this) {
+    var count = coerceAtLeast($this.sides_1, 3);
+    var tmp0 = $this.width_1;
+    // Inline function 'kotlin.math.min' call
+    var b = $this.height_1;
+    var radius = Math.min(tmp0, b) / 2;
+    var step = 2 * 3.141592653589793 / count;
+    // Inline function 'kotlin.collections.List' call
+    // Inline function 'kotlin.collections.MutableList' call
+    var list = ArrayList_init_$Create$_0(count);
+    // Inline function 'kotlin.repeat' call
+    var inductionVariable = 0;
+    if (inductionVariable < count)
+      do {
+        var index = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        // Inline function 'kotlin.collections.MutableList.<anonymous>' call
+        // Inline function 'stickynode.model.PolygonItem.vertices.<anonymous>' call
+        var angle = -3.141592653589793 / 2 + index * step;
+        var tmp = get_centerX($this);
+        // Inline function 'kotlin.math.cos' call
+        var tmp_0 = tmp + radius * Math.cos(angle);
+        var tmp_1 = get_centerY($this);
+        // Inline function 'kotlin.math.sin' call
+        var tmp$ret$2 = Math.sin(angle);
+        var tmp$ret$3 = new Point(tmp_0, tmp_1 + radius * tmp$ret$2);
+        list.add_utx5q5_k$(tmp$ret$3);
+      }
+       while (inductionVariable < count);
+    return list;
   }
-  protoOf(Companion_5).serializer_9w0wvi_k$ = function () {
+  function Companion_6() {
+    Companion_instance_6 = this;
+  }
+  protoOf(Companion_6).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_5();
   };
-  var Companion_instance_5;
-  function Companion_getInstance_6() {
-    if (Companion_instance_5 == null)
-      new Companion_5();
-    return Companion_instance_5;
+  var Companion_instance_6;
+  function Companion_getInstance_7() {
+    if (Companion_instance_6 == null)
+      new Companion_6();
+    return Companion_instance_6;
   }
   function $serializer_5() {
     $serializer_instance_5 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.PolygonItem', this, 8);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('polygon', this, 8);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
     tmp0_serialDesc.addElement_5pzumi_k$('width', false);
@@ -2272,7 +2397,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_5).serialize_ve2ex0_k$ = function (encoder, value) {
+  protoOf($serializer_5).serialize_9g6o2x_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -2290,7 +2415,7 @@
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_5).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_ve2ex0_k$(encoder, value instanceof PolygonItem ? value : THROW_CCE());
+    return this.serialize_9g6o2x_k$(encoder, value instanceof PolygonItem ? value : THROW_CCE());
   };
   protoOf($serializer_5).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -2388,6 +2513,7 @@
     if (!(63 === (63 & seen0))) {
       throwMissingFieldException(seen0, 63, $serializer_getInstance_5().descriptor_1);
     }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
     $this.y_1 = y;
     $this.width_1 = width;
@@ -2408,9 +2534,10 @@
     return PolygonItem_init_$Init$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(PolygonItem)));
   }
   function PolygonItem(x, y, width, height, sides, color, lineWidth, fill) {
-    Companion_getInstance_6();
+    Companion_getInstance_7();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
+    Item.call(this);
     this.x_1 = x;
     this.y_1 = y;
     this.width_1 = width;
@@ -2453,21 +2580,66 @@
   protoOf(PolygonItem).get_fill_wom0ng_k$ = function () {
     return this.fill_1;
   };
-  function Companion_6() {
-    Companion_instance_6 = this;
+  protoOf(PolygonItem).draw_rpid3c_k$ = function (ctx) {
+    var points = vertices(this);
+    ctx.beginPath();
+    ctx.moveTo(points.get_c1px32_k$(0).get_x_1mhr67_k$(), points.get_c1px32_k$(0).get_y_1mhr68_k$());
+    var inductionVariable = 1;
+    var last = points.get_size_woubt6_k$();
+    if (inductionVariable < last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        ctx.lineTo(points.get_c1px32_k$(i).get_x_1mhr67_k$(), points.get_c1px32_k$(i).get_y_1mhr68_k$());
+      }
+       while (inductionVariable < last);
+    ctx.closePath();
+    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+  };
+  protoOf(PolygonItem).hitTest_1gxtur_k$ = function (p) {
+    var tmp0 = this.width_1;
+    // Inline function 'kotlin.math.min' call
+    var b = this.height_1;
+    if (Math.min(tmp0, b) === 0.0)
+      return false;
+    var points = vertices(this);
+    var inside = false;
+    var previous = get_lastIndex(points);
+    var inductionVariable = 0;
+    var last = points.get_size_woubt6_k$() - 1 | 0;
+    if (inductionVariable <= last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var a = points.get_c1px32_k$(i);
+        var b_0 = points.get_c1px32_k$(previous);
+        if (!(a.get_y_1mhr68_k$() > p.get_y_1mhr68_k$() === b_0.get_y_1mhr68_k$() > p.get_y_1mhr68_k$()) && p.get_x_1mhr67_k$() < (b_0.get_x_1mhr67_k$() - a.get_x_1mhr67_k$()) * (p.get_y_1mhr68_k$() - a.get_y_1mhr68_k$()) / (b_0.get_y_1mhr68_k$() - a.get_y_1mhr68_k$()) + a.get_x_1mhr67_k$()) {
+          inside = !inside;
+        }
+        previous = i;
+      }
+       while (inductionVariable <= last);
+    return inside;
+  };
+  protoOf(PolygonItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
+  function Companion_7() {
+    Companion_instance_7 = this;
   }
-  protoOf(Companion_6).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_7).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_6();
   };
-  var Companion_instance_6;
-  function Companion_getInstance_7() {
-    if (Companion_instance_6 == null)
-      new Companion_6();
-    return Companion_instance_6;
+  var Companion_instance_7;
+  function Companion_getInstance_8() {
+    if (Companion_instance_7 == null)
+      new Companion_7();
+    return Companion_instance_7;
   }
   function $serializer_6() {
     $serializer_instance_6 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.ArrowItem', this, 6);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('arrow', this, 6);
     tmp0_serialDesc.addElement_5pzumi_k$('startX', false);
     tmp0_serialDesc.addElement_5pzumi_k$('startY', false);
     tmp0_serialDesc.addElement_5pzumi_k$('endX', false);
@@ -2476,7 +2648,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_6).serialize_hibvi4_k$ = function (encoder, value) {
+  protoOf($serializer_6).serialize_6xgepf_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.startX_1);
@@ -2490,7 +2662,7 @@
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_6).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_hibvi4_k$(encoder, value instanceof ArrowItem ? value : THROW_CCE());
+    return this.serialize_6xgepf_k$(encoder, value instanceof ArrowItem ? value : THROW_CCE());
   };
   protoOf($serializer_6).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -2574,6 +2746,7 @@
     if (!(31 === (31 & seen0))) {
       throwMissingFieldException(seen0, 31, $serializer_getInstance_6().descriptor_1);
     }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.startX_1 = startX;
     $this.startY_1 = startY;
     $this.endX_1 = endX;
@@ -2589,8 +2762,9 @@
     return ArrowItem_init_$Init$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(ArrowItem)));
   }
   function ArrowItem(startX, startY, endX, endY, color, lineWidth) {
-    Companion_getInstance_7();
+    Companion_getInstance_8();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
+    Item.call(this);
     this.startX_1 = startX;
     this.startY_1 = startY;
     this.endX_1 = endX;
@@ -2628,125 +2802,158 @@
   protoOf(ArrowItem).get_lineWidth_lbeliv_k$ = function () {
     return this.lineWidth_1;
   };
-  function _get_$childSerializers__r2zwns_1($this) {
-    return $this.$childSerializers_1;
+  protoOf(ArrowItem).draw_rpid3c_k$ = function (ctx) {
+    // Inline function 'kotlin.math.max' call
+    var b = this.lineWidth_1 * 4.0;
+    var headLength = Math.max(16.0, b);
+    var tmp2 = this.endY_1 - this.startY_1;
+    // Inline function 'kotlin.math.atan2' call
+    var x = this.endX_1 - this.startX_1;
+    var angle = Math.atan2(tmp2, x);
+    var spread = 3.141592653589793 / 6;
+    ctx.strokeStyle = this.color_1;
+    ctx.lineWidth = this.lineWidth_1;
+    roundStroke(ctx);
+    ctx.beginPath();
+    ctx.moveTo(this.startX_1, this.startY_1);
+    ctx.lineTo(this.endX_1, this.endY_1);
+    var tmp = this.endX_1;
+    // Inline function 'kotlin.math.cos' call
+    var x_0 = angle - spread;
+    var tmp_0 = tmp - headLength * Math.cos(x_0);
+    var tmp_1 = this.endY_1;
+    // Inline function 'kotlin.math.sin' call
+    var x_1 = angle - spread;
+    var tmp$ret$3 = Math.sin(x_1);
+    ctx.moveTo(tmp_0, tmp_1 - headLength * tmp$ret$3);
+    ctx.lineTo(this.endX_1, this.endY_1);
+    var tmp_2 = this.endX_1;
+    // Inline function 'kotlin.math.cos' call
+    var x_2 = angle + spread;
+    var tmp_3 = tmp_2 - headLength * Math.cos(x_2);
+    var tmp_4 = this.endY_1;
+    // Inline function 'kotlin.math.sin' call
+    var x_3 = angle + spread;
+    var tmp$ret$5 = Math.sin(x_3);
+    ctx.lineTo(tmp_3, tmp_4 - headLength * tmp$ret$5);
+    ctx.stroke();
+  };
+  protoOf(ArrowItem).hitTest_1gxtur_k$ = function (p) {
+    return distanceToSegment(p, new Point(this.startX_1, this.startY_1), new Point(this.endX_1, this.endY_1)) <= hitRadius(this.lineWidth_1);
+  };
+  protoOf(ArrowItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.startX_1 = this.startX_1 + dx;
+    this.startY_1 = this.startY_1 + dy;
+    this.endX_1 = this.endX_1 + dx;
+    this.endY_1 = this.endY_1 + dy;
+  };
+  function fontSpec($this) {
+    return '' + $this.fontSize_1 + 'px sans-serif';
   }
-  function Companion_7() {
-    Companion_instance_7 = this;
-    var tmp = this;
-    // Inline function 'kotlin.arrayOf' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), new ArrayListSerializer($serializer_getInstance_2()), new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6())];
+  function lines($this) {
+    return split($this.text_1, ['\n']);
   }
-  protoOf(Companion_7).serializer_9w0wvi_k$ = function () {
+  function Companion_8() {
+    Companion_instance_8 = this;
+  }
+  protoOf(Companion_8).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_7();
   };
-  var Companion_instance_7;
-  function Companion_getInstance_8() {
-    if (Companion_instance_7 == null)
-      new Companion_7();
-    return Companion_instance_7;
+  var Companion_instance_8;
+  function Companion_getInstance_9() {
+    if (Companion_instance_8 == null)
+      new Companion_8();
+    return Companion_instance_8;
   }
   function $serializer_7() {
     $serializer_instance_7 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.canvas.Items', this, 6);
-    tmp0_serialDesc.addElement_5pzumi_k$('strokeItems', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('textItems', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('rectangleItems', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('circleItems', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('polygonItems', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('arrowItems', false);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('text', this, 5);
+    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('text', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('fontSize', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_7).serialize_l2cv60_k$ = function (encoder, value) {
+  protoOf($serializer_7).serialize_dwuzj_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_8().$childSerializers_1;
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.strokeItems_1);
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 1, tmp2_cached[1], value.textItems_1);
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.rectangleItems_1);
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 3, tmp2_cached[3], value.circleItems_1);
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 4, tmp2_cached[4], value.polygonItems_1);
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 5, tmp2_cached[5], value.arrowItems_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
+    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 2, value.color_1);
+    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 3, value.text_1);
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !(value.fontSize_1 === 20)) {
+      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 4, value.fontSize_1);
+    }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_7).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_l2cv60_k$(encoder, value instanceof Items ? value : THROW_CCE());
+    return this.serialize_dwuzj_k$(encoder, value instanceof TextItem ? value : THROW_CCE());
   };
   protoOf($serializer_7).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
-    var tmp4_local0 = null;
-    var tmp5_local1 = null;
+    var tmp4_local0 = 0.0;
+    var tmp5_local1 = 0.0;
     var tmp6_local2 = null;
     var tmp7_local3 = null;
-    var tmp8_local4 = null;
-    var tmp9_local5 = null;
-    var tmp10_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp11_cached = Companion_getInstance_8().$childSerializers_1;
-    if (tmp10_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+    var tmp8_local4 = 0;
+    var tmp9_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+      tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+      tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+      tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+      tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
-      tmp3_bitMask0 = tmp3_bitMask0 | 32;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp10_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp9_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+            tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+            tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+            tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+            tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+            tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
-            break;
-          case 5:
-            tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
-            tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp10_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return Items_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
+    tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return TextItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
   protoOf($serializer_7).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
   protoOf($serializer_7).childSerializers_5ghqw5_k$ = function () {
-    var tmp0_cached = Companion_getInstance_8().$childSerializers_1;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [tmp0_cached[0], tmp0_cached[1], tmp0_cached[2], tmp0_cached[3], tmp0_cached[4], tmp0_cached[5]];
+    return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance()];
   };
   var $serializer_instance_7;
   function $serializer_getInstance_7() {
@@ -2754,1601 +2961,1031 @@
       new $serializer_7();
     return $serializer_instance_7;
   }
-  function Items_init_$Init$(seen0, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker, $this) {
-    if (!(63 === (63 & seen0))) {
-      throwMissingFieldException(seen0, 63, $serializer_getInstance_7().descriptor_1);
+  function TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, $this) {
+    if (!(15 === (15 & seen0))) {
+      throwMissingFieldException(seen0, 15, $serializer_getInstance_7().descriptor_1);
     }
-    $this.strokeItems_1 = strokeItems;
-    $this.textItems_1 = textItems;
-    $this.rectangleItems_1 = rectangleItems;
-    $this.circleItems_1 = circleItems;
-    $this.polygonItems_1 = polygonItems;
-    $this.arrowItems_1 = arrowItems;
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
+    $this.x_1 = x;
+    $this.y_1 = y;
+    $this.color_1 = color;
+    $this.text_1 = text;
+    if (0 === (seen0 & 16))
+      $this.fontSize_1 = 20;
+    else
+      $this.fontSize_1 = fontSize;
     return $this;
   }
-  function Items_init_$Create$(seen0, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker) {
-    return Items_init_$Init$(seen0, strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems, serializationConstructorMarker, objectCreate(protoOf(Items)));
+  function TextItem_init_$Create$(seen0, x, y, color, text, fontSize, serializationConstructorMarker) {
+    return TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, objectCreate(protoOf(TextItem)));
   }
-  function Items(strokeItems, textItems, rectangleItems, circleItems, polygonItems, arrowItems) {
-    Companion_getInstance_8();
-    this.strokeItems_1 = strokeItems;
-    this.textItems_1 = textItems;
-    this.rectangleItems_1 = rectangleItems;
-    this.circleItems_1 = circleItems;
-    this.polygonItems_1 = polygonItems;
-    this.arrowItems_1 = arrowItems;
+  function TextItem(x, y, color, text, fontSize) {
+    Companion_getInstance_9();
+    fontSize = fontSize === VOID ? 20 : fontSize;
+    Item.call(this);
+    this.x_1 = x;
+    this.y_1 = y;
+    this.color_1 = color;
+    this.text_1 = text;
+    this.fontSize_1 = fontSize;
   }
-  protoOf(Items).get_strokeItems_pivh8h_k$ = function () {
-    return this.strokeItems_1;
+  protoOf(TextItem).set_x_scd9vp_k$ = function (_set____db54di) {
+    this.x_1 = _set____db54di;
   };
-  protoOf(Items).get_textItems_8zbevq_k$ = function () {
-    return this.textItems_1;
+  protoOf(TextItem).get_x_1mhr67_k$ = function () {
+    return this.x_1;
   };
-  protoOf(Items).get_rectangleItems_npge3q_k$ = function () {
-    return this.rectangleItems_1;
+  protoOf(TextItem).set_y_lelkme_k$ = function (_set____db54di) {
+    this.y_1 = _set____db54di;
   };
-  protoOf(Items).get_circleItems_cgj3on_k$ = function () {
-    return this.circleItems_1;
+  protoOf(TextItem).get_y_1mhr68_k$ = function () {
+    return this.y_1;
   };
-  protoOf(Items).get_polygonItems_rrdxqp_k$ = function () {
-    return this.polygonItems_1;
+  protoOf(TextItem).set_color_ayzg4c_k$ = function (_set____db54di) {
+    this.color_1 = _set____db54di;
   };
-  protoOf(Items).get_arrowItems_lx0j40_k$ = function () {
-    return this.arrowItems_1;
+  protoOf(TextItem).get_color_ipu8u2_k$ = function () {
+    return this.color_1;
   };
-  function State() {
-    this.tool_1 = 'draw';
-    this.selectedColor_1 = '#000000';
-    this.erasing_1 = false;
-    this.drawing_1 = false;
-    this.startPosition_1 = null;
-    this.canvasSnapshot_1 = null;
-    var tmp = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp.strokeItems_1 = ArrayList_init_$Create$();
-    var tmp_0 = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_0.textItems_1 = ArrayList_init_$Create$();
-    var tmp_1 = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_1.rectangleItems_1 = ArrayList_init_$Create$();
-    var tmp_2 = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_2.circleItems_1 = ArrayList_init_$Create$();
-    var tmp_3 = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_3.polygonItems_1 = ArrayList_init_$Create$();
-    var tmp_4 = this;
-    // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_4.arrowItems_1 = ArrayList_init_$Create$();
-    this.polygonSides_1 = 5;
-    this.currentStroke_1 = null;
-    this.editingStroke_1 = null;
-    this.editingCircle_1 = null;
-    this.editingRectangle_1 = null;
-    this.editingPolygon_1 = null;
-    this.editingArrow_1 = null;
-    this.editingText_1 = null;
-    this.pendingTextPosition_1 = null;
-    this.editOffset_1 = null;
-    this.lastPosition_1 = null;
-    this.lineWidth_1 = 3;
-    this.fontSize_1 = 20;
-  }
-  protoOf(State).set_tool_ony1u3_k$ = function (_set____db54di) {
-    this.tool_1 = _set____db54di;
+  protoOf(TextItem).set_text_oy06f4_k$ = function (_set____db54di) {
+    this.text_1 = _set____db54di;
   };
-  protoOf(State).get_tool_wov2zl_k$ = function () {
-    return this.tool_1;
+  protoOf(TextItem).get_text_wouvsm_k$ = function () {
+    return this.text_1;
   };
-  protoOf(State).set_selectedColor_xursdb_k$ = function (_set____db54di) {
-    this.selectedColor_1 = _set____db54di;
-  };
-  protoOf(State).get_selectedColor_mfz4gv_k$ = function () {
-    return this.selectedColor_1;
-  };
-  protoOf(State).set_erasing_9bfbf3_k$ = function (_set____db54di) {
-    this.erasing_1 = _set____db54di;
-  };
-  protoOf(State).get_erasing_ng9ybq_k$ = function () {
-    return this.erasing_1;
-  };
-  protoOf(State).set_drawing_rwhub8_k$ = function (_set____db54di) {
-    this.drawing_1 = _set____db54di;
-  };
-  protoOf(State).get_drawing_wwiddh_k$ = function () {
-    return this.drawing_1;
-  };
-  protoOf(State).set_startPosition_a2dsao_k$ = function (_set____db54di) {
-    this.startPosition_1 = _set____db54di;
-  };
-  protoOf(State).get_startPosition_d95qiq_k$ = function () {
-    return this.startPosition_1;
-  };
-  protoOf(State).set_canvasSnapshot_kjd87_k$ = function (_set____db54di) {
-    this.canvasSnapshot_1 = _set____db54di;
-  };
-  protoOf(State).get_canvasSnapshot_qkwi11_k$ = function () {
-    return this.canvasSnapshot_1;
-  };
-  protoOf(State).get_strokeItems_pivh8h_k$ = function () {
-    return this.strokeItems_1;
-  };
-  protoOf(State).get_textItems_8zbevq_k$ = function () {
-    return this.textItems_1;
-  };
-  protoOf(State).get_rectangleItems_npge3q_k$ = function () {
-    return this.rectangleItems_1;
-  };
-  protoOf(State).get_circleItems_cgj3on_k$ = function () {
-    return this.circleItems_1;
-  };
-  protoOf(State).get_polygonItems_rrdxqp_k$ = function () {
-    return this.polygonItems_1;
-  };
-  protoOf(State).get_arrowItems_lx0j40_k$ = function () {
-    return this.arrowItems_1;
-  };
-  protoOf(State).set_polygonSides_7fzqbb_k$ = function (_set____db54di) {
-    this.polygonSides_1 = _set____db54di;
-  };
-  protoOf(State).get_polygonSides_rm31lh_k$ = function () {
-    return this.polygonSides_1;
-  };
-  protoOf(State).set_currentStroke_ky7n3q_k$ = function (_set____db54di) {
-    this.currentStroke_1 = _set____db54di;
-  };
-  protoOf(State).get_currentStroke_z58r2w_k$ = function () {
-    return this.currentStroke_1;
-  };
-  protoOf(State).set_editingStroke_b73whh_k$ = function (_set____db54di) {
-    this.editingStroke_1 = _set____db54di;
-  };
-  protoOf(State).get_editingStroke_bi8r0n_k$ = function () {
-    return this.editingStroke_1;
-  };
-  protoOf(State).set_editingCircle_twqoun_k$ = function (_set____db54di) {
-    this.editingCircle_1 = _set____db54di;
-  };
-  protoOf(State).get_editingCircle_3rgtb3_k$ = function () {
-    return this.editingCircle_1;
-  };
-  protoOf(State).set_editingRectangle_mobwhj_k$ = function (_set____db54di) {
-    this.editingRectangle_1 = _set____db54di;
-  };
-  protoOf(State).get_editingRectangle_ldge4g_k$ = function () {
-    return this.editingRectangle_1;
-  };
-  protoOf(State).set_editingPolygon_zbqdup_k$ = function (_set____db54di) {
-    this.editingPolygon_1 = _set____db54di;
-  };
-  protoOf(State).get_editingPolygon_q3jmob_k$ = function () {
-    return this.editingPolygon_1;
-  };
-  protoOf(State).set_editingArrow_6cz93o_k$ = function (_set____db54di) {
-    this.editingArrow_1 = _set____db54di;
-  };
-  protoOf(State).get_editingArrow_mtg0o6_k$ = function () {
-    return this.editingArrow_1;
-  };
-  protoOf(State).set_editingText_qair36_k$ = function (_set____db54di) {
-    this.editingText_1 = _set____db54di;
-  };
-  protoOf(State).get_editingText_lck0p0_k$ = function () {
-    return this.editingText_1;
-  };
-  protoOf(State).set_pendingTextPosition_w5pflu_k$ = function (_set____db54di) {
-    this.pendingTextPosition_1 = _set____db54di;
-  };
-  protoOf(State).get_pendingTextPosition_5yd58c_k$ = function () {
-    return this.pendingTextPosition_1;
-  };
-  protoOf(State).set_editOffset_7b8yc4_k$ = function (_set____db54di) {
-    this.editOffset_1 = _set____db54di;
-  };
-  protoOf(State).get_editOffset_9sigg6_k$ = function () {
-    return this.editOffset_1;
-  };
-  protoOf(State).set_lastPosition_mmd7ci_k$ = function (_set____db54di) {
-    this.lastPosition_1 = _set____db54di;
-  };
-  protoOf(State).get_lastPosition_bjivo8_k$ = function () {
-    return this.lastPosition_1;
-  };
-  protoOf(State).set_lineWidth_97ta37_k$ = function (_set____db54di) {
-    this.lineWidth_1 = _set____db54di;
-  };
-  protoOf(State).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(State).set_fontSize_6szsfv_k$ = function (_set____db54di) {
+  protoOf(TextItem).set_fontSize_6szsfv_k$ = function (_set____db54di) {
     this.fontSize_1 = _set____db54di;
   };
-  protoOf(State).get_fontSize_pr9n47_k$ = function () {
+  protoOf(TextItem).get_fontSize_pr9n47_k$ = function () {
     return this.fontSize_1;
   };
-  function json$lambda($this$Json) {
-    _init_properties_Model_kt__1gdqdl();
-    $this$Json.set_ignoreUnknownKeys_pzvtne_k$(true);
-    $this$Json.set_encodeDefaults_c5evsg_k$(true);
-    $this$Json.set_explicitNulls_mtj2ai_k$(false);
-    return Unit_getInstance();
-  }
-  var properties_initialized_Model_kt_bjs3d3;
-  function _init_properties_Model_kt__1gdqdl() {
-    if (!properties_initialized_Model_kt_bjs3d3) {
-      properties_initialized_Model_kt_bjs3d3 = true;
-      json = Json(VOID, json$lambda);
+  protoOf(TextItem).draw_rpid3c_k$ = function (ctx) {
+    // Inline function 'kotlin.js.asDynamic' call
+    ctx.textBaseline = 'top';
+    ctx.font = fontSpec(this);
+    ctx.fillStyle = this.color_1;
+    var step = lineHeight(this.fontSize_1);
+    // Inline function 'kotlin.collections.forEachIndexed' call
+    var index = 0;
+    var _iterator__ex2g4s = lines(this).iterator_jk1svi_k$();
+    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+      var item = _iterator__ex2g4s.next_20eer_k$();
+      var _unary__edvuaz = index;
+      index = _unary__edvuaz + 1 | 0;
+      // Inline function 'stickynode.model.TextItem.draw.<anonymous>' call
+      var index_0 = checkIndexOverflow(_unary__edvuaz);
+      ctx.fillText(item, this.x_1, this.y_1 + imul(index_0, step));
     }
-  }
-  function get_storageKey() {
-    return storageKey;
-  }
-  var storageKey;
-  function get_textStorageKey() {
-    return textStorageKey;
-  }
-  var textStorageKey;
-  function get_rectangleStorageKey() {
-    return rectangleStorageKey;
-  }
-  var rectangleStorageKey;
-  function get_circleStorageKey() {
-    return circleStorageKey;
-  }
-  var circleStorageKey;
-  function get_polygonStorageKey() {
-    return polygonStorageKey;
-  }
-  var polygonStorageKey;
-  function get_strokeStorageKey() {
-    return strokeStorageKey;
-  }
-  var strokeStorageKey;
-  function get_arrowStorageKey() {
-    return arrowStorageKey;
-  }
-  var arrowStorageKey;
-  function saveCanvas(canvas, state) {
-    localStorage.setItem('drawingCanvas', canvas.toDataURL('image/png'));
-    localStorage.setItem('drawingCanvasText', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_3().serializer_9w0wvi_k$()), state.get_textItems_8zbevq_k$()));
-    localStorage.setItem('drawingCanvasRectangles', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_4().serializer_9w0wvi_k$()), state.get_rectangleItems_npge3q_k$()));
-    localStorage.setItem('drawingCanvasCircles', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_5().serializer_9w0wvi_k$()), state.get_circleItems_cgj3on_k$()));
-    localStorage.setItem('drawingCanvasPolygons', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_6().serializer_9w0wvi_k$()), state.get_polygonItems_rrdxqp_k$()));
-    localStorage.setItem('drawingCanvasStrokes', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_2().serializer_9w0wvi_k$()), state.get_strokeItems_pivh8h_k$()));
-    localStorage.setItem('drawingCanvasArrows', get_json().encodeToString_k0apqx_k$(ListSerializer(Companion_getInstance_7().serializer_9w0wvi_k$()), state.get_arrowItems_lx0j40_k$()));
-  }
-  function loadCanvas(canvas, context, state) {
-    var tmp0_safe_receiver = localStorage.getItem('drawingCanvasCircles');
-    if (tmp0_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_circleItems_cgj3on_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_5().serializer_9w0wvi_k$()), tmp0_safe_receiver));
-    }
-    var tmp1_safe_receiver = localStorage.getItem('drawingCanvasPolygons');
-    if (tmp1_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_polygonItems_rrdxqp_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_6().serializer_9w0wvi_k$()), tmp1_safe_receiver));
-    }
-    var tmp2_safe_receiver = localStorage.getItem('drawingCanvasStrokes');
-    if (tmp2_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_strokeItems_pivh8h_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_2().serializer_9w0wvi_k$()), tmp2_safe_receiver));
-    }
-    var tmp3_safe_receiver = localStorage.getItem('drawingCanvasArrows');
-    if (tmp3_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_arrowItems_lx0j40_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_7().serializer_9w0wvi_k$()), tmp3_safe_receiver));
-    }
-    var tmp4_safe_receiver = localStorage.getItem('drawingCanvasText');
-    if (tmp4_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_textItems_8zbevq_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_3().serializer_9w0wvi_k$()), tmp4_safe_receiver));
-    }
-    var tmp5_safe_receiver = localStorage.getItem('drawingCanvasRectangles');
-    if (tmp5_safe_receiver == null)
-      null;
-    else {
-      // Inline function 'kotlin.let' call
-      // Inline function 'stickynode.canvas.loadCanvas.<anonymous>' call
-      state.get_rectangleItems_npge3q_k$().addAll_4lagoh_k$(get_json().decodeFromString_jwu9sq_k$(ListSerializer(Companion_getInstance_4().serializer_9w0wvi_k$()), tmp5_safe_receiver));
-    }
-    var tmp6_elvis_lhs = localStorage.getItem('drawingCanvas');
-    var tmp;
-    if (tmp6_elvis_lhs == null) {
-      return Unit_getInstance();
-    } else {
-      tmp = tmp6_elvis_lhs;
-    }
-    var savedDrawing = tmp;
-    var tmp_0 = document.createElement('img');
-    var image = tmp_0 instanceof HTMLImageElement ? tmp_0 : THROW_CCE();
-    image.onload = loadCanvas$lambda(context, image);
-    image.src = savedDrawing;
-  }
-  function clearCanvas(canvas, context, state) {
-    context.clearRect(0.0, 0.0, canvas.width, canvas.height);
-    context.globalCompositeOperation = 'source-over';
-    localStorage.removeItem('drawingCanvas');
-    localStorage.removeItem('drawingCanvasText');
-    localStorage.removeItem('drawingCanvasRectangles');
-    localStorage.removeItem('drawingCanvasCircles');
-    localStorage.removeItem('drawingCanvasPolygons');
-    localStorage.removeItem('drawingCanvasStrokes');
-    localStorage.removeItem('drawingCanvasArrows');
-    state.get_textItems_8zbevq_k$().clear_j9egeb_k$();
-    state.get_rectangleItems_npge3q_k$().clear_j9egeb_k$();
-    state.get_circleItems_cgj3on_k$().clear_j9egeb_k$();
-    state.get_polygonItems_rrdxqp_k$().clear_j9egeb_k$();
-    state.get_strokeItems_pivh8h_k$().clear_j9egeb_k$();
-    state.get_arrowItems_lx0j40_k$().clear_j9egeb_k$();
-  }
-  function loadCanvas$lambda($context, $image) {
-    return function (it) {
-      $context.drawImage($image, 0.0, 0.0);
-      return null;
-    };
-  }
-  function handleFreehandMouseDown(h, position) {
-    var state = h.get_state_iypx7s_k$();
-    if (state.get_erasing_ng9ybq_k$()) {
-      state.set_drawing_rwhub8_k$(true);
-      var removed = eraseAt(state, position, h.get_textContext_fqn3o9_k$());
-      if (removed) {
-        h.render_dje1iy_k$();
-        h.get_saveCanvas_acgjeq_k$()();
-      }
-      return Unit_getInstance();
-    }
-    var existingStroke = findStrokeAt(state.get_strokeItems_pivh8h_k$(), position);
-    if (!(existingStroke == null)) {
-      state.set_editingStroke_b73whh_k$(existingStroke);
-      state.set_editOffset_7b8yc4_k$(new Point(position.get_x_1mhr67_k$() - existingStroke.get_points_i5obn0_k$().get_c1px32_k$(0).get_x_1mhr67_k$(), position.get_y_1mhr68_k$() - existingStroke.get_points_i5obn0_k$().get_c1px32_k$(0).get_y_1mhr68_k$()));
-      return Unit_getInstance();
-    }
-    var stroke = new Stroke(mutableListOf([position]), state.get_selectedColor_mfz4gv_k$(), state.get_lineWidth_lbeliv_k$());
-    state.set_currentStroke_ky7n3q_k$(stroke);
-    state.get_strokeItems_pivh8h_k$().add_utx5q5_k$(stroke);
-    h.render_dje1iy_k$();
-  }
-  function handleFreehandMouseMove(h, position) {
-    var state = h.get_state_iypx7s_k$();
-    if (state.get_erasing_ng9ybq_k$() && state.get_drawing_wwiddh_k$()) {
-      var removed = eraseAt(state, position, h.get_textContext_fqn3o9_k$());
-      if (removed) {
-        h.render_dje1iy_k$();
-        h.get_saveCanvas_acgjeq_k$()();
-      }
-      return Unit_getInstance();
-    }
-    var editing = state.get_editingStroke_bi8r0n_k$();
-    if (!(editing == null)) {
-      var firstPoint = editing.get_points_i5obn0_k$().get_c1px32_k$(0);
-      var offset = ensureNotNull(state.get_editOffset_9sigg6_k$());
-      var deltaX = position.get_x_1mhr67_k$() - offset.get_x_1mhr67_k$() - firstPoint.get_x_1mhr67_k$();
-      var deltaY = position.get_y_1mhr68_k$() - offset.get_y_1mhr68_k$() - firstPoint.get_y_1mhr68_k$();
-      // Inline function 'kotlin.collections.map' call
-      var this_0 = editing.get_points_i5obn0_k$();
-      // Inline function 'kotlin.collections.mapTo' call
-      var destination = ArrayList_init_$Create$_0(collectionSizeOrDefault(this_0, 10));
-      var _iterator__ex2g4s = this_0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var item = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.handleFreehandMouseMove.<anonymous>' call
-        var tmp$ret$0 = new Point(item.get_x_1mhr67_k$() + deltaX, item.get_y_1mhr68_k$() + deltaY);
-        destination.add_utx5q5_k$(tmp$ret$0);
-      }
-      editing.set_points_w0ahkm_k$(toMutableList(destination));
-      h.render_dje1iy_k$();
-      return Unit_getInstance();
-    }
-    var current = state.get_currentStroke_z58r2w_k$();
-    if (!state.get_erasing_ng9ybq_k$() && !(current == null)) {
-      current.get_points_i5obn0_k$().add_utx5q5_k$(position);
-      h.render_dje1iy_k$();
-      return Unit_getInstance();
-    }
-  }
-  function handleFreehandMouseUp(h) {
-    var state = h.get_state_iypx7s_k$();
-    if (!(state.get_editingStroke_bi8r0n_k$() == null)) {
-      h.get_saveCanvas_acgjeq_k$()();
-      state.set_editingStroke_b73whh_k$(null);
-      state.set_editOffset_7b8yc4_k$(null);
-      return Unit_getInstance();
-    }
-    var current = state.get_currentStroke_z58r2w_k$();
-    if (!(current == null)) {
-      if (current.get_points_i5obn0_k$().get_size_woubt6_k$() < 2) {
-        state.get_strokeItems_pivh8h_k$().removeAt_6niowx_k$(get_lastIndex(state.get_strokeItems_pivh8h_k$()));
-      }
-      h.get_saveCanvas_acgjeq_k$()();
-      state.set_currentStroke_ky7n3q_k$(null);
-      return Unit_getInstance();
-    }
-    state.set_drawing_rwhub8_k$(false);
-  }
-  function handleFreehandMouseLeave(h) {
-    var state = h.get_state_iypx7s_k$();
-    var current = state.get_currentStroke_z58r2w_k$();
-    if (!(current == null) && current.get_points_i5obn0_k$().get_size_woubt6_k$() < 2) {
-      state.get_strokeItems_pivh8h_k$().removeAt_6niowx_k$(get_lastIndex(state.get_strokeItems_pivh8h_k$()));
-    }
-    if (state.get_drawing_wwiddh_k$() || !(state.get_currentStroke_z58r2w_k$() == null) || !(state.get_editingStroke_bi8r0n_k$() == null))
-      h.get_saveCanvas_acgjeq_k$()();
-    state.set_drawing_rwhub8_k$(false);
-    state.set_currentStroke_ky7n3q_k$(null);
-    state.set_editingStroke_b73whh_k$(null);
-    state.set_editOffset_7b8yc4_k$(null);
-  }
-  function Handlers(canvas, context, textContext, state, saveCanvas, renderOverlay) {
-    this.canvas_1 = canvas;
-    this.context_1 = context;
-    this.textContext_1 = textContext;
-    this.state_1 = state;
-    this.saveCanvas_1 = saveCanvas;
-    this.renderOverlay_1 = renderOverlay;
-  }
-  protoOf(Handlers).get_canvas_bshgm9_k$ = function () {
-    return this.canvas_1;
   };
-  protoOf(Handlers).get_context_h02k06_k$ = function () {
-    return this.context_1;
-  };
-  protoOf(Handlers).get_textContext_fqn3o9_k$ = function () {
-    return this.textContext_1;
-  };
-  protoOf(Handlers).get_state_iypx7s_k$ = function () {
-    return this.state_1;
-  };
-  protoOf(Handlers).get_saveCanvas_acgjeq_k$ = function () {
-    return this.saveCanvas_1;
-  };
-  protoOf(Handlers).get_renderOverlay_y00vgv_k$ = function () {
-    return this.renderOverlay_1;
-  };
-  protoOf(Handlers).render_dje1iy_k$ = function () {
-    return this.renderOverlay_1(this.textContext_1, this.state_1);
-  };
-  function findCircleAt(circleItems, position) {
-    var tmp0 = asReversed(circleItems);
-    var tmp$ret$1;
-    $l$block: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findCircleAt.<anonymous>' call
-        var centerX = element.get_x_1mhr67_k$() + element.get_width_j0q4yl_k$() / 2;
-        var centerY = element.get_y_1mhr68_k$() + element.get_height_e7t92o_k$() / 2;
-        var radiusX = element.get_width_j0q4yl_k$() / 2;
-        var radiusY = element.get_height_e7t92o_k$() / 2;
-        var tmp;
-        if (radiusX === 0.0 || radiusY === 0.0) {
-          tmp = false;
-        } else {
-          var normalizedX = (position.get_x_1mhr67_k$() - centerX) / radiusX;
-          var normalizedY = (position.get_y_1mhr68_k$() - centerY) / radiusY;
-          tmp = normalizedX * normalizedX + normalizedY * normalizedY <= 1;
-        }
-        if (tmp) {
-          tmp$ret$1 = element;
-          break $l$block;
-        }
-      }
-      tmp$ret$1 = null;
+  protoOf(TextItem).hitTest_1gxtur_k$ = function (p) {
+    // Inline function 'kotlin.text.isEmpty' call
+    var this_0 = this.text_1;
+    if (charSequenceLength(this_0) === 0)
+      return false;
+    get_measureContext().font = fontSpec(this);
+    var lines_0 = lines(this);
+    // Inline function 'kotlin.collections.maxOf' call
+    var iterator = lines_0.iterator_jk1svi_k$();
+    if (!iterator.hasNext_bitz1p_k$())
+      throw NoSuchElementException_init_$Create$();
+    // Inline function 'stickynode.model.TextItem.hitTest.<anonymous>' call
+    var it = iterator.next_20eer_k$();
+    var maxValue = get_measureContext().measureText(it).width;
+    while (iterator.hasNext_bitz1p_k$()) {
+      // Inline function 'stickynode.model.TextItem.hitTest.<anonymous>' call
+      var it_0 = iterator.next_20eer_k$();
+      var v = get_measureContext().measureText(it_0).width;
+      // Inline function 'kotlin.comparisons.maxOf' call
+      var a = maxValue;
+      maxValue = Math.max(a, v);
     }
-    return tmp$ret$1;
-  }
-  function findRectangleAt(rectangleItems, position) {
-    var tmp0 = asReversed(rectangleItems);
-    var tmp$ret$1;
-    $l$block: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findRectangleAt.<anonymous>' call
-        if (position.get_x_1mhr67_k$() >= element.get_x_1mhr67_k$() && position.get_x_1mhr67_k$() <= element.get_x_1mhr67_k$() + element.get_width_j0q4yl_k$() && position.get_y_1mhr68_k$() >= element.get_y_1mhr68_k$() && position.get_y_1mhr68_k$() <= element.get_y_1mhr68_k$() + element.get_height_e7t92o_k$()) {
-          tmp$ret$1 = element;
-          break $l$block;
-        }
-      }
-      tmp$ret$1 = null;
-    }
-    return tmp$ret$1;
-  }
-  function findPolygonAt(polygonItems, position) {
-    var tmp0 = asReversed(polygonItems);
-    var tmp$ret$3;
-    $l$block: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findPolygonAt.<anonymous>' call
-        var centerX = element.get_x_1mhr67_k$() + element.get_width_j0q4yl_k$() / 2;
-        var centerY = element.get_y_1mhr68_k$() + element.get_height_e7t92o_k$() / 2;
-        var tmp0_0 = element.get_width_j0q4yl_k$();
-        // Inline function 'kotlin.math.min' call
-        var b = element.get_height_e7t92o_k$();
-        var radius = Math.min(tmp0_0, b) / 2;
-        var tmp;
-        if (radius === 0.0) {
-          tmp = false;
-        } else {
-          var tmp2 = position.get_x_1mhr67_k$() - centerX;
-          // Inline function 'kotlin.math.hypot' call
-          var y = position.get_y_1mhr68_k$() - centerY;
-          tmp = hypot(tmp2, y) <= radius;
-        }
-        if (tmp) {
-          tmp$ret$3 = element;
-          break $l$block;
-        }
-      }
-      tmp$ret$3 = null;
-    }
-    return tmp$ret$3;
-  }
-  function findStrokeAt(strokeItems, position) {
-    var tmp0 = asReversed(strokeItems);
-    var tmp$ret$7;
-    $l$block_1: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findStrokeAt.<anonymous>' call
-        var points = element.get_points_i5obn0_k$();
-        var tmp0_0 = get_indices(points);
-        var tmp$ret$0;
-        $l$block_0: {
-          // Inline function 'kotlin.collections.any' call
-          var tmp;
-          if (isInterface(tmp0_0, Collection)) {
-            tmp = tmp0_0.isEmpty_y1axqb_k$();
-          } else {
-            tmp = false;
-          }
-          if (tmp) {
-            tmp$ret$0 = false;
-            break $l$block_0;
-          }
-          var inductionVariable = tmp0_0.get_first_irdx8n_k$();
-          var last = tmp0_0.get_last_wopotb_k$();
-          if (inductionVariable <= last)
-            do {
-              var element_0 = inductionVariable;
-              inductionVariable = inductionVariable + 1 | 0;
-              // Inline function 'stickynode.canvas.events.findStrokeAt.<anonymous>.<anonymous>' call
-              var index = element_0;
-              var point = points.get_c1px32_k$(index);
-              var nextPoint = getOrNull(points, index + 1 | 0);
-              var tmp_0;
-              if (nextPoint == null) {
-                var tmp0_1 = point.get_x_1mhr67_k$() - position.get_x_1mhr67_k$();
-                // Inline function 'kotlin.math.hypot' call
-                var y = point.get_y_1mhr68_k$() - position.get_y_1mhr68_k$();
-                tmp_0 = hypot(tmp0_1, y) <= 8;
-              } else {
-                var segmentX = nextPoint.get_x_1mhr67_k$() - point.get_x_1mhr67_k$();
-                var segmentY = nextPoint.get_y_1mhr68_k$() - point.get_y_1mhr68_k$();
-                var segmentLengthSquared = segmentX * segmentX + segmentY * segmentY;
-                var tmp_1;
-                if (segmentLengthSquared === 0.0) {
-                  tmp_1 = 0.0;
-                } else {
-                  // Inline function 'kotlin.math.min' call
-                  var b = ((position.get_x_1mhr67_k$() - point.get_x_1mhr67_k$()) * segmentX + (position.get_y_1mhr68_k$() - point.get_y_1mhr68_k$()) * segmentY) / segmentLengthSquared;
-                  // Inline function 'kotlin.math.max' call
-                  var b_0 = Math.min(1.0, b);
-                  tmp_1 = Math.max(0.0, b_0);
-                }
-                var projection = tmp_1;
-                var closestX = point.get_x_1mhr67_k$() + projection * segmentX;
-                var closestY = point.get_y_1mhr68_k$() + projection * segmentY;
-                var tmp6 = position.get_x_1mhr67_k$() - closestX;
-                // Inline function 'kotlin.math.hypot' call
-                var y_0 = position.get_y_1mhr68_k$() - closestY;
-                tmp_0 = hypot(tmp6, y_0) <= 8;
-              }
-              if (tmp_0) {
-                tmp$ret$0 = true;
-                break $l$block_0;
-              }
-            }
-             while (!(element_0 === last));
-          tmp$ret$0 = false;
-        }
-        if (tmp$ret$0) {
-          tmp$ret$7 = element;
-          break $l$block_1;
-        }
-      }
-      tmp$ret$7 = null;
-    }
-    return tmp$ret$7;
-  }
-  function pointToSegmentDistance(px, py, x1, y1, x2, y2) {
-    var dx = x2 - x1;
-    var dy = y2 - y1;
-    var lengthSq = dx * dx + dy * dy;
-    if (lengthSq === 0.0) {
-      var tmp0 = px - x1;
-      // Inline function 'kotlin.math.hypot' call
-      var y = py - y1;
-      return hypot(tmp0, y);
-    }
-    // Inline function 'kotlin.math.min' call
-    var b = ((px - x1) * dx + (py - y1) * dy) / lengthSq;
     // Inline function 'kotlin.math.max' call
-    var b_0 = Math.min(1.0, b);
-    var t = Math.max(0.0, b_0);
-    var projX = x1 + t * dx;
-    var projY = y1 + t * dy;
-    var tmp6 = px - projX;
-    // Inline function 'kotlin.math.hypot' call
-    var y_0 = py - projY;
-    return hypot(tmp6, y_0);
-  }
-  function findArrowAt(arrowItems, position, threshold) {
-    threshold = threshold === VOID ? 8.0 : threshold;
-    var tmp0 = asReversed(arrowItems);
-    var tmp$ret$1;
-    $l$block: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findArrowAt.<anonymous>' call
-        if (pointToSegmentDistance(position.get_x_1mhr67_k$(), position.get_y_1mhr68_k$(), element.get_startX_jnf4u7_k$(), element.get_startY_jnf4u8_k$(), element.get_endX_wolh5y_k$(), element.get_endY_wolh5z_k$()) <= threshold) {
-          tmp$ret$1 = element;
-          break $l$block;
-        }
-      }
-      tmp$ret$1 = null;
-    }
-    return tmp$ret$1;
-  }
-  function findTextAt(textContext, textItems, position) {
-    // Inline function 'kotlin.js.asDynamic' call
-    textContext.textBaseline = 'top';
-    var tmp1 = asReversed(textItems);
-    var tmp$ret$8;
-    $l$block: {
-      // Inline function 'kotlin.collections.firstOrNull' call
-      var _iterator__ex2g4s = tmp1.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
-        // Inline function 'stickynode.canvas.events.findTextAt.<anonymous>' call
-        var tmp;
-        // Inline function 'kotlin.text.isEmpty' call
-        var this_0 = element.get_text_wouvsm_k$();
-        if (charSequenceLength(this_0) === 0) {
-          tmp = false;
-        } else {
-          var fontSize = element.get_fontSize_pr9n47_k$();
-          textContext.font = '' + fontSize + 'px sans-serif';
-          var lines = split(element.get_text_wouvsm_k$(), ['\n']);
-          // Inline function 'kotlin.collections.maxOf' call
-          var iterator = lines.iterator_jk1svi_k$();
-          if (!iterator.hasNext_bitz1p_k$())
-            throw NoSuchElementException_init_$Create$();
-          // Inline function 'stickynode.canvas.events.findTextAt.<anonymous>.<anonymous>' call
-          var line = iterator.next_20eer_k$();
-          var maxValue = textContext.measureText(line).width;
-          while (iterator.hasNext_bitz1p_k$()) {
-            // Inline function 'stickynode.canvas.events.findTextAt.<anonymous>.<anonymous>' call
-            var line_0 = iterator.next_20eer_k$();
-            var v = textContext.measureText(line_0).width;
-            // Inline function 'kotlin.comparisons.maxOf' call
-            var a = maxValue;
-            maxValue = Math.max(a, v);
-          }
-          // Inline function 'kotlin.math.max' call
-          var a_0 = maxValue;
-          var width = Math.max(a_0, 1.0);
-          var height = imul(lines.get_size_woubt6_k$(), getLineHeight(fontSize));
-          tmp = (position.get_x_1mhr67_k$() >= element.get_x_1mhr67_k$() && position.get_x_1mhr67_k$() <= element.get_x_1mhr67_k$() + width && position.get_y_1mhr68_k$() >= element.get_y_1mhr68_k$() && position.get_y_1mhr68_k$() <= element.get_y_1mhr68_k$() + height);
-        }
-        if (tmp) {
-          tmp$ret$8 = element;
-          break $l$block;
-        }
-      }
-      tmp$ret$8 = null;
-    }
-    return tmp$ret$8;
-  }
-  function get_SHAPE_CONFIGS() {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return SHAPE_CONFIGS;
-  }
-  var SHAPE_CONFIGS;
-  function ShapeConfig() {
-  }
-  function _get_getItems__x29jwh($this) {
-    return $this.getItems_1;
-  }
-  function _get_findAt__nonfzz($this) {
-    return $this.findAt_1;
-  }
-  function _get_getEditing__to9aw9($this) {
-    return $this.getEditing_1;
-  }
-  function _get_setEditing__s7iq9h($this) {
-    return $this.setEditing_1;
-  }
-  function _get_origin__hwq945($this) {
-    return $this.origin_1;
-  }
-  function _get_preview__e3e5vt($this) {
-    return $this.preview_1;
-  }
-  function _get_create__g83typ($this) {
-    return $this.create_1;
-  }
-  function TypedShapeConfig(getItems, findAt, getEditing, setEditing, origin, preview, create) {
-    ShapeConfig.call(this);
-    this.getItems_1 = getItems;
-    this.findAt_1 = findAt;
-    this.getEditing_1 = getEditing;
-    this.setEditing_1 = setEditing;
-    this.origin_1 = origin;
-    this.preview_1 = preview;
-    this.create_1 = create;
-  }
-  protoOf(TypedShapeConfig).beginEdit_cdvfw4_k$ = function (state, position) {
-    var tmp0_elvis_lhs = this.findAt_1(this.getItems_1(state), position);
+    var b = maxValue;
+    var width = Math.max(1.0, b);
+    var height = imul(lines_0.get_size_woubt6_k$(), lineHeight(this.fontSize_1));
     var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return false;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var existing = tmp;
-    this.setEditing_1(state, existing);
-    var o = this.origin_1(existing);
-    state.set_editOffset_7b8yc4_k$(new Point(position.get_x_1mhr67_k$() - o.get_x_1mhr67_k$(), position.get_y_1mhr68_k$() - o.get_y_1mhr68_k$()));
-    return true;
-  };
-  protoOf(TypedShapeConfig).isEditing_wcf7nu_k$ = function (state) {
-    return !(this.getEditing_1(state) == null);
-  };
-  protoOf(TypedShapeConfig).endEdit_221lpt_k$ = function (state) {
-    return this.setEditing_1(state, null);
-  };
-  protoOf(TypedShapeConfig).drawPreview_xvy11w_k$ = function (context, start, current, state) {
-    return this.preview_1(context, start, current, state);
-  };
-  protoOf(TypedShapeConfig).addItem_tqdqio_k$ = function (state, start, end) {
-    this.getItems_1(state).add_utx5q5_k$(this.create_1(start, end, state));
-  };
-  function SHAPE_CONFIGS$lambda(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_arrowItems_lx0j40_k$();
-  }
-  function SHAPE_CONFIGS$lambda_0(items, p) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return findArrowAt(items, p);
-  }
-  function SHAPE_CONFIGS$lambda_1(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_editingArrow_mtg0o6_k$();
-  }
-  function SHAPE_CONFIGS$lambda_2(s, v) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    s.set_editingArrow_6cz93o_k$(v);
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_3(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return new Point(it.get_startX_jnf4u7_k$(), it.get_startY_jnf4u8_k$());
-  }
-  function SHAPE_CONFIGS$lambda_4(ctx, start, current, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    drawArrow(ctx, start, current, s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_5(start, end, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return new ArrowItem(start.get_x_1mhr67_k$(), start.get_y_1mhr68_k$(), end.get_x_1mhr67_k$(), end.get_y_1mhr68_k$(), s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-  }
-  function SHAPE_CONFIGS$lambda_6(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_circleItems_cgj3on_k$();
-  }
-  function SHAPE_CONFIGS$lambda_7(items, p) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return findCircleAt(items, p);
-  }
-  function SHAPE_CONFIGS$lambda_8(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_editingCircle_3rgtb3_k$();
-  }
-  function SHAPE_CONFIGS$lambda_9(s, v) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    s.set_editingCircle_twqoun_k$(v);
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_10(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return new Point(it.get_x_1mhr67_k$(), it.get_y_1mhr68_k$());
-  }
-  function SHAPE_CONFIGS$lambda_11(ctx, start, current, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    drawCircle(ctx, start, current, s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_12(start, end, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    var b = getBoundingBox(start, end);
-    return new CircleItem(b.get_x_1mhr67_k$(), b.get_y_1mhr68_k$(), b.get_width_j0q4yl_k$(), b.get_height_e7t92o_k$(), s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-  }
-  function SHAPE_CONFIGS$lambda_13(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_rectangleItems_npge3q_k$();
-  }
-  function SHAPE_CONFIGS$lambda_14(items, p) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return findRectangleAt(items, p);
-  }
-  function SHAPE_CONFIGS$lambda_15(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_editingRectangle_ldge4g_k$();
-  }
-  function SHAPE_CONFIGS$lambda_16(s, v) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    s.set_editingRectangle_mobwhj_k$(v);
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_17(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return new Point(it.get_x_1mhr67_k$(), it.get_y_1mhr68_k$());
-  }
-  function SHAPE_CONFIGS$lambda_18(ctx, start, current, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    drawRectangle(ctx, start, current, s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_19(start, end, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    var b = getBoundingBox(start, end);
-    return new RectangleItem(b.get_x_1mhr67_k$(), b.get_y_1mhr68_k$(), b.get_width_j0q4yl_k$(), b.get_height_e7t92o_k$(), s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-  }
-  function SHAPE_CONFIGS$lambda_20(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_polygonItems_rrdxqp_k$();
-  }
-  function SHAPE_CONFIGS$lambda_21(items, p) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return findPolygonAt(items, p);
-  }
-  function SHAPE_CONFIGS$lambda_22(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return it.get_editingPolygon_q3jmob_k$();
-  }
-  function SHAPE_CONFIGS$lambda_23(s, v) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    s.set_editingPolygon_zbqdup_k$(v);
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_24(it) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    return new Point(it.get_x_1mhr67_k$(), it.get_y_1mhr68_k$());
-  }
-  function SHAPE_CONFIGS$lambda_25(ctx, start, current, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    drawPolygon(ctx, start, current, s.get_polygonSides_rm31lh_k$(), s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-    return Unit_getInstance();
-  }
-  function SHAPE_CONFIGS$lambda_26(start, end, s) {
-    _init_properties_ShapeDefinitions_kt__xfukox();
-    var b = getBoundingBox(start, end);
-    return new PolygonItem(b.get_x_1mhr67_k$(), b.get_y_1mhr68_k$(), b.get_width_j0q4yl_k$(), b.get_height_e7t92o_k$(), s.get_polygonSides_rm31lh_k$(), s.get_selectedColor_mfz4gv_k$(), s.get_lineWidth_lbeliv_k$());
-  }
-  var properties_initialized_ShapeDefinitions_kt_s3rlc1;
-  function _init_properties_ShapeDefinitions_kt__xfukox() {
-    if (!properties_initialized_ShapeDefinitions_kt_s3rlc1) {
-      properties_initialized_ShapeDefinitions_kt_s3rlc1 = true;
-      var tmp = SHAPE_CONFIGS$lambda;
-      var tmp_0 = SHAPE_CONFIGS$lambda_0;
-      var tmp_1 = SHAPE_CONFIGS$lambda_1;
-      var tmp_2 = SHAPE_CONFIGS$lambda_2;
-      var tmp_3 = SHAPE_CONFIGS$lambda_3;
-      var tmp_4 = SHAPE_CONFIGS$lambda_4;
-      var tmp_5 = to('arrow', new TypedShapeConfig(tmp, tmp_0, tmp_1, tmp_2, tmp_3, tmp_4, SHAPE_CONFIGS$lambda_5));
-      var tmp_6 = SHAPE_CONFIGS$lambda_6;
-      var tmp_7 = SHAPE_CONFIGS$lambda_7;
-      var tmp_8 = SHAPE_CONFIGS$lambda_8;
-      var tmp_9 = SHAPE_CONFIGS$lambda_9;
-      var tmp_10 = SHAPE_CONFIGS$lambda_10;
-      var tmp_11 = SHAPE_CONFIGS$lambda_11;
-      var tmp_12 = to('circle', new TypedShapeConfig(tmp_6, tmp_7, tmp_8, tmp_9, tmp_10, tmp_11, SHAPE_CONFIGS$lambda_12));
-      var tmp_13 = SHAPE_CONFIGS$lambda_13;
-      var tmp_14 = SHAPE_CONFIGS$lambda_14;
-      var tmp_15 = SHAPE_CONFIGS$lambda_15;
-      var tmp_16 = SHAPE_CONFIGS$lambda_16;
-      var tmp_17 = SHAPE_CONFIGS$lambda_17;
-      var tmp_18 = SHAPE_CONFIGS$lambda_18;
-      var tmp_19 = to('rectangle', new TypedShapeConfig(tmp_13, tmp_14, tmp_15, tmp_16, tmp_17, tmp_18, SHAPE_CONFIGS$lambda_19));
-      var tmp_20 = SHAPE_CONFIGS$lambda_20;
-      var tmp_21 = SHAPE_CONFIGS$lambda_21;
-      var tmp_22 = SHAPE_CONFIGS$lambda_22;
-      var tmp_23 = SHAPE_CONFIGS$lambda_23;
-      var tmp_24 = SHAPE_CONFIGS$lambda_24;
-      var tmp_25 = SHAPE_CONFIGS$lambda_25;
-      SHAPE_CONFIGS = mapOf([tmp_5, tmp_12, tmp_19, to('polygon', new TypedShapeConfig(tmp_20, tmp_21, tmp_22, tmp_23, tmp_24, tmp_25, SHAPE_CONFIGS$lambda_26))]);
-    }
-  }
-  function takeCanvasSnapshot(canvas, context, state, position) {
-    state.set_startPosition_a2dsao_k$(position);
-    state.set_lastPosition_mmd7ci_k$(position);
-    state.set_canvasSnapshot_kjd87_k$(context.getImageData(0.0, 0.0, canvas.width, canvas.height));
-  }
-  function handleShapeMouseDown(h, position) {
-    var state = h.get_state_iypx7s_k$();
-    var tmp0_elvis_lhs = get_SHAPE_CONFIGS().get_wei43m_k$(state.get_tool_wov2zl_k$());
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return false;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var config = tmp;
-    if (config.beginEdit_cdvfw4_k$(state, position))
-      return true;
-    takeCanvasSnapshot(h.get_canvas_bshgm9_k$(), h.get_context_h02k06_k$(), state, position);
-    return true;
-  }
-  function handleShapeMouseMove(h, position) {
-    var state = h.get_state_iypx7s_k$();
-    var config = get_SHAPE_CONFIGS().get_wei43m_k$(state.get_tool_wov2zl_k$());
-    var start = state.get_startPosition_d95qiq_k$();
-    if (!(config == null) && !(start == null)) {
-      h.get_context_h02k06_k$().putImageData(ensureNotNull(state.get_canvasSnapshot_qkwi11_k$()), 0.0, 0.0);
-      config.drawPreview_xvy11w_k$(h.get_context_h02k06_k$(), start, position, state);
-      return true;
-    }
-    var arrow = state.get_editingArrow_mtg0o6_k$();
-    if (!(arrow == null)) {
-      var offset = ensureNotNull(state.get_editOffset_9sigg6_k$());
-      var dx = arrow.get_endX_wolh5y_k$() - arrow.get_startX_jnf4u7_k$();
-      var dy = arrow.get_endY_wolh5z_k$() - arrow.get_startY_jnf4u8_k$();
-      var newStartX = position.get_x_1mhr67_k$() - offset.get_x_1mhr67_k$();
-      var newStartY = position.get_y_1mhr68_k$() - offset.get_y_1mhr68_k$();
-      arrow.set_startX_tweqcj_k$(newStartX);
-      arrow.set_startY_y6xmda_k$(newStartY);
-      arrow.set_endX_mh4xwk_k$(newStartX + dx);
-      arrow.set_endY_fjd8n9_k$(newStartY + dy);
-      h.render_dje1iy_k$();
-      return true;
-    }
-    var offset_0 = state.get_editOffset_9sigg6_k$();
-    var circle = state.get_editingCircle_3rgtb3_k$();
-    var rectangle = state.get_editingRectangle_ldge4g_k$();
-    var polygon = state.get_editingPolygon_q3jmob_k$();
-    if (!(circle == null)) {
-      circle.set_x_scd9vp_k$(position.get_x_1mhr67_k$() - ensureNotNull(offset_0).get_x_1mhr67_k$());
-      circle.set_y_lelkme_k$(position.get_y_1mhr68_k$() - offset_0.get_y_1mhr68_k$());
-    } else if (!(rectangle == null)) {
-      rectangle.set_x_scd9vp_k$(position.get_x_1mhr67_k$() - ensureNotNull(offset_0).get_x_1mhr67_k$());
-      rectangle.set_y_lelkme_k$(position.get_y_1mhr68_k$() - offset_0.get_y_1mhr68_k$());
-    } else if (!(polygon == null)) {
-      polygon.set_x_scd9vp_k$(position.get_x_1mhr67_k$() - ensureNotNull(offset_0).get_x_1mhr67_k$());
-      polygon.set_y_lelkme_k$(position.get_y_1mhr68_k$() - offset_0.get_y_1mhr68_k$());
-    } else
-      return false;
-    h.render_dje1iy_k$();
-    return true;
-  }
-  function handleShapeMouseUp(h) {
-    var state = h.get_state_iypx7s_k$();
-    var tmp0_elvis_lhs = get_SHAPE_CONFIGS().get_wei43m_k$(state.get_tool_wov2zl_k$());
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return false;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var config = tmp;
-    if (config.isEditing_wcf7nu_k$(state)) {
-      h.get_saveCanvas_acgjeq_k$()();
-      config.endEdit_221lpt_k$(state);
-      state.set_editOffset_7b8yc4_k$(null);
-      return true;
-    }
-    var start = state.get_startPosition_d95qiq_k$();
-    if (!(start == null)) {
-      var endPosition = ensureNotNull(state.get_lastPosition_bjivo8_k$());
-      var tmp0 = endPosition.get_x_1mhr67_k$() - start.get_x_1mhr67_k$();
-      // Inline function 'kotlin.math.hypot' call
-      var y = endPosition.get_y_1mhr68_k$() - start.get_y_1mhr68_k$();
-      var moved = hypot(tmp0, y) > 3;
-      if (moved) {
-        config.addItem_tqdqio_k$(state, start, endPosition);
-      }
-      h.get_context_h02k06_k$().putImageData(ensureNotNull(state.get_canvasSnapshot_qkwi11_k$()), 0.0, 0.0);
-      h.render_dje1iy_k$();
-      h.get_saveCanvas_acgjeq_k$()();
-    }
-    state.set_startPosition_a2dsao_k$(null);
-    state.set_canvasSnapshot_kjd87_k$(null);
-    return true;
-  }
-  function openNewTextBox(h, position) {
-    if (!(document.querySelector('textarea.sticky-node-textbox') == null))
-      return Unit_getInstance();
-    var state = h.get_state_iypx7s_k$();
-    var tmp = h.get_canvas_bshgm9_k$();
-    var tmp_0 = state.get_selectedColor_mfz4gv_k$();
-    var tmp_1 = state.get_fontSize_pr9n47_k$();
-    createTextBox(tmp, position, tmp_0, VOID, tmp_1, openNewTextBox$lambda(state, h));
-  }
-  function handleTextMouseDown(h, event, position) {
-    var state = h.get_state_iypx7s_k$();
-    if (!(state.get_tool_wov2zl_k$() === 'text'))
-      return false;
-    event.preventDefault();
-    var existingText = findTextAt(h.get_textContext_fqn3o9_k$(), state.get_textItems_8zbevq_k$(), position);
-    if (event.button === 0) {
-      if (!(existingText == null)) {
-        state.set_editingText_qair36_k$(existingText);
-        state.set_pendingTextPosition_w5pflu_k$(null);
-        state.set_editOffset_7b8yc4_k$(new Point(position.get_x_1mhr67_k$() - existingText.get_x_1mhr67_k$(), position.get_y_1mhr68_k$() - existingText.get_y_1mhr68_k$()));
-        return true;
-      }
-      state.set_pendingTextPosition_w5pflu_k$(position);
-      return true;
-    }
-    if (!(event.button === 2))
-      return true;
-    if (existingText == null)
-      return true;
-    var tmp0_canvas = h.get_canvas_bshgm9_k$();
-    var tmp1_position = new Point(existingText.get_x_1mhr67_k$(), existingText.get_y_1mhr68_k$());
-    var tmp2_color = state.get_selectedColor_mfz4gv_k$();
-    var tmp3_fontSize = state.get_fontSize_pr9n47_k$();
-    createTextBox(tmp0_canvas, tmp1_position, tmp2_color, existingText, tmp3_fontSize, handleTextMouseDown$lambda(existingText, h));
-    return true;
-  }
-  function handleTextMouseMove(h, position) {
-    var state = h.get_state_iypx7s_k$();
-    if (!(state.get_pendingTextPosition_5yd58c_k$() == null))
-      return true;
-    var tmp0_elvis_lhs = state.get_editingText_lck0p0_k$();
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      return false;
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    var editing = tmp;
-    var offset = ensureNotNull(state.get_editOffset_9sigg6_k$());
-    editing.set_x_scd9vp_k$(position.get_x_1mhr67_k$() - offset.get_x_1mhr67_k$());
-    editing.set_y_lelkme_k$(position.get_y_1mhr68_k$() - offset.get_y_1mhr68_k$());
-    h.render_dje1iy_k$();
-    return true;
-  }
-  function handleTextMouseUp(h) {
-    var state = h.get_state_iypx7s_k$();
-    if (!(state.get_tool_wov2zl_k$() === 'text'))
-      return false;
-    if (!(state.get_editingText_lck0p0_k$() == null)) {
-      h.get_saveCanvas_acgjeq_k$()();
-      state.set_editingText_qair36_k$(null);
-      state.set_editOffset_7b8yc4_k$(null);
-      return true;
-    }
-    var pending = state.get_pendingTextPosition_5yd58c_k$();
-    if (!(pending == null)) {
-      state.set_pendingTextPosition_w5pflu_k$(null);
-      openNewTextBox(h, pending);
-    }
-    return true;
-  }
-  function openNewTextBox$lambda($state, $h) {
-    return function (updatedText) {
-      $state.get_textItems_8zbevq_k$().add_utx5q5_k$(updatedText);
-      $h.render_dje1iy_k$();
-      $h.get_saveCanvas_acgjeq_k$()();
-      return Unit_getInstance();
-    };
-  }
-  function handleTextMouseDown$lambda($existingText, $h) {
-    return function (updatedText) {
-      $existingText.set_x_scd9vp_k$(updatedText.get_x_1mhr67_k$());
-      $existingText.set_y_lelkme_k$(updatedText.get_y_1mhr68_k$());
-      $existingText.set_color_ayzg4c_k$(updatedText.get_color_ipu8u2_k$());
-      $existingText.set_fontSize_6szsfv_k$(updatedText.get_fontSize_pr9n47_k$());
-      $existingText.set_text_oy06f4_k$(updatedText.get_text_wouvsm_k$());
-      $h.render_dje1iy_k$();
-      $h.get_saveCanvas_acgjeq_k$()();
-      return Unit_getInstance();
-    };
-  }
-  function renderText(textContext, textItems) {
-    // Inline function 'kotlin.js.asDynamic' call
-    textContext.textBaseline = 'top';
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = textItems.iterator_jk1svi_k$();
-    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var element = _iterator__ex2g4s.next_20eer_k$();
-      // Inline function 'stickynode.canvas.render.renderText.<anonymous>' call
-      textContext.font = '' + element.get_fontSize_pr9n47_k$() + 'px sans-serif';
-      textContext.fillStyle = element.get_color_ipu8u2_k$();
-      var lineHeight = getLineHeight(element.get_fontSize_pr9n47_k$());
-      // Inline function 'kotlin.collections.forEachIndexed' call
-      var index = 0;
-      var _iterator__ex2g4s_0 = split(element.get_text_wouvsm_k$(), ['\n']).iterator_jk1svi_k$();
-      while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
-        var item = _iterator__ex2g4s_0.next_20eer_k$();
-        var _unary__edvuaz = index;
-        index = _unary__edvuaz + 1 | 0;
-        // Inline function 'stickynode.canvas.render.renderText.<anonymous>.<anonymous>' call
-        var index_0 = checkIndexOverflow(_unary__edvuaz);
-        textContext.fillText(item, element.get_x_1mhr67_k$(), element.get_y_1mhr68_k$() + imul(index_0, lineHeight));
-      }
-    }
-  }
-  function renderStrokes(context, strokeItems) {
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = strokeItems.iterator_jk1svi_k$();
-    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var element = _iterator__ex2g4s.next_20eer_k$();
-      $l$block: {
-        // Inline function 'stickynode.canvas.render.renderStrokes.<anonymous>' call
-        var points = element.get_points_i5obn0_k$();
-        if (points.get_size_woubt6_k$() < 2) {
-          break $l$block;
-        }
-        context.globalCompositeOperation = 'source-over';
-        context.strokeStyle = element.get_color_ipu8u2_k$();
-        context.lineWidth = element.get_lineWidth_lbeliv_k$();
-        // Inline function 'kotlin.js.asDynamic' call
-        context.lineCap = 'round';
-        // Inline function 'kotlin.js.asDynamic' call
-        context.lineJoin = 'round';
-        context.beginPath();
-        context.moveTo(points.get_c1px32_k$(0).get_x_1mhr67_k$(), points.get_c1px32_k$(0).get_y_1mhr68_k$());
-        // Inline function 'kotlin.collections.forEach' call
-        var _iterator__ex2g4s_0 = drop(points, 1).iterator_jk1svi_k$();
-        while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
-          var element_0 = _iterator__ex2g4s_0.next_20eer_k$();
-          // Inline function 'stickynode.canvas.render.renderStrokes.<anonymous>.<anonymous>' call
-          context.lineTo(element_0.get_x_1mhr67_k$(), element_0.get_y_1mhr68_k$());
-        }
-        context.stroke();
-      }
-    }
-  }
-  function renderOverlay(textContext, state) {
-    textContext.clearRect(0.0, 0.0, textContext.canvas.width, textContext.canvas.height);
-    renderStrokes(textContext, state.get_strokeItems_pivh8h_k$());
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s = state.get_rectangleItems_npge3q_k$().iterator_jk1svi_k$();
-    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var element = _iterator__ex2g4s.next_20eer_k$();
-      // Inline function 'stickynode.canvas.render.renderOverlay.<anonymous>' call
-      drawStoredRectangle(textContext, element);
-    }
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s_0 = state.get_circleItems_cgj3on_k$().iterator_jk1svi_k$();
-    while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
-      var element_0 = _iterator__ex2g4s_0.next_20eer_k$();
-      // Inline function 'stickynode.canvas.render.renderOverlay.<anonymous>' call
-      drawStoredCircle(textContext, element_0);
-    }
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s_1 = state.get_polygonItems_rrdxqp_k$().iterator_jk1svi_k$();
-    while (_iterator__ex2g4s_1.hasNext_bitz1p_k$()) {
-      var element_1 = _iterator__ex2g4s_1.next_20eer_k$();
-      // Inline function 'stickynode.canvas.render.renderOverlay.<anonymous>' call
-      drawStoredPolygon(textContext, element_1);
-    }
-    // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s_2 = state.get_arrowItems_lx0j40_k$().iterator_jk1svi_k$();
-    while (_iterator__ex2g4s_2.hasNext_bitz1p_k$()) {
-      var element_2 = _iterator__ex2g4s_2.next_20eer_k$();
-      // Inline function 'stickynode.canvas.render.renderOverlay.<anonymous>' call
-      drawStoredArrow(textContext, element_2);
-    }
-    renderText(textContext, state.get_textItems_8zbevq_k$());
-  }
-  function drawArrowLine(context, fromX, fromY, toX, toY, color, lineWidth) {
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    // Inline function 'kotlin.math.max' call
-    var b = lineWidth * 4.0;
-    var headLength = Math.max(16.0, b);
-    var tmp2 = toY - fromY;
-    // Inline function 'kotlin.math.atan2' call
-    var x = toX - fromX;
-    var angle = Math.atan2(tmp2, x);
-    context.strokeStyle = color;
-    context.lineWidth = lineWidth;
-    // Inline function 'kotlin.js.asDynamic' call
-    context.lineCap = 'round';
-    // Inline function 'kotlin.js.asDynamic' call
-    context.lineJoin = 'round';
-    context.beginPath();
-    context.moveTo(fromX, fromY);
-    context.lineTo(toX, toY);
-    context.stroke();
-    var arrowAngle = 3.141592653589793 / 6;
-    context.beginPath();
-    // Inline function 'kotlin.math.cos' call
-    var x_0 = angle - arrowAngle;
-    var tmp = toX - headLength * Math.cos(x_0);
-    // Inline function 'kotlin.math.sin' call
-    var x_1 = angle - arrowAngle;
-    var tmp$ret$5 = Math.sin(x_1);
-    context.moveTo(tmp, toY - headLength * tmp$ret$5);
-    context.lineTo(toX, toY);
-    // Inline function 'kotlin.math.cos' call
-    var x_2 = angle + arrowAngle;
-    var tmp_0 = toX - headLength * Math.cos(x_2);
-    // Inline function 'kotlin.math.sin' call
-    var x_3 = angle + arrowAngle;
-    var tmp$ret$7 = Math.sin(x_3);
-    context.lineTo(tmp_0, toY - headLength * tmp$ret$7);
-    context.stroke();
-  }
-  function drawArrow(context, startPosition, currentPosition, color, lineWidth) {
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    context.globalCompositeOperation = 'source-over';
-    drawArrowLine(context, startPosition.get_x_1mhr67_k$(), startPosition.get_y_1mhr68_k$(), currentPosition.get_x_1mhr67_k$(), currentPosition.get_y_1mhr68_k$(), color, lineWidth);
-  }
-  function drawStoredArrow(context, item) {
-    drawArrowLine(context, item.get_startX_jnf4u7_k$(), item.get_startY_jnf4u8_k$(), item.get_endX_wolh5y_k$(), item.get_endY_wolh5z_k$(), item.get_color_ipu8u2_k$(), item.get_lineWidth_lbeliv_k$());
-  }
-  function drawCircle(context, startPosition, currentPosition, color, lineWidth) {
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    var box = getBoundingBox(startPosition, currentPosition);
-    drawStoredCircle(context, new CircleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), color, lineWidth));
-  }
-  function drawStoredCircle(context, item) {
-    context.globalCompositeOperation = 'source-over';
-    context.strokeStyle = item.get_color_ipu8u2_k$();
-    context.lineWidth = item.get_lineWidth_lbeliv_k$();
-    context.beginPath();
-    context.ellipse(item.get_x_1mhr67_k$() + item.get_width_j0q4yl_k$() / 2, item.get_y_1mhr68_k$() + item.get_height_e7t92o_k$() / 2, item.get_width_j0q4yl_k$() / 2, item.get_height_e7t92o_k$() / 2, 0.0, 0.0, 2 * 3.141592653589793);
-    var fill = item.get_fill_wom0ng_k$();
-    // Inline function 'kotlin.text.isNullOrEmpty' call
-    if (!(fill == null || charSequenceLength(fill) === 0)) {
-      context.fillStyle = fill;
-      context.fill();
-    }
-    context.stroke();
-  }
-  function removeFirstMatching(list, predicate) {
-    var tmp$ret$0;
-    $l$block: {
-      // Inline function 'kotlin.collections.indexOfLast' call
-      var iterator = list.listIterator_70e65o_k$(list.get_size_woubt6_k$());
-      while (iterator.hasPrevious_qh0629_k$()) {
-        if (predicate(iterator.previous_l2dfd5_k$())) {
-          tmp$ret$0 = iterator.nextIndex_jshxun_k$();
-          break $l$block;
-        }
-      }
-      tmp$ret$0 = -1;
-    }
-    var index = tmp$ret$0;
-    if (!(index === -1)) {
-      list.removeAt_6niowx_k$(index);
-      return true;
-    }
-    return false;
-  }
-  function eraseAt(state, position, textContext) {
-    var text = findTextAt(textContext, state.get_textItems_8zbevq_k$(), position);
-    var tmp;
-    if (!(text == null)) {
-      var tmp_0 = state.get_textItems_8zbevq_k$();
-      tmp = removeFirstMatching(tmp_0, eraseAt$lambda(text));
+    var containsLower = this.x_1;
+    var containsUpper = this.x_1 + width;
+    var containsArg = p.get_x_1mhr67_k$();
+    if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
+      var containsLower_0 = this.y_1;
+      var containsUpper_0 = this.y_1 + height;
+      var containsArg_0 = p.get_y_1mhr68_k$();
+      tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
     } else {
       tmp = false;
     }
-    if (tmp) {
-      return true;
-    }
-    var circle = findCircleAt(state.get_circleItems_cgj3on_k$(), position);
-    var tmp_1;
-    if (!(circle == null)) {
-      var tmp_2 = state.get_circleItems_cgj3on_k$();
-      tmp_1 = removeFirstMatching(tmp_2, eraseAt$lambda_0(circle));
-    } else {
-      tmp_1 = false;
-    }
-    if (tmp_1) {
-      return true;
-    }
-    var polygon = findPolygonAt(state.get_polygonItems_rrdxqp_k$(), position);
-    var tmp_3;
-    if (!(polygon == null)) {
-      var tmp_4 = state.get_polygonItems_rrdxqp_k$();
-      tmp_3 = removeFirstMatching(tmp_4, eraseAt$lambda_1(polygon));
-    } else {
-      tmp_3 = false;
-    }
-    if (tmp_3) {
-      return true;
-    }
-    var rect = findRectangleAt(state.get_rectangleItems_npge3q_k$(), position);
-    var tmp_5;
-    if (!(rect == null)) {
-      var tmp_6 = state.get_rectangleItems_npge3q_k$();
-      tmp_5 = removeFirstMatching(tmp_6, eraseAt$lambda_2(rect));
-    } else {
-      tmp_5 = false;
-    }
-    if (tmp_5) {
-      return true;
-    }
-    var arrow = findArrowAt(state.get_arrowItems_lx0j40_k$(), position);
-    var tmp_7;
-    if (!(arrow == null)) {
-      var tmp_8 = state.get_arrowItems_lx0j40_k$();
-      tmp_7 = removeFirstMatching(tmp_8, eraseAt$lambda_3(arrow));
-    } else {
-      tmp_7 = false;
-    }
-    if (tmp_7) {
-      return true;
-    }
-    var stroke = findStrokeAt(state.get_strokeItems_pivh8h_k$(), position);
-    var tmp_9;
-    if (!(stroke == null)) {
-      var tmp_10 = state.get_strokeItems_pivh8h_k$();
-      tmp_9 = removeFirstMatching(tmp_10, eraseAt$lambda_4(stroke));
-    } else {
-      tmp_9 = false;
-    }
-    if (tmp_9) {
-      return true;
-    }
-    return false;
+    return tmp;
+  };
+  protoOf(TextItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
+  function measureContext$delegate$lambda() {
+    _init_properties_Items_kt__3bnoaa();
+    var tmp = document.createElement('canvas');
+    var tmp_0 = (tmp instanceof HTMLCanvasElement ? tmp : THROW_CCE()).getContext('2d');
+    return tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
   }
-  function eraseAt$lambda($text) {
-    return function (it) {
-      return it === $text;
+  function measureContext$factory() {
+    return getPropertyCallableRef('measureContext', 0, KProperty0, function () {
+      return get_measureContext();
+    }, null);
+  }
+  var properties_initialized_Items_kt_tr5xps;
+  function _init_properties_Items_kt__3bnoaa() {
+    if (!properties_initialized_Items_kt_tr5xps) {
+      properties_initialized_Items_kt_tr5xps = true;
+      measureContext$delegate = lazy_0(measureContext$delegate$lambda);
+    }
+  }
+  function saveToFile(content, suggestedName, $completion) {
+    suggestedName = suggestedName === VOID ? 'drawing.sticky.json' : suggestedName;
+    var tmp = new $saveToFileCOROUTINE$0(content, suggestedName, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  }
+  function pickFileText($completion) {
+    var tmp = new $pickFileTextCOROUTINE$1($completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  }
+  function pickFile($completion) {
+    // Inline function 'kotlin.coroutines.suspendCoroutine.<anonymous>' call
+    var safe = SafeContinuation_init_$Create$(intercepted($completion));
+    // Inline function 'stickynode.storage.pickFile.<anonymous>' call
+    var tmp = document.createElement('input');
+    var input = tmp instanceof HTMLInputElement ? tmp : THROW_CCE();
+    input.type = 'file';
+    input.accept = '.json,application/json';
+    input.addEventListener('change', pickFile$lambda(safe, input));
+    input.addEventListener('cancel', pickFile$lambda_0(safe));
+    input.click();
+    return safe.getOrThrow_23gqzp_k$();
+  }
+  function saveToFile$lambda($url) {
+    return function () {
+      // Inline function 'kotlin.js.asDynamic' call
+      window.URL.revokeObjectURL($url);
+      return Unit_getInstance();
     };
   }
-  function eraseAt$lambda_0($circle) {
+  function pickFile$lambda($continuation, $input) {
     return function (it) {
-      return it === $circle;
+      var tmp0 = $continuation;
+      var tmp0_safe_receiver = $input.files;
+      // Inline function 'kotlin.coroutines.resume' call
+      var value = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.item(0);
+      // Inline function 'kotlin.Companion.success' call
+      Companion_getInstance();
+      var tmp$ret$0 = _Result___init__impl__xyqfz8(value);
+      tmp0.resumeWith_dtxwbr_k$(tmp$ret$0);
+      return Unit_getInstance();
     };
   }
-  function eraseAt$lambda_1($polygon) {
+  function pickFile$lambda_0($continuation) {
     return function (it) {
-      return it === $polygon;
+      // Inline function 'kotlin.coroutines.resume' call
+      var this_0 = $continuation;
+      // Inline function 'kotlin.Companion.success' call
+      Companion_getInstance();
+      var tmp$ret$0 = _Result___init__impl__xyqfz8(null);
+      this_0.resumeWith_dtxwbr_k$(tmp$ret$0);
+      return Unit_getInstance();
     };
   }
-  function eraseAt$lambda_2($rect) {
-    return function (it) {
-      return it === $rect;
-    };
+  function $saveToFileCOROUTINE$0(content, suggestedName, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this.content_1 = content;
+    this.suggestedName_1 = suggestedName;
   }
-  function eraseAt$lambda_3($arrow) {
-    return function (it) {
-      return it === $arrow;
-    };
-  }
-  function eraseAt$lambda_4($stroke) {
-    return function (it) {
-      return it === $stroke;
-    };
-  }
-  function fillAt(state, position, color) {
-    var tmp0_elvis_lhs = findPolygonAt(state.get_polygonItems_rrdxqp_k$(), position);
-    var tmp1_elvis_lhs = tmp0_elvis_lhs == null ? findCircleAt(state.get_circleItems_cgj3on_k$(), position) : tmp0_elvis_lhs;
-    var target = tmp1_elvis_lhs == null ? findRectangleAt(state.get_rectangleItems_npge3q_k$(), position) : tmp1_elvis_lhs;
-    if (target == null)
-      return false;
-    if (color == null) {
-      // Inline function 'kotlin.text.isNullOrEmpty' call
-      var this_0 = target.get_fill_wom0ng_k$();
-      if (this_0 == null || charSequenceLength(this_0) === 0)
-        return false;
-      target.set_fill_sosdnb_k$(null);
-      return true;
-    }
-    if (target.get_fill_wom0ng_k$() == color)
-      return false;
-    target.set_fill_sosdnb_k$(color);
-    return true;
-  }
-  function drawPolygon(context, startPosition, currentPosition, sides, color, lineWidth) {
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    var box = getBoundingBox(startPosition, currentPosition);
-    drawStoredPolygon(context, new PolygonItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), sides, color, lineWidth));
-  }
-  function drawStoredPolygon(context, item) {
-    var centerX = item.get_x_1mhr67_k$() + item.get_width_j0q4yl_k$() / 2;
-    var centerY = item.get_y_1mhr68_k$() + item.get_height_e7t92o_k$() / 2;
-    var tmp0 = item.get_width_j0q4yl_k$();
-    // Inline function 'kotlin.math.min' call
-    var b = item.get_height_e7t92o_k$();
-    var radius = Math.min(tmp0, b) / 2;
-    var angleStep = 3.141592653589793 * 2 / item.get_sides_iyiy8j_k$();
-    context.globalCompositeOperation = 'source-over';
-    context.strokeStyle = item.get_color_ipu8u2_k$();
-    context.lineWidth = item.get_lineWidth_lbeliv_k$();
-    context.beginPath();
-    var inductionVariable = 0;
-    var last = item.get_sides_iyiy8j_k$();
-    if (inductionVariable < last)
-      do {
-        var index = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        var angle = -3.141592653589793 / 2 + index * angleStep;
-        // Inline function 'kotlin.math.cos' call
-        var pointX = centerX + radius * Math.cos(angle);
-        // Inline function 'kotlin.math.sin' call
-        var pointY = centerY + radius * Math.sin(angle);
-        if (index === 0) {
-          context.moveTo(pointX, pointY);
+  protoOf($saveToFileCOROUTINE$0).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(7);
+            if (window.showSaveFilePicker != undefined) {
+              this.set_exceptionState_fex74n_k$(6);
+              this.accept1__1 = {};
+              var this_0 = ['.json'];
+              this.accept1__1['application/json'] = this_0;
+              this.type2__1 = {};
+              this.type2__1.description = 'Sticky Node drawing';
+              this.type2__1.accept = this.accept1__1;
+              this.options3__1 = {};
+              this.options3__1.suggestedName = this.suggestedName_1;
+              var this_1 = [this.type2__1];
+              this.options3__1.types = this_1;
+              this.set_state_rjd8d0_k$(2);
+              var this_2 = window.showSaveFilePicker(this.options3__1);
+              suspendResult = await_0(this_2, this);
+              if (suspendResult === get_COROUTINE_SUSPENDED()) {
+                return suspendResult;
+              }
+              continue $sm;
+            } else {
+              this.set_state_rjd8d0_k$(1);
+              continue $sm;
+            }
+
+          case 1:
+            var tmp_0 = this;
+            var this_3 = [this.content_1];
+            var type = 'application/json';
+            var o = {};
+            o['type'] = type;
+            tmp_0.blob4__1 = new Blob(this_3, o);
+            var tmp_1 = this;
+            tmp_1.url5__1 = window.URL.createObjectURL(this.blob4__1);
+            var tmp_2 = this;
+            var tmp_3 = document.createElement('a');
+            tmp_2.link6__1 = tmp_3 instanceof HTMLAnchorElement ? tmp_3 : THROW_CCE();
+            this.link6__1.href = this.url5__1;
+            this.link6__1.download = this.suggestedName_1;
+            ensureNotNull(document.body).appendChild(this.link6__1);
+            this.link6__1.click();
+            this.link6__1.remove();
+            var tmp_4 = window;
+            tmp_4.setTimeout(saveToFile$lambda(this.url5__1), 1000);
+            return Unit_getInstance();
+          case 2:
+            this.handle7__1 = suspendResult;
+            this.set_state_rjd8d0_k$(3);
+            var this_4 = this.handle7__1.createWritable();
+            suspendResult = await_0(this_4, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 3:
+            this.writable8__1 = suspendResult;
+            this.set_state_rjd8d0_k$(4);
+            var this_5 = this.writable8__1.write(this.content_1);
+            suspendResult = await_0(this_5, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 4:
+            this.set_state_rjd8d0_k$(5);
+            var this_6 = this.writable8__1.close();
+            suspendResult = await_0(this_6, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 5:
+            this.TRY_RESULT0__1 = suspendResult;
+            this.set_exceptionState_fex74n_k$(7);
+            this.set_state_rjd8d0_k$(8);
+            continue $sm;
+          case 6:
+            this.set_exceptionState_fex74n_k$(7);
+            var tmp_5 = this.get_exception_x0n6w6_k$();
+            if (tmp_5 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              var tmp_6 = this;
+              if (error.name != 'AbortError')
+                throw error;
+              tmp_6.TRY_RESULT0__1 = Unit_getInstance();
+              this.set_state_rjd8d0_k$(8);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 7:
+            throw this.get_exception_x0n6w6_k$();
+          case 8:
+            this.set_exceptionState_fex74n_k$(7);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 7) {
+          throw e;
         } else {
-          context.lineTo(pointX, pointY);
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
         }
       }
-       while (inductionVariable < last);
-    context.closePath();
-    var fill = item.get_fill_wom0ng_k$();
-    // Inline function 'kotlin.text.isNullOrEmpty' call
-    if (!(fill == null || charSequenceLength(fill) === 0)) {
-      context.fillStyle = fill;
-      context.fill();
-    }
-    context.stroke();
+     while (true);
+  };
+  function $pickFileTextCOROUTINE$1(resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
   }
-  function drawRectangle(context, startPosition, currentPosition, color, lineWidth) {
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    context.globalCompositeOperation = 'source-over';
-    context.strokeStyle = color;
-    context.lineWidth = lineWidth;
-    context.strokeRect(startPosition.get_x_1mhr67_k$(), startPosition.get_y_1mhr68_k$(), currentPosition.get_x_1mhr67_k$() - startPosition.get_x_1mhr67_k$(), currentPosition.get_y_1mhr68_k$() - startPosition.get_y_1mhr68_k$());
-  }
-  function drawStoredRectangle(context, item) {
-    context.globalCompositeOperation = 'source-over';
-    var fill = item.get_fill_wom0ng_k$();
-    // Inline function 'kotlin.text.isNullOrEmpty' call
-    if (!(fill == null || charSequenceLength(fill) === 0)) {
-      context.fillStyle = fill;
-      context.fillRect(item.get_x_1mhr67_k$(), item.get_y_1mhr68_k$(), item.get_width_j0q4yl_k$(), item.get_height_e7t92o_k$());
-    }
-    context.lineWidth = item.get_lineWidth_lbeliv_k$();
-    context.strokeStyle = item.get_color_ipu8u2_k$();
-    context.strokeRect(item.get_x_1mhr67_k$(), item.get_y_1mhr68_k$(), item.get_width_j0q4yl_k$(), item.get_height_e7t92o_k$());
-  }
-  function get_DEFAULT_FONT_SIZE() {
-    return DEFAULT_FONT_SIZE;
-  }
-  var DEFAULT_FONT_SIZE;
-  function getLineHeight(fontSize) {
-    fontSize = fontSize === VOID ? 20 : fontSize;
-    // Inline function 'kotlin.math.floor' call
-    var x = fontSize * 1.2 + 0.5;
-    var tmp$ret$0 = Math.floor(x);
-    return numberToInt(tmp$ret$0);
-  }
-  function createTextBox(canvas, position, color, textItem, fontSize, onCommit) {
-    textItem = textItem === VOID ? null : textItem;
-    fontSize = fontSize === VOID ? 20 : fontSize;
-    var bounds = canvas.getBoundingClientRect();
-    var tmp = document.createElement('textarea');
-    var textBox = tmp instanceof HTMLTextAreaElement ? tmp : THROW_CCE();
-    textBox.className = 'sticky-node-textbox';
-    textBox.style.position = 'fixed';
-    textBox.style.left = '' + (bounds.left + position.get_x_1mhr67_k$() - 8) + 'px';
-    textBox.style.top = '' + (bounds.top + position.get_y_1mhr68_k$() - 8) + 'px';
-    textBox.style.boxSizing = 'content-box';
-    textBox.style.width = '180px';
-    textBox.style.height = '70px';
-    textBox.style.padding = '6px';
-    textBox.style.margin = '0';
-    textBox.style.backgroundColor = 'white';
-    textBox.style.border = '2px solid red';
-    textBox.style.color = color;
-    textBox.style.zIndex = '1000';
-    var tmp1_elvis_lhs = textItem == null ? null : textItem.get_text_wouvsm_k$();
-    textBox.value = tmp1_elvis_lhs == null ? '' : tmp1_elvis_lhs;
-    ensureNotNull(document.body).appendChild(textBox);
-    var committed = {_v: false};
-    var allowBlur = {_v: false};
-    var commitText = createTextBox$lambda(committed, textBox, onCommit, textItem, position, color, fontSize);
-    var tmp_0 = window;
-    tmp_0.requestAnimationFrame(createTextBox$lambda_0(textBox, allowBlur));
-    textBox.addEventListener('keydown', createTextBox$lambda_1(commitText, committed, textBox));
-    textBox.addEventListener('blur', createTextBox$lambda_2(allowBlur, textBox, commitText));
-  }
-  function createTextBox$lambda($committed, $textBox, $onCommit, $textItem, $position, $color, $fontSize) {
-    return function () {
-      var tmp;
-      if (!$committed._v) {
-        $committed._v = true;
-        // Inline function 'kotlin.text.trim' call
-        var this_0 = $textBox.value;
-        var text = toString(trim(isCharSequence(this_0) ? this_0 : THROW_CCE()));
-        // Inline function 'kotlin.text.isNotEmpty' call
-        if (charSequenceLength(text) > 0) {
-          var tmp0_safe_receiver = $textItem;
-          var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_x_1mhr67_k$();
-          var tmp6_x = tmp1_elvis_lhs == null ? $position.get_x_1mhr67_k$() : tmp1_elvis_lhs;
-          var tmp2_safe_receiver = $textItem;
-          var tmp3_elvis_lhs = tmp2_safe_receiver == null ? null : tmp2_safe_receiver.get_y_1mhr68_k$();
-          var tmp7_y = tmp3_elvis_lhs == null ? $position.get_y_1mhr68_k$() : tmp3_elvis_lhs;
-          var tmp4_safe_receiver = $textItem;
-          var tmp5_elvis_lhs = tmp4_safe_receiver == null ? null : tmp4_safe_receiver.get_color_ipu8u2_k$();
-          var tmp8_color = tmp5_elvis_lhs == null ? $color : tmp5_elvis_lhs;
-          $onCommit(new TextItem(tmp6_x, tmp7_y, tmp8_color, text, $fontSize));
+  protoOf($pickFileTextCOROUTINE$1).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = pickFile(this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.tmp0_elvis_lhs0__1 = suspendResult;
+            var tmp_0 = this;
+            var tmp_1;
+            if (this.tmp0_elvis_lhs0__1 == null) {
+              return null;
+            } else {
+              tmp_1 = this.tmp0_elvis_lhs0__1;
+            }
+
+            tmp_0.file1__1 = tmp_1;
+            this.set_state_rjd8d0_k$(2);
+            var this_0 = this.file1__1.text();
+            suspendResult = await_0(this_0, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            return suspendResult;
+          case 3:
+            throw this.get_exception_x0n6w6_k$();
         }
-        $textBox.remove();
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 3) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function _get_KEY__e5qd6a($this) {
+    return $this.KEY_1;
+  }
+  function _get_LEGACY_PNG__v3l8ko($this) {
+    return $this.LEGACY_PNG_1;
+  }
+  function _get_LEGACY_STROKES__2abn5m($this) {
+    return $this.LEGACY_STROKES_1;
+  }
+  function _get_LEGACY_RECTANGLES__orwuwn($this) {
+    return $this.LEGACY_RECTANGLES_1;
+  }
+  function _get_LEGACY_CIRCLES__e6r926($this) {
+    return $this.LEGACY_CIRCLES_1;
+  }
+  function _get_LEGACY_POLYGONS__4dkk3m($this) {
+    return $this.LEGACY_POLYGONS_1;
+  }
+  function _get_LEGACY_ARROWS__ud09ox($this) {
+    return $this.LEGACY_ARROWS_1;
+  }
+  function _get_LEGACY_TEXT__uec6j2($this) {
+    return $this.LEGACY_TEXT_1;
+  }
+  function _get_legacyKeys__3ixary($this) {
+    return $this.legacyKeys_1;
+  }
+  function migrateLegacy($this) {
+    var tmp0 = $this.legacyKeys_1;
+    var tmp$ret$0;
+    $l$block_0: {
+      // Inline function 'kotlin.collections.all' call
+      var tmp;
+      if (isInterface(tmp0, Collection)) {
+        tmp = tmp0.isEmpty_y1axqb_k$();
+      } else {
+        tmp = false;
+      }
+      if (tmp) {
+        tmp$ret$0 = true;
+        break $l$block_0;
+      }
+      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
+      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+        var element = _iterator__ex2g4s.next_20eer_k$();
+        // Inline function 'stickynode.storage.Storage.migrateLegacy.<anonymous>' call
+        if (!(localStorage.getItem(element) == null)) {
+          tmp$ret$0 = false;
+          break $l$block_0;
+        }
+      }
+      tmp$ret$0 = true;
+    }
+    if (tmp$ret$0)
+      return emptyList();
+    var v1 = '{"app":"sticky-node","version":1,' + ('"strokeItems":' + migrateLegacy$list('drawingCanvasStrokes') + ',"rectangleItems":' + migrateLegacy$list('drawingCanvasRectangles') + ',') + ('"circleItems":' + migrateLegacy$list('drawingCanvasCircles') + ',"polygonItems":' + migrateLegacy$list('drawingCanvasPolygons') + ',') + ('"arrowItems":' + migrateLegacy$list('drawingCanvasArrows') + ',"textItems":' + migrateLegacy$list('drawingCanvasText') + '}');
+    var items = decodeDrawing(v1);
+    $this.save_kr09ot_k$(encodeDrawing(items));
+    // Inline function 'kotlin.collections.forEach' call
+    var _iterator__ex2g4s_0 = $this.legacyKeys_1.iterator_jk1svi_k$();
+    while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
+      var element_0 = _iterator__ex2g4s_0.next_20eer_k$();
+      // Inline function 'stickynode.storage.Storage.migrateLegacy.<anonymous>' call
+      localStorage.removeItem(element_0);
+    }
+    return items;
+  }
+  function migrateLegacy$list(key) {
+    var tmp0_elvis_lhs = localStorage.getItem(key);
+    return tmp0_elvis_lhs == null ? '[]' : tmp0_elvis_lhs;
+  }
+  function Storage() {
+    Storage_instance = this;
+    this.KEY_1 = 'stickyNode.drawing';
+    this.LEGACY_PNG_1 = 'drawingCanvas';
+    this.LEGACY_STROKES_1 = 'drawingCanvasStrokes';
+    this.LEGACY_RECTANGLES_1 = 'drawingCanvasRectangles';
+    this.LEGACY_CIRCLES_1 = 'drawingCanvasCircles';
+    this.LEGACY_POLYGONS_1 = 'drawingCanvasPolygons';
+    this.LEGACY_ARROWS_1 = 'drawingCanvasArrows';
+    this.LEGACY_TEXT_1 = 'drawingCanvasText';
+    this.legacyKeys_1 = listOf(['drawingCanvas', 'drawingCanvasStrokes', 'drawingCanvasRectangles', 'drawingCanvasCircles', 'drawingCanvasPolygons', 'drawingCanvasArrows', 'drawingCanvasText']);
+  }
+  protoOf(Storage).load_1zbae_k$ = function () {
+    var tmp;
+    try {
+      var saved = localStorage.getItem('stickyNode.drawing');
+      tmp = !(saved == null) ? decodeDrawing(saved) : migrateLegacy(this);
+    } catch ($p) {
+      var tmp_0;
+      if ($p instanceof Error) {
+        var error = $p;
+        console.warn("Couldn't restore the saved drawing", error);
+        tmp_0 = emptyList();
+      } else {
+        throw $p;
+      }
+      tmp = tmp_0;
+    }
+    return tmp;
+  };
+  protoOf(Storage).save_kr09ot_k$ = function (snapshot) {
+    try {
+      localStorage.setItem('stickyNode.drawing', snapshot);
+    } catch ($p) {
+      if ($p instanceof Error) {
+        var error = $p;
+        console.warn("Couldn't autosave (storage full or unavailable)", error);
+      } else {
+        throw $p;
+      }
+    }
+  };
+  var Storage_instance;
+  function Storage_getInstance() {
+    if (Storage_instance == null)
+      new Storage();
+    return Storage_instance;
+  }
+  function get_LEFT_BUTTON() {
+    return LEFT_BUTTON;
+  }
+  var LEFT_BUTTON;
+  function get_RIGHT_BUTTON() {
+    return RIGHT_BUTTON;
+  }
+  var RIGHT_BUTTON;
+  function setupCanvasEvents(editor) {
+    var canvas = editor.get_canvas_bshgm9_k$();
+    canvas.addEventListener('contextmenu', setupCanvasEvents$lambda(editor));
+    canvas.addEventListener('mousedown', setupCanvasEvents$lambda_0(editor, canvas));
+    var tmp = window;
+    tmp.addEventListener('mousemove', setupCanvasEvents$lambda_1(editor, canvas));
+    var tmp_0 = window;
+    tmp_0.addEventListener('mouseup', setupCanvasEvents$lambda_2(editor));
+  }
+  function setupCanvasEvents$position(canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+    return new Point(event.clientX - rect.left, event.clientY - rect.top);
+  }
+  function setupCanvasEvents$lambda($editor) {
+    return function (event) {
+      var tmp;
+      if ($editor.get_tool_wov2zl_k$().get_claimsMouse_54sth7_k$()) {
+        event.preventDefault();
         tmp = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function createTextBox$lambda$lambda($allowBlur) {
-    return function (it) {
-      $allowBlur._v = true;
-      return Unit_getInstance();
-    };
-  }
-  function createTextBox$lambda_0($textBox, $allowBlur) {
-    return function (it) {
-      $textBox.focus();
-      $textBox.select();
-      var tmp = window;
-      tmp.requestAnimationFrame(createTextBox$lambda$lambda($allowBlur));
-      return Unit_getInstance();
-    };
-  }
-  function createTextBox$lambda_1($commitText, $committed, $textBox) {
+  function setupCanvasEvents$lambda_0($editor, $canvas) {
     return function (e) {
-      var event = e instanceof KeyboardEvent ? e : THROW_CCE();
+      var event = e instanceof MouseEvent ? e : THROW_CCE();
+      var button = event.button;
+      var tool = $editor.get_tool_wov2zl_k$();
+      var allowed = button === 0 || (button === 2 && tool.get_claimsMouse_54sth7_k$());
       var tmp;
-      if (event.key === 'Enter' && !event.shiftKey) {
-        event.preventDefault();
-        tmp = $commitText();
+      if (!allowed) {
+        return Unit_getInstance();
       }
       var tmp_0;
-      if (event.key === 'Escape') {
-        $committed._v = true;
-        $textBox.remove();
+      if (tool.get_claimsMouse_54sth7_k$()) {
+        event.preventDefault();
+        tmp_0 = Unit_getInstance();
+      }
+      var tmp_1;
+      if (tool.get_busy_wojps2_k$()) {
+        tool.onUp_lz9rfn_k$($editor);
+        tmp_1 = Unit_getInstance();
+      }
+      tool.onDown_sb4qs0_k$($editor, setupCanvasEvents$position($canvas, event), button);
+      return Unit_getInstance();
+    };
+  }
+  function setupCanvasEvents$lambda_1($editor, $canvas) {
+    return function (e) {
+      var event = e instanceof MouseEvent ? e : THROW_CCE();
+      var tool = $editor.get_tool_wov2zl_k$();
+      var tmp;
+      if (!tool.get_busy_wojps2_k$()) {
+        return Unit_getInstance();
+      }
+      var tmp_0;
+      if (event.buttons === 0) {
+        tool.onUp_lz9rfn_k$($editor);
+        tmp_0 = Unit_getInstance();
+      } else {
+        tool.onMove_580z7b_k$($editor, setupCanvasEvents$position($canvas, event));
         tmp_0 = Unit_getInstance();
       }
       return Unit_getInstance();
     };
   }
-  function createTextBox$lambda_2($allowBlur, $textBox, $commitText) {
+  function setupCanvasEvents$lambda_2($editor) {
     return function (it) {
-      var tmp;
-      if (!$allowBlur._v) {
-        $textBox.focus();
-        tmp = Unit_getInstance();
+      $editor.get_tool_wov2zl_k$().onUp_lz9rfn_k$($editor);
+      return Unit_getInstance();
+    };
+  }
+  function get_scope() {
+    _init_properties_Controls_kt__wbvoru();
+    return scope;
+  }
+  var scope;
+  function get_TEXT_INPUT_TYPES() {
+    _init_properties_Controls_kt__wbvoru();
+    return TEXT_INPUT_TYPES;
+  }
+  var TEXT_INPUT_TYPES;
+  function onClick(id, action) {
+    _init_properties_Controls_kt__wbvoru();
+    var tmp0_safe_receiver = document.getElementById(id);
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      tmp0_safe_receiver.addEventListener('click', onClick$lambda(action));
+    }
+  }
+  function bindRange(inputId, labelId, onChange) {
+    _init_properties_Controls_kt__wbvoru();
+    // Inline function 'stickynode.ui.byId' call
+    var tmp = document.getElementById(inputId);
+    var tmp0_elvis_lhs = tmp instanceof HTMLInputElement ? tmp : null;
+    var tmp_0;
+    if (tmp0_elvis_lhs == null) {
+      return Unit_getInstance();
+    } else {
+      tmp_0 = tmp0_elvis_lhs;
+    }
+    var input = tmp_0;
+    var label = document.getElementById(labelId);
+    input.addEventListener('input', bindRange$lambda(input, onChange, label));
+  }
+  function isTyping(target) {
+    _init_properties_Controls_kt__wbvoru();
+    var tmp0_elvis_lhs = target instanceof Element ? target : null;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      return false;
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    var element = tmp;
+    var tmp_0;
+    if (element.tagName === 'TEXTAREA') {
+      tmp_0 = true;
+    } else {
+      var tmp_1;
+      if (element instanceof HTMLInputElement) {
+        tmp_1 = get_TEXT_INPUT_TYPES().contains_aljjnj_k$(element.type);
       } else {
-        tmp = $commitText();
+        tmp_1 = false;
+      }
+      tmp_0 = tmp_1;
+    }
+    return tmp_0;
+  }
+  function setupControls(editor) {
+    _init_properties_Controls_kt__wbvoru();
+    var tools = editor.get_tools_iz6t2q_k$();
+    onClick('drawButton', setupControls$lambda(editor, tools));
+    onClick('rectangleButton', setupControls$lambda_0(editor, tools));
+    onClick('circleButton', setupControls$lambda_1(editor, tools));
+    onClick('arrowButton', setupControls$lambda_2(editor, tools));
+    onClick('textButton', setupControls$lambda_3(editor, tools));
+    onClick('fillButton', setupControls$lambda_4(editor, tools));
+    onClick('eraserButton', setupControls$lambda_5(editor, tools));
+    onClick('polygonButton', setupControls$lambda_6(editor, tools));
+    // Inline function 'stickynode.ui.byId' call
+    var id = 'eraserButton';
+    var tmp = document.getElementById(id);
+    var eraserButton = tmp instanceof HTMLButtonElement ? tmp : null;
+    editor.set_onToolChanged_3f4ytg_k$(setupControls$lambda_7(eraserButton, tools));
+    // Inline function 'stickynode.ui.byId' call
+    var id_0 = 'colorPicker';
+    var tmp_0 = document.getElementById(id_0);
+    var tmp0_safe_receiver = tmp_0 instanceof HTMLInputElement ? tmp_0 : null;
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlin.let' call
+      // Inline function 'stickynode.ui.setupControls.<anonymous>' call
+      tmp0_safe_receiver.addEventListener('input', setupControls$lambda_8(editor, tmp0_safe_receiver));
+    }
+    bindRange('lineWidthInput', 'lineWidthValue', setupControls$lambda_9(editor));
+    bindRange('fontSizeInput', 'fontSizeValue', setupControls$lambda_10(editor));
+    onClick('undoButton', setupControls$lambda_11(editor));
+    onClick('redoButton', setupControls$lambda_12(editor));
+    onClick('clearButton', setupControls$lambda_13(editor));
+    onClick('saveFileButton', setupControls$lambda_14(editor));
+    onClick('openFileButton', setupControls$lambda_15(editor));
+    var tmp_1 = document;
+    tmp_1.addEventListener('keydown', setupControls$lambda_16(editor));
+  }
+  function onClick$lambda($action) {
+    return function (it) {
+      $action();
+      return Unit_getInstance();
+    };
+  }
+  function bindRange$lambda($input, $onChange, $label) {
+    return function (it) {
+      var tmp0_safe_receiver = toIntOrNull($input.value);
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        // Inline function 'kotlin.let' call
+        $onChange(tmp0_safe_receiver);
+      }
+      var tmp1_safe_receiver = $label;
+      if (tmp1_safe_receiver == null)
+        null;
+      else {
+        tmp1_safe_receiver.textContent = $input.value;
       }
       return Unit_getInstance();
     };
   }
+  function setupControls$lambda($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_freehand_dsmxlw_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_0($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_rectangle_r245om_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_1($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_circle_bwxzh5_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_2($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_arrow_iosp28_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_3($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_text_wouvsm_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_4($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($tools.get_fill_wom0ng_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_5($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($editor.get_tool_wov2zl_k$() === $tools.get_eraser_czouj9_k$() ? $tools.get_freehand_dsmxlw_k$() : $tools.get_eraser_czouj9_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_6($editor, $tools) {
+    return function () {
+      // Inline function 'stickynode.ui.byId' call
+      var id = 'polygonSidesInput';
+      var tmp = document.getElementById(id);
+      var tmp0_safe_receiver = tmp instanceof HTMLInputElement ? tmp : null;
+      var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.value;
+      var tmp2_safe_receiver = tmp1_safe_receiver == null ? null : toDoubleOrNull(tmp1_safe_receiver);
+      var sides = tmp2_safe_receiver == null ? null : numberToInt(tmp2_safe_receiver);
+      var tmp_0;
+      if (!(sides == null) && sides >= 3) {
+        $editor.set_polygonSides_7fzqbb_k$(sides);
+        $editor.selectTool_nfpv6_k$($tools.get_polygon_5b4a0f_k$());
+        tmp_0 = Unit_getInstance();
+      }
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_7($eraserButton, $tools) {
+    return function (tool) {
+      var tmp0_safe_receiver = $eraserButton;
+      if (tmp0_safe_receiver == null)
+        null;
+      else {
+        tmp0_safe_receiver.textContent = tool === $tools.get_eraser_czouj9_k$() ? 'Eraser: On' : 'Eraser: Off';
+      }
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_8($editor, $picker) {
+    return function (it) {
+      $editor.set_color_ayzg4c_k$($picker.value);
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_9($editor) {
+    return function (it) {
+      $editor.set_lineWidth_97ta37_k$(it);
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_10($editor) {
+    return function (it) {
+      $editor.set_fontSize_6szsfv_k$(it);
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_11($editor) {
+    return function () {
+      $editor.undo_t6j8bw_k$();
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_12($editor) {
+    return function () {
+      $editor.redo_p9k3wy_k$();
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_13($editor) {
+    return function () {
+      $editor.clear_j9egeb_k$();
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda$slambda($editor, resultContinuation) {
+    this.$editor_1 = $editor;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(setupControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(setupControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(setupControls$lambda$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = saveToFile(this.$editor_1.exportJson_3gdc58_k$(), VOID, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_state_rjd8d0_k$(4);
+            continue $sm;
+          case 2:
+            this.set_exceptionState_fex74n_k$(3);
+            var tmp_0 = this.get_exception_x0n6w6_k$();
+            if (tmp_0 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              window.alert("Couldn't save the file: " + error.message);
+              this.set_state_rjd8d0_k$(4);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 3:
+            throw this.get_exception_x0n6w6_k$();
+          case 4:
+            this.set_exceptionState_fex74n_k$(3);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 3) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(setupControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new setupControls$lambda$slambda(this.$editor_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(setupControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function setupControls$lambda$slambda_0($editor, resultContinuation) {
+    var i = new setupControls$lambda$slambda($editor, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function setupControls$lambda_14($editor) {
+    return function () {
+      var tmp = get_scope();
+      launch(tmp, VOID, VOID, setupControls$lambda$slambda_0($editor, null));
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda$slambda_1($editor, resultContinuation) {
+    this.$editor_1 = $editor;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(setupControls$lambda$slambda_1).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(setupControls$lambda$slambda_1).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(setupControls$lambda$slambda_1).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = pickFileText(this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            var tmp0_elvis_lhs = suspendResult;
+            var tmp_0;
+            if (tmp0_elvis_lhs == null) {
+              return Unit_getInstance();
+            } else {
+              tmp_0 = tmp0_elvis_lhs;
+            }
+
+            var text = tmp_0;
+            this.$editor_1.load_fth14d_k$(decodeDrawing(text));
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_state_rjd8d0_k$(4);
+            continue $sm;
+          case 2:
+            this.set_exceptionState_fex74n_k$(3);
+            var tmp_1 = this.get_exception_x0n6w6_k$();
+            if (tmp_1 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              window.alert("Couldn't open that file: " + error.message);
+              this.set_state_rjd8d0_k$(4);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 3:
+            throw this.get_exception_x0n6w6_k$();
+          case 4:
+            this.set_exceptionState_fex74n_k$(3);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 3) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(setupControls$lambda$slambda_1).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new setupControls$lambda$slambda_1(this.$editor_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(setupControls$lambda$slambda_1).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function setupControls$lambda$slambda_2($editor, resultContinuation) {
+    var i = new setupControls$lambda$slambda_1($editor, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function setupControls$lambda_15($editor) {
+    return function () {
+      var tmp = get_scope();
+      launch(tmp, VOID, VOID, setupControls$lambda$slambda_2($editor, null));
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_16($editor) {
+    return function (e) {
+      var event = e instanceof KeyboardEvent ? e : THROW_CCE();
+      var tmp;
+      if (!(event.ctrlKey || event.metaKey) || isTyping(event.target)) {
+        return Unit_getInstance();
+      }
+      // Inline function 'kotlin.text.lowercase' call
+      // Inline function 'kotlin.js.asDynamic' call
+      var tmp_0;
+      switch (event.key.toLowerCase()) {
+        case 'z':
+          event.preventDefault();
+          var tmp_1;
+          if (event.shiftKey) {
+            $editor.redo_p9k3wy_k$();
+            tmp_1 = Unit_getInstance();
+          } else {
+            $editor.undo_t6j8bw_k$();
+            tmp_1 = Unit_getInstance();
+          }
+
+          tmp_0 = tmp_1;
+          break;
+        case 'y':
+          event.preventDefault();
+          $editor.redo_p9k3wy_k$();
+          tmp_0 = Unit_getInstance();
+          break;
+        default:
+          tmp_0 = Unit_getInstance();
+          break;
+      }
+      return Unit_getInstance();
+    };
+  }
+  var properties_initialized_Controls_kt_mopnlk;
+  function _init_properties_Controls_kt__wbvoru() {
+    if (!properties_initialized_Controls_kt_mopnlk) {
+      properties_initialized_Controls_kt_mopnlk = true;
+      scope = MainScope();
+      TEXT_INPUT_TYPES = setOf(['text', 'number']);
+    }
+  }
   //region block: post-declaration
+  protoOf(FreehandTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
+  protoOf(ShapeTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
+  protoOf(FillTool).get_busy_wojps2_k$ = get_busy;
+  protoOf(EraserTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
   protoOf($serializer).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_0).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_1).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
@@ -4360,15 +3997,14 @@
   protoOf($serializer_7).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   //endregion
   //region block: init
-  MAX_HISTORY = 100;
-  storageKey = 'drawingCanvas';
-  textStorageKey = 'drawingCanvasText';
-  rectangleStorageKey = 'drawingCanvasRectangles';
-  circleStorageKey = 'drawingCanvasCircles';
-  polygonStorageKey = 'drawingCanvasPolygons';
-  strokeStorageKey = 'drawingCanvasStrokes';
-  arrowStorageKey = 'drawingCanvasArrows';
+  MIN_SHAPE_DRAG = 3.0;
+  APP_ID = 'sticky-node';
+  FORMAT_VERSION = 2;
+  DEFAULT_LINE_WIDTH = 3;
   DEFAULT_FONT_SIZE = 20;
+  MIN_HIT_RADIUS = 8.0;
+  LEFT_BUTTON = 0;
+  RIGHT_BUTTON = 2;
   //endregion
   mainWrapper();
   return _;
