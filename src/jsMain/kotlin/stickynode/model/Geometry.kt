@@ -29,3 +29,19 @@ fun distanceToSegment(p: Point, a: Point, b: Point): Double {
     val t = (((p.x - a.x) * dx + (p.y - a.y) * dy) / lengthSquared).coerceIn(0.0, 1.0)
     return hypot(p.x - (a.x + t * dx), p.y - (a.y + t * dy))
 }
+
+fun pointInPolygon(p: Point, polygon: List<Point>): Boolean {   // 'Point', not 'point'
+    var inside = false
+    var previous = polygon.lastIndex
+    for (i in polygon.indices) {                                  // 'indices', not 'lastIndex'
+        val a = polygon[i]
+        val b = polygon[previous]
+        if ((a.y > p.y) != (b.y > p.y) &&
+            p.x < (b.x - a.x) * (p.y - a.y) / (b.y - a.y) + a.x
+        ) {
+            inside = !inside
+        }
+        previous = i
+    }
+    return inside
+}

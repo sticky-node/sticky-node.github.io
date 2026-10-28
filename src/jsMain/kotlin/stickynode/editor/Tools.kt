@@ -218,7 +218,6 @@ class FillTool : Tool {
 
     override fun onDown(ed: Editor, p: Point, button: Int) {
         val target = ed.findTop(p) { it is Fillable } as? Fillable ?: return
-        // Right click removes the fill.
         val newFill = if (button == 2) null else ed.color
         if (newFill == target.fill || (newFill == null && target.fill.isNullOrEmpty())) return
 

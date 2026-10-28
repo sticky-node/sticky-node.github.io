@@ -64,6 +64,7 @@ sealed class Item {
     abstract fun draw(ctx: CanvasRenderingContext2D)
     abstract fun hitTest(p: Point): Boolean
     abstract fun moveBy(dx: Double, dy: Double)
+    open fun hitTestFill(p: Point): Boolean = hitTest(p)
 }
 
 @Serializable
@@ -71,20 +72,20 @@ sealed class Item {
 class StrokeItem(
     val points: MutableList<Point>,
     val color: String,
-    val lineWidth: Int = DEFAULT_LINE_WIDTH
-) : Item() {
+    val lineWidth: Int = DEFAULT_LINE_WIDTH,
+    override var fill: String? = null
+) : Item(), Fillable {
     override fun draw(ctx: CanvasRenderingContext2D) {
         if (points.size < 2) return
-        ctx.strokeStyle = color
-        ctx.lineWidth = lineWidth.toDouble()
         ctx.roundStroke()
         ctx.beginPath()
         ctx.moveTo(points[0].x, points[0].y)
         for (i in 1 until points.size) ctx.lineTo(points[i].x, points[i].y)
-        ctx.stroke()
+        // fill() implicitly closes the path; the stroke stays open, as drawn.
+        ctx.paint(fill, color, lineWidth)
     }
 
-    override fun hitTest(p: Point): Boolean {
+    private fun nearLine(p: Point): Boolean {
         val radius = hitRadius(lineWidth)
         if (points.size == 1) return p.distanceTo(points[0]) <= radius
         for (i in 0 until points.size - 1) {
@@ -92,6 +93,15 @@ class StrokeItem(
         }
         return false
     }
+
+    private fun inside(p: Point) = points.size >= 3 && pointInPolygon(p, points)
+
+    /** Once filled, the interior counts too, so it can be dragged and erased like other filled shapes. */
+    override fun hitTest(p: Point): Boolean =
+        nearLine(p) || (!fill.isNullOrEmpty() && inside(p))
+
+    /** The fill tool can target the interior of a stroke even before it has a fill. */
+    override fun hitTestFill(p: Point): Boolean = nearLine(p) || inside(p)
 
     override fun moveBy(dx: Double, dy: Double) {
         for (i in points.indices) {

@@ -128,7 +128,7 @@
   initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_3});
   initMetadataForCompanion(Companion_3);
   initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_2});
+  initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_2});
   initMetadataForCompanion(Companion_4);
   initMetadataForObject($serializer_3, '$serializer', VOID, VOID, [GeneratedSerializer]);
   initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_3});
@@ -1625,6 +1625,25 @@
     var y = p.y_1 - (a.y_1 + t * dy);
     return hypot(tmp0, y);
   }
+  function pointInPolygon(p, polygon) {
+    var inside = false;
+    var previous = get_lastIndex(polygon);
+    var inductionVariable = 0;
+    var last = polygon.get_size_woubt6_k$() - 1 | 0;
+    if (inductionVariable <= last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var a = polygon.get_c1px32_k$(i);
+        var b = polygon.get_c1px32_k$(previous);
+        if (!(a.y_1 > p.y_1 === b.y_1 > p.y_1) && p.x_1 < (b.x_1 - a.x_1) * (p.y_1 - a.y_1) / (b.y_1 - a.y_1) + a.x_1) {
+          inside = !inside;
+        }
+        previous = i;
+      }
+       while (inductionVariable <= last);
+    return inside;
+  }
   function get_measureContext() {
     _init_properties_Items_kt__3bnoaa();
     var tmp0 = measureContext$delegate;
@@ -1731,8 +1750,30 @@
   function Item() {
     Companion_getInstance_3();
   }
+  protoOf(Item).hitTestFill_vfzr9i_k$ = function (p) {
+    return this.hitTest_1gxtur_k$(p);
+  };
   function _get_$childSerializers__r2zwns_1($this) {
     return $this.$childSerializers_1;
+  }
+  function nearLine($this, p) {
+    var radius = hitRadius($this.lineWidth_1);
+    if ($this.points_1.get_size_woubt6_k$() === 1)
+      return p.distanceTo_kno8q6_k$($this.points_1.get_c1px32_k$(0)) <= radius;
+    var inductionVariable = 0;
+    var last = $this.points_1.get_size_woubt6_k$() - 1 | 0;
+    if (inductionVariable < last)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        if (distanceToSegment(p, $this.points_1.get_c1px32_k$(i), $this.points_1.get_c1px32_k$(i + 1 | 0)) <= radius)
+          return true;
+      }
+       while (inductionVariable < last);
+    return false;
+  }
+  function inside($this, p) {
+    return $this.points_1.get_size_woubt6_k$() >= 3 && pointInPolygon(p, $this.points_1);
   }
   function Companion_3() {
     Companion_instance_3 = this;
@@ -1740,7 +1781,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null];
+    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null, null];
   }
   protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_2();
@@ -1753,13 +1794,14 @@
   }
   function $serializer_2() {
     $serializer_instance_2 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stroke', this, 3);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stroke', this, 4);
     tmp0_serialDesc.addElement_5pzumi_k$('points', false);
     tmp0_serialDesc.addElement_5pzumi_k$('color', false);
     tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_2).serialize_z9e00k_k$ = function (encoder, value) {
+  protoOf($serializer_2).serialize_j2wkun_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     var tmp2_cached = Companion_getInstance_4().$childSerializers_1;
@@ -1768,10 +1810,13 @@
     if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !(value.lineWidth_1 === 3)) {
       tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 2, value.lineWidth_1);
     }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !(value.fill_1 == null)) {
+      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 3, StringSerializer_getInstance(), value.fill_1);
+    }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_z9e00k_k$(encoder, value instanceof StrokeItem ? value : THROW_CCE());
+    return this.serialize_j2wkun_k$(encoder, value instanceof StrokeItem ? value : THROW_CCE());
   };
   protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -1781,40 +1826,47 @@
     var tmp4_local0 = null;
     var tmp5_local1 = null;
     var tmp6_local2 = 0;
-    var tmp7_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp8_cached = Companion_getInstance_4().$childSerializers_1;
-    if (tmp7_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp7_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp8_cached[0], tmp4_local0);
+    var tmp7_local3 = null;
+    var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    var tmp9_cached = Companion_getInstance_4().$childSerializers_1;
+    if (tmp8_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp7_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
+      tmp7_local3 = tmp8_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+      tmp3_bitMask0 = tmp3_bitMask0 | 8;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp7_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp8_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp7_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp8_cached[0], tmp4_local0);
+            tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp7_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp7_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
+            break;
+          case 3:
+            tmp7_local3 = tmp8_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+            tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp7_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return StrokeItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
+    tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return StrokeItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
   protoOf($serializer_2).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
@@ -1823,7 +1875,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_4().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance()];
+    return [Companion_getInstance_4().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
   };
   var $serializer_instance_2;
   function $serializer_getInstance_2() {
@@ -1831,7 +1883,7 @@
       new $serializer_2();
     return $serializer_instance_2;
   }
-  function StrokeItem_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, $this) {
+  function StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
       throwMissingFieldException(seen0, 3, $serializer_getInstance_2().descriptor_1);
     }
@@ -1842,18 +1894,24 @@
       $this.lineWidth_1 = 3;
     else
       $this.lineWidth_1 = lineWidth;
+    if (0 === (seen0 & 8))
+      $this.fill_1 = null;
+    else
+      $this.fill_1 = fill;
     return $this;
   }
-  function StrokeItem_init_$Create$(seen0, points, color, lineWidth, serializationConstructorMarker) {
-    return StrokeItem_init_$Init$(seen0, points, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(StrokeItem)));
+  function StrokeItem_init_$Create$(seen0, points, color, lineWidth, fill, serializationConstructorMarker) {
+    return StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(StrokeItem)));
   }
-  function StrokeItem(points, color, lineWidth) {
+  function StrokeItem(points, color, lineWidth, fill) {
     Companion_getInstance_4();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
+    fill = fill === VOID ? null : fill;
     Item.call(this);
     this.points_1 = points;
     this.color_1 = color;
     this.lineWidth_1 = lineWidth;
+    this.fill_1 = fill;
   }
   protoOf(StrokeItem).get_points_i5obn0_k$ = function () {
     return this.points_1;
@@ -1864,11 +1922,15 @@
   protoOf(StrokeItem).get_lineWidth_lbeliv_k$ = function () {
     return this.lineWidth_1;
   };
+  protoOf(StrokeItem).set_fill_sosdnb_k$ = function (_set____db54di) {
+    this.fill_1 = _set____db54di;
+  };
+  protoOf(StrokeItem).get_fill_wom0ng_k$ = function () {
+    return this.fill_1;
+  };
   protoOf(StrokeItem).draw_rpid3c_k$ = function (ctx) {
     if (this.points_1.get_size_woubt6_k$() < 2)
       return Unit_getInstance();
-    ctx.strokeStyle = this.color_1;
-    ctx.lineWidth = this.lineWidth_1;
     roundStroke(ctx);
     ctx.beginPath();
     ctx.moveTo(this.points_1.get_c1px32_k$(0).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(0).get_y_1mhr68_k$());
@@ -1881,23 +1943,27 @@
         ctx.lineTo(this.points_1.get_c1px32_k$(i).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(i).get_y_1mhr68_k$());
       }
        while (inductionVariable < last);
-    ctx.stroke();
+    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
   };
   protoOf(StrokeItem).hitTest_1gxtur_k$ = function (p) {
-    var radius = hitRadius(this.lineWidth_1);
-    if (this.points_1.get_size_woubt6_k$() === 1)
-      return p.distanceTo_kno8q6_k$(this.points_1.get_c1px32_k$(0)) <= radius;
-    var inductionVariable = 0;
-    var last = this.points_1.get_size_woubt6_k$() - 1 | 0;
-    if (inductionVariable < last)
-      do {
-        var i = inductionVariable;
-        inductionVariable = inductionVariable + 1 | 0;
-        if (distanceToSegment(p, this.points_1.get_c1px32_k$(i), this.points_1.get_c1px32_k$(i + 1 | 0)) <= radius)
-          return true;
+    var tmp;
+    if (nearLine(this, p)) {
+      tmp = true;
+    } else {
+      var tmp_0;
+      // Inline function 'kotlin.text.isNullOrEmpty' call
+      var this_0 = this.fill_1;
+      if (!(this_0 == null || charSequenceLength(this_0) === 0)) {
+        tmp_0 = inside(this, p);
+      } else {
+        tmp_0 = false;
       }
-       while (inductionVariable < last);
-    return false;
+      tmp = tmp_0;
+    }
+    return tmp;
+  };
+  protoOf(StrokeItem).hitTestFill_vfzr9i_k$ = function (p) {
+    return nearLine(this, p) || inside(this, p);
   };
   protoOf(StrokeItem).moveBy_hp42rs_k$ = function (dx, dy) {
     var inductionVariable = 0;
