@@ -217,7 +217,8 @@ class FillTool : Tool {
     override val claimsMouse = true
 
     override fun onDown(ed: Editor, p: Point, button: Int) {
-        val target = ed.findTop(p) { it is Fillable } as? Fillable ?: return
+        val target = ed.items.lastOrNull { it is Fillable && it.hitTestFill(p) } as? Fillable
+            ?: return
         val newFill = if (button == 2) null else ed.color
         if (newFill == target.fill || (newFill == null && target.fill.isNullOrEmpty())) return
 

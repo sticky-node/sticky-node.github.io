@@ -844,9 +844,6 @@
     this.pending_1 = null;
     addNew(this, ed, at);
   };
-  function FillTool$onDown$lambda(it) {
-    return isInterface(it, Fillable);
-  }
   function FillTool() {
     this.claimsMouse_1 = true;
   }
@@ -854,31 +851,52 @@
     return this.claimsMouse_1;
   };
   protoOf(FillTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    var tmp = ed.findTop_jleozl_k$(p, FillTool$onDown$lambda);
-    var tmp0_elvis_lhs = (!(tmp == null) ? isInterface(tmp, Fillable) : false) ? tmp : null;
-    var tmp_0;
+    var tmp0 = ed.get_items_it823b_k$();
+    var tmp$ret$1;
+    $l$block: {
+      // Inline function 'kotlin.collections.lastOrNull' call
+      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
+      while (iterator.hasPrevious_qh0629_k$()) {
+        var element = iterator.previous_l2dfd5_k$();
+        // Inline function 'stickynode.editor.FillTool.onDown.<anonymous>' call
+        var tmp;
+        if (isInterface(element, Fillable)) {
+          tmp = element.hitTestFill_vfzr9i_k$(p);
+        } else {
+          tmp = false;
+        }
+        if (tmp) {
+          tmp$ret$1 = element;
+          break $l$block;
+        }
+      }
+      tmp$ret$1 = null;
+    }
+    var tmp_0 = tmp$ret$1;
+    var tmp0_elvis_lhs = (!(tmp_0 == null) ? isInterface(tmp_0, Fillable) : false) ? tmp_0 : null;
+    var tmp_1;
     if (tmp0_elvis_lhs == null) {
       return Unit_getInstance();
     } else {
-      tmp_0 = tmp0_elvis_lhs;
+      tmp_1 = tmp0_elvis_lhs;
     }
-    var target = tmp_0;
+    var target = tmp_1;
     var newFill = button === 2 ? null : ed.get_color_ipu8u2_k$();
-    var tmp_1;
+    var tmp_2;
     if (newFill == target.get_fill_wom0ng_k$()) {
-      tmp_1 = true;
+      tmp_2 = true;
     } else {
-      var tmp_2;
+      var tmp_3;
       if (newFill == null) {
         // Inline function 'kotlin.text.isNullOrEmpty' call
         var this_0 = target.get_fill_wom0ng_k$();
-        tmp_2 = this_0 == null || charSequenceLength(this_0) === 0;
+        tmp_3 = this_0 == null || charSequenceLength(this_0) === 0;
       } else {
-        tmp_2 = false;
+        tmp_3 = false;
       }
-      tmp_1 = tmp_2;
+      tmp_2 = tmp_3;
     }
-    if (tmp_1)
+    if (tmp_2)
       return Unit_getInstance();
     target.set_fill_sosdnb_k$(newFill);
     ed.render_dje1iy_k$();
