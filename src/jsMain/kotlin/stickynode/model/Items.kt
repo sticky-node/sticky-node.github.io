@@ -12,6 +12,7 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sin
+import kotlin.math.floor
 
 const val DEFAULT_LINE_WIDTH = 3
 const val DEFAULT_FONT_SIZE = 20
@@ -299,5 +300,44 @@ class TextItem(
     override fun moveBy(dx: Double, dy: Double) {
         x += dx
         y += dy
+    }
+}
+
+/** A filled area found by flood fill. [runs] holds triples: y, xStart, xEnd (exclusive). */
+@Serializable
+@SerialName("regionFill")
+class RegionFillItem(
+    val runs: List<Int>,
+    val color: String,
+    var offsetX: Double = 0.0,
+    var offsetY: Double = 0.0
+) : Item() {
+    override fun draw(ctx: CanvasRenderingContext2D) {
+        ctx.fillStyle = color
+        var i = 0
+        while (i < runs.size) {
+            val y = runs[i]
+            val x0 = runs[i + 1]
+            val x1 = runs[i + 2]
+            // Grown by 1px so the fill tucks under the anti-aliased edges of the lines.
+            ctx.fillRect(x0 + offsetX - 1, y + offsetY - 1, (x1 - x0 + 2).toDouble(), 3.0)
+            i += 3
+        }
+    }
+
+    override fun hitTest(p: Point): Boolean {
+        val y = floor(p.y - offsetY).toInt()
+        val x = floor(p.x - offsetX).toInt()
+        var i = 0
+        while (i < runs.size) {
+            if (runs[i] == y && x >= runs[i + 1] && x < runs[i + 2]) return true
+            i += 3
+        }
+        return false
+    }
+
+    override fun moveBy(dx: Double, dy: Double) {
+        offsetX += dx
+        offsetY += dy
     }
 }

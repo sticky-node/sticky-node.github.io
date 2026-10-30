@@ -11,6 +11,7 @@ import stickynode.model.StrokeItem
 import stickynode.model.TextItem
 import stickynode.model.boundingBox
 import kotlin.math.hypot
+import stickynode.model.RegionFillItem
 
 private const val MIN_SHAPE_DRAG = 3.0
 
@@ -217,12 +218,32 @@ class FillTool : Tool {
     override val claimsMouse = true
 
     override fun onDown(ed: Editor, p: Point, button: Int) {
-        val target = ed.items.lastOrNull { it is Fillable && it.hitTestFill(p) } as? Fillable
-            ?: return
-        val newFill = if (button == 2) null else ed.color
-        if (newFill == target.fill || (newFill == null && target.fill.isNullOrEmpty())) return
+        // 1. Clicking inside a rectangle, circle, polygon or single stroke works as before.
+        val native = ed.items.lastOrNull { it is Fillable && it.hitTestFill(p) } as? Fillable
+        if (native != null) {
+            val newFill = if (button == 2) null else ed.color
+            if (newFill == native.fill || (newFill == null && native.fill.isNullOrEmpty())) return
+            native.fill = newFill
+            ed.render()
+            ed.commit()
+            return
+        }
 
-        target.fill = newFill
+        // 2. Otherwise fill the area enclosed by any combination of items.
+        val old = ed.items.lastOrNull { it is RegionFillItem && it.hitTest(p) }
+
+        if (button == 2) { // right-click removes a region fill
+            if (old != null) {
+                ed.items.remove(old)
+                ed.render()
+                ed.commit()
+            }
+            return
+        }
+
+        val runs = findEnclosedRegion(ed, p) ?: return
+        if (old != null) ed.items.remove(old) // clicking again recolors it
+        ed.items.add(0, RegionFillItem(runs, ed.color))
         ed.render()
         ed.commit()
     }
@@ -231,7 +252,6 @@ class FillTool : Tool {
     override fun onUp(ed: Editor) = Unit
 }
 
-/** Removes whole items. A drag across several items is a single undo step. */
 class EraserTool : Tool {
     private var active = false
     private var erased = false
