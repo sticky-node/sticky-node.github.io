@@ -13,6 +13,10 @@ import stickynode.editor.Editor
 import stickynode.model.decodeDrawing
 import stickynode.storage.pickFileText
 import stickynode.storage.saveToFile
+import stickynode.storage.configureServer
+import stickynode.storage.listServerDrawings
+import stickynode.storage.loadFromServer
+import stickynode.storage.saveToServer
 
 private val scope = MainScope()
 private val TEXT_INPUT_TYPES = setOf("text", "number")
@@ -94,6 +98,42 @@ fun setupControls(editor: Editor) {
                 editor.load(decodeDrawing(text))
             } catch (error: Throwable) {
                 window.alert("Couldn't open that file: ${error.message}")
+            }
+        }
+    }
+    
+        // Server (Raspberry Pi)
+    onClick("serverSettingsButton") { configureServer() }
+
+    onClick("serverSaveButton") {
+        val name = window.prompt("Save as (letters, numbers, - and _ only):", "drawing")?.trim()
+        if (name.isNullOrEmpty()) return@onClick
+        scope.launch {
+            try {
+                saveToServer(name, editor.exportJson())
+                window.alert("Saved \"$name\" to the server.")
+            } catch (error: Throwable) {
+                window.alert("Couldn't save to the server: ${error.message}")
+            }
+        }
+    }
+
+    onClick("serverOpenButton") {
+        scope.launch {
+            try {
+                val names = listServerDrawings()
+                if (names.isEmpty()) {
+                    window.alert("No saved drawings on the server yet.")
+                    return@launch
+                }
+                val name = window.prompt(
+                    "Open which drawing?\n\n" + names.joinToString("\n"),
+                    names.first()
+                )?.trim()
+                if (name.isNullOrEmpty()) return@launch
+                editor.load(decodeDrawing(loadFromServer(name)))
+            } catch (error: Throwable) {
+                window.alert("Couldn't open that drawing: ${error.message}")
             }
         }
     }
