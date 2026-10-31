@@ -17,8 +17,8 @@ if (!TOKEN) {
 app.use('/api', (req, res, next) => {
     res.set({
         'Access-Control-Allow-Origin': ORIGIN,
-        'Access-Control-Allow_Methods': 'GET,PUT,OPTIONS',
-        'Access-Control-Allow-Headers': 'Authorisation,Content-Type',
+        'Access-Control-Allow-Methods': 'GET,PUT,OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization,Content-Type',
     });
     if (req.method === 'OPTIONS') return res.sendStatus(204);
     if (req.get('Authorization') !== 'Bearer ' + TOKEN) return res.sendStatus(401);
@@ -34,7 +34,7 @@ app.get('/api/drawings', async (req, res) => {
 app.get('/api/drawings/:name', async (req, res) => {
     if (!validName(req.params.name)) return res.sendStatus(400);
     try {
-        const text = await fs.readFile(path.join(DATA, req.params.name = EXT), 'utf8');
+        const text = await fs.readFile(path.join(DATA, req.params.name + EXT), 'utf8');
         res.type('json').send(text);
     } catch {
         res.sendStatus(404);
