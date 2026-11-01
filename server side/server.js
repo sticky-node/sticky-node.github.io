@@ -48,4 +48,26 @@ app.put('/api/drawings/:name', express.text({ type: '*/*', limit: '20mb' }), asy
     res.sendStatus(204);
 });
 
+const IMAGES = path.join(DATA, 'images');
+const validImage = n => /^[\w\-]{1,64}\.(png|jpe?g|gif|webp)$/i.test(n);
+
+app.put('/api/images/:id', express.raw({ type: '20mb' }), async (req, res) => {
+    if (!validImage(req.params.id)) return res.sendStatus(400);
+    if (!(req.get('Content-Type') || '').startsWith('image/')) return res.sendStatus(415);
+    if (!Buffer.isBuffer(req.body) || req.body.length === 0) return res.sendStatus(400);
+    await fs.mkdir(IMAGES, { recursive: true });
+    await fs.writeFile(path.join(IMAGES, req.params.id), req.body);
+    res.sendStatus(204);
+});
+
+app.get('/api/images/:id', (req, res) => {
+    if (!validImage(req.params.id)) return res.sendStatus(400);
+    res.set('X-Content-Type-Options', 'nosniff');
+    res.sendFile(
+        path.join(IMAGES, req.params.id),
+        { headers: { 'Cache-Control': 'private, max-age=31536000, immutable' } },
+        err => { if (err && !res.headersSent) res.sendStatus(404); }
+    );
+});
+
 app.listen(3000, '127.0.0.1', () => console.log('Sticky Node API on :3000'));

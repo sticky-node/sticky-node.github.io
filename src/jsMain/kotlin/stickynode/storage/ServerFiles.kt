@@ -4,6 +4,8 @@ import kotlinx.browser.localStorage
 import kotlinx.browser.window
 import kotlinx.coroutines.await
 import kotlinx.serialization.json.Json
+import org.w3c.files.Blob
+import org.w3c.files.File
 import kotlin.js.Promise
 
 private const val URL_KEY = "stickyNode.serverUrl"
@@ -21,10 +23,17 @@ fun configureServer(): Boolean {
     return true
 }
 
-private fun ensureConfigured(): Boolean =
-    (localStorage.getItem(URL_KEY) != null && localStorage.getItem(TOKEN_KEY) != null) || configureServer()
+fun isConfigured(): Boolean =
+    localStorage.getItem(URL_KEY) != null && localStorage.getItem(TOKEN_KEY) != null
 
-private suspend fun request(path: String, method: String = "GET", body: String? = null): String {
+private fun ensureConfigured(): Boolean = isConfigured() || configureServer()
+
+private suspend fun send(
+    path: String,
+    method: String = "GET",
+    body: dynamic = null,
+    contentType: String? = null
+): dynamic {
     if (!ensureConfigured()) throw IllegalStateException("Server not configured")
     val base = localStorage.getItem(URL_KEY)
     val token = localStorage.getItem(TOKEN_KEY)
@@ -35,7 +44,7 @@ private suspend fun request(path: String, method: String = "GET", body: String? 
     options.method = method
     options.headers = headers
     if (body != null) {
-        headers["Content-Type"] = "text/plain"
+        if (contentType != null) headers["Content-Type"] = contentType
         options.body = body
     }
 
@@ -44,8 +53,11 @@ private suspend fun request(path: String, method: String = "GET", body: String? 
         if (response.status == 401) throw IllegalStateException("Wrong token (use Server Settings)")
         throw IllegalStateException("Server error ${response.status}")
     }
-    return response.text().unsafeCast<Promise<String>>().await()
+    return response
 }
+
+private suspend fun request(path: String, method: String = "GET", body: String? = null): String =
+    send(path, method, body, "text/plain").text().unsafeCast<Promise<String>>().await()
 
 private fun encode(name: String): String = js("encodeURIComponent")(name).unsafeCast<String>()
 
@@ -58,3 +70,10 @@ suspend fun loadFromServer(name: String): String =
 suspend fun saveToServer(name: String, content: String) {
     request("/api/drawings/${encode(name)}", "PUT", content)
 }
+
+suspend fun uploadImage(id: String, file: File) {
+    send("/api/images/${encode(id)}", "PUT", file, file.type)
+}
+
+suspend fun fetchImageBlob(id: String): Blob =
+    send("/api/images/${encode(id)}").blob().unsafeCast<Promise<Blob>>().await()
