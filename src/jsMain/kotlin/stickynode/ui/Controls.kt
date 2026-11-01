@@ -17,6 +17,12 @@ import stickynode.storage.configureServer
 import stickynode.storage.listServerDrawings
 import stickynode.storage.loadFromServer
 import stickynode.storage.saveToServer
+import kotlin.math.min
+import kotlin.random.Random
+import stickynode.model.ImageItem
+import stickynode.storage.ImageCache
+import stickynode.storage.pickImageFile
+import stickynode.storage.uploadImage
 
 private val scope = MainScope()
 private val TEXT_INPUT_TYPES = setOf("text", "number")

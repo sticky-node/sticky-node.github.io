@@ -13,6 +13,7 @@ import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sin
 import kotlin.math.floor
+import stickynode.storage.ImageCache
 
 const val DEFAULT_LINE_WIDTH = 3
 const val DEFAULT_FONT_SIZE = 20
@@ -343,7 +344,7 @@ class RegionFillItem(
 }
 
 @Serializable
-@serialName("image")
+@SerialName("image")
 class ImageItem(
     override var x: Double,
     override var y: Double,
@@ -356,7 +357,7 @@ class ImageItem(
         if (img != null) {
             ctx.drawImage(img, x, y, width, height)
         } else {
-            ctx.strokeStyle = '#999999'
+            ctx.strokeStyle = "#999999"
             ctx.lineWidth = 1.0
             ctx.strokeRect(x, y, width, height)
             ctx.fillStyle = "#999999"
