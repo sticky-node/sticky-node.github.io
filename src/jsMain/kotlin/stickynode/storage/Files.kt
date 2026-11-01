@@ -47,18 +47,18 @@ suspend fun saveToFile(content: String, suggestedName: String = "drawing.sticky.
     window.setTimeout({ window.asDynamic().URL.revokeObjectURL(url); Unit }, 1000)
 }
 
-/** Lets the user choose a JSON file and returns its text, or null if they cancel. */
 suspend fun pickFileText(): String? {
-    val file = pickFile() ?: return null
+    val file = pickFile(".json,application/json") ?: return null
     return file.asDynamic().text().unsafeCast<Promise<String>>().await()
 }
 
-private suspend fun pickFile(): File? = suspendCoroutine { continuation ->
+suspend fun pickImageFile(): File? = pickFile("image/png,image/jpeg,image/gif,image/webp")
+
+private suspend fun pickFile(accept: String): File? = suspendCoroutine { continuation ->
     val input = document.createElement("input") as HTMLInputElement
     input.type = "file"
-    input.accept = ".json,application/json"
+    input.accept = accept
     input.addEventListener("change", { continuation.resume(input.files?.item(0)) })
-    // Fired by modern browsers when the dialog is dismissed, so the coroutine never hangs.
     input.addEventListener("cancel", { continuation.resume(null) })
     input.click()
 }
