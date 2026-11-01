@@ -51,7 +51,7 @@ app.put('/api/drawings/:name', express.text({ type: '*/*', limit: '20mb' }), asy
 const IMAGES = path.join(DATA, 'images');
 const validImage = n => /^[\w\-]{1,64}\.(png|jpe?g|gif|webp)$/i.test(n);
 
-app.put('/api/images/:id', express.raw({ type: '20mb' }), async (req, res) => {
+app.put('/api/images/:id', express.raw({ type: 'image/*', limit: '20mb' }), async (req, res) => {
     if (!validImage(req.params.id)) return res.sendStatus(400);
     if (!(req.get('Content-Type') || '').startsWith('image/')) return res.sendStatus(415);
     if (!Buffer.isBuffer(req.body) || req.body.length === 0) return res.sendStatus(400);
