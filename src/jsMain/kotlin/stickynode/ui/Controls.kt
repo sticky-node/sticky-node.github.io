@@ -13,23 +13,13 @@ import stickynode.editor.Editor
 import stickynode.model.decodeDrawing
 import stickynode.storage.pickFileText
 import stickynode.storage.saveToFile
-import stickynode.storage.configureServer
-import stickynode.storage.listServerDrawings
-import stickynode.storage.loadFromServer
-import stickynode.storage.saveToServer
-import kotlin.math.min
-import kotlin.random.Random
-import stickynode.model.ImageItem
-import stickynode.storage.ImageCache
-import stickynode.storage.pickImageFile
-import stickynode.storage.uploadImage
 
 private val scope = MainScope()
 private val TEXT_INPUT_TYPES = setOf("text", "number")
 
 private inline fun <reified T : Element> byId(id: String): T? = document.getElementById(id) as? T
 
-private fun onClick(id: String, action: () -> Unit) {
+internal fun onClick(id: String, action: () -> Unit) {
     document.getElementById(id)?.addEventListener("click", { action() })
 }
 
@@ -108,75 +98,8 @@ fun setupControls(editor: Editor) {
         }
     }
     
-        // Server (Raspberry Pi)
-    onClick("serverSettingsButton") { configureServer() }
-
-    onClick("serverSaveButton") {
-        val name = window.prompt("Save as (letters, numbers, - and _ only):", "drawing")?.trim()
-        if (name.isNullOrEmpty()) return@onClick
-        scope.launch {
-            try {
-                saveToServer(name, editor.exportJson())
-                window.alert("Saved \"$name\" to the server.")
-            } catch (error: Throwable) {
-                window.alert("Couldn't save to the server: ${error.message}")
-            }
-        }
-    }
-
-    onClick("serverOpenButton") {
-        scope.launch {
-            try {
-                val names = listServerDrawings()
-                if (names.isEmpty()) {
-                    window.alert("No saved drawings on the server yet.")
-                    return@launch
-                }
-                val name = window.prompt(
-                    "Open which drawing?\n\n" + names.joinToString("\n"),
-                    names.first()
-                )?.trim()
-                if (name.isNullOrEmpty()) return@launch
-                editor.load(decodeDrawing(loadFromServer(name)))
-            } catch (error: Throwable) {
-                window.alert("Couldn't open that drawing: ${error.message}")
-            }
-        }
-    }
-    
-onClick("addImageButton") {
-    scope.launch {
-        try {
-            val file = pickImageFile() ?: return@launch
-            val ext = when (file.type) {
-                "image/png" -> "png"
-                "image/jpeg" -> "jpg"
-                "image/gif" -> "gif"
-                "image/webp" -> "webp"
-                else -> throw IllegalArgumentException("Use a PNG, JPEG, GIF or WebP image")
-            }
-            if (file.size.toDouble() > 20 * 1024 * 1024) {
-                throw IllegalArgumentException("Image is larger than 20 MB")
-            }
-
-            val id = "${(Random.nextLong() ushr 1).toString(36)}.$ext"
-            uploadImage(id, file)
-            val img = ImageCache.add(id, file)
-
-            // Fit within 400px and centre on screen.
-            val scale = min(1.0, 400.0 / maxOf(img.naturalWidth, img.naturalHeight))
-            val w = img.naturalWidth * scale
-            val h = img.naturalHeight * scale
-            editor.items.add(
-                ImageItem((editor.canvas.width - w) / 2, (editor.canvas.height - h) / 2, w, h, id)
-            )
-            editor.render()
-            editor.commit()
-        } catch (error: Throwable) {
-            window.alert("Couldn't add the image: ${error.message}")
-        }
-    }
-}
+    setupServerControls(editor, scope)
+    setupImageControls(editor, scope)
 
     // Keyboard shortcuts
     document.addEventListener("keydown", { e ->

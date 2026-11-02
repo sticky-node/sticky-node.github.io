@@ -3,8 +3,8 @@
   "version": "unspecified",
   "private": true,
   "workspaces": [
-    "packages/sticky-node",
-    "packages/sticky-node-test"
+    "packages\\sticky-node",
+    "packages\\sticky-node-test"
   ],
   "devDependencies": {},
   "dependencies": {},

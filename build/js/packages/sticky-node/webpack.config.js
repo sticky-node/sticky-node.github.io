@@ -1,5 +1,5 @@
 let config = {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     modules: [
       "node_modules"
@@ -13,7 +13,7 @@ let config = {
 
 // entry
 config.entry = {
-    main: [require('path').resolve(__dirname, "kotlin/sticky-node.js")]
+    main: [require('path').resolve(__dirname, "kotlin\\sticky-node.js")]
 };
 config.output = {
     filename: (chunkData) => {
@@ -25,18 +25,32 @@ config.output = {
     libraryTarget: "umd",
     globalObject: "globalThis"
 };
-config.output.path = require('path').resolve(__dirname, "../../../kotlin-webpack/js/productionExecutable")
 // source maps
 config.module.rules.push({
         test: /\.m?js$/,
         use: ["source-map-loader"],
         enforce: "pre"
 });
-config.devtool = 'source-map';
+config.devtool = 'eval-source-map';
 config.ignoreWarnings = [
     /Failed to parse source map/,
     /Accessing import\.meta directly is unsupported \(only property access or destructuring is supported\)/
 ]
+
+// dev server
+config.devServer = {
+  "open": true,
+  "static": [
+    "kotlin",
+    "..\\..\\..\\processedResources\\js\\main"
+  ],
+  "client": {
+    "overlay": {
+      "errors": true,
+      "warnings": false
+    }
+  }
+};
 
 // noinspection JSUnnecessarySemicolon
 ;(function(config) {

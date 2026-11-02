@@ -23,82 +23,104 @@
   //region block: imports
   var imul = Math.imul;
   var hypot = Math.hypot;
-  var THROW_CCE = kotlin_kotlin.$_$.nb;
-  var Unit_getInstance = kotlin_kotlin.$_$.f4;
-  var ArrayList_init_$Create$ = kotlin_kotlin.$_$.h;
-  var protoOf = kotlin_kotlin.$_$.a9;
-  var VOID = kotlin_kotlin.$_$.d;
-  var emptyList = kotlin_kotlin.$_$.l5;
-  var initMetadataForClass = kotlin_kotlin.$_$.b8;
-  var ArrayDeque_init_$Create$ = kotlin_kotlin.$_$.f;
-  var get_lastIndex = kotlin_kotlin.$_$.t5;
-  var numberToInt = kotlin_kotlin.$_$.x8;
-  var booleanArray = kotlin_kotlin.$_$.m7;
-  var isCharSequence = kotlin_kotlin.$_$.l8;
-  var trim = kotlin_kotlin.$_$.wa;
-  var toString = kotlin_kotlin.$_$.e9;
-  var ensureNotNull = kotlin_kotlin.$_$.dc;
-  var initMetadataForObject = kotlin_kotlin.$_$.g8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.e8;
-  var mutableListOf = kotlin_kotlin.$_$.a6;
-  var last = kotlin_kotlin.$_$.v5;
-  var charSequenceLength = kotlin_kotlin.$_$.q7;
-  var isInterface = kotlin_kotlin.$_$.p8;
+  var THROW_CCE = kotlin_kotlin.$_$.vb;
+  var Unit_getInstance = kotlin_kotlin.$_$.i4;
+  var ArrayList_init_$Create$ = kotlin_kotlin.$_$.j;
+  var protoOf = kotlin_kotlin.$_$.g9;
+  var VOID = kotlin_kotlin.$_$.f;
+  var emptyList = kotlin_kotlin.$_$.o5;
+  var initMetadataForClass = kotlin_kotlin.$_$.g8;
+  var ArrayDeque_init_$Create$ = kotlin_kotlin.$_$.h;
+  var get_lastIndex = kotlin_kotlin.$_$.x5;
+  var numberToInt = kotlin_kotlin.$_$.d9;
+  var booleanArray = kotlin_kotlin.$_$.q7;
+  var isCharSequence = kotlin_kotlin.$_$.q8;
+  var trim = kotlin_kotlin.$_$.eb;
+  var toString = kotlin_kotlin.$_$.k9;
+  var ensureNotNull = kotlin_kotlin.$_$.mc;
+  var initMetadataForObject = kotlin_kotlin.$_$.l8;
+  var initMetadataForInterface = kotlin_kotlin.$_$.j8;
+  var mutableListOf = kotlin_kotlin.$_$.e6;
+  var last = kotlin_kotlin.$_$.z5;
+  var charSequenceLength = kotlin_kotlin.$_$.v7;
+  var isInterface = kotlin_kotlin.$_$.u8;
   var ArrayListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p1;
-  var initMetadataForCompanion = kotlin_kotlin.$_$.c8;
+  var initMetadataForCompanion = kotlin_kotlin.$_$.h8;
   var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.w1;
-  var equals = kotlin_kotlin.$_$.u7;
+  var equals = kotlin_kotlin.$_$.z7;
   var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.d;
   var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o;
   var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n;
   var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r1;
   var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.s1;
   var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.z1;
-  var objectCreate = kotlin_kotlin.$_$.z8;
-  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.f1;
-  var isBlank = kotlin_kotlin.$_$.z9;
-  var Json = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.a;
+  var objectCreate = kotlin_kotlin.$_$.f9;
+  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.h1;
+  var isBlank = kotlin_kotlin.$_$.fa;
+  var Json = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.b;
   var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
-  var getNumberHashCode = kotlin_kotlin.$_$.x7;
-  var coerceIn = kotlin_kotlin.$_$.j9;
-  var roundToInt = kotlin_kotlin.$_$.f9;
-  var getKClass = kotlin_kotlin.$_$.c;
+  var getNumberHashCode = kotlin_kotlin.$_$.c8;
+  var coerceIn = kotlin_kotlin.$_$.p9;
+  var roundToInt = kotlin_kotlin.$_$.l9;
+  var getKClass = kotlin_kotlin.$_$.e;
   var SealedClassSerializer_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.a;
-  var LazyThreadSafetyMode_PUBLICATION_getInstance = kotlin_kotlin.$_$.e;
-  var lazy = kotlin_kotlin.$_$.hc;
+  var LazyThreadSafetyMode_PUBLICATION_getInstance = kotlin_kotlin.$_$.g;
+  var lazy = kotlin_kotlin.$_$.qc;
   var SerializerFactory = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.x1;
   var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r;
-  var coerceAtLeast = kotlin_kotlin.$_$.h9;
-  var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.g;
-  var split = kotlin_kotlin.$_$.ga;
-  var checkIndexOverflow = kotlin_kotlin.$_$.x4;
-  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.l1;
-  var KProperty0 = kotlin_kotlin.$_$.p9;
-  var getPropertyCallableRef = kotlin_kotlin.$_$.y7;
-  var lazy_0 = kotlin_kotlin.$_$.ic;
-  var intercepted = kotlin_kotlin.$_$.r6;
-  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.x;
-  var Companion_getInstance = kotlin_kotlin.$_$.a4;
-  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.y1;
-  var CoroutineImpl = kotlin_kotlin.$_$.f7;
+  var coerceAtLeast = kotlin_kotlin.$_$.n9;
+  var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.i;
+  var split = kotlin_kotlin.$_$.ma;
+  var checkIndexOverflow = kotlin_kotlin.$_$.a5;
+  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.n1;
+  var KProperty0 = kotlin_kotlin.$_$.v9;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.d8;
+  var lazy_0 = kotlin_kotlin.$_$.rc;
+  var intercepted = kotlin_kotlin.$_$.v6;
+  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.z;
+  var Companion_getInstance = kotlin_kotlin.$_$.d4;
+  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.a2;
+  var CoroutineImpl = kotlin_kotlin.$_$.j7;
   var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.p6;
-  var initMetadataForCoroutine = kotlin_kotlin.$_$.d8;
-  var Collection = kotlin_kotlin.$_$.h4;
-  var listOf = kotlin_kotlin.$_$.x5;
-  var toIntOrNull = kotlin_kotlin.$_$.na;
-  var toDoubleOrNull = kotlin_kotlin.$_$.la;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.t6;
+  var initMetadataForCoroutine = kotlin_kotlin.$_$.i8;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
-  var initMetadataForLambda = kotlin_kotlin.$_$.f8;
-  var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
+  var initMetadataForLambda = kotlin_kotlin.$_$.k8;
+  var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.k1;
+  var createFailure = kotlin_kotlin.$_$.lc;
+  var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
+  var HashSet_init_$Create$ = kotlin_kotlin.$_$.p;
   var MainScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
-  var setOf = kotlin_kotlin.$_$.f6;
-  var SuspendFunction1 = kotlin_kotlin.$_$.g7;
+  var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
+  var SuspendFunction1 = kotlin_kotlin.$_$.k7;
+  var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.w1;
+  var charArrayOf = kotlin_kotlin.$_$.s7;
+  var trimEnd = kotlin_kotlin.$_$.cb;
+  var plus = kotlin_kotlin.$_$.tc;
+  var Default_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.a;
+  var KtList = kotlin_kotlin.$_$.s4;
+  var PrimitiveClasses_getInstance = kotlin_kotlin.$_$.y3;
+  var arrayOf = kotlin_kotlin.$_$.jc;
+  var createKType = kotlin_kotlin.$_$.b;
+  var createInvariantKTypeProjection = kotlin_kotlin.$_$.a;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n2;
+  var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.f2;
+  var Collection = kotlin_kotlin.$_$.k4;
+  var listOf = kotlin_kotlin.$_$.b6;
+  var toIntOrNull = kotlin_kotlin.$_$.ta;
+  var toDoubleOrNull = kotlin_kotlin.$_$.ra;
+  var setOf = kotlin_kotlin.$_$.j6;
+  var numberToDouble = kotlin_kotlin.$_$.c9;
+  var Default_getInstance_0 = kotlin_kotlin.$_$.x3;
+  var toString_0 = kotlin_kotlin.$_$.wa;
+  var joinToString = kotlin_kotlin.$_$.v5;
+  var first = kotlin_kotlin.$_$.r5;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(Editor, 'Editor');
   initMetadataForClass(History, 'History');
   initMetadataForObject(TextBox, 'TextBox');
+  initMetadataForClass(ToolSet, 'ToolSet', ToolSet);
   function get_claimsMouse() {
     return false;
   }
@@ -112,7 +134,6 @@
   initMetadataForClass(TextTool, 'TextTool', TextTool, VOID, [Tool]);
   initMetadataForClass(FillTool, 'FillTool', FillTool, VOID, [Tool]);
   initMetadataForClass(EraserTool, 'EraserTool', EraserTool, VOID, [Tool]);
-  initMetadataForClass(ToolSet, 'ToolSet', ToolSet);
   initMetadataForCompanion(Companion);
   initMetadataForObject($serializer, '$serializer', VOID, VOID, [GeneratedSerializer]);
   initMetadataForClass(DrawingFile, 'DrawingFile', DrawingFile, VOID, VOID, VOID, VOID, {0: $serializer_getInstance});
@@ -123,36 +144,48 @@
   initMetadataForObject($serializer_1, '$serializer', VOID, VOID, [GeneratedSerializer]);
   initMetadataForClass(Point, 'Point', VOID, VOID, VOID, VOID, VOID, {0: $serializer_getInstance_1});
   initMetadataForClass(BoundingBox, 'BoundingBox');
-  initMetadataForInterface(Fillable, 'Fillable');
-  initMetadataForInterface(Boxed, 'Boxed');
-  initMetadataForCompanion(Companion_2, VOID, [SerializerFactory]);
-  initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_3});
-  initMetadataForCompanion(Companion_3);
+  initMetadataForCompanion(Companion_2);
   initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_2});
+  initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_4});
+  initMetadataForInterface(Boxed, 'Boxed');
+  initMetadataForClass(ImageItem, 'ImageItem', VOID, Item, [Item, Boxed], VOID, VOID, {0: $serializer_getInstance_2});
+  initMetadataForInterface(Fillable, 'Fillable');
+  initMetadataForCompanion(Companion_3, VOID, [SerializerFactory]);
   initMetadataForCompanion(Companion_4);
   initMetadataForObject($serializer_3, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_3});
+  initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_3});
   initMetadataForCompanion(Companion_5);
   initMetadataForObject($serializer_4, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(CircleItem, 'CircleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_4});
+  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_4});
   initMetadataForCompanion(Companion_6);
   initMetadataForObject($serializer_5, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_5});
+  initMetadataForClass(CircleItem, 'CircleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_5});
   initMetadataForCompanion(Companion_7);
   initMetadataForObject($serializer_6, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(ArrowItem, 'ArrowItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_6});
+  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_6});
   initMetadataForCompanion(Companion_8);
   initMetadataForObject($serializer_7, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(TextItem, 'TextItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_7});
+  initMetadataForClass(ArrowItem, 'ArrowItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_7});
   initMetadataForCompanion(Companion_9);
   initMetadataForObject($serializer_8, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(RegionFillItem, 'RegionFillItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_8});
+  initMetadataForClass(TextItem, 'TextItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_8});
+  initMetadataForCompanion(Companion_10);
+  initMetadataForObject($serializer_9, '$serializer', VOID, VOID, [GeneratedSerializer]);
+  initMetadataForClass(RegionFillItem, 'RegionFillItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_9});
   initMetadataForCoroutine($saveToFileCOROUTINE$0, CoroutineImpl);
   initMetadataForCoroutine($pickFileTextCOROUTINE$1, CoroutineImpl);
+  initMetadataForLambda(ImageCache$get$slambda, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForCoroutine($addCOROUTINE$2, CoroutineImpl);
+  initMetadataForObject(ImageCache, 'ImageCache', VOID, VOID, VOID, [2, 1]);
+  initMetadataForCoroutine($sendAndReadCOROUTINE$3, CoroutineImpl);
+  initMetadataForCoroutine($listServerDrawingsCOROUTINE$4, CoroutineImpl);
+  initMetadataForCoroutine($saveToServerCOROUTINE$5, CoroutineImpl);
   initMetadataForObject(Storage, 'Storage');
   initMetadataForLambda(setupControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
   initMetadataForLambda(setupControls$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(setupImageControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(setupServerControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(setupServerControls$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
   //endregion
   function main() {
     var tmp = document.getElementById('drawingcanvas');
@@ -163,10 +196,18 @@
     setupControls(editor);
     var tmp_0 = window;
     tmp_0.addEventListener('resize', main$lambda(editor));
+    var tmp_1 = ImageCache_getInstance();
+    tmp_1.set_onLoaded_3u02fu_k$(main$lambda_0(editor));
   }
   function main$lambda($editor) {
     return function (it) {
       $editor.fitToWindow_u790h8_k$();
+      return Unit_getInstance();
+    };
+  }
+  function main$lambda_0($editor) {
+    return function () {
+      $editor.requestRender_xvw6ob_k$();
       return Unit_getInstance();
     };
   }
@@ -639,6 +680,75 @@
       new TextBox();
     return TextBox_instance;
   }
+  function ToolSet$rectangle$lambda(it) {
+    return it instanceof RectangleItem;
+  }
+  function ToolSet$rectangle$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new RectangleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet$circle$lambda(it) {
+    return it instanceof CircleItem;
+  }
+  function ToolSet$circle$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new CircleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet$polygon$lambda(it) {
+    return it instanceof PolygonItem;
+  }
+  function ToolSet$polygon$lambda_0(ed, start, end) {
+    var box = boundingBox(start, end);
+    return new PolygonItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_polygonSides_rm31lh_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet$arrow$lambda(it) {
+    return it instanceof ArrowItem;
+  }
+  function ToolSet$arrow$lambda_0(ed, start, end) {
+    return new ArrowItem(start.get_x_1mhr67_k$(), start.get_y_1mhr68_k$(), end.get_x_1mhr67_k$(), end.get_y_1mhr68_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+  }
+  function ToolSet() {
+    this.freehand_1 = new FreehandTool();
+    this.eraser_1 = new EraserTool();
+    this.text_1 = new TextTool();
+    this.fill_1 = new FillTool();
+    var tmp = this;
+    var tmp_0 = ToolSet$rectangle$lambda;
+    tmp.rectangle_1 = new ShapeTool(tmp_0, ToolSet$rectangle$lambda_0);
+    var tmp_1 = this;
+    var tmp_2 = ToolSet$circle$lambda;
+    tmp_1.circle_1 = new ShapeTool(tmp_2, ToolSet$circle$lambda_0);
+    var tmp_3 = this;
+    var tmp_4 = ToolSet$polygon$lambda;
+    tmp_3.polygon_1 = new ShapeTool(tmp_4, ToolSet$polygon$lambda_0);
+    var tmp_5 = this;
+    var tmp_6 = ToolSet$arrow$lambda;
+    tmp_5.arrow_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
+  }
+  protoOf(ToolSet).get_freehand_dsmxlw_k$ = function () {
+    return this.freehand_1;
+  };
+  protoOf(ToolSet).get_eraser_czouj9_k$ = function () {
+    return this.eraser_1;
+  };
+  protoOf(ToolSet).get_text_wouvsm_k$ = function () {
+    return this.text_1;
+  };
+  protoOf(ToolSet).get_fill_wom0ng_k$ = function () {
+    return this.fill_1;
+  };
+  protoOf(ToolSet).get_rectangle_r245om_k$ = function () {
+    return this.rectangle_1;
+  };
+  protoOf(ToolSet).get_circle_bwxzh5_k$ = function () {
+    return this.circle_1;
+  };
+  protoOf(ToolSet).get_polygon_5b4a0f_k$ = function () {
+    return this.polygon_1;
+  };
+  protoOf(ToolSet).get_arrow_iosp28_k$ = function () {
+    return this.arrow_1;
+  };
   function get_MIN_SHAPE_DRAG() {
     return MIN_SHAPE_DRAG;
   }
@@ -1110,75 +1220,6 @@
       ed.commit_vpt10n_k$();
     }
   };
-  function ToolSet$rectangle$lambda(it) {
-    return it instanceof RectangleItem;
-  }
-  function ToolSet$rectangle$lambda_0(ed, start, end) {
-    var box = boundingBox(start, end);
-    return new RectangleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
-  }
-  function ToolSet$circle$lambda(it) {
-    return it instanceof CircleItem;
-  }
-  function ToolSet$circle$lambda_0(ed, start, end) {
-    var box = boundingBox(start, end);
-    return new CircleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
-  }
-  function ToolSet$polygon$lambda(it) {
-    return it instanceof PolygonItem;
-  }
-  function ToolSet$polygon$lambda_0(ed, start, end) {
-    var box = boundingBox(start, end);
-    return new PolygonItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_polygonSides_rm31lh_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
-  }
-  function ToolSet$arrow$lambda(it) {
-    return it instanceof ArrowItem;
-  }
-  function ToolSet$arrow$lambda_0(ed, start, end) {
-    return new ArrowItem(start.get_x_1mhr67_k$(), start.get_y_1mhr68_k$(), end.get_x_1mhr67_k$(), end.get_y_1mhr68_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
-  }
-  function ToolSet() {
-    this.freehand_1 = new FreehandTool();
-    this.eraser_1 = new EraserTool();
-    this.text_1 = new TextTool();
-    this.fill_1 = new FillTool();
-    var tmp = this;
-    var tmp_0 = ToolSet$rectangle$lambda;
-    tmp.rectangle_1 = new ShapeTool(tmp_0, ToolSet$rectangle$lambda_0);
-    var tmp_1 = this;
-    var tmp_2 = ToolSet$circle$lambda;
-    tmp_1.circle_1 = new ShapeTool(tmp_2, ToolSet$circle$lambda_0);
-    var tmp_3 = this;
-    var tmp_4 = ToolSet$polygon$lambda;
-    tmp_3.polygon_1 = new ShapeTool(tmp_4, ToolSet$polygon$lambda_0);
-    var tmp_5 = this;
-    var tmp_6 = ToolSet$arrow$lambda;
-    tmp_5.arrow_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
-  }
-  protoOf(ToolSet).get_freehand_dsmxlw_k$ = function () {
-    return this.freehand_1;
-  };
-  protoOf(ToolSet).get_eraser_czouj9_k$ = function () {
-    return this.eraser_1;
-  };
-  protoOf(ToolSet).get_text_wouvsm_k$ = function () {
-    return this.text_1;
-  };
-  protoOf(ToolSet).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(ToolSet).get_rectangle_r245om_k$ = function () {
-    return this.rectangle_1;
-  };
-  protoOf(ToolSet).get_circle_bwxzh5_k$ = function () {
-    return this.circle_1;
-  };
-  protoOf(ToolSet).get_polygon_5b4a0f_k$ = function () {
-    return this.polygon_1;
-  };
-  protoOf(ToolSet).get_arrow_iosp28_k$ = function () {
-    return this.arrow_1;
-  };
   function get_json() {
     _init_properties_Drawing_kt__mbw8h8();
     return json;
@@ -1206,7 +1247,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [null, null, new ArrayListSerializer(Companion_getInstance_3().serializer_9w0wvi_k$())];
+    tmp.$childSerializers_1 = [null, null, new ArrayListSerializer(Companion_getInstance_4().serializer_9w0wvi_k$())];
   }
   protoOf(Companion).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance();
@@ -1350,7 +1391,7 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_2()), new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6()), new ArrayListSerializer($serializer_getInstance_7())];
+    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6()), new ArrayListSerializer($serializer_getInstance_7()), new ArrayListSerializer($serializer_getInstance_8())];
   }
   protoOf(Companion_0).serializer_9w0wvi_k$ = function () {
     return $serializer_getInstance_0();
@@ -1805,6 +1846,191 @@
        while (inductionVariable <= last);
     return inside;
   }
+  function Companion_2() {
+    Companion_instance_2 = this;
+  }
+  protoOf(Companion_2).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_2();
+  };
+  var Companion_instance_2;
+  function Companion_getInstance_3() {
+    if (Companion_instance_2 == null)
+      new Companion_2();
+    return Companion_instance_2;
+  }
+  function $serializer_2() {
+    $serializer_instance_2 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('image', this, 5);
+    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('imageId', false);
+    this.descriptor_1 = tmp0_serialDesc;
+  }
+  protoOf($serializer_2).serialize_q12j3v_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
+    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.imageId_1);
+    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+  };
+  protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
+    return this.serialize_q12j3v_k$(encoder, value instanceof ImageItem ? value : THROW_CCE());
+  };
+  protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = 0.0;
+    var tmp5_local1 = 0.0;
+    var tmp6_local2 = 0.0;
+    var tmp7_local3 = 0.0;
+    var tmp8_local4 = null;
+    var tmp9_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+      tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp3_bitMask0 = tmp3_bitMask0 | 2;
+      tmp6_local2 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp3_bitMask0 = tmp3_bitMask0 | 4;
+      tmp7_local3 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp3_bitMask0 = tmp3_bitMask0 | 8;
+      tmp8_local4 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp3_bitMask0 = tmp3_bitMask0 | 16;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp9_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          case 1:
+            tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp3_bitMask0 = tmp3_bitMask0 | 2;
+            break;
+          case 2:
+            tmp6_local2 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp3_bitMask0 = tmp3_bitMask0 | 4;
+            break;
+          case 3:
+            tmp7_local3 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp3_bitMask0 = tmp3_bitMask0 | 8;
+            break;
+          case 4:
+            tmp8_local4 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp3_bitMask0 = tmp3_bitMask0 | 16;
+            break;
+          default:
+            throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return ImageItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
+  };
+  protoOf($serializer_2).get_descriptor_wjt6a0_k$ = function () {
+    return this.descriptor_1;
+  };
+  protoOf($serializer_2).childSerializers_5ghqw5_k$ = function () {
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance()];
+  };
+  var $serializer_instance_2;
+  function $serializer_getInstance_2() {
+    if ($serializer_instance_2 == null)
+      new $serializer_2();
+    return $serializer_instance_2;
+  }
+  function ImageItem_init_$Init$(seen0, x, y, width, height, imageId, serializationConstructorMarker, $this) {
+    if (!(31 === (31 & seen0))) {
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_2().descriptor_1);
+    }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
+    $this.x_1 = x;
+    $this.y_1 = y;
+    $this.width_1 = width;
+    $this.height_1 = height;
+    $this.imageId_1 = imageId;
+    return $this;
+  }
+  function ImageItem_init_$Create$(seen0, x, y, width, height, imageId, serializationConstructorMarker) {
+    return ImageItem_init_$Init$(seen0, x, y, width, height, imageId, serializationConstructorMarker, objectCreate(protoOf(ImageItem)));
+  }
+  function ImageItem(x, y, width, height, imageId) {
+    Companion_getInstance_3();
+    Item.call(this);
+    this.x_1 = x;
+    this.y_1 = y;
+    this.width_1 = width;
+    this.height_1 = height;
+    this.imageId_1 = imageId;
+  }
+  protoOf(ImageItem).set_x_scd9vp_k$ = function (_set____db54di) {
+    this.x_1 = _set____db54di;
+  };
+  protoOf(ImageItem).get_x_1mhr67_k$ = function () {
+    return this.x_1;
+  };
+  protoOf(ImageItem).set_y_lelkme_k$ = function (_set____db54di) {
+    this.y_1 = _set____db54di;
+  };
+  protoOf(ImageItem).get_y_1mhr68_k$ = function () {
+    return this.y_1;
+  };
+  protoOf(ImageItem).get_width_j0q4yl_k$ = function () {
+    return this.width_1;
+  };
+  protoOf(ImageItem).get_height_e7t92o_k$ = function () {
+    return this.height_1;
+  };
+  protoOf(ImageItem).get_imageId_wvvawd_k$ = function () {
+    return this.imageId_1;
+  };
+  protoOf(ImageItem).draw_rpid3c_k$ = function (ctx) {
+    var img = ImageCache_getInstance().get_6bo4tg_k$(this.imageId_1);
+    if (!(img == null)) {
+      ctx.drawImage(img, this.x_1, this.y_1, this.width_1, this.height_1);
+    } else {
+      ctx.strokeStyle = '#999999';
+      ctx.lineWidth = 1.0;
+      ctx.strokeRect(this.x_1, this.y_1, this.width_1, this.height_1);
+      ctx.fillStyle = '#999999';
+      ctx.font = '14px sans-serif';
+      // Inline function 'kotlin.js.asDynamic' call
+      ctx.textBaseline = 'top';
+      ctx.fillText('Loading image...', this.x_1 + 8, this.y_1 + 8);
+    }
+  };
+  protoOf(ImageItem).hitTest_1gxtur_k$ = function (p) {
+    var tmp;
+    var containsLower = this.x_1;
+    var containsUpper = this.x_1 + this.width_1;
+    var containsArg = p.get_x_1mhr67_k$();
+    if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
+      var containsLower_0 = this.y_1;
+      var containsUpper_0 = this.y_1 + this.height_1;
+      var containsArg_0 = p.get_y_1mhr68_k$();
+      tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
+    } else {
+      tmp = false;
+    }
+    return tmp;
+  };
+  protoOf(ImageItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
   function get_measureContext() {
     _init_properties_Items_kt__3bnoaa();
     var tmp0 = measureContext$delegate;
@@ -1873,34 +2099,34 @@
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    var tmp_0 = [getKClass(ArrowItem), getKClass(CircleItem), getKClass(PolygonItem), getKClass(RectangleItem), getKClass(RegionFillItem), getKClass(StrokeItem), getKClass(TextItem)];
+    var tmp_0 = [getKClass(ArrowItem), getKClass(CircleItem), getKClass(ImageItem), getKClass(PolygonItem), getKClass(RectangleItem), getKClass(RegionFillItem), getKClass(StrokeItem), getKClass(TextItem)];
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    var tmp_1 = [$serializer_getInstance_6(), $serializer_getInstance_4(), $serializer_getInstance_5(), $serializer_getInstance_3(), $serializer_getInstance_8(), $serializer_getInstance_2(), $serializer_getInstance_7()];
+    var tmp_1 = [$serializer_getInstance_7(), $serializer_getInstance_5(), $serializer_getInstance_2(), $serializer_getInstance_6(), $serializer_getInstance_4(), $serializer_getInstance_9(), $serializer_getInstance_3(), $serializer_getInstance_8()];
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     var tmp$ret$8 = [];
     return SealedClassSerializer_init_$Create$('stickynode.model.Item', tmp, tmp_0, tmp_1, tmp$ret$8);
   }
-  function Companion_2() {
-    Companion_instance_2 = this;
+  function Companion_3() {
+    Companion_instance_3 = this;
     var tmp = this;
     var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
     tmp.$cachedSerializer$delegate_1 = lazy(tmp_0, Item$Companion$_anonymous__jaim2s);
   }
-  protoOf(Companion_2).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
     return _get_$cachedSerializer__te6jhj(this);
   };
-  protoOf(Companion_2).serializer_nv39qc_k$ = function (typeParamsSerializers) {
+  protoOf(Companion_3).serializer_nv39qc_k$ = function (typeParamsSerializers) {
     return this.serializer_9w0wvi_k$();
   };
-  var Companion_instance_2;
-  function Companion_getInstance_3() {
-    if (Companion_instance_2 == null)
-      new Companion_2();
-    return Companion_instance_2;
+  var Companion_instance_3;
+  function Companion_getInstance_4() {
+    if (Companion_instance_3 == null)
+      new Companion_3();
+    return Companion_instance_3;
   }
   function Item_init_$Init$(seen0, serializationConstructorMarker, $this) {
     return $this;
@@ -1909,7 +2135,7 @@
     return Item_init_$Init$(seen0, serializationConstructorMarker, objectCreate(protoOf(Item)));
   }
   function Item() {
-    Companion_getInstance_3();
+    Companion_getInstance_4();
   }
   protoOf(Item).hitTestFill_vfzr9i_k$ = function (p) {
     return this.hitTest_1gxtur_k$(p);
@@ -1936,25 +2162,25 @@
   function inside($this, p) {
     return $this.points_1.get_size_woubt6_k$() >= 3 && pointInPolygon(p, $this.points_1);
   }
-  function Companion_3() {
-    Companion_instance_3 = this;
+  function Companion_4() {
+    Companion_instance_4 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null, null];
   }
-  protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_2();
+  protoOf(Companion_4).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_3();
   };
-  var Companion_instance_3;
-  function Companion_getInstance_4() {
-    if (Companion_instance_3 == null)
-      new Companion_3();
-    return Companion_instance_3;
+  var Companion_instance_4;
+  function Companion_getInstance_5() {
+    if (Companion_instance_4 == null)
+      new Companion_4();
+    return Companion_instance_4;
   }
-  function $serializer_2() {
-    $serializer_instance_2 = this;
+  function $serializer_3() {
+    $serializer_instance_3 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stroke', this, 4);
     tmp0_serialDesc.addElement_5pzumi_k$('points', false);
     tmp0_serialDesc.addElement_5pzumi_k$('color', false);
@@ -1962,10 +2188,10 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_2).serialize_j2wkun_k$ = function (encoder, value) {
+  protoOf($serializer_3).serialize_j2wkun_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_4().$childSerializers_1;
+    var tmp2_cached = Companion_getInstance_5().$childSerializers_1;
     tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.points_1);
     tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.color_1);
     if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !(value.lineWidth_1 === 3)) {
@@ -1976,10 +2202,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
+  protoOf($serializer_3).serialize_5ase3y_k$ = function (encoder, value) {
     return this.serialize_j2wkun_k$(encoder, value instanceof StrokeItem ? value : THROW_CCE());
   };
-  protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_3).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -1989,7 +2215,7 @@
     var tmp6_local2 = 0;
     var tmp7_local3 = null;
     var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp9_cached = Companion_getInstance_4().$childSerializers_1;
+    var tmp9_cached = Companion_getInstance_5().$childSerializers_1;
     if (tmp8_input.decodeSequentially_xlblqy_k$()) {
       tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -2029,24 +2255,24 @@
     tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
     return StrokeItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  protoOf($serializer_2).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_3).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_2).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_3).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_4().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
+    return [Companion_getInstance_5().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
   };
-  var $serializer_instance_2;
-  function $serializer_getInstance_2() {
-    if ($serializer_instance_2 == null)
-      new $serializer_2();
-    return $serializer_instance_2;
+  var $serializer_instance_3;
+  function $serializer_getInstance_3() {
+    if ($serializer_instance_3 == null)
+      new $serializer_3();
+    return $serializer_instance_3;
   }
   function StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_2().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_3().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.points_1 = points;
@@ -2065,7 +2291,7 @@
     return StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(StrokeItem)));
   }
   function StrokeItem(points, color, lineWidth, fill) {
-    Companion_getInstance_4();
+    Companion_getInstance_5();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
@@ -2138,224 +2364,6 @@
       }
        while (inductionVariable <= last);
   };
-  function Companion_4() {
-    Companion_instance_4 = this;
-  }
-  protoOf(Companion_4).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_3();
-  };
-  var Companion_instance_4;
-  function Companion_getInstance_5() {
-    if (Companion_instance_4 == null)
-      new Companion_4();
-    return Companion_instance_4;
-  }
-  function $serializer_3() {
-    $serializer_instance_3 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('rectangle', this, 7);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
-    this.descriptor_1 = tmp0_serialDesc;
-  }
-  protoOf($serializer_3).serialize_aff1o_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 5, value.lineWidth_1);
-    }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !(value.fill_1 == null)) {
-      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 6, StringSerializer_getInstance(), value.fill_1);
-    }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
-  };
-  protoOf($serializer_3).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_aff1o_k$(encoder, value instanceof RectangleItem ? value : THROW_CCE());
-  };
-  protoOf($serializer_3).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_flag = true;
-    var tmp2_index = 0;
-    var tmp3_bitMask0 = 0;
-    var tmp4_local0 = 0.0;
-    var tmp5_local1 = 0.0;
-    var tmp6_local2 = 0.0;
-    var tmp7_local3 = 0.0;
-    var tmp8_local4 = null;
-    var tmp9_local5 = 0;
-    var tmp10_local6 = null;
-    var tmp11_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp11_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
-      tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
-      tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
-      tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
-      tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
-      tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
-      tmp3_bitMask0 = tmp3_bitMask0 | 32;
-      tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
-      tmp3_bitMask0 = tmp3_bitMask0 | 64;
-    } else
-      while (tmp1_flag) {
-        tmp2_index = tmp11_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
-        switch (tmp2_index) {
-          case -1:
-            tmp1_flag = false;
-            break;
-          case 0:
-            tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
-            tmp3_bitMask0 = tmp3_bitMask0 | 1;
-            break;
-          case 1:
-            tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
-            tmp3_bitMask0 = tmp3_bitMask0 | 2;
-            break;
-          case 2:
-            tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
-            tmp3_bitMask0 = tmp3_bitMask0 | 4;
-            break;
-          case 3:
-            tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
-            tmp3_bitMask0 = tmp3_bitMask0 | 8;
-            break;
-          case 4:
-            tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
-            tmp3_bitMask0 = tmp3_bitMask0 | 16;
-            break;
-          case 5:
-            tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
-            tmp3_bitMask0 = tmp3_bitMask0 | 32;
-            break;
-          case 6:
-            tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
-            tmp3_bitMask0 = tmp3_bitMask0 | 64;
-            break;
-          default:
-            throw UnknownFieldException_init_$Create$(tmp2_index);
-        }
-      }
-    tmp11_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return RectangleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
-  };
-  protoOf($serializer_3).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
-  };
-  protoOf($serializer_3).childSerializers_5ghqw5_k$ = function () {
-    // Inline function 'kotlin.arrayOf' call
-    // Inline function 'kotlin.js.unsafeCast' call
-    // Inline function 'kotlin.js.asDynamic' call
-    return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
-  };
-  var $serializer_instance_3;
-  function $serializer_getInstance_3() {
-    if ($serializer_instance_3 == null)
-      new $serializer_3();
-    return $serializer_instance_3;
-  }
-  function RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
-    if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_3().descriptor_1);
-    }
-    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.width_1 = width;
-    $this.height_1 = height;
-    $this.color_1 = color;
-    if (0 === (seen0 & 32))
-      $this.lineWidth_1 = 3;
-    else
-      $this.lineWidth_1 = lineWidth;
-    if (0 === (seen0 & 64))
-      $this.fill_1 = null;
-    else
-      $this.fill_1 = fill;
-    return $this;
-  }
-  function RectangleItem_init_$Create$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker) {
-    return RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(RectangleItem)));
-  }
-  function RectangleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_5();
-    lineWidth = lineWidth === VOID ? 3 : lineWidth;
-    fill = fill === VOID ? null : fill;
-    Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-    this.fill_1 = fill;
-  }
-  protoOf(RectangleItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
-  };
-  protoOf(RectangleItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(RectangleItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
-  };
-  protoOf(RectangleItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(RectangleItem).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
-  };
-  protoOf(RectangleItem).get_height_e7t92o_k$ = function () {
-    return this.height_1;
-  };
-  protoOf(RectangleItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(RectangleItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(RectangleItem).set_fill_sosdnb_k$ = function (_set____db54di) {
-    this.fill_1 = _set____db54di;
-  };
-  protoOf(RectangleItem).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(RectangleItem).draw_rpid3c_k$ = function (ctx) {
-    ctx.beginPath();
-    ctx.rect(this.x_1, this.y_1, this.width_1, this.height_1);
-    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
-  };
-  protoOf(RectangleItem).hitTest_1gxtur_k$ = function (p) {
-    var tmp;
-    var containsLower = this.x_1;
-    var containsUpper = this.x_1 + this.width_1;
-    var containsArg = p.get_x_1mhr67_k$();
-    if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
-      var containsLower_0 = this.y_1;
-      var containsUpper_0 = this.y_1 + this.height_1;
-      var containsArg_0 = p.get_y_1mhr68_k$();
-      tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
-    } else {
-      tmp = false;
-    }
-    return tmp;
-  };
-  protoOf(RectangleItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
-  };
   function Companion_5() {
     Companion_instance_5 = this;
   }
@@ -2370,7 +2378,7 @@
   }
   function $serializer_4() {
     $serializer_instance_4 = this;
-    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('circle', this, 7);
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('rectangle', this, 7);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
     tmp0_serialDesc.addElement_5pzumi_k$('width', false);
@@ -2380,7 +2388,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_4).serialize_4h19cz_k$ = function (encoder, value) {
+  protoOf($serializer_4).serialize_aff1o_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -2397,7 +2405,7 @@
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
   protoOf($serializer_4).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_4h19cz_k$(encoder, value instanceof CircleItem ? value : THROW_CCE());
+    return this.serialize_aff1o_k$(encoder, value instanceof RectangleItem ? value : THROW_CCE());
   };
   protoOf($serializer_4).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
@@ -2467,7 +2475,7 @@
         }
       }
     tmp11_input.endStructure_1xqz0n_k$(tmp0_desc);
-    return CircleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
+    return RectangleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
   };
   protoOf($serializer_4).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
@@ -2484,9 +2492,227 @@
       new $serializer_4();
     return $serializer_instance_4;
   }
-  function CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
+  function RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
       throwMissingFieldException(seen0, 31, $serializer_getInstance_4().descriptor_1);
+    }
+    Item_init_$Init$(seen0, serializationConstructorMarker, $this);
+    $this.x_1 = x;
+    $this.y_1 = y;
+    $this.width_1 = width;
+    $this.height_1 = height;
+    $this.color_1 = color;
+    if (0 === (seen0 & 32))
+      $this.lineWidth_1 = 3;
+    else
+      $this.lineWidth_1 = lineWidth;
+    if (0 === (seen0 & 64))
+      $this.fill_1 = null;
+    else
+      $this.fill_1 = fill;
+    return $this;
+  }
+  function RectangleItem_init_$Create$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker) {
+    return RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(RectangleItem)));
+  }
+  function RectangleItem(x, y, width, height, color, lineWidth, fill) {
+    Companion_getInstance_6();
+    lineWidth = lineWidth === VOID ? 3 : lineWidth;
+    fill = fill === VOID ? null : fill;
+    Item.call(this);
+    this.x_1 = x;
+    this.y_1 = y;
+    this.width_1 = width;
+    this.height_1 = height;
+    this.color_1 = color;
+    this.lineWidth_1 = lineWidth;
+    this.fill_1 = fill;
+  }
+  protoOf(RectangleItem).set_x_scd9vp_k$ = function (_set____db54di) {
+    this.x_1 = _set____db54di;
+  };
+  protoOf(RectangleItem).get_x_1mhr67_k$ = function () {
+    return this.x_1;
+  };
+  protoOf(RectangleItem).set_y_lelkme_k$ = function (_set____db54di) {
+    this.y_1 = _set____db54di;
+  };
+  protoOf(RectangleItem).get_y_1mhr68_k$ = function () {
+    return this.y_1;
+  };
+  protoOf(RectangleItem).get_width_j0q4yl_k$ = function () {
+    return this.width_1;
+  };
+  protoOf(RectangleItem).get_height_e7t92o_k$ = function () {
+    return this.height_1;
+  };
+  protoOf(RectangleItem).get_color_ipu8u2_k$ = function () {
+    return this.color_1;
+  };
+  protoOf(RectangleItem).get_lineWidth_lbeliv_k$ = function () {
+    return this.lineWidth_1;
+  };
+  protoOf(RectangleItem).set_fill_sosdnb_k$ = function (_set____db54di) {
+    this.fill_1 = _set____db54di;
+  };
+  protoOf(RectangleItem).get_fill_wom0ng_k$ = function () {
+    return this.fill_1;
+  };
+  protoOf(RectangleItem).draw_rpid3c_k$ = function (ctx) {
+    ctx.beginPath();
+    ctx.rect(this.x_1, this.y_1, this.width_1, this.height_1);
+    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+  };
+  protoOf(RectangleItem).hitTest_1gxtur_k$ = function (p) {
+    var tmp;
+    var containsLower = this.x_1;
+    var containsUpper = this.x_1 + this.width_1;
+    var containsArg = p.get_x_1mhr67_k$();
+    if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
+      var containsLower_0 = this.y_1;
+      var containsUpper_0 = this.y_1 + this.height_1;
+      var containsArg_0 = p.get_y_1mhr68_k$();
+      tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
+    } else {
+      tmp = false;
+    }
+    return tmp;
+  };
+  protoOf(RectangleItem).moveBy_hp42rs_k$ = function (dx, dy) {
+    this.x_1 = this.x_1 + dx;
+    this.y_1 = this.y_1 + dy;
+  };
+  function Companion_6() {
+    Companion_instance_6 = this;
+  }
+  protoOf(Companion_6).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_5();
+  };
+  var Companion_instance_6;
+  function Companion_getInstance_7() {
+    if (Companion_instance_6 == null)
+      new Companion_6();
+    return Companion_instance_6;
+  }
+  function $serializer_5() {
+    $serializer_instance_5 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('circle', this, 7);
+    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
+    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
+    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
+    this.descriptor_1 = tmp0_serialDesc;
+  }
+  protoOf($serializer_5).serialize_4h19cz_k$ = function (encoder, value) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
+    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
+    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.color_1);
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !(value.lineWidth_1 === 3)) {
+      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 5, value.lineWidth_1);
+    }
+    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !(value.fill_1 == null)) {
+      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 6, StringSerializer_getInstance(), value.fill_1);
+    }
+    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+  };
+  protoOf($serializer_5).serialize_5ase3y_k$ = function (encoder, value) {
+    return this.serialize_4h19cz_k$(encoder, value instanceof CircleItem ? value : THROW_CCE());
+  };
+  protoOf($serializer_5).deserialize_sy6x50_k$ = function (decoder) {
+    var tmp0_desc = this.descriptor_1;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = 0.0;
+    var tmp5_local1 = 0.0;
+    var tmp6_local2 = 0.0;
+    var tmp7_local3 = 0.0;
+    var tmp8_local4 = null;
+    var tmp9_local5 = 0;
+    var tmp10_local6 = null;
+    var tmp11_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
+    if (tmp11_input.decodeSequentially_xlblqy_k$()) {
+      tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+      tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp3_bitMask0 = tmp3_bitMask0 | 2;
+      tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp3_bitMask0 = tmp3_bitMask0 | 4;
+      tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp3_bitMask0 = tmp3_bitMask0 | 8;
+      tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp3_bitMask0 = tmp3_bitMask0 | 16;
+      tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+      tmp3_bitMask0 = tmp3_bitMask0 | 32;
+      tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+      tmp3_bitMask0 = tmp3_bitMask0 | 64;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp11_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          case 1:
+            tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp3_bitMask0 = tmp3_bitMask0 | 2;
+            break;
+          case 2:
+            tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp3_bitMask0 = tmp3_bitMask0 | 4;
+            break;
+          case 3:
+            tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp3_bitMask0 = tmp3_bitMask0 | 8;
+            break;
+          case 4:
+            tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp3_bitMask0 = tmp3_bitMask0 | 16;
+            break;
+          case 5:
+            tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+            tmp3_bitMask0 = tmp3_bitMask0 | 32;
+            break;
+          case 6:
+            tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+            tmp3_bitMask0 = tmp3_bitMask0 | 64;
+            break;
+          default:
+            throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp11_input.endStructure_1xqz0n_k$(tmp0_desc);
+    return CircleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
+  };
+  protoOf($serializer_5).get_descriptor_wjt6a0_k$ = function () {
+    return this.descriptor_1;
+  };
+  protoOf($serializer_5).childSerializers_5ghqw5_k$ = function () {
+    // Inline function 'kotlin.arrayOf' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    // Inline function 'kotlin.js.asDynamic' call
+    return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
+  };
+  var $serializer_instance_5;
+  function $serializer_getInstance_5() {
+    if ($serializer_instance_5 == null)
+      new $serializer_5();
+    return $serializer_instance_5;
+  }
+  function CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
+    if (!(31 === (31 & seen0))) {
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_5().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
@@ -2508,7 +2734,7 @@
     return CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(CircleItem)));
   }
   function CircleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_6();
+    Companion_getInstance_7();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
@@ -2599,20 +2825,20 @@
        while (inductionVariable < count);
     return list;
   }
-  function Companion_6() {
-    Companion_instance_6 = this;
+  function Companion_7() {
+    Companion_instance_7 = this;
   }
-  protoOf(Companion_6).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_5();
+  protoOf(Companion_7).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_6();
   };
-  var Companion_instance_6;
-  function Companion_getInstance_7() {
-    if (Companion_instance_6 == null)
-      new Companion_6();
-    return Companion_instance_6;
+  var Companion_instance_7;
+  function Companion_getInstance_8() {
+    if (Companion_instance_7 == null)
+      new Companion_7();
+    return Companion_instance_7;
   }
-  function $serializer_5() {
-    $serializer_instance_5 = this;
+  function $serializer_6() {
+    $serializer_instance_6 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('polygon', this, 8);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
@@ -2624,7 +2850,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_5).serialize_9g6o2x_k$ = function (encoder, value) {
+  protoOf($serializer_6).serialize_9g6o2x_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -2641,10 +2867,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_5).serialize_5ase3y_k$ = function (encoder, value) {
+  protoOf($serializer_6).serialize_5ase3y_k$ = function (encoder, value) {
     return this.serialize_9g6o2x_k$(encoder, value instanceof PolygonItem ? value : THROW_CCE());
   };
-  protoOf($serializer_5).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_6).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -2721,24 +2947,24 @@
     tmp12_input.endStructure_1xqz0n_k$(tmp0_desc);
     return PolygonItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, null);
   };
-  protoOf($serializer_5).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_6).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_5).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_6).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), IntSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
   };
-  var $serializer_instance_5;
-  function $serializer_getInstance_5() {
-    if ($serializer_instance_5 == null)
-      new $serializer_5();
-    return $serializer_instance_5;
+  var $serializer_instance_6;
+  function $serializer_getInstance_6() {
+    if ($serializer_instance_6 == null)
+      new $serializer_6();
+    return $serializer_instance_6;
   }
   function PolygonItem_init_$Init$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(63 === (63 & seen0))) {
-      throwMissingFieldException(seen0, 63, $serializer_getInstance_5().descriptor_1);
+      throwMissingFieldException(seen0, 63, $serializer_getInstance_6().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
@@ -2761,7 +2987,7 @@
     return PolygonItem_init_$Init$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(PolygonItem)));
   }
   function PolygonItem(x, y, width, height, sides, color, lineWidth, fill) {
-    Companion_getInstance_7();
+    Companion_getInstance_8();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
@@ -2852,20 +3078,20 @@
     this.x_1 = this.x_1 + dx;
     this.y_1 = this.y_1 + dy;
   };
-  function Companion_7() {
-    Companion_instance_7 = this;
+  function Companion_8() {
+    Companion_instance_8 = this;
   }
-  protoOf(Companion_7).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_6();
+  protoOf(Companion_8).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_7();
   };
-  var Companion_instance_7;
-  function Companion_getInstance_8() {
-    if (Companion_instance_7 == null)
-      new Companion_7();
-    return Companion_instance_7;
+  var Companion_instance_8;
+  function Companion_getInstance_9() {
+    if (Companion_instance_8 == null)
+      new Companion_8();
+    return Companion_instance_8;
   }
-  function $serializer_6() {
-    $serializer_instance_6 = this;
+  function $serializer_7() {
+    $serializer_instance_7 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('arrow', this, 6);
     tmp0_serialDesc.addElement_5pzumi_k$('startX', false);
     tmp0_serialDesc.addElement_5pzumi_k$('startY', false);
@@ -2875,7 +3101,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_6).serialize_6xgepf_k$ = function (encoder, value) {
+  protoOf($serializer_7).serialize_6xgepf_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.startX_1);
@@ -2888,10 +3114,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_6).serialize_5ase3y_k$ = function (encoder, value) {
+  protoOf($serializer_7).serialize_5ase3y_k$ = function (encoder, value) {
     return this.serialize_6xgepf_k$(encoder, value instanceof ArrowItem ? value : THROW_CCE());
   };
-  protoOf($serializer_6).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_7).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -2954,24 +3180,24 @@
     tmp10_input.endStructure_1xqz0n_k$(tmp0_desc);
     return ArrowItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
   };
-  protoOf($serializer_6).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_7).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_6).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_7).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance()];
   };
-  var $serializer_instance_6;
-  function $serializer_getInstance_6() {
-    if ($serializer_instance_6 == null)
-      new $serializer_6();
-    return $serializer_instance_6;
+  var $serializer_instance_7;
+  function $serializer_getInstance_7() {
+    if ($serializer_instance_7 == null)
+      new $serializer_7();
+    return $serializer_instance_7;
   }
   function ArrowItem_init_$Init$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_6().descriptor_1);
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_7().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.startX_1 = startX;
@@ -2989,7 +3215,7 @@
     return ArrowItem_init_$Init$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(ArrowItem)));
   }
   function ArrowItem(startX, startY, endX, endY, color, lineWidth) {
-    Companion_getInstance_8();
+    Companion_getInstance_9();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     Item.call(this);
     this.startX_1 = startX;
@@ -3080,20 +3306,20 @@
   function lines($this) {
     return split($this.text_1, ['\n']);
   }
-  function Companion_8() {
-    Companion_instance_8 = this;
+  function Companion_9() {
+    Companion_instance_9 = this;
   }
-  protoOf(Companion_8).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_7();
+  protoOf(Companion_9).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_8();
   };
-  var Companion_instance_8;
-  function Companion_getInstance_9() {
-    if (Companion_instance_8 == null)
-      new Companion_8();
-    return Companion_instance_8;
+  var Companion_instance_9;
+  function Companion_getInstance_10() {
+    if (Companion_instance_9 == null)
+      new Companion_9();
+    return Companion_instance_9;
   }
-  function $serializer_7() {
-    $serializer_instance_7 = this;
+  function $serializer_8() {
+    $serializer_instance_8 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('text', this, 5);
     tmp0_serialDesc.addElement_5pzumi_k$('x', false);
     tmp0_serialDesc.addElement_5pzumi_k$('y', false);
@@ -3102,7 +3328,7 @@
     tmp0_serialDesc.addElement_5pzumi_k$('fontSize', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_7).serialize_dwuzj_k$ = function (encoder, value) {
+  protoOf($serializer_8).serialize_dwuzj_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
     tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
@@ -3114,10 +3340,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_7).serialize_5ase3y_k$ = function (encoder, value) {
+  protoOf($serializer_8).serialize_5ase3y_k$ = function (encoder, value) {
     return this.serialize_dwuzj_k$(encoder, value instanceof TextItem ? value : THROW_CCE());
   };
-  protoOf($serializer_7).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_8).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -3173,24 +3399,24 @@
     tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
     return TextItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
-  protoOf($serializer_7).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_8).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_7).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_8).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     return [DoubleSerializer_getInstance(), DoubleSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), IntSerializer_getInstance()];
   };
-  var $serializer_instance_7;
-  function $serializer_getInstance_7() {
-    if ($serializer_instance_7 == null)
-      new $serializer_7();
-    return $serializer_instance_7;
+  var $serializer_instance_8;
+  function $serializer_getInstance_8() {
+    if ($serializer_instance_8 == null)
+      new $serializer_8();
+    return $serializer_instance_8;
   }
   function TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, $this) {
     if (!(15 === (15 & seen0))) {
-      throwMissingFieldException(seen0, 15, $serializer_getInstance_7().descriptor_1);
+      throwMissingFieldException(seen0, 15, $serializer_getInstance_8().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.x_1 = x;
@@ -3207,7 +3433,7 @@
     return TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, objectCreate(protoOf(TextItem)));
   }
   function TextItem(x, y, color, text, fontSize) {
-    Companion_getInstance_9();
+    Companion_getInstance_10();
     fontSize = fontSize === VOID ? 20 : fontSize;
     Item.call(this);
     this.x_1 = x;
@@ -3311,25 +3537,25 @@
   function _get_$childSerializers__r2zwns_2($this) {
     return $this.$childSerializers_1;
   }
-  function Companion_9() {
-    Companion_instance_9 = this;
+  function Companion_10() {
+    Companion_instance_10 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
     tmp.$childSerializers_1 = [new ArrayListSerializer(IntSerializer_getInstance()), null, null, null];
   }
-  protoOf(Companion_9).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_8();
+  protoOf(Companion_10).serializer_9w0wvi_k$ = function () {
+    return $serializer_getInstance_9();
   };
-  var Companion_instance_9;
-  function Companion_getInstance_10() {
-    if (Companion_instance_9 == null)
-      new Companion_9();
-    return Companion_instance_9;
+  var Companion_instance_10;
+  function Companion_getInstance_11() {
+    if (Companion_instance_10 == null)
+      new Companion_10();
+    return Companion_instance_10;
   }
-  function $serializer_8() {
-    $serializer_instance_8 = this;
+  function $serializer_9() {
+    $serializer_instance_9 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('regionFill', this, 4);
     tmp0_serialDesc.addElement_5pzumi_k$('runs', false);
     tmp0_serialDesc.addElement_5pzumi_k$('color', false);
@@ -3337,10 +3563,10 @@
     tmp0_serialDesc.addElement_5pzumi_k$('offsetY', true);
     this.descriptor_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_8).serialize_j32akr_k$ = function (encoder, value) {
+  protoOf($serializer_9).serialize_j32akr_k$ = function (encoder, value) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_10().$childSerializers_1;
+    var tmp2_cached = Companion_getInstance_11().$childSerializers_1;
     tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.runs_1);
     tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.color_1);
     if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.offsetX_1, 0.0)) {
@@ -3351,10 +3577,10 @@
     }
     tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
   };
-  protoOf($serializer_8).serialize_5ase3y_k$ = function (encoder, value) {
+  protoOf($serializer_9).serialize_5ase3y_k$ = function (encoder, value) {
     return this.serialize_j32akr_k$(encoder, value instanceof RegionFillItem ? value : THROW_CCE());
   };
-  protoOf($serializer_8).deserialize_sy6x50_k$ = function (decoder) {
+  protoOf($serializer_9).deserialize_sy6x50_k$ = function (decoder) {
     var tmp0_desc = this.descriptor_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
@@ -3364,7 +3590,7 @@
     var tmp6_local2 = 0.0;
     var tmp7_local3 = 0.0;
     var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp9_cached = Companion_getInstance_10().$childSerializers_1;
+    var tmp9_cached = Companion_getInstance_11().$childSerializers_1;
     if (tmp8_input.decodeSequentially_xlblqy_k$()) {
       tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
@@ -3404,24 +3630,24 @@
     tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
     return RegionFillItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  protoOf($serializer_8).get_descriptor_wjt6a0_k$ = function () {
+  protoOf($serializer_9).get_descriptor_wjt6a0_k$ = function () {
     return this.descriptor_1;
   };
-  protoOf($serializer_8).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_9).childSerializers_5ghqw5_k$ = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_10().$childSerializers_1[0], StringSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance()];
+    return [Companion_getInstance_11().$childSerializers_1[0], StringSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance()];
   };
-  var $serializer_instance_8;
-  function $serializer_getInstance_8() {
-    if ($serializer_instance_8 == null)
-      new $serializer_8();
-    return $serializer_instance_8;
+  var $serializer_instance_9;
+  function $serializer_getInstance_9() {
+    if ($serializer_instance_9 == null)
+      new $serializer_9();
+    return $serializer_instance_9;
   }
   function RegionFillItem_init_$Init$(seen0, runs, color, offsetX, offsetY, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_8().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_9().descriptor_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
     $this.runs_1 = runs;
@@ -3440,7 +3666,7 @@
     return RegionFillItem_init_$Init$(seen0, runs, color, offsetX, offsetY, serializationConstructorMarker, objectCreate(protoOf(RegionFillItem)));
   }
   function RegionFillItem(runs, color, offsetX, offsetY) {
-    Companion_getInstance_10();
+    Companion_getInstance_11();
     offsetX = offsetX === VOID ? 0.0 : offsetX;
     offsetY = offsetY === VOID ? 0.0 : offsetY;
     Item.call(this);
@@ -3530,14 +3756,17 @@
     tmp.set_exception_px07aa_k$(null);
     return tmp.doResume_5yljmg_k$();
   }
-  function pickFile($completion) {
+  function pickImageFile($completion) {
+    return pickFile('image/png,image/jpeg,image/gif,image/webp', $completion);
+  }
+  function pickFile(accept, $completion) {
     // Inline function 'kotlin.coroutines.suspendCoroutine.<anonymous>' call
     var safe = SafeContinuation_init_$Create$(intercepted($completion));
     // Inline function 'stickynode.storage.pickFile.<anonymous>' call
     var tmp = document.createElement('input');
     var input = tmp instanceof HTMLInputElement ? tmp : THROW_CCE();
     input.type = 'file';
-    input.accept = '.json,application/json';
+    input.accept = accept;
     input.addEventListener('change', pickFile$lambda(safe, input));
     input.addEventListener('cancel', pickFile$lambda_0(safe));
     input.click();
@@ -3709,7 +3938,7 @@
           case 0:
             this.set_exceptionState_fex74n_k$(3);
             this.set_state_rjd8d0_k$(1);
-            suspendResult = pickFile(this);
+            suspendResult = pickFile('.json,application/json', this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -3750,6 +3979,493 @@
       }
      while (true);
   };
+  function _get_images__1m5xt9($this) {
+    return $this.images_1;
+  }
+  function _get_loading__5c531n($this) {
+    return $this.loading_1;
+  }
+  function _get_scope__bi2zur($this) {
+    return $this.scope_1;
+  }
+  function decode($this, blob, $completion) {
+    // Inline function 'kotlin.coroutines.suspendCoroutine.<anonymous>' call
+    var safe = SafeContinuation_init_$Create$(intercepted($completion));
+    // Inline function 'stickynode.storage.ImageCache.decode.<anonymous>' call
+    // Inline function 'kotlin.js.asDynamic' call
+    // Inline function 'kotlin.js.unsafeCast' call
+    var url = window.URL.createObjectURL(blob);
+    var tmp = document.createElement('img');
+    var img = tmp instanceof HTMLImageElement ? tmp : THROW_CCE();
+    img.addEventListener('load', ImageCache$decode$lambda(url, safe, img));
+    img.addEventListener('error', ImageCache$decode$lambda_0(url, safe));
+    img.src = url;
+    return safe.getOrThrow_23gqzp_k$();
+  }
+  function ImageCache$get$slambda($id, resultContinuation) {
+    this.$id_1 = $id;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(ImageCache$get$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(ImageCache$get$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(ImageCache$get$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_exceptionState_fex74n_k$(3);
+            var tmp_0 = this;
+            tmp_0.tmp01__1 = ImageCache_getInstance().images_1;
+            var tmp_1 = this;
+            tmp_1.tmp12__1 = this.$id_1;
+            this.ARGUMENT3__1 = ImageCache_getInstance();
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = fetchImageBlob(this.$id_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.ARGUMENT4__1 = suspendResult;
+            this.set_state_rjd8d0_k$(2);
+            suspendResult = decode(this.ARGUMENT3__1, this.ARGUMENT4__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            var tmp2 = suspendResult;
+            var this_0 = this.tmp01__1;
+            var key = this.tmp12__1;
+            this_0.put_4fpzoq_k$(key, tmp2);
+            var tmp_2 = this;
+            var tmp0_safe_receiver = ImageCache_getInstance().onLoaded_1;
+            tmp_2.TRY_RESULT0__1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver();
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_state_rjd8d0_k$(5);
+            continue $sm;
+          case 3:
+            this.set_exceptionState_fex74n_k$(4);
+            var tmp_3 = this.get_exception_x0n6w6_k$();
+            if (tmp_3 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              var tmp_4 = this;
+              console.warn("Couldn't load image " + this.$id_1, error);
+              tmp_4.TRY_RESULT0__1 = Unit_getInstance();
+              this.set_state_rjd8d0_k$(5);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 4:
+            throw this.get_exception_x0n6w6_k$();
+          case 5:
+            this.set_exceptionState_fex74n_k$(4);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 4) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(ImageCache$get$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new ImageCache$get$slambda(this.$id_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(ImageCache$get$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function ImageCache$get$slambda_0($id, resultContinuation) {
+    var i = new ImageCache$get$slambda($id, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function ImageCache$decode$lambda($url, $c, $img) {
+    return function (it) {
+      // Inline function 'kotlin.js.asDynamic' call
+      window.URL.revokeObjectURL($url);
+      var tmp1 = $c;
+      // Inline function 'kotlin.coroutines.resume' call
+      var value = $img;
+      // Inline function 'kotlin.Companion.success' call
+      Companion_getInstance();
+      var tmp$ret$1 = _Result___init__impl__xyqfz8(value);
+      tmp1.resumeWith_dtxwbr_k$(tmp$ret$1);
+      return Unit_getInstance();
+    };
+  }
+  function ImageCache$decode$lambda_0($url, $c) {
+    return function (it) {
+      // Inline function 'kotlin.js.asDynamic' call
+      window.URL.revokeObjectURL($url);
+      var tmp1 = $c;
+      // Inline function 'kotlin.coroutines.resumeWithException' call
+      var exception = IllegalStateException_init_$Create$('Not a readable image');
+      // Inline function 'kotlin.Companion.failure' call
+      Companion_getInstance();
+      var tmp$ret$1 = _Result___init__impl__xyqfz8(createFailure(exception));
+      tmp1.resumeWith_dtxwbr_k$(tmp$ret$1);
+      return Unit_getInstance();
+    };
+  }
+  function $addCOROUTINE$2(_this__u8e3s4, id, file, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this._this__u8e3s4__1 = _this__u8e3s4;
+    this.id_1 = id;
+    this.file_1 = file;
+  }
+  protoOf($addCOROUTINE$2).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = decode(this._this__u8e3s4__1, this.file_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            var this_0 = suspendResult;
+            var tmp0 = ImageCache_getInstance().images_1;
+            var key = this.id_1;
+            tmp0.put_4fpzoq_k$(key, this_0);
+            return this_0;
+          case 2:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 2) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function ImageCache() {
+    ImageCache_instance = this;
+    this.images_1 = HashMap_init_$Create$();
+    this.loading_1 = HashSet_init_$Create$();
+    this.scope_1 = MainScope();
+    this.onLoaded_1 = null;
+  }
+  protoOf(ImageCache).set_onLoaded_3u02fu_k$ = function (_set____db54di) {
+    this.onLoaded_1 = _set____db54di;
+  };
+  protoOf(ImageCache).get_onLoaded_aaf4hf_k$ = function () {
+    return this.onLoaded_1;
+  };
+  protoOf(ImageCache).get_6bo4tg_k$ = function (id) {
+    var tmp0_safe_receiver = this.images_1.get_wei43m_k$(id);
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlin.let' call
+      return tmp0_safe_receiver;
+    }
+    if (!isConfigured() || !this.loading_1.add_utx5q5_k$(id))
+      return null;
+    launch(this.scope_1, VOID, VOID, ImageCache$get$slambda_0(id, null));
+    return null;
+  };
+  protoOf(ImageCache).add_iat429_k$ = function (id, file, $completion) {
+    var tmp = new $addCOROUTINE$2(this, id, file, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  var ImageCache_instance;
+  function ImageCache_getInstance() {
+    if (ImageCache_instance == null)
+      new ImageCache();
+    return ImageCache_instance;
+  }
+  function get_URL_KEY() {
+    return URL_KEY;
+  }
+  var URL_KEY;
+  function get_TOKEN_KEY() {
+    return TOKEN_KEY;
+  }
+  var TOKEN_KEY;
+  function configureServer() {
+    var tmp0_elvis_lhs = localStorage.getItem('stickyNode.serverUrl');
+    var currentUrl = tmp0_elvis_lhs == null ? 'https://table.tail964c8c.ts.net' : tmp0_elvis_lhs;
+    var tmp1_safe_receiver = window.prompt('Server URL:', currentUrl);
+    var tmp;
+    if (tmp1_safe_receiver == null) {
+      tmp = null;
+    } else {
+      // Inline function 'kotlin.text.trim' call
+      tmp = toString(trim(isCharSequence(tmp1_safe_receiver) ? tmp1_safe_receiver : THROW_CCE()));
+    }
+    var tmp2_safe_receiver = tmp;
+    var tmp3_elvis_lhs = tmp2_safe_receiver == null ? null : trimEnd(tmp2_safe_receiver, charArrayOf([_Char___init__impl__6a9atx(47)]));
+    var tmp_0;
+    if (tmp3_elvis_lhs == null) {
+      return false;
+    } else {
+      tmp_0 = tmp3_elvis_lhs;
+    }
+    var url = tmp_0;
+    var tmp_1 = window;
+    var tmp4_elvis_lhs = localStorage.getItem('stickyNode.serverToken');
+    var tmp5_safe_receiver = tmp_1.prompt('Server token:', tmp4_elvis_lhs == null ? '' : tmp4_elvis_lhs);
+    var tmp_2;
+    if (tmp5_safe_receiver == null) {
+      tmp_2 = null;
+    } else {
+      // Inline function 'kotlin.text.trim' call
+      tmp_2 = toString(trim(isCharSequence(tmp5_safe_receiver) ? tmp5_safe_receiver : THROW_CCE()));
+    }
+    var tmp6_elvis_lhs = tmp_2;
+    var tmp_3;
+    if (tmp6_elvis_lhs == null) {
+      return false;
+    } else {
+      tmp_3 = tmp6_elvis_lhs;
+    }
+    var token = tmp_3;
+    localStorage.setItem('stickyNode.serverUrl', url);
+    localStorage.setItem('stickyNode.serverToken', token);
+    return true;
+  }
+  function isConfigured() {
+    return !(localStorage.getItem('stickyNode.serverUrl') == null) && !(localStorage.getItem('stickyNode.serverToken') == null);
+  }
+  function ensureConfigured() {
+    return isConfigured() || configureServer();
+  }
+  function sendAndRead(path, method, body, contentType, read, $completion) {
+    method = method === VOID ? 'GET' : method;
+    body = body === VOID ? null : body;
+    contentType = contentType === VOID ? null : contentType;
+    var tmp = new $sendAndReadCOROUTINE$3(path, method, body, contentType, read, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  }
+  function request(path, method, body, $completion) {
+    method = method === VOID ? 'GET' : method;
+    body = body === VOID ? null : body;
+    return sendAndRead(path, method, body, 'text/plain', request$lambda, $completion);
+  }
+  function encodePathSegment(value) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    return encodeURIComponent(value);
+  }
+  function request$lambda(it) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    return it.text();
+  }
+  function $sendAndReadCOROUTINE$3(path, method, body, contentType, read, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this.path_1 = path;
+    this.method_1 = method;
+    this.body_1 = body;
+    this.contentType_1 = contentType;
+    this.read_1 = read;
+  }
+  protoOf($sendAndReadCOROUTINE$3).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(3);
+            if (!ensureConfigured())
+              throw IllegalStateException_init_$Create$('Server not configured');
+            this.base0__1 = localStorage.getItem('stickyNode.serverUrl');
+            this.token1__1 = localStorage.getItem('stickyNode.serverToken');
+            this.headers2__1 = {};
+            this.headers2__1['Authorization'] = '******';
+            this.options3__1 = {};
+            this.options3__1.method = this.method_1;
+            this.options3__1.headers = this.headers2__1;
+            if (this.body_1 != null) {
+              if (!(this.contentType_1 == null)) {
+                this.headers2__1['Content-Type'] = this.contentType_1;
+              }
+              this.options3__1.body = this.body_1;
+            }
+
+            this.set_state_rjd8d0_k$(1);
+            var this_0 = window.fetch(plus(this.base0__1, this.path_1), this.options3__1);
+            suspendResult = await_0(this_0, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.response4__1 = suspendResult;
+            if (this.response4__1.ok != true) {
+              if (this.response4__1.status == 401)
+                throw IllegalStateException_init_$Create$('Wrong token (use Server Settings)');
+              throw IllegalStateException_init_$Create$('Server error ' + this.response4__1.status);
+            }
+
+            this.set_state_rjd8d0_k$(2);
+            suspendResult = await_0(this.read_1(this.response4__1), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            return suspendResult;
+          case 3:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 3) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function listServerDrawings($completion) {
+    var tmp = new $listServerDrawingsCOROUTINE$4($completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  }
+  function loadFromServer(name, $completion) {
+    return request('/api/drawings/' + encodePathSegment(name), VOID, VOID, $completion);
+  }
+  function saveToServer(name, content, $completion) {
+    var tmp = new $saveToServerCOROUTINE$5(name, content, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  }
+  function $listServerDrawingsCOROUTINE$4(resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf($listServerDrawingsCOROUTINE$4).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(2);
+            var tmp_0 = this;
+            tmp_0.tmp00__1 = Default_getInstance();
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = request('/api/drawings', VOID, VOID, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            var tmp1 = suspendResult;
+            var this_0 = this.tmp00__1;
+            var this_1 = this_0.get_serializersModule_piitvg_k$();
+            var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().get_stringClass_bik2gy_k$(), arrayOf([]), false))]), false));
+            return this_0.decodeFromString_jwu9sq_k$(isInterface(this_2, KSerializer) ? this_2 : THROW_CCE(), tmp1);
+          case 2:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 2) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function $saveToServerCOROUTINE$5(name, content, resultContinuation) {
+    CoroutineImpl.call(this, resultContinuation);
+    this.name_1 = name;
+    this.content_1 = content;
+  }
+  protoOf($saveToServerCOROUTINE$5).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = request('/api/drawings/' + encodePathSegment(this.name_1), 'PUT', this.content_1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            return Unit_getInstance();
+          case 2:
+            throw this.get_exception_x0n6w6_k$();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 2) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  function uploadImage(id, file, $completion) {
+    var tmp = '/api/images/' + encodePathSegment(id);
+    var tmp_0 = file.type;
+    return sendAndRead(tmp, 'PUT', file, tmp_0, uploadImage$lambda, $completion);
+  }
+  function fetchImageBlob(id, $completion) {
+    var tmp = '/api/images/' + encodePathSegment(id);
+    return sendAndRead(tmp, VOID, VOID, VOID, fetchImageBlob$lambda, $completion);
+  }
+  function uploadImage$lambda(it) {
+    return Promise.resolve(Unit_getInstance());
+  }
+  function fetchImageBlob$lambda(it) {
+    // Inline function 'kotlin.js.unsafeCast' call
+    return it.blob();
+  }
   function _get_KEY__e5qd6a($this) {
     return $this.KEY_1;
   }
@@ -4041,6 +4757,8 @@
     onClick('clearButton', setupControls$lambda_13(editor));
     onClick('saveFileButton', setupControls$lambda_14(editor));
     onClick('openFileButton', setupControls$lambda_15(editor));
+    setupServerControls(editor, get_scope());
+    setupImageControls(editor, get_scope());
     var tmp_1 = document;
     tmp_1.addEventListener('keydown', setupControls$lambda_16(editor));
   }
@@ -4399,6 +5117,377 @@
       TEXT_INPUT_TYPES = setOf(['text', 'number']);
     }
   }
+  function setupImageControls(editor, scope) {
+    onClick('addImageButton', setupImageControls$lambda(scope, editor));
+  }
+  function setupImageControls$lambda$slambda($editor, resultContinuation) {
+    this.$editor_1 = $editor;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(setupImageControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(setupImageControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(setupImageControls$lambda$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(5);
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = pickImageFile(this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.tmp0_elvis_lhs0__1 = suspendResult;
+            var tmp_0 = this;
+            var tmp_1;
+            if (this.tmp0_elvis_lhs0__1 == null) {
+              return Unit_getInstance();
+            } else {
+              tmp_1 = this.tmp0_elvis_lhs0__1;
+            }
+
+            tmp_0.file1__1 = tmp_1;
+            var tmp_2 = this;
+            var tmp_3;
+            switch (this.file1__1.type) {
+              case 'image/png':
+                tmp_3 = 'png';
+                break;
+              case 'image/jpeg':
+                tmp_3 = 'jpg';
+                break;
+              case 'image/gif':
+                tmp_3 = 'gif';
+                break;
+              case 'image/webp':
+                tmp_3 = 'webp';
+                break;
+              default:
+                throw IllegalArgumentException_init_$Create$('Use a PNG, JPEG, GIF or WebP image');
+            }
+
+            tmp_2.ext2__1 = tmp_3;
+            if (numberToDouble(this.file1__1.size) > 20971520) {
+              throw IllegalArgumentException_init_$Create$('Image is larger than 20 MB');
+            }
+
+            this.id3__1 = toString_0(Default_getInstance_0().nextLong_njwv0v_k$().ushr_z7nmq8_k$(1), 36) + '.' + this.ext2__1;
+            this.set_state_rjd8d0_k$(2);
+            suspendResult = uploadImage(this.id3__1, this.file1__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            this.set_state_rjd8d0_k$(3);
+            suspendResult = ImageCache_getInstance().add_iat429_k$(this.id3__1, this.file1__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 3:
+            var img = suspendResult;
+            var tmp0 = img.naturalWidth;
+            var b = img.naturalHeight;
+            var b_0 = 400.0 / Math.max(tmp0, b);
+            var scale = Math.min(1.0, b_0);
+            var w = img.naturalWidth * scale;
+            var h = img.naturalHeight * scale;
+            this.$editor_1.get_items_it823b_k$().add_utx5q5_k$(new ImageItem((this.$editor_1.get_canvas_bshgm9_k$().width - w) / 2, (this.$editor_1.get_canvas_bshgm9_k$().height - h) / 2, w, h, this.id3__1));
+            this.$editor_1.render_dje1iy_k$();
+            this.$editor_1.commit_vpt10n_k$();
+            this.set_exceptionState_fex74n_k$(5);
+            this.set_state_rjd8d0_k$(6);
+            continue $sm;
+          case 4:
+            this.set_exceptionState_fex74n_k$(5);
+            var tmp_4 = this.get_exception_x0n6w6_k$();
+            if (tmp_4 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              window.alert("Couldn't add the image: " + error.message);
+              this.set_state_rjd8d0_k$(6);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 5:
+            throw this.get_exception_x0n6w6_k$();
+          case 6:
+            this.set_exceptionState_fex74n_k$(5);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 5) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(setupImageControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new setupImageControls$lambda$slambda(this.$editor_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(setupImageControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function setupImageControls$lambda$slambda_0($editor, resultContinuation) {
+    var i = new setupImageControls$lambda$slambda($editor, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function setupImageControls$lambda($scope, $editor) {
+    return function () {
+      launch($scope, VOID, VOID, setupImageControls$lambda$slambda_0($editor, null));
+      return Unit_getInstance();
+    };
+  }
+  function setupServerControls(editor, scope) {
+    onClick('serverSettingsButton', setupServerControls$lambda);
+    onClick('serverSaveButton', setupServerControls$lambda_0(scope, editor));
+    onClick('serverOpenButton', setupServerControls$lambda_1(scope, editor));
+  }
+  function setupServerControls$lambda() {
+    configureServer();
+    return Unit_getInstance();
+  }
+  function setupServerControls$lambda$slambda($name, $editor, resultContinuation) {
+    this.$name_1 = $name;
+    this.$editor_1 = $editor;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(setupServerControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(setupServerControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(setupServerControls$lambda$slambda).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_exceptionState_fex74n_k$(2);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = saveToServer(this.$name_1, this.$editor_1.exportJson_3gdc58_k$(), this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            window.alert('Saved "' + this.$name_1 + '" to the server.');
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_state_rjd8d0_k$(4);
+            continue $sm;
+          case 2:
+            this.set_exceptionState_fex74n_k$(3);
+            var tmp_0 = this.get_exception_x0n6w6_k$();
+            if (tmp_0 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              window.alert("Couldn't save to the server: " + error.message);
+              this.set_state_rjd8d0_k$(4);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 3:
+            throw this.get_exception_x0n6w6_k$();
+          case 4:
+            this.set_exceptionState_fex74n_k$(3);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 3) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(setupServerControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new setupServerControls$lambda$slambda(this.$name_1, this.$editor_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(setupServerControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function setupServerControls$lambda$slambda_0($name, $editor, resultContinuation) {
+    var i = new setupServerControls$lambda$slambda($name, $editor, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function setupServerControls$lambda_0($scope, $editor) {
+    return function () {
+      var tmp0_safe_receiver = window.prompt('Save as (letters, numbers, - and _ only):', 'drawing');
+      var tmp;
+      if (tmp0_safe_receiver == null) {
+        tmp = null;
+      } else {
+        // Inline function 'kotlin.text.trim' call
+        tmp = toString(trim(isCharSequence(tmp0_safe_receiver) ? tmp0_safe_receiver : THROW_CCE()));
+      }
+      var name = tmp;
+      var tmp_0;
+      // Inline function 'kotlin.text.isNullOrEmpty' call
+      if (name == null || charSequenceLength(name) === 0) {
+        return Unit_getInstance();
+      }
+      launch($scope, VOID, VOID, setupServerControls$lambda$slambda_0(name, $editor, null));
+      return Unit_getInstance();
+    };
+  }
+  function setupServerControls$lambda$slambda_1($editor, resultContinuation) {
+    this.$editor_1 = $editor;
+    CoroutineImpl.call(this, resultContinuation);
+  }
+  protoOf(setupServerControls$lambda$slambda_1).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
+    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
+    tmp.set_result_xj64lm_k$(Unit_getInstance());
+    tmp.set_exception_px07aa_k$(null);
+    return tmp.doResume_5yljmg_k$();
+  };
+  protoOf(setupServerControls$lambda$slambda_1).invoke_qns8j1_k$ = function (p1, $completion) {
+    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  };
+  protoOf(setupServerControls$lambda$slambda_1).doResume_5yljmg_k$ = function () {
+    var suspendResult = this.get_result_iyg5d2_k$();
+    $sm: do
+      try {
+        var tmp = this.get_state_iypx7s_k$();
+        switch (tmp) {
+          case 0:
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_exceptionState_fex74n_k$(3);
+            this.set_state_rjd8d0_k$(1);
+            suspendResult = listServerDrawings(this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 1:
+            this.names0__1 = suspendResult;
+            if (this.names0__1.isEmpty_y1axqb_k$()) {
+              window.alert('No saved drawings on the server yet.');
+              return Unit_getInstance();
+            }
+
+            var tmp_0 = this;
+            var tmp0_safe_receiver = window.prompt('Open which drawing?\n\n' + joinToString(this.names0__1, '\n'), first(this.names0__1));
+            var tmp_1;
+            if (tmp0_safe_receiver == null) {
+              tmp_1 = null;
+            } else {
+              tmp_1 = toString(trim(isCharSequence(tmp0_safe_receiver) ? tmp0_safe_receiver : THROW_CCE()));
+            }
+
+            tmp_0.name1__1 = tmp_1;
+            var this_0 = this.name1__1;
+            if (this_0 == null || charSequenceLength(this_0) === 0)
+              return Unit_getInstance();
+            this.set_state_rjd8d0_k$(2);
+            suspendResult = loadFromServer(this.name1__1, this);
+            if (suspendResult === get_COROUTINE_SUSPENDED()) {
+              return suspendResult;
+            }
+
+            continue $sm;
+          case 2:
+            var ARGUMENT = suspendResult;
+            var ARGUMENT_0 = decodeDrawing(ARGUMENT);
+            this.$editor_1.load_fth14d_k$(ARGUMENT_0);
+            this.set_exceptionState_fex74n_k$(4);
+            this.set_state_rjd8d0_k$(5);
+            continue $sm;
+          case 3:
+            this.set_exceptionState_fex74n_k$(4);
+            var tmp_2 = this.get_exception_x0n6w6_k$();
+            if (tmp_2 instanceof Error) {
+              var error = this.get_exception_x0n6w6_k$();
+              window.alert("Couldn't open that drawing: " + error.message);
+              this.set_state_rjd8d0_k$(5);
+              continue $sm;
+            } else {
+              throw this.get_exception_x0n6w6_k$();
+            }
+
+          case 4:
+            throw this.get_exception_x0n6w6_k$();
+          case 5:
+            this.set_exceptionState_fex74n_k$(4);
+            return Unit_getInstance();
+        }
+      } catch ($p) {
+        var e = $p;
+        if (this.get_exceptionState_wflpxn_k$() === 4) {
+          throw e;
+        } else {
+          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
+          this.set_exception_px07aa_k$(e);
+        }
+      }
+     while (true);
+  };
+  protoOf(setupServerControls$lambda$slambda_1).create_rcuf4x_k$ = function ($this$launch, completion) {
+    var i = new setupServerControls$lambda$slambda_1(this.$editor_1, completion);
+    i.$this$launch_1 = $this$launch;
+    return i;
+  };
+  protoOf(setupServerControls$lambda$slambda_1).create_wyq9v6_k$ = function (value, completion) {
+    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
+  };
+  function setupServerControls$lambda$slambda_2($editor, resultContinuation) {
+    var i = new setupServerControls$lambda$slambda_1($editor, resultContinuation);
+    var l = function ($this$launch, $completion) {
+      return i.invoke_d9fzmj_k$($this$launch, $completion);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function setupServerControls$lambda_1($scope, $editor) {
+    return function () {
+      launch($scope, VOID, VOID, setupServerControls$lambda$slambda_2($editor, null));
+      return Unit_getInstance();
+    };
+  }
   //region block: post-declaration
   protoOf(FreehandTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
   protoOf(ShapeTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
@@ -4414,6 +5503,7 @@
   protoOf($serializer_6).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_7).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_8).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
+  protoOf($serializer_9).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   //endregion
   //region block: init
   MIN_SHAPE_DRAG = 3.0;
@@ -4422,6 +5512,8 @@
   DEFAULT_LINE_WIDTH = 3;
   DEFAULT_FONT_SIZE = 20;
   MIN_HIT_RADIUS = 8.0;
+  URL_KEY = 'stickyNode.serverUrl';
+  TOKEN_KEY = 'stickyNode.serverToken';
   LEFT_BUTTON = 0;
   RIGHT_BUTTON = 2;
   //endregion

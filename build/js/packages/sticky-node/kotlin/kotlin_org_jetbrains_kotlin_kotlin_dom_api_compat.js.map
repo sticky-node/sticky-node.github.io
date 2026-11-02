@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;;;;;;;;;"}
+{"version":3,"sources":["../../../../compileSync/js/main/developmentExecutable/kotlin/libraries/stdlib/js/src/org.w3c/org.w3c.files.kt"],"sourcesContent":[null],"names":["BlobPropertyBag","type","o"],"mappings":";;;;;;;;;;;;;;;;;;0BAmCAA,CAEkCC,IAFlCD,EAEuE;A,2BAArB,E;QAC9CE,IAAQ,E;IACR,EAAE,MAAF,IAAY,I;IACZ,OAAO,C;EACX,C;;;"}
