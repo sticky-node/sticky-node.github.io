@@ -1,33 +1,52 @@
-Sticky Node
+# Sticky Node
 
-A simple, no-frills drawing canvas that runs entirely in your browser. Sketch freehand, drop in shapes and arrows, add text, and save your work to a file. Everything is stored locally, so there are no accounts and no servers.
+> A lightweight drawing canvas for quick ideas, diagrams, and visual notes.
+
+Sticky Node runs entirely in your browser. Sketch freehand, add shapes and arrows, place text, and save your work as a portable file. Your work stays on your device: no account, backend, or server is required.
 
 Built with Kotlin/JS and Gradle, and deployed to GitHub Pages.
 
-## Features
+## Preview
 
-- Freehand drawing with adjustable stroke width and color
-- Shapes: rectangle, circle/ellipse, regular polygon (choose the number of sides), and arrow
-- Text with adjustable font size and multi-line support
-- Move things after drawing them: click and drag any stroke, shape, arrow, or text item to reposition it
-- Object eraser: erases whole items rather than pixels
-- Undo / redo (up to 100 steps)
-- Autosave to your browser's localStorage, so your drawing is still there when you come back
-- Save / open files as .sticky.json so you can back up or share drawings
+![Sticky Node canvas with drawing tools and a sample sketch](Screenshot_20261102_141904.png)
 
-## Getting started
+## Highlights
 
-You need JDK 17 or newer and Gradle (or generate the wrapper once with `gradle wrapper`).
+- **Draw naturally** with adjustable stroke width and color
+- **Build diagrams** with rectangles, circles, regular polygons, and arrows
+- **Add context** with multi-line text and adjustable font size
+- **Edit in place** by moving any drawn item after creating it
+- **Work safely** with object-level erasing and 100-step undo / redo
+- **Keep ownership** with local autosave and `.sticky.json` export/import
+
+## Quick start
+
+### Use the hosted app
+
+Open the deployed app in a modern browser: **[sticky-node.github.io](https://sticky-node.github.io/)**
+
+### Run locally
+
+You need JDK 17 or newer. The Gradle wrapper handles the rest.
+
 
 ```bash
-# start the dev server
+# Start the development server
 ./gradlew jsBrowserDevelopmentRun
+```
 
-# build for production (outputs to build/dist/js/productionExecutable)
+Then open the local URL printed by Gradle.
+
+To create a production bundle:
+
+```bash
+# Build for production
 ./gradlew jsBrowserDistribution
 ```
 
-## How to use
+The production output is written to `build/dist/js/productionExecutable`.
+
+## Tools
 
 | Tool | How it works |
 | --- | --- |
@@ -38,3 +57,22 @@ You need JDK 17 or newer and Gradle (or generate the wrapper once with `gradle w
 | Undo / Redo | Buttons, or Ctrl/Cmd+Z and Ctrl/Cmd+Shift+Z (or Ctrl/Cmd+Y). |
 | Save File / Open File | Export or import the drawing as JSON. Uses the File System Access API where available, with a normal download as the fallback. |
 | Clear Canvas | Removes everything, including the autosaved copy. |
+
+## Storage and files
+
+- **Autosave:** the current drawing is kept in your browser's `localStorage` and restored when you return.
+- **Export:** save a drawing as a `.sticky.json` file to back it up or share it.
+- **Import:** open a previously exported `.sticky.json` file from the app.
+- **Clear:** permanently removes the current canvas and its autosaved copy.
+
+## Project layout
+
+```text
+src/jsMain/kotlin/stickynode/  Kotlin/JS application code
+src/jsMain/resources/          HTML and CSS resources
+server side/                   Optional local server utilities
+```
+
+## License
+
+No license has been specified yet.
