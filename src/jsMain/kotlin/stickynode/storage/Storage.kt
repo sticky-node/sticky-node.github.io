@@ -2,8 +2,9 @@ package stickynode.storage
 
 import kotlinx.browser.localStorage
 import stickynode.model.APP_ID
-import stickynode.model.Item
+import stickynode.model.DecodedDrawing
 import stickynode.model.decodeDrawing
+import stickynode.model.decodeDrawingData
 import stickynode.model.encodeDrawing
 
 /** Autosave to localStorage: one key holding the whole drawing. */
@@ -23,12 +24,12 @@ object Storage {
         LEGACY_CIRCLES, LEGACY_POLYGONS, LEGACY_ARROWS, LEGACY_TEXT
     )
 
-    fun load(): List<Item> = try {
+    fun load(): DecodedDrawing = try {
         val saved = localStorage.getItem(KEY)
-        if (saved != null) decodeDrawing(saved) else migrateLegacy()
+        if (saved != null) decodeDrawingData(saved) else migrateLegacy()
     } catch (error: Throwable) {
         console.warn("Couldn't restore the saved drawing", error)
-        emptyList()
+        DecodedDrawing(emptyList(), "#ffffff")
     }
 
     fun save(snapshot: String) {
@@ -40,8 +41,10 @@ object Storage {
     }
 
     /** Converts the old per-type keys into the current format once, then deletes them. */
-    private fun migrateLegacy(): List<Item> {
-        if (legacyKeys.all { localStorage.getItem(it) == null }) return emptyList()
+    private fun migrateLegacy(): DecodedDrawing {
+        if (legacyKeys.all { localStorage.getItem(it) == null }) {
+            return DecodedDrawing(emptyList(), "#ffffff")
+        }
 
         fun list(key: String) = localStorage.getItem(key) ?: "[]"
         // Reuses the v1 file reader by assembling the same shape a v1 file has.
@@ -50,9 +53,9 @@ object Storage {
             """"circleItems":${list(LEGACY_CIRCLES)},"polygonItems":${list(LEGACY_POLYGONS)},""" +
             """"arrowItems":${list(LEGACY_ARROWS)},"textItems":${list(LEGACY_TEXT)}}"""
 
-        val items = decodeDrawing(v1)
-        save(encodeDrawing(items))
+        val drawing = decodeDrawingData(v1)
+        save(encodeDrawing(drawing.items, backgroundColor = drawing.backgroundColor))
         legacyKeys.forEach { localStorage.removeItem(it) }
-        return items
+        return drawing
     }
 }

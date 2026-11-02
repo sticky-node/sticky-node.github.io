@@ -21,6 +21,8 @@ interface Tool {
     /** True while a gesture is in progress; undo/redo are ignored meanwhile. */
     val busy: Boolean get() = false
 
+    fun cancel(ed: Editor) = Unit
+
     fun onDown(ed: Editor, p: Point, button: Int)
     fun onMove(ed: Editor, p: Point)
     fun onUp(ed: Editor)
@@ -50,6 +52,10 @@ private class Dragger {
         target = null
         return wasActive
     }
+
+    fun cancel() {
+        target = null
+    }
 }
 
 class FreehandTool : Tool {
@@ -57,6 +63,12 @@ class FreehandTool : Tool {
     private var stroke: StrokeItem? = null
 
     override val busy: Boolean get() = drag.active || stroke != null
+
+    override fun cancel(ed: Editor) {
+        drag.cancel()
+        stroke = null
+        ed.preview = null
+    }
 
     override fun onDown(ed: Editor, p: Point, button: Int) {
         val existing = ed.findTop(p) { it is StrokeItem }
@@ -106,6 +118,13 @@ class ShapeTool(
 
     override val busy: Boolean get() = drag.active || start != null
 
+    override fun cancel(ed: Editor) {
+        drag.cancel()
+        start = null
+        current = null
+        ed.preview = null
+    }
+
     override fun onDown(ed: Editor, p: Point, button: Int) {
         val existing = ed.findTop(p, owns)
         if (existing != null) {
@@ -153,6 +172,11 @@ class TextTool : Tool {
 
     override val busy: Boolean get() = drag.active || pending != null
 
+    override fun cancel(ed: Editor) {
+        drag.cancel()
+        pending = null
+    }
+
     override fun onDown(ed: Editor, p: Point, button: Int) {
         val existing = ed.findTop(p) { it is TextItem } as? TextItem
         when (button) {
@@ -198,13 +222,11 @@ class TextTool : Tool {
     }
 
     private fun edit(ed: Editor, item: TextItem) {
-        val fontSize = ed.fontSize
         TextBox.show(ed.canvas, Point(item.x, item.y), item.color, item.text) { text ->
             if (text.isEmpty()) {
                 ed.items.remove(item)
             } else {
                 item.text = text
-                item.fontSize = fontSize
             }
             ed.render()
             ed.commit()
@@ -255,6 +277,11 @@ class EraserTool : Tool {
     private var erased = false
 
     override val busy: Boolean get() = active
+
+    override fun cancel(ed: Editor) {
+        active = false
+        erased = false
+    }
 
     override fun onDown(ed: Editor, p: Point, button: Int) {
         active = true

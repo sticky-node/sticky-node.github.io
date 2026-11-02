@@ -7,7 +7,7 @@ import stickynode.model.DEFAULT_FONT_SIZE
 import stickynode.model.DEFAULT_LINE_WIDTH
 import stickynode.model.Item
 import stickynode.model.Point
-import stickynode.model.decodeDrawing
+import stickynode.model.decodeDrawingData
 import stickynode.model.encodeDrawing
 import stickynode.storage.Storage
 
@@ -25,6 +25,7 @@ class Editor(val canvas: HTMLCanvasElement) {
     var preview: Item? = null
 
     var color = "#000000"
+    var backgroundColor = "#ffffff"
     var lineWidth = DEFAULT_LINE_WIDTH
     var fontSize = DEFAULT_FONT_SIZE
     var polygonSides = 5
@@ -38,11 +39,14 @@ class Editor(val canvas: HTMLCanvasElement) {
     private var renderQueued = false
 
     init {
-        items.addAll(Storage.load())
-        history = History(encodeDrawing(items))
+        val drawing = Storage.load()
+        items.addAll(drawing.items)
+        backgroundColor = drawing.backgroundColor
+        history = History(encodeDrawing(items, backgroundColor = backgroundColor))
     }
 
     fun selectTool(next: Tool) {
+        tool.cancel(this)
         preview = null
         tool = next
         onToolChanged?.invoke(next)
@@ -55,6 +59,8 @@ class Editor(val canvas: HTMLCanvasElement) {
 
     fun render() {
         ctx.clearRect(0.0, 0.0, canvas.width.toDouble(), canvas.height.toDouble())
+        ctx.fillStyle = backgroundColor
+        ctx.fillRect(0.0, 0.0, canvas.width.toDouble(), canvas.height.toDouble())
         for (item in items) drawItem(item)
         preview?.let { drawItem(it) }
     }
@@ -83,7 +89,7 @@ class Editor(val canvas: HTMLCanvasElement) {
 
     /** Call after a completed change: records an undo step and autosaves, but only if something actually changed. */
     fun commit() {
-        val snapshot = encodeDrawing(items)
+        val snapshot = encodeDrawing(items, backgroundColor = backgroundColor)
         if (history.record(snapshot)) Storage.save(snapshot)
     }
 
@@ -97,7 +103,9 @@ class Editor(val canvas: HTMLCanvasElement) {
 
     private fun restore(snapshot: String?) {
         if (snapshot == null) return
-        replaceItems(decodeDrawing(snapshot))
+        val drawing = decodeDrawingData(snapshot)
+        replaceItems(drawing.items)
+        backgroundColor = drawing.backgroundColor
         Storage.save(snapshot)
         render()
     }
@@ -109,13 +117,21 @@ class Editor(val canvas: HTMLCanvasElement) {
     }
 
     /** Replaces the whole drawing, e.g. after opening a file. */
-    fun load(newItems: List<Item>) {
+    fun load(newItems: List<Item>, newBackgroundColor: String = backgroundColor) {
         replaceItems(newItems)
+        backgroundColor = newBackgroundColor
         render()
         commit()
     }
 
-    fun exportJson(): String = encodeDrawing(items, pretty = true)
+    fun exportJson(): String = encodeDrawing(items, pretty = true, backgroundColor = backgroundColor)
+
+    fun setBackgroundColor(value: String) {
+        if (backgroundColor == value) return
+        backgroundColor = value
+        render()
+        commit()
+    }
 
     private fun replaceItems(newItems: List<Item>) {
         preview = null

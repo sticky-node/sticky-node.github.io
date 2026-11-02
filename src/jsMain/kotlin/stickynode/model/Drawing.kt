@@ -25,7 +25,13 @@ private val prettyJson = Json(from = json) {
 private class DrawingFile(
     val app: String = "",
     val version: Int = 1,
-    val items: List<Item> = emptyList()
+    val items: List<Item> = emptyList(),
+    val backgroundColor: String = "#ffffff"
+)
+
+data class DecodedDrawing(
+    val items: List<Item>,
+    val backgroundColor: String
 )
 
 /** Format v1: one list per item type. Only ever read, never written. */
@@ -49,18 +55,26 @@ private class LegacyDrawing(
     }
 }
 
-fun encodeDrawing(items: List<Item>, pretty: Boolean = false): String {
-    val file = DrawingFile(APP_ID, FORMAT_VERSION, items)
+fun encodeDrawing(
+    items: List<Item>,
+    pretty: Boolean = false,
+    backgroundColor: String = "#ffffff"
+): String {
+    val file = DrawingFile(APP_ID, FORMAT_VERSION, items, backgroundColor)
     return (if (pretty) prettyJson else json).encodeToString(DrawingFile.serializer(), file)
 }
 
 /** Throws [IllegalArgumentException] with a user-presentable message if [text] isn't a valid drawing. */
-fun decodeDrawing(text: String): List<Item> {
+fun decodeDrawingData(text: String): DecodedDrawing {
     if (text.isBlank()) throw IllegalArgumentException("The file is empty")
 
     val file = json.decodeFromString(DrawingFile.serializer(), text)
     if (file.app != APP_ID) throw IllegalArgumentException("Not a Sticky Node file")
 
-    if (file.version >= FORMAT_VERSION) return file.items
-    return json.decodeFromString(LegacyDrawing.serializer(), text).toItems()
+    if (file.version >= FORMAT_VERSION) {
+        return DecodedDrawing(file.items, file.backgroundColor)
+    }
+    return DecodedDrawing(json.decodeFromString(LegacyDrawing.serializer(), text).toItems(), "#ffffff")
 }
+
+fun decodeDrawing(text: String): List<Item> = decodeDrawingData(text).items

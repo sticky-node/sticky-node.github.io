@@ -10,7 +10,7 @@ import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.events.EventTarget
 import org.w3c.dom.events.KeyboardEvent
 import stickynode.editor.Editor
-import stickynode.model.decodeDrawing
+import stickynode.model.decodeDrawingData
 import stickynode.storage.pickFileText
 import stickynode.storage.saveToFile
 
@@ -69,6 +69,12 @@ fun setupControls(editor: Editor) {
     byId<HTMLInputElement>("colorPicker")?.let { picker ->
         picker.addEventListener("input", { editor.color = picker.value })
     }
+    byId<HTMLInputElement>("backgroundColorPicker")?.let { picker ->
+        picker.value = editor.backgroundColor
+        picker.addEventListener("input", {
+            editor.setBackgroundColor(picker.value)
+        })
+    }
     bindRange("lineWidthInput", "lineWidthValue") { editor.lineWidth = it }
     bindRange("fontSizeInput", "fontSizeValue") { editor.fontSize = it }
 
@@ -91,7 +97,8 @@ fun setupControls(editor: Editor) {
         scope.launch {
             try {
                 val text = pickFileText() ?: return@launch
-                editor.load(decodeDrawing(text))
+                val drawing = decodeDrawingData(text)
+                editor.load(drawing.items, drawing.backgroundColor)
             } catch (error: Throwable) {
                 window.alert("Couldn't open that file: ${error.message}")
             }
