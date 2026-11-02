@@ -28,12 +28,17 @@ fun isConfigured(): Boolean =
 
 private fun ensureConfigured(): Boolean = isConfigured() || configureServer()
 
-private suspend fun send(
+/**
+ * Sends a request, checks the status, then reads the body with [read] while still inside this
+ * function, so the fetch Response object is never returned across a suspend boundary.
+ */
+private suspend fun <T> sendAndRead(
     path: String,
     method: String = "GET",
     body: dynamic = null,
-    contentType: String? = null
-): dynamic {
+    contentType: String? = null,
+    read: (dynamic) -> Promise<T>
+): T {
     if (!ensureConfigured()) throw IllegalStateException("Server not configured")
     val base = localStorage.getItem(URL_KEY)
     val token = localStorage.getItem(TOKEN_KEY)
@@ -53,11 +58,11 @@ private suspend fun send(
         if (response.status == 401) throw IllegalStateException("Wrong token (use Server Settings)")
         throw IllegalStateException("Server error ${response.status}")
     }
-    return response
+    return read(response).await()
 }
 
 private suspend fun request(path: String, method: String = "GET", body: String? = null): String =
-    send(path, method, body, "text/plain").text().unsafeCast<Promise<String>>().await()
+    sendAndRead(path, method, body, "text/plain") { it.text().unsafeCast<Promise<String>>() }
 
 private fun encode(name: String): String = js("encodeURIComponent")(name).unsafeCast<String>()
 
@@ -72,8 +77,10 @@ suspend fun saveToServer(name: String, content: String) {
 }
 
 suspend fun uploadImage(id: String, file: File) {
-    send("/api/images/${encode(id)}", "PUT", file, file.type)
+    sendAndRead<Unit>("/api/images/${encode(id)}", "PUT", file, file.type) {
+        Promise.resolve(Unit)
+    }
 }
 
 suspend fun fetchImageBlob(id: String): Blob =
-    send("/api/images/${encode(id)}").blob().unsafeCast<Promise<Blob>>().await()
+    sendAndRead("/api/images/${encode(id)}") { it.blob().unsafeCast<Promise<Blob>>() }
