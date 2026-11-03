@@ -5,7 +5,6 @@ import kotlinx.browser.window
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import org.w3c.dom.Element
-import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLInputElement
 import org.w3c.dom.events.EventTarget
 import org.w3c.dom.events.KeyboardEvent
@@ -59,10 +58,20 @@ fun setupControls(editor: Editor) {
         }
     }
 
-    // Keeps the eraser label correct no matter how the tool was changed.
-    val eraserButton = byId<HTMLButtonElement>("eraserButton")
+    val toolButtons = mapOf(
+        tools.freehand to "drawButton",
+        tools.rectangle to "rectangleButton",
+        tools.circle to "circleButton",
+        tools.polygon to "polygonButton",
+        tools.arrow to "arrowButton",
+        tools.text to "textButton",
+        tools.fill to "fillButton",
+        tools.eraser to "eraserButton"
+    )
     editor.onToolChanged = { tool ->
-        eraserButton?.textContent = if (tool === tools.eraser) "Eraser: On" else "Eraser: Off"
+        toolButtons.forEach { (t, id) ->
+            document.getElementById(id)?.classList?.toggle("active", t === tool)
+        }
     }
 
     // Brush settings
