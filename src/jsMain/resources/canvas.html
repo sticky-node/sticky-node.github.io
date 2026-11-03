@@ -11,7 +11,28 @@
 
       <div class="group" aria-label="Tools">
         <button id="drawButton" class="tool active" title="draw">✎ <span>Draw</span></button>
-        
+        <button id="rectangleButton" class="tool" title="Rectangle">▭ <span>Rectangle</span></button>
+        <button id="circleButton" class="tool" title="Circle">◯ <span>Circle</span></button>
+        <button id="polygonButton" class="tool" title="Polygon">⬡ <span>Polygon</span></button>
+        <button id="arrowButton" class="tool" title="Arrow">➔ <span>Arrow</span></button>
+        <button id="textButton" class="tool" title="Text">T <span>Text</span></button>
+        <button id="fillButton" class="tool" title="Fill (right-click removes)">▨ <span>Fill</span></button>
+        <button id="eraserButton" class="tool" title="Eraser">⌫ <span>Eraser</span></button>
+        <button id="addImageButton" class="tool" title="Add image">▣ <span>Image</span></button>
+      </div>
+
+      <div class="group" role="group" aria-label="Brush settings">
+        <label class="swatch" title="color">
+          <input type="color" id="colorPicker" value="#000000">
+        </label>
+        <label class="slider" for="lineWidthInput">Stroke
+          <input type="range" id="lineWidthInput" min="1" max="30" step="1" value="3">
+          <output id="lineWidthValue">3</output>
+        </label>
+        <label class="slider" for="lineWidthInput">Stroke
+          <input type="range"
+        </label>
+
       </div>
     </header>
   </body>

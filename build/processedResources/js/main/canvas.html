@@ -6,39 +6,31 @@
     <title>Sticky Node</title>
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body>
-    <label for="colorPicker">Color</label>
-    <input type="color" id="colorPicker" value="#000000">
-    <label for="backgroundColorPicker">Background</label>
-    <input type="color" id="backgroundColorPicker" value="#ffffff">
-    <button id="eraserButton">Eraser: Off</button>
-    <button id="clearButton">Clear Canvas</button>
-    <button id="drawButton">Draw</button>
-    <button id="rectangleButton">Rectangle</button>
-    <button id="textButton">Text</button>
-    <button id="circleButton">Circle</button>
-    <button id="arrowButton">Arrow</button>
-    <label for="polygonSidesInput">Polygon sides</label>
-    <input type="number" id="polygonSidesInput" min="3" step="1" value="5">
-    <button id="polygonButton">Polygon</button>
-    <button id="undoButton">Undo</button>
-    <button id="redoButton">Redo</button>
-    <button id="saveFileButton">Save File</button>
-    <button id="openFileButton">Open File</button>
-    <label for="lineWidthInput">Stroke</label>
-    <input type="range" id="lineWidthInput" min="1" max="30" step="1" value="3">
-    <span id="lineWidthValue">3</span>
-    <label for="fontSizeInput">Text size</label>
-    <input type="range" id="fontSizeInput" min="8" max="96" step="1" value="20">
-    <span id="fontSizeValue">20</span>
-    <button id="fillButton">Fill</button>
-    <button id="serverSaveButton">Save to Server</button>
-  <button id="serverOpenButton">Open from Server</button>
-  <button id="serverSettingsButton">Server Settings</button>
-  <button id="addImageButton">Add Image</button>
+  <body class="app">
+    <header class="toolbar" role="toolbar" aria-label="Drawing tools">
 
-    <canvas id="drawingcanvas"></canvas>
+      <div class="group" aria-label="Tools">
+        <button id="drawButton" class="tool active" title="draw">✎ <span>Draw</span></button>
+        <button id="rectangleButton" class="tool" title="Rectangle">▭ <span>Rectangle</span></button>
+        <button id="circleButton" class="tool" title="Circle">◯ <span>Circle</span></button>
+        <button id="polygonButton" class="tool" title="Polygon">⬡ <span>Polygon</span></button>
+        <button id="arrowButton" class="tool" title="Arrow">➔ <span>Arrow</span></button>
+        <button id="textButton" class="tool" title="Text">T <span>Text</span></button>
+        <button id="fillButton" class="tool" title="Fill (right-click removes)">▨ <span>Fill</span></button>
+        <button id="eraserButton" class="tool" title="Eraser">⌫ <span>Eraser</span></button>
+        <button id="addImageButton" class="tool" title="Add image">▣ <span>Image</span></button>
+      </div>
 
-    <script src="./sticky-node.js"></script>
+      <div class="group" role="group" aria-label="Brush settings">
+        <label class="swatch" title="color">
+          <input type="color" id="colorPicker" value="#000000">
+        </label>
+        <label class="slider" for="lineWidthInput">Stroke
+          <input type="range" id="lineWidthInput" min="1" max="30" step="1" value="3">
+          <output id="lineWidthValue">3</output>
+        </label>
+
+      </div>
+    </header>
   </body>
 </html>

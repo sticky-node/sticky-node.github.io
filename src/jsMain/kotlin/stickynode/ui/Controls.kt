@@ -58,6 +58,7 @@ fun setupControls(editor: Editor) {
         }
     }
 
+    // Highlights whichever tool is currently selected.
     val toolButtons = mapOf(
         tools.freehand to "drawButton",
         tools.rectangle to "rectangleButton",
