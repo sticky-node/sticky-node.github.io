@@ -1,3 +1,17 @@
+:root {
+    --ink: #1c2230;
+    --ink-soft: #5b6475;
+    --surface: #ffffff;
+    --line: #dde1e8;
+    --hover: #eef0f4;
+    --sticky: #ffd84d;
+    --sticky-edge: #e6b800;
+    --danger: #b3261e;
+    --shadow: 0 1px 2px reba(20, 24, 36, .08), 0 8px 24px rgba(20, 24, 36, .12);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+}
+
 html,
 body {
     margin: 0;
@@ -15,4 +29,24 @@ canvas {
     left: 0;
     pointer-events: none;
     background: transparent;
+}
+
+body.app {
+    overflow: hidden;
+    background: #f3f4f6;
+}
+
+.toolbar {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 4px;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    padding:
 }

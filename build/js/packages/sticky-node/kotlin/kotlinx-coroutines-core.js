@@ -218,8 +218,8 @@
   initMetadataForObject(ThreadLocalEventLoop, 'ThreadLocalEventLoop');
   initMetadataForClass(CompletionHandlerException, 'CompletionHandlerException', VOID, RuntimeException);
   initMetadataForClass(CoroutinesInternalError, 'CoroutinesInternalError', VOID, Error_0);
-  initMetadataForInterface(ChildHandle, 'ChildHandle', VOID, VOID, [DisposableHandle]);
   initMetadataForObject(Key_2, 'Key', VOID, VOID, [Key]);
+  initMetadataForInterface(ChildHandle, 'ChildHandle', VOID, VOID, [DisposableHandle]);
   initMetadataForObject(NonDisposableHandle, 'NonDisposableHandle', VOID, VOID, [DisposableHandle, ChildHandle]);
   initMetadataForClass(Empty, 'Empty', VOID, VOID, [Incomplete]);
   initMetadataForClass(LockFreeLinkedListHead, 'LockFreeLinkedListHead', LockFreeLinkedListHead, LockFreeLinkedListNode);
@@ -1922,9 +1922,7 @@
     Error_init_$Init$(message, cause, this);
     captureStack(this, CoroutinesInternalError);
   }
-  function ParentJob() {
-  }
-  function ChildHandle() {
+  function DisposableHandle() {
   }
   function Key_2() {
     Key_instance_1 = this;
@@ -1937,15 +1935,11 @@
   }
   function Job() {
   }
-  function ensureActive(_this__u8e3s4) {
-    var tmp41_safe_receiver = _this__u8e3s4.get_y2st91_k$(Key_getInstance_2());
-    if (tmp41_safe_receiver == null)
-      null;
-    else {
-      ensureActive_0(tmp41_safe_receiver);
-    }
-  }
   function ChildJob() {
+  }
+  function ParentJob() {
+  }
+  function ChildHandle() {
   }
   function NonDisposableHandle() {
     NonDisposableHandle_instance = this;
@@ -1967,7 +1961,13 @@
       new NonDisposableHandle();
     return NonDisposableHandle_instance;
   }
-  function DisposableHandle() {
+  function ensureActive(_this__u8e3s4) {
+    var tmp41_safe_receiver = _this__u8e3s4.get_y2st91_k$(Key_getInstance_2());
+    if (tmp41_safe_receiver == null)
+      null;
+    else {
+      ensureActive_0(tmp41_safe_receiver);
+    }
   }
   function invokeOnCompletion(_this__u8e3s4, invokeImmediately, handler) {
     invokeImmediately = invokeImmediately === VOID ? true : invokeImmediately;

@@ -13,7 +13,7 @@ let config = {
 
 // entry
 config.entry = {
-    main: [require('path').resolve(__dirname, "kotlin/sticky-node.js")]
+    main: [require('path').resolve(__dirname, "kotlin\\sticky-node.js")]
 };
 config.output = {
     filename: (chunkData) => {
@@ -42,7 +42,7 @@ config.devServer = {
   "open": true,
   "static": [
     "kotlin",
-    "../../../processedResources/js/main"
+    "..\\..\\..\\processedResources\\js\\main"
   ],
   "client": {
     "overlay": {
