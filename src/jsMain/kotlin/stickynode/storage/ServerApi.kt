@@ -41,7 +41,7 @@ internal suspend fun <T> sendAndRead(
     val token = localStorage.getItem(TOKEN_KEY)
 
     val headers = js("({})")
-    headers["Authorization"] = "******"
+    headers["Authorization"] = "Bearer $token"
     val options = js("({})")
     options.method = method
     options.headers = headers

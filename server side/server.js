@@ -40,7 +40,6 @@ app.get('/api/drawings/:name', async (req, res) => {
         res.sendStatus(404);
     }
 });
-c
 app.put('/api/drawings/:name', express.text({ type: '*/*', limit: '20mb' }), async (req, res) => {
     if (!validName(req.params.name)) return res.sendStatus(400);
     await fs.mkdir(DATA, { recursive: true });

@@ -23,102 +23,101 @@
   //region block: imports
   var imul = Math.imul;
   var hypot = Math.hypot;
-  var THROW_CCE = kotlin_kotlin.$_$.vb;
-  var Unit_getInstance = kotlin_kotlin.$_$.i4;
+  var THROW_CCE = kotlin_kotlin.$_$.ua;
+  var Unit_instance = kotlin_kotlin.$_$.c4;
   var ArrayList_init_$Create$ = kotlin_kotlin.$_$.j;
   var VOID = kotlin_kotlin.$_$.f;
-  var protoOf = kotlin_kotlin.$_$.g9;
-  var emptyList = kotlin_kotlin.$_$.o5;
-  var initMetadataForClass = kotlin_kotlin.$_$.g8;
+  var protoOf = kotlin_kotlin.$_$.p8;
+  var emptyList = kotlin_kotlin.$_$.f5;
+  var initMetadataForClass = kotlin_kotlin.$_$.q7;
   var ArrayDeque_init_$Create$ = kotlin_kotlin.$_$.h;
-  var get_lastIndex = kotlin_kotlin.$_$.x5;
-  var numberToInt = kotlin_kotlin.$_$.d9;
-  var booleanArray = kotlin_kotlin.$_$.q7;
-  var isCharSequence = kotlin_kotlin.$_$.q8;
-  var trim = kotlin_kotlin.$_$.eb;
-  var toString = kotlin_kotlin.$_$.k9;
-  var ensureNotNull = kotlin_kotlin.$_$.mc;
-  var initMetadataForObject = kotlin_kotlin.$_$.l8;
-  var initMetadataForInterface = kotlin_kotlin.$_$.j8;
-  var mutableListOf = kotlin_kotlin.$_$.e6;
-  var last = kotlin_kotlin.$_$.z5;
-  var charSequenceLength = kotlin_kotlin.$_$.v7;
-  var isInterface = kotlin_kotlin.$_$.u8;
-  var ArrayListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p1;
-  var initMetadataForCompanion = kotlin_kotlin.$_$.h8;
-  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.w1;
-  var equals = kotlin_kotlin.$_$.z7;
-  var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.d;
-  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.o;
-  var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n;
-  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r1;
-  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.s1;
-  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.z1;
-  var objectCreate = kotlin_kotlin.$_$.f9;
-  var hashCode = kotlin_kotlin.$_$.f8;
-  var getStringHashCode = kotlin_kotlin.$_$.e8;
-  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.h1;
-  var isBlank = kotlin_kotlin.$_$.fa;
+  var get_lastIndex = kotlin_kotlin.$_$.o5;
+  var numberToInt = kotlin_kotlin.$_$.m8;
+  var booleanArray = kotlin_kotlin.$_$.c7;
+  var isCharSequence = kotlin_kotlin.$_$.a8;
+  var trim = kotlin_kotlin.$_$.ga;
+  var toString = kotlin_kotlin.$_$.t8;
+  var ensureNotNull = kotlin_kotlin.$_$.kb;
+  var initMetadataForObject = kotlin_kotlin.$_$.v7;
+  var initMetadataForInterface = kotlin_kotlin.$_$.t7;
+  var mutableListOf = kotlin_kotlin.$_$.u5;
+  var last = kotlin_kotlin.$_$.q5;
+  var charSequenceLength = kotlin_kotlin.$_$.h7;
+  var isInterface = kotlin_kotlin.$_$.e8;
+  var ArrayListSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n1;
+  var initMetadataForCompanion = kotlin_kotlin.$_$.r7;
+  var PluginGeneratedSerialDescriptor = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.t1;
+  var equals = kotlin_kotlin.$_$.j7;
+  var UnknownFieldException_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.c;
+  var StringSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n;
+  var IntSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
+  var typeParametersSerializers = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.p1;
+  var GeneratedSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.q1;
+  var throwMissingFieldException = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.w1;
+  var objectCreate = kotlin_kotlin.$_$.o8;
+  var hashCode = kotlin_kotlin.$_$.p7;
+  var getStringHashCode = kotlin_kotlin.$_$.o7;
+  var IllegalArgumentException_init_$Create$ = kotlin_kotlin.$_$.e1;
+  var isBlank = kotlin_kotlin.$_$.k9;
   var Json = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.b;
-  var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
-  var getNumberHashCode = kotlin_kotlin.$_$.c8;
-  var coerceIn = kotlin_kotlin.$_$.p9;
-  var roundToInt = kotlin_kotlin.$_$.l9;
+  var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.l;
+  var getNumberHashCode = kotlin_kotlin.$_$.m7;
+  var coerceIn = kotlin_kotlin.$_$.y8;
+  var roundToInt = kotlin_kotlin.$_$.u8;
   var getKClass = kotlin_kotlin.$_$.e;
   var SealedClassSerializer_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.a;
   var LazyThreadSafetyMode_PUBLICATION_getInstance = kotlin_kotlin.$_$.g;
-  var lazy = kotlin_kotlin.$_$.qc;
-  var SerializerFactory = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.x1;
-  var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.r;
-  var coerceAtLeast = kotlin_kotlin.$_$.n9;
+  var lazy = kotlin_kotlin.$_$.ob;
+  var SerializerFactory = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.u1;
+  var get_nullable = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.q;
+  var coerceAtLeast = kotlin_kotlin.$_$.w8;
   var ArrayList_init_$Create$_0 = kotlin_kotlin.$_$.i;
-  var split = kotlin_kotlin.$_$.ma;
-  var checkIndexOverflow = kotlin_kotlin.$_$.a5;
-  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.n1;
-  var KProperty0 = kotlin_kotlin.$_$.v9;
-  var getPropertyCallableRef = kotlin_kotlin.$_$.d8;
-  var lazy_0 = kotlin_kotlin.$_$.rc;
-  var intercepted = kotlin_kotlin.$_$.v6;
-  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.z;
-  var Companion_getInstance = kotlin_kotlin.$_$.d4;
-  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.a2;
-  var CoroutineImpl = kotlin_kotlin.$_$.j7;
+  var split = kotlin_kotlin.$_$.o9;
+  var checkIndexOverflow = kotlin_kotlin.$_$.r4;
+  var NoSuchElementException_init_$Create$ = kotlin_kotlin.$_$.j1;
+  var KProperty0 = kotlin_kotlin.$_$.d9;
+  var getPropertyCallableRef = kotlin_kotlin.$_$.n7;
+  var lazy_0 = kotlin_kotlin.$_$.pb;
+  var intercepted = kotlin_kotlin.$_$.k6;
+  var SafeContinuation_init_$Create$ = kotlin_kotlin.$_$.y;
+  var Companion_instance = kotlin_kotlin.$_$.x3;
+  var _Result___init__impl__xyqfz8 = kotlin_kotlin.$_$.u1;
+  var CoroutineImpl = kotlin_kotlin.$_$.x6;
   var await_0 = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.a;
-  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.t6;
-  var initMetadataForCoroutine = kotlin_kotlin.$_$.i8;
+  var get_COROUTINE_SUSPENDED = kotlin_kotlin.$_$.i6;
+  var initMetadataForCoroutine = kotlin_kotlin.$_$.s7;
   var CoroutineScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.b;
-  var initMetadataForLambda = kotlin_kotlin.$_$.k8;
-  var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.k1;
-  var createFailure = kotlin_kotlin.$_$.lc;
+  var initMetadataForLambda = kotlin_kotlin.$_$.u7;
+  var IllegalStateException_init_$Create$ = kotlin_kotlin.$_$.g1;
+  var createFailure = kotlin_kotlin.$_$.jb;
   var HashMap_init_$Create$ = kotlin_kotlin.$_$.m;
   var HashSet_init_$Create$ = kotlin_kotlin.$_$.p;
   var MainScope = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.c;
   var launch = kotlin_org_jetbrains_kotlinx_kotlinx_coroutines_core.$_$.d;
-  var SuspendFunction1 = kotlin_kotlin.$_$.k7;
-  var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.w1;
-  var charArrayOf = kotlin_kotlin.$_$.s7;
-  var trimEnd = kotlin_kotlin.$_$.cb;
-  var plus = kotlin_kotlin.$_$.tc;
+  var _Char___init__impl__6a9atx = kotlin_kotlin.$_$.q1;
+  var charArrayOf = kotlin_kotlin.$_$.e7;
+  var trimEnd = kotlin_kotlin.$_$.ea;
+  var plus = kotlin_kotlin.$_$.rb;
   var Default_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_json.$_$.a;
-  var KtList = kotlin_kotlin.$_$.s4;
-  var PrimitiveClasses_getInstance = kotlin_kotlin.$_$.y3;
-  var arrayOf = kotlin_kotlin.$_$.jc;
+  var KtList = kotlin_kotlin.$_$.j4;
+  var PrimitiveClasses_getInstance = kotlin_kotlin.$_$.s3;
+  var arrayOf = kotlin_kotlin.$_$.hb;
   var createKType = kotlin_kotlin.$_$.b;
   var createInvariantKTypeProjection = kotlin_kotlin.$_$.a;
-  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n2;
-  var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.f2;
-  var Collection = kotlin_kotlin.$_$.k4;
-  var listOf = kotlin_kotlin.$_$.b6;
-  var to = kotlin_kotlin.$_$.xc;
-  var mapOf = kotlin_kotlin.$_$.d6;
-  var toIntOrNull = kotlin_kotlin.$_$.ta;
-  var toDoubleOrNull = kotlin_kotlin.$_$.ra;
-  var setOf = kotlin_kotlin.$_$.j6;
-  var numberToDouble = kotlin_kotlin.$_$.c9;
-  var Default_getInstance_0 = kotlin_kotlin.$_$.x3;
-  var toString_0 = kotlin_kotlin.$_$.wa;
-  var joinToString = kotlin_kotlin.$_$.v5;
-  var first = kotlin_kotlin.$_$.r5;
+  var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.i2;
+  var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.b2;
+  var Collection = kotlin_kotlin.$_$.e4;
+  var listOf = kotlin_kotlin.$_$.r5;
+  var to = kotlin_kotlin.$_$.ub;
+  var mapOf = kotlin_kotlin.$_$.t5;
+  var toIntOrNull = kotlin_kotlin.$_$.v9;
+  var toDoubleOrNull = kotlin_kotlin.$_$.t9;
+  var setOf = kotlin_kotlin.$_$.y5;
+  var numberToDouble = kotlin_kotlin.$_$.l8;
+  var Default_getInstance_0 = kotlin_kotlin.$_$.r3;
+  var toString_0 = kotlin_kotlin.$_$.y9;
+  var joinToString = kotlin_kotlin.$_$.m5;
+  var first = kotlin_kotlin.$_$.i5;
   //endregion
   //region block: pre-declaration
   initMetadataForClass(Editor, 'Editor');
@@ -132,7 +131,7 @@
     return false;
   }
   function cancel(ed) {
-    return Unit_getInstance();
+    return Unit_instance;
   }
   initMetadataForInterface(Tool, 'Tool');
   initMetadataForClass(Dragger, 'Dragger', Dragger);
@@ -154,9 +153,8 @@
   initMetadataForClass(BoundingBox, 'BoundingBox');
   initMetadataForCompanion(Companion_2);
   initMetadataForObject($serializer_2, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_4});
-  initMetadataForInterface(Boxed, 'Boxed');
-  initMetadataForClass(ImageItem, 'ImageItem', VOID, Item, [Item, Boxed], VOID, VOID, {0: $serializer_getInstance_2});
+  initMetadataForClass(Item, 'Item', VOID, VOID, VOID, VOID, VOID, {0: Companion_getInstance_3});
+  initMetadataForClass(ImageItem, 'ImageItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_2});
   initMetadataForInterface(Fillable, 'Fillable');
   initMetadataForCompanion(Companion_3, VOID, [SerializerFactory]);
   initMetadataForCompanion(Companion_4);
@@ -164,13 +162,13 @@
   initMetadataForClass(StrokeItem, 'StrokeItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_3});
   initMetadataForCompanion(Companion_5);
   initMetadataForObject($serializer_4, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_4});
+  initMetadataForClass(RectangleItem, 'RectangleItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_4});
   initMetadataForCompanion(Companion_6);
   initMetadataForObject($serializer_5, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(CircleItem, 'CircleItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_5});
+  initMetadataForClass(CircleItem, 'CircleItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_5});
   initMetadataForCompanion(Companion_7);
   initMetadataForObject($serializer_6, '$serializer', VOID, VOID, [GeneratedSerializer]);
-  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, Item, [Item, Boxed, Fillable], VOID, VOID, {0: $serializer_getInstance_6});
+  initMetadataForClass(PolygonItem, 'PolygonItem', VOID, Item, [Item, Fillable], VOID, VOID, {0: $serializer_getInstance_6});
   initMetadataForCompanion(Companion_8);
   initMetadataForObject($serializer_7, '$serializer', VOID, VOID, [GeneratedSerializer]);
   initMetadataForClass(ArrowItem, 'ArrowItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_7});
@@ -182,188 +180,116 @@
   initMetadataForClass(RegionFillItem, 'RegionFillItem', VOID, Item, VOID, VOID, VOID, {0: $serializer_getInstance_9});
   initMetadataForCoroutine($saveToFileCOROUTINE$0, CoroutineImpl);
   initMetadataForCoroutine($pickFileTextCOROUTINE$1, CoroutineImpl);
-  initMetadataForLambda(ImageCache$get$slambda, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(ImageCache$get$slambda, CoroutineImpl, VOID, [1]);
   initMetadataForCoroutine($addCOROUTINE$2, CoroutineImpl);
   initMetadataForObject(ImageCache, 'ImageCache', VOID, VOID, VOID, [2, 1]);
   initMetadataForCoroutine($sendAndReadCOROUTINE$3, CoroutineImpl);
   initMetadataForCoroutine($listServerDrawingsCOROUTINE$4, CoroutineImpl);
   initMetadataForCoroutine($saveToServerCOROUTINE$5, CoroutineImpl);
   initMetadataForObject(Storage, 'Storage');
-  initMetadataForLambda(setupControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForLambda(setupControls$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForLambda(setupImageControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForLambda(setupServerControls$lambda$slambda, CoroutineImpl, [CoroutineImpl], [1]);
-  initMetadataForLambda(setupServerControls$lambda$slambda_1, CoroutineImpl, [CoroutineImpl], [1]);
+  initMetadataForLambda(setupControls$lambda$slambda, CoroutineImpl, VOID, [1]);
+  initMetadataForLambda(setupControls$lambda$slambda_1, CoroutineImpl, VOID, [1]);
+  initMetadataForLambda(setupImageControls$lambda$slambda, CoroutineImpl, VOID, [1]);
+  initMetadataForLambda(setupServerControls$lambda$slambda, CoroutineImpl, VOID, [1]);
+  initMetadataForLambda(setupServerControls$lambda$slambda_1, CoroutineImpl, VOID, [1]);
   //endregion
   function main() {
     var tmp = document.getElementById('drawingcanvas');
     var canvas = tmp instanceof HTMLCanvasElement ? tmp : THROW_CCE();
     var editor = new Editor(canvas);
-    editor.fitToWindow_u790h8_k$();
+    editor.e1o();
     setupCanvasEvents(editor);
     setupControls(editor);
     var tmp_0 = window;
     tmp_0.addEventListener('resize', main$lambda(editor));
     var tmp_1 = ImageCache_getInstance();
-    tmp_1.set_onLoaded_3u02fu_k$(main$lambda_0(editor));
+    tmp_1.i1o_1 = main$lambda_0(editor);
   }
   function main$lambda($editor) {
     return function (it) {
-      $editor.fitToWindow_u790h8_k$();
-      return Unit_getInstance();
+      $editor.e1o();
+      return Unit_instance;
     };
   }
   function main$lambda_0($editor) {
     return function () {
-      $editor.requestRender_xvw6ob_k$();
-      return Unit_getInstance();
+      $editor.j1o();
+      return Unit_instance;
     };
   }
   function mainWrapper() {
     main();
   }
-  function _get_ctx__e66oga($this) {
-    return $this.ctx_1;
-  }
-  function _set_tool__9ujw73($this, _set____db54di) {
-    $this.tool_1 = _set____db54di;
-  }
-  function _get_history__d61b7h($this) {
-    return $this.history_1;
-  }
-  function _set_renderQueued__nr3wvm($this, _set____db54di) {
-    $this.renderQueued_1 = _set____db54di;
-  }
-  function _get_renderQueued__87d6bi($this) {
-    return $this.renderQueued_1;
-  }
   function drawItem($this, item) {
-    $this.ctx_1.save();
-    item.draw_rpid3c_k$($this.ctx_1);
-    $this.ctx_1.restore();
+    $this.r1n_1.save();
+    item.k1o($this.r1n_1);
+    $this.r1n_1.restore();
   }
   function restore($this, snapshot) {
     if (snapshot == null)
-      return Unit_getInstance();
+      return Unit_instance;
     var drawing = decodeDrawingData(snapshot);
-    replaceItems($this, drawing.get_items_it823b_k$());
-    $this.backgroundColor_1 = drawing.get_backgroundColor_a0bggk_k$();
-    Storage_getInstance().save_kr09ot_k$(snapshot);
-    $this.render_dje1iy_k$();
+    replaceItems($this, drawing.l1o_1);
+    $this.v1n_1 = drawing.m1o_1;
+    Storage_getInstance().w1o(snapshot);
+    $this.x1o();
   }
   function replaceItems($this, newItems) {
-    $this.preview_1 = null;
-    $this.items_1.clear_j9egeb_k$();
-    $this.items_1.addAll_4lagoh_k$(newItems);
-  }
-  function Editor$findTop$lambda(it) {
-    return true;
+    $this.t1n_1 = null;
+    $this.s1n_1.z1();
+    $this.s1n_1.z(newItems);
   }
   function Editor$requestRender$lambda(this$0) {
     return function (it) {
-      this$0.renderQueued_1 = false;
-      this$0.render_dje1iy_k$();
-      return Unit_getInstance();
+      this$0.d1o_1 = false;
+      this$0.x1o();
+      return Unit_instance;
     };
   }
   function Editor(canvas) {
-    this.canvas_1 = canvas;
+    this.q1n_1 = canvas;
     var tmp = this;
-    var tmp_0 = this.canvas_1.getContext('2d');
-    tmp.ctx_1 = tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
+    var tmp_0 = this.q1n_1.getContext('2d');
+    tmp.r1n_1 = tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
     var tmp_1 = this;
     // Inline function 'kotlin.collections.mutableListOf' call
-    tmp_1.items_1 = ArrayList_init_$Create$();
-    this.preview_1 = null;
-    this.color_1 = '#000000';
-    this.backgroundColor_1 = '#ffffff';
-    this.lineWidth_1 = 3;
-    this.fontSize_1 = 20;
-    this.polygonSides_1 = 5;
-    this.tools_1 = new ToolSet();
-    this.tool_1 = this.tools_1.get_freehand_dsmxlw_k$();
-    this.onToolChanged_1 = null;
-    this.renderQueued_1 = false;
-    var drawing = Storage_getInstance().load_1zbae_k$();
-    this.items_1.addAll_4lagoh_k$(drawing.get_items_it823b_k$());
-    this.backgroundColor_1 = drawing.get_backgroundColor_a0bggk_k$();
-    this.history_1 = new History(encodeDrawing(this.items_1, VOID, this.backgroundColor_1));
+    tmp_1.s1n_1 = ArrayList_init_$Create$();
+    this.t1n_1 = null;
+    this.u1n_1 = '#000000';
+    this.v1n_1 = '#ffffff';
+    this.w1n_1 = 3;
+    this.x1n_1 = 20;
+    this.y1n_1 = 5;
+    this.z1n_1 = new ToolSet();
+    this.a1o_1 = this.z1n_1.y1o_1;
+    this.b1o_1 = null;
+    this.d1o_1 = false;
+    var drawing = Storage_getInstance().g1p();
+    this.s1n_1.z(drawing.l1o_1);
+    this.v1n_1 = drawing.m1o_1;
+    this.c1o_1 = new History(encodeDrawing(this.s1n_1, VOID, this.v1n_1));
   }
-  protoOf(Editor).get_canvas_bshgm9_k$ = function () {
-    return this.canvas_1;
-  };
-  protoOf(Editor).get_items_it823b_k$ = function () {
-    return this.items_1;
-  };
-  protoOf(Editor).set_preview_zhisal_k$ = function (_set____db54di) {
-    this.preview_1 = _set____db54di;
-  };
-  protoOf(Editor).get_preview_3zvuox_k$ = function () {
-    return this.preview_1;
-  };
-  protoOf(Editor).set_color_ayzg4c_k$ = function (_set____db54di) {
-    this.color_1 = _set____db54di;
-  };
-  protoOf(Editor).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(Editor).set_backgroundColor_ef6q42_k$ = function (_set____db54di) {
-    this.backgroundColor_1 = _set____db54di;
-  };
-  protoOf(Editor).get_backgroundColor_a0bggk_k$ = function () {
-    return this.backgroundColor_1;
-  };
-  protoOf(Editor).set_lineWidth_97ta37_k$ = function (_set____db54di) {
-    this.lineWidth_1 = _set____db54di;
-  };
-  protoOf(Editor).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(Editor).set_fontSize_6szsfv_k$ = function (_set____db54di) {
-    this.fontSize_1 = _set____db54di;
-  };
-  protoOf(Editor).get_fontSize_pr9n47_k$ = function () {
-    return this.fontSize_1;
-  };
-  protoOf(Editor).set_polygonSides_7fzqbb_k$ = function (_set____db54di) {
-    this.polygonSides_1 = _set____db54di;
-  };
-  protoOf(Editor).get_polygonSides_rm31lh_k$ = function () {
-    return this.polygonSides_1;
-  };
-  protoOf(Editor).get_tools_iz6t2q_k$ = function () {
-    return this.tools_1;
-  };
-  protoOf(Editor).get_tool_wov2zl_k$ = function () {
-    return this.tool_1;
-  };
-  protoOf(Editor).set_onToolChanged_3f4ytg_k$ = function (_set____db54di) {
-    this.onToolChanged_1 = _set____db54di;
-  };
-  protoOf(Editor).get_onToolChanged_aze2yc_k$ = function () {
-    return this.onToolChanged_1;
-  };
-  protoOf(Editor).selectTool_nfpv6_k$ = function (next) {
-    this.tool_1.cancel_lxi2wt_k$(this);
-    this.preview_1 = null;
-    this.tool_1 = next;
-    var tmp0_safe_receiver = this.onToolChanged_1;
+  protoOf(Editor).h1p = function (next) {
+    this.a1o_1.i1p(this);
+    this.t1n_1 = null;
+    this.a1o_1 = next;
+    var tmp0_safe_receiver = this.b1o_1;
     if (tmp0_safe_receiver == null)
       null;
     else
       tmp0_safe_receiver(next);
-    this.requestRender_xvw6ob_k$();
+    this.j1o();
   };
-  protoOf(Editor).findTop_jleozl_k$ = function (p, accept) {
-    var tmp0 = this.items_1;
+  protoOf(Editor).j1p = function (p, accept) {
+    var tmp0 = this.s1n_1;
     var tmp$ret$1;
     $l$block: {
       // Inline function 'kotlin.collections.lastOrNull' call
-      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
-      while (iterator.hasPrevious_qh0629_k$()) {
-        var element = iterator.previous_l2dfd5_k$();
+      var iterator = tmp0.o1(tmp0.l());
+      while (iterator.c4()) {
+        var element = iterator.e4();
         // Inline function 'stickynode.editor.Editor.findTop.<anonymous>' call
-        if (accept(element) && element.hitTest_1gxtur_k$(p)) {
+        if (accept(element) && element.k1p(p)) {
           tmp$ret$1 = element;
           break $l$block;
         }
@@ -372,26 +298,16 @@
     }
     return tmp$ret$1;
   };
-  protoOf(Editor).findTop$default_fnknud_k$ = function (p, accept, $super) {
-    var tmp;
-    if (accept === VOID) {
-      tmp = Editor$findTop$lambda;
-    } else {
-      tmp = accept;
-    }
-    accept = tmp;
-    return $super === VOID ? this.findTop_jleozl_k$(p, accept) : $super.findTop_jleozl_k$.call(this, p, accept);
-  };
-  protoOf(Editor).render_dje1iy_k$ = function () {
-    this.ctx_1.clearRect(0.0, 0.0, this.canvas_1.width, this.canvas_1.height);
-    this.ctx_1.fillStyle = this.backgroundColor_1;
-    this.ctx_1.fillRect(0.0, 0.0, this.canvas_1.width, this.canvas_1.height);
-    var _iterator__ex2g4s = this.items_1.iterator_jk1svi_k$();
-    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var item = _iterator__ex2g4s.next_20eer_k$();
+  protoOf(Editor).x1o = function () {
+    this.r1n_1.clearRect(0.0, 0.0, this.q1n_1.width, this.q1n_1.height);
+    this.r1n_1.fillStyle = this.v1n_1;
+    this.r1n_1.fillRect(0.0, 0.0, this.q1n_1.width, this.q1n_1.height);
+    var _iterator__ex2g4s = this.s1n_1.i();
+    while (_iterator__ex2g4s.j()) {
+      var item = _iterator__ex2g4s.k();
       drawItem(this, item);
     }
-    var tmp0_safe_receiver = this.preview_1;
+    var tmp0_safe_receiver = this.t1n_1;
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -400,120 +316,108 @@
       drawItem(this, tmp0_safe_receiver);
     }
   };
-  protoOf(Editor).requestRender_xvw6ob_k$ = function () {
-    if (this.renderQueued_1)
-      return Unit_getInstance();
-    this.renderQueued_1 = true;
+  protoOf(Editor).j1o = function () {
+    if (this.d1o_1)
+      return Unit_instance;
+    this.d1o_1 = true;
     var tmp = window;
     tmp.requestAnimationFrame(Editor$requestRender$lambda(this));
   };
-  protoOf(Editor).fitToWindow_u790h8_k$ = function () {
-    this.canvas_1.width = window.innerWidth;
-    this.canvas_1.height = window.innerHeight;
-    this.render_dje1iy_k$();
+  protoOf(Editor).e1o = function () {
+    this.q1n_1.width = window.innerWidth;
+    this.q1n_1.height = window.innerHeight;
+    this.x1o();
   };
-  protoOf(Editor).commit_vpt10n_k$ = function () {
-    var snapshot = encodeDrawing(this.items_1, VOID, this.backgroundColor_1);
-    if (this.history_1.record_guryq1_k$(snapshot)) {
-      Storage_getInstance().save_kr09ot_k$(snapshot);
+  protoOf(Editor).l1p = function () {
+    var snapshot = encodeDrawing(this.s1n_1, VOID, this.v1n_1);
+    if (this.c1o_1.p1p(snapshot)) {
+      Storage_getInstance().w1o(snapshot);
     }
   };
-  protoOf(Editor).undo_t6j8bw_k$ = function () {
-    if (!this.tool_1.get_busy_wojps2_k$()) {
-      restore(this, this.history_1.undo_251ic_k$());
+  protoOf(Editor).q1p = function () {
+    if (!this.a1o_1.s1p()) {
+      restore(this, this.c1o_1.r1p());
     }
   };
-  protoOf(Editor).redo_p9k3wy_k$ = function () {
-    if (!this.tool_1.get_busy_wojps2_k$()) {
-      restore(this, this.history_1.redo_22xvi_k$());
+  protoOf(Editor).t1p = function () {
+    if (!this.a1o_1.s1p()) {
+      restore(this, this.c1o_1.u1p());
     }
   };
-  protoOf(Editor).clear_j9egeb_k$ = function () {
+  protoOf(Editor).z1 = function () {
     replaceItems(this, emptyList());
-    this.render_dje1iy_k$();
-    this.commit_vpt10n_k$();
+    this.x1o();
+    this.l1p();
   };
-  protoOf(Editor).load_5aoc2h_k$ = function (newItems, newBackgroundColor) {
+  protoOf(Editor).v1p = function (newItems, newBackgroundColor) {
     replaceItems(this, newItems);
-    this.backgroundColor_1 = newBackgroundColor;
-    this.render_dje1iy_k$();
-    this.commit_vpt10n_k$();
+    this.v1n_1 = newBackgroundColor;
+    this.x1o();
+    this.l1p();
   };
-  protoOf(Editor).load$default_5zymnb_k$ = function (newItems, newBackgroundColor, $super) {
-    newBackgroundColor = newBackgroundColor === VOID ? this.backgroundColor_1 : newBackgroundColor;
+  protoOf(Editor).w1p = function (newItems, newBackgroundColor, $super) {
+    newBackgroundColor = newBackgroundColor === VOID ? this.v1n_1 : newBackgroundColor;
     var tmp;
     if ($super === VOID) {
-      this.load_5aoc2h_k$(newItems, newBackgroundColor);
-      tmp = Unit_getInstance();
+      this.v1p(newItems, newBackgroundColor);
+      tmp = Unit_instance;
     } else {
-      tmp = $super.load_5aoc2h_k$.call(this, newItems, newBackgroundColor);
+      tmp = $super.v1p.call(this, newItems, newBackgroundColor);
     }
     return tmp;
   };
-  protoOf(Editor).exportJson_3gdc58_k$ = function () {
-    return encodeDrawing(this.items_1, true, this.backgroundColor_1);
+  protoOf(Editor).x1p = function () {
+    return encodeDrawing(this.s1n_1, true, this.v1n_1);
   };
-  protoOf(Editor).setBackgroundColor_91fdqh_k$ = function (value) {
-    if (this.backgroundColor_1 === value)
-      return Unit_getInstance();
-    this.backgroundColor_1 = value;
-    this.render_dje1iy_k$();
-    this.commit_vpt10n_k$();
+  protoOf(Editor).y1p = function (value) {
+    if (this.v1n_1 === value)
+      return Unit_instance;
+    this.v1n_1 = value;
+    this.x1o();
+    this.l1p();
   };
-  function _get_limit__eq4zuy($this) {
-    return $this.limit_1;
-  }
-  function _get_stack__b8zp2v($this) {
-    return $this.stack_1;
-  }
-  function _set_index__fyfqnn($this, _set____db54di) {
-    $this.index_1 = _set____db54di;
-  }
-  function _get_index__g2optt($this) {
-    return $this.index_1;
-  }
   function History(initial, limit) {
     limit = limit === VOID ? 100 : limit;
-    this.limit_1 = limit;
+    this.m1p_1 = limit;
     var tmp = this;
     // Inline function 'kotlin.apply' call
     var this_0 = ArrayDeque_init_$Create$();
     // Inline function 'stickynode.editor.History.stack.<anonymous>' call
-    this_0.addLast_gaaijb_k$(initial);
-    tmp.stack_1 = this_0;
-    this.index_1 = 0;
+    this_0.kc(initial);
+    tmp.n1p_1 = this_0;
+    this.o1p_1 = 0;
   }
-  protoOf(History).record_guryq1_k$ = function (snapshot) {
-    if (snapshot === this.stack_1.get_c1px32_k$(this.index_1))
+  protoOf(History).p1p = function (snapshot) {
+    if (snapshot === this.n1p_1.n(this.o1p_1))
       return false;
-    while (this.stack_1.get_size_woubt6_k$() > (this.index_1 + 1 | 0)) {
-      this.stack_1.removeLast_i5wx8a_k$();
+    while (this.n1p_1.gc_1 > (this.o1p_1 + 1 | 0)) {
+      this.n1p_1.nc();
     }
-    this.stack_1.addLast_gaaijb_k$(snapshot);
-    if (this.stack_1.get_size_woubt6_k$() > this.limit_1) {
-      this.stack_1.removeFirst_58pi0k_k$();
+    this.n1p_1.kc(snapshot);
+    if (this.n1p_1.gc_1 > this.m1p_1) {
+      this.n1p_1.lc();
     }
-    this.index_1 = get_lastIndex(this.stack_1);
+    this.o1p_1 = get_lastIndex(this.n1p_1);
     return true;
   };
-  protoOf(History).undo_251ic_k$ = function () {
-    if (this.index_1 === 0)
+  protoOf(History).r1p = function () {
+    if (this.o1p_1 === 0)
       return null;
-    this.index_1 = this.index_1 - 1 | 0;
-    return this.stack_1.get_c1px32_k$(this.index_1);
+    this.o1p_1 = this.o1p_1 - 1 | 0;
+    return this.n1p_1.n(this.o1p_1);
   };
-  protoOf(History).redo_22xvi_k$ = function () {
-    if (this.index_1 === get_lastIndex(this.stack_1))
+  protoOf(History).u1p = function () {
+    if (this.o1p_1 === get_lastIndex(this.n1p_1))
       return null;
-    this.index_1 = this.index_1 + 1 | 0;
-    return this.stack_1.get_c1px32_k$(this.index_1);
+    this.o1p_1 = this.o1p_1 + 1 | 0;
+    return this.n1p_1.n(this.o1p_1);
   };
   function findEnclosedRegion(ed, p) {
-    var w = ed.get_canvas_bshgm9_k$().width;
-    var h = ed.get_canvas_bshgm9_k$().height;
-    var sx = numberToInt(p.get_x_1mhr67_k$());
-    var sy = numberToInt(p.get_y_1mhr68_k$());
-    if (p.get_x_1mhr67_k$() < 0 || p.get_y_1mhr68_k$() < 0 || sx >= w || sy >= h)
+    var w = ed.q1n_1.width;
+    var h = ed.q1n_1.height;
+    var sx = numberToInt(p.z1p_1);
+    var sy = numberToInt(p.a1q_1);
+    if (p.z1p_1 < 0 || p.a1q_1 < 0 || sx >= w || sy >= h)
       return null;
     var tmp = document.createElement('canvas');
     var off = tmp instanceof HTMLCanvasElement ? tmp : THROW_CCE();
@@ -521,13 +425,13 @@
     off.height = h;
     var tmp_0 = off.getContext('2d');
     var ctx = tmp_0 instanceof CanvasRenderingContext2D ? tmp_0 : THROW_CCE();
-    var _iterator__ex2g4s = ed.get_items_it823b_k$().iterator_jk1svi_k$();
-    $l$loop: while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var item = _iterator__ex2g4s.next_20eer_k$();
+    var _iterator__ex2g4s = ed.s1n_1.i();
+    $l$loop: while (_iterator__ex2g4s.j()) {
+      var item = _iterator__ex2g4s.k();
       if (item instanceof RegionFillItem)
         continue $l$loop;
       ctx.save();
-      item.draw_rpid3c_k$(ctx);
+      item.k1o(ctx);
       ctx.restore();
     }
     // Inline function 'kotlin.js.asDynamic' call
@@ -547,13 +451,13 @@
       return null;
     var runs = ArrayList_init_$Create$();
     var stack = ArrayDeque_init_$Create$();
-    stack.addLast_gaaijb_k$(imul(sy, w) + sx | 0);
+    stack.kc(imul(sy, w) + sx | 0);
     $l$loop_1: while (true) {
       // Inline function 'kotlin.collections.isNotEmpty' call
-      if (!!stack.isEmpty_y1axqb_k$()) {
+      if (!!stack.m()) {
         break $l$loop_1;
       }
-      var idx = stack.removeLast_i5wx8a_k$();
+      var idx = stack.nc();
       if (blocked[idx])
         continue $l$loop_1;
       var y = idx / w | 0;
@@ -577,9 +481,9 @@
           blocked[imul(y, w) + xx | 0] = true;
         }
          while (!(xx === last_0));
-      runs.add_utx5q5_k$(y);
-      runs.add_utx5q5_k$(left);
-      runs.add_utx5q5_k$(right + 1 | 0);
+      runs.d(y);
+      runs.d(left);
+      runs.d(right + 1 | 0);
       // Inline function 'kotlin.intArrayOf' call
       var indexedObject = new Int32Array([y - 1 | 0, y + 1 | 0]);
       var inductionVariable_1 = 0;
@@ -596,7 +500,7 @@
             inductionVariable_2 = inductionVariable_2 + 1 | 0;
             var open = !blocked[imul(ny, w) + xx_0 | 0];
             if (open && !inSpan) {
-              stack.addLast_gaaijb_k$(imul(ny, w) + xx_0 | 0);
+              stack.kc(imul(ny, w) + xx_0 | 0);
               inSpan = true;
             } else if (!open) {
               inSpan = false;
@@ -607,12 +511,9 @@
     }
     return runs;
   }
-  function _get_CLASS_NAME__cp9395($this) {
-    return $this.CLASS_NAME_1;
-  }
   function show$finish(finished, box, $onCommit, commit) {
     if (finished._v)
-      return Unit_getInstance();
+      return Unit_instance;
     finished._v = true;
     // Inline function 'kotlin.text.trim' call
     var this_0 = box.value;
@@ -624,7 +525,7 @@
   function TextBox$show$lambda$lambda($armed) {
     return function (it) {
       $armed._v = true;
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function TextBox$show$lambda($box, $armed) {
@@ -633,7 +534,7 @@
       $box.select();
       var tmp = window;
       tmp.requestAnimationFrame(TextBox$show$lambda$lambda($armed));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function TextBox$show$lambda_0($finished, $box, $onCommit) {
@@ -643,14 +544,14 @@
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
         show$finish($finished, $box, $onCommit, true);
-        tmp = Unit_getInstance();
+        tmp = Unit_instance;
       }
       var tmp_0;
       if (event.key === 'Escape') {
         show$finish($finished, $box, $onCommit, false);
-        tmp_0 = Unit_getInstance();
+        tmp_0 = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function TextBox$show$lambda_1($armed, $box, $finished, $onCommit) {
@@ -658,24 +559,23 @@
       var tmp;
       if ($armed._v) {
         show$finish($finished, $box, $onCommit, true);
-        tmp = Unit_getInstance();
+        tmp = Unit_instance;
       } else {
         $box.focus();
-        tmp = Unit_getInstance();
+        tmp = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function TextBox() {
-    TextBox_instance = this;
-    this.CLASS_NAME_1 = 'sticky-node-textbox';
+    this.b1q_1 = 'sticky-node-textbox';
   }
-  protoOf(TextBox).isOpen_jiokto_k$ = function () {
+  protoOf(TextBox).c1q = function () {
     return !(document.querySelector('textarea.sticky-node-textbox') == null);
   };
-  protoOf(TextBox).show_aamyt0_k$ = function (canvas, at, color, initialText, onCommit) {
-    if (this.isOpen_jiokto_k$())
-      return Unit_getInstance();
+  protoOf(TextBox).d1q = function (canvas, at, color, initialText, onCommit) {
+    if (this.c1q())
+      return Unit_instance;
     var bounds = canvas.getBoundingClientRect();
     var tmp = document.createElement('textarea');
     var box = tmp instanceof HTMLTextAreaElement ? tmp : THROW_CCE();
@@ -684,8 +584,8 @@
     // Inline function 'stickynode.editor.TextBox.show.<anonymous>' call
     var $this$with = box.style;
     $this$with.position = 'fixed';
-    $this$with.left = '' + (bounds.left + at.get_x_1mhr67_k$() - 8) + 'px';
-    $this$with.top = '' + (bounds.top + at.get_y_1mhr68_k$() - 8) + 'px';
+    $this$with.left = '' + (bounds.left + at.z1p_1 - 8) + 'px';
+    $this$with.top = '' + (bounds.top + at.a1q_1 - 8) + 'px';
     $this$with.boxSizing = 'content-box';
     $this$with.width = '180px';
     $this$with.height = '70px';
@@ -704,21 +604,19 @@
     box.addEventListener('keydown', TextBox$show$lambda_0(finished, box, onCommit));
     box.addEventListener('blur', TextBox$show$lambda_1(armed, box, finished, onCommit));
   };
-  protoOf(TextBox).show$default_8t5ky5_k$ = function (canvas, at, color, initialText, onCommit, $super) {
+  protoOf(TextBox).e1q = function (canvas, at, color, initialText, onCommit, $super) {
     initialText = initialText === VOID ? '' : initialText;
     var tmp;
     if ($super === VOID) {
-      this.show_aamyt0_k$(canvas, at, color, initialText, onCommit);
-      tmp = Unit_getInstance();
+      this.d1q(canvas, at, color, initialText, onCommit);
+      tmp = Unit_instance;
     } else {
-      tmp = $super.show_aamyt0_k$.call(this, canvas, at, color, initialText, onCommit);
+      tmp = $super.d1q.call(this, canvas, at, color, initialText, onCommit);
     }
     return tmp;
   };
   var TextBox_instance;
   function TextBox_getInstance() {
-    if (TextBox_instance == null)
-      new TextBox();
     return TextBox_instance;
   }
   function ToolSet$rectangle$lambda(it) {
@@ -726,101 +624,61 @@
   }
   function ToolSet$rectangle$lambda_0(ed, start, end) {
     var box = boundingBox(start, end);
-    return new RectangleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+    return new RectangleItem(box.f1q_1, box.g1q_1, box.h1q_1, box.i1q_1, ed.u1n_1, ed.w1n_1);
   }
   function ToolSet$circle$lambda(it) {
     return it instanceof CircleItem;
   }
   function ToolSet$circle$lambda_0(ed, start, end) {
     var box = boundingBox(start, end);
-    return new CircleItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+    return new CircleItem(box.f1q_1, box.g1q_1, box.h1q_1, box.i1q_1, ed.u1n_1, ed.w1n_1);
   }
   function ToolSet$polygon$lambda(it) {
     return it instanceof PolygonItem;
   }
   function ToolSet$polygon$lambda_0(ed, start, end) {
     var box = boundingBox(start, end);
-    return new PolygonItem(box.get_x_1mhr67_k$(), box.get_y_1mhr68_k$(), box.get_width_j0q4yl_k$(), box.get_height_e7t92o_k$(), ed.get_polygonSides_rm31lh_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+    return new PolygonItem(box.f1q_1, box.g1q_1, box.h1q_1, box.i1q_1, ed.y1n_1, ed.u1n_1, ed.w1n_1);
   }
   function ToolSet$arrow$lambda(it) {
     return it instanceof ArrowItem;
   }
   function ToolSet$arrow$lambda_0(ed, start, end) {
-    return new ArrowItem(start.get_x_1mhr67_k$(), start.get_y_1mhr68_k$(), end.get_x_1mhr67_k$(), end.get_y_1mhr68_k$(), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
+    return new ArrowItem(start.z1p_1, start.a1q_1, end.z1p_1, end.a1q_1, ed.u1n_1, ed.w1n_1);
   }
   function ToolSet() {
-    this.freehand_1 = new FreehandTool();
-    this.eraser_1 = new EraserTool();
-    this.text_1 = new TextTool();
-    this.fill_1 = new FillTool();
+    this.y1o_1 = new FreehandTool();
+    this.z1o_1 = new EraserTool();
+    this.a1p_1 = new TextTool();
+    this.b1p_1 = new FillTool();
     var tmp = this;
     var tmp_0 = ToolSet$rectangle$lambda;
-    tmp.rectangle_1 = new ShapeTool(tmp_0, ToolSet$rectangle$lambda_0);
+    tmp.c1p_1 = new ShapeTool(tmp_0, ToolSet$rectangle$lambda_0);
     var tmp_1 = this;
     var tmp_2 = ToolSet$circle$lambda;
-    tmp_1.circle_1 = new ShapeTool(tmp_2, ToolSet$circle$lambda_0);
+    tmp_1.d1p_1 = new ShapeTool(tmp_2, ToolSet$circle$lambda_0);
     var tmp_3 = this;
     var tmp_4 = ToolSet$polygon$lambda;
-    tmp_3.polygon_1 = new ShapeTool(tmp_4, ToolSet$polygon$lambda_0);
+    tmp_3.e1p_1 = new ShapeTool(tmp_4, ToolSet$polygon$lambda_0);
     var tmp_5 = this;
     var tmp_6 = ToolSet$arrow$lambda;
-    tmp_5.arrow_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
+    tmp_5.f1p_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
   }
-  protoOf(ToolSet).get_freehand_dsmxlw_k$ = function () {
-    return this.freehand_1;
-  };
-  protoOf(ToolSet).get_eraser_czouj9_k$ = function () {
-    return this.eraser_1;
-  };
-  protoOf(ToolSet).get_text_wouvsm_k$ = function () {
-    return this.text_1;
-  };
-  protoOf(ToolSet).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(ToolSet).get_rectangle_r245om_k$ = function () {
-    return this.rectangle_1;
-  };
-  protoOf(ToolSet).get_circle_bwxzh5_k$ = function () {
-    return this.circle_1;
-  };
-  protoOf(ToolSet).get_polygon_5b4a0f_k$ = function () {
-    return this.polygon_1;
-  };
-  protoOf(ToolSet).get_arrow_iosp28_k$ = function () {
-    return this.arrow_1;
-  };
-  function get_MIN_SHAPE_DRAG() {
-    return MIN_SHAPE_DRAG;
-  }
-  var MIN_SHAPE_DRAG;
   function Tool() {
   }
-  function _set_target__aw1jfq($this, _set____db54di) {
-    $this.target_1 = _set____db54di;
-  }
-  function _get_target__ccs42i($this) {
-    return $this.target_1;
-  }
-  function _set_last__9pwosh($this, _set____db54di) {
-    $this.last_1 = _set____db54di;
-  }
-  function _get_last__d9oodx($this) {
-    return $this.last_1;
-  }
   function Dragger() {
-    this.target_1 = null;
-    this.last_1 = new Point(0.0, 0.0);
+    this.n1q_1 = null;
+    this.o1q_1 = new Point(0.0, 0.0);
   }
-  protoOf(Dragger).get_active_avldsf_k$ = function () {
-    return !(this.target_1 == null);
+  protoOf(Dragger).p1q = function () {
+    return !(this.n1q_1 == null);
   };
-  protoOf(Dragger).start_lvwrrj_k$ = function (item, at) {
-    this.target_1 = item;
-    this.last_1 = at;
+  protoOf(Dragger).q1q = function (item, at) {
+    this.n1q_1 = item;
+    this.o1q_1 = at;
   };
-  protoOf(Dragger).move_m5bngx_k$ = function (to) {
-    var tmp0_elvis_lhs = this.target_1;
+  protoOf(Dragger).r1q = function (to) {
+    var tmp0_elvis_lhs = this.n1q_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
       return false;
@@ -828,204 +686,163 @@
       tmp = tmp0_elvis_lhs;
     }
     var item = tmp;
-    item.moveBy_hp42rs_k$(to.get_x_1mhr67_k$() - this.last_1.get_x_1mhr67_k$(), to.get_y_1mhr68_k$() - this.last_1.get_y_1mhr68_k$());
-    this.last_1 = to;
+    item.s1q(to.z1p_1 - this.o1q_1.z1p_1, to.a1q_1 - this.o1q_1.a1q_1);
+    this.o1q_1 = to;
     return true;
   };
-  protoOf(Dragger).end_25ln_k$ = function () {
-    var wasActive = !(this.target_1 == null);
-    this.target_1 = null;
+  protoOf(Dragger).t1q = function () {
+    var wasActive = !(this.n1q_1 == null);
+    this.n1q_1 = null;
     return wasActive;
   };
-  protoOf(Dragger).cancel_2l89ey_k$ = function () {
-    this.target_1 = null;
+  protoOf(Dragger).u1q = function () {
+    this.n1q_1 = null;
   };
-  function _get_drag__d5ksrb($this) {
-    return $this.drag_1;
-  }
-  function _set_stroke__57naov($this, _set____db54di) {
-    $this.stroke_1 = _set____db54di;
-  }
-  function _get_stroke__6odvbn($this) {
-    return $this.stroke_1;
-  }
   function FreehandTool$onDown$lambda(it) {
     return it instanceof StrokeItem;
   }
   function FreehandTool() {
-    this.drag_1 = new Dragger();
-    this.stroke_1 = null;
+    this.v1q_1 = new Dragger();
+    this.w1q_1 = null;
   }
-  protoOf(FreehandTool).get_busy_wojps2_k$ = function () {
-    return this.drag_1.get_active_avldsf_k$() || !(this.stroke_1 == null);
+  protoOf(FreehandTool).s1p = function () {
+    return this.v1q_1.p1q() || !(this.w1q_1 == null);
   };
-  protoOf(FreehandTool).cancel_lxi2wt_k$ = function (ed) {
-    this.drag_1.cancel_2l89ey_k$();
-    this.stroke_1 = null;
-    ed.set_preview_zhisal_k$(null);
+  protoOf(FreehandTool).i1p = function (ed) {
+    this.v1q_1.u1q();
+    this.w1q_1 = null;
+    ed.t1n_1 = null;
   };
-  protoOf(FreehandTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    var existing = ed.findTop_jleozl_k$(p, FreehandTool$onDown$lambda);
+  protoOf(FreehandTool).k1q = function (ed, p, button) {
+    var existing = ed.j1p(p, FreehandTool$onDown$lambda);
     if (!(existing == null)) {
-      this.drag_1.start_lvwrrj_k$(existing, p);
-      return Unit_getInstance();
+      this.v1q_1.q1q(existing, p);
+      return Unit_instance;
     }
-    var fresh = new StrokeItem(mutableListOf([p]), ed.get_color_ipu8u2_k$(), ed.get_lineWidth_lbeliv_k$());
-    this.stroke_1 = fresh;
-    ed.set_preview_zhisal_k$(fresh);
+    var fresh = new StrokeItem(mutableListOf([p]), ed.u1n_1, ed.w1n_1);
+    this.w1q_1 = fresh;
+    ed.t1n_1 = fresh;
   };
-  protoOf(FreehandTool).onMove_580z7b_k$ = function (ed, p) {
-    if (this.drag_1.move_m5bngx_k$(p)) {
-      ed.requestRender_xvw6ob_k$();
-      return Unit_getInstance();
+  protoOf(FreehandTool).l1q = function (ed, p) {
+    if (this.v1q_1.r1q(p)) {
+      ed.j1o();
+      return Unit_instance;
     }
-    var tmp0_elvis_lhs = this.stroke_1;
+    var tmp0_elvis_lhs = this.w1q_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp = tmp0_elvis_lhs;
     }
     var current = tmp;
-    if (!last(current.get_points_i5obn0_k$()).equals(p)) {
-      current.get_points_i5obn0_k$().add_utx5q5_k$(p);
-      ed.requestRender_xvw6ob_k$();
+    if (!last(current.x1q_1).equals(p)) {
+      current.x1q_1.d(p);
+      ed.j1o();
     }
   };
-  protoOf(FreehandTool).onUp_lz9rfn_k$ = function (ed) {
-    if (this.drag_1.end_25ln_k$()) {
-      ed.commit_vpt10n_k$();
-      return Unit_getInstance();
+  protoOf(FreehandTool).m1q = function (ed) {
+    if (this.v1q_1.t1q()) {
+      ed.l1p();
+      return Unit_instance;
     }
-    var tmp0_elvis_lhs = this.stroke_1;
+    var tmp0_elvis_lhs = this.w1q_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp = tmp0_elvis_lhs;
     }
     var finished = tmp;
-    this.stroke_1 = null;
-    ed.set_preview_zhisal_k$(null);
-    if (finished.get_points_i5obn0_k$().get_size_woubt6_k$() >= 2) {
-      ed.get_items_it823b_k$().add_utx5q5_k$(finished);
+    this.w1q_1 = null;
+    ed.t1n_1 = null;
+    if (finished.x1q_1.l() >= 2) {
+      ed.s1n_1.d(finished);
     }
-    ed.render_dje1iy_k$();
-    ed.commit_vpt10n_k$();
+    ed.x1o();
+    ed.l1p();
   };
-  function _get_owns__dbq05a($this) {
-    return $this.owns_1;
-  }
-  function _get_create__g83typ($this) {
-    return $this.create_1;
-  }
-  function _get_drag__d5ksrb_0($this) {
-    return $this.drag_1;
-  }
-  function _set_start__ks52qr($this, _set____db54di) {
-    $this.start_1 = _set____db54di;
-  }
-  function _get_start__b8zdqp($this) {
-    return $this.start_1;
-  }
-  function _set_current__qj3kk($this, _set____db54di) {
-    $this.current_1 = _set____db54di;
-  }
-  function _get_current__qcrdxk($this) {
-    return $this.current_1;
-  }
   function ShapeTool(owns, create) {
-    this.owns_1 = owns;
-    this.create_1 = create;
-    this.drag_1 = new Dragger();
-    this.start_1 = null;
-    this.current_1 = null;
+    this.b1r_1 = owns;
+    this.c1r_1 = create;
+    this.d1r_1 = new Dragger();
+    this.e1r_1 = null;
+    this.f1r_1 = null;
   }
-  protoOf(ShapeTool).get_busy_wojps2_k$ = function () {
-    return this.drag_1.get_active_avldsf_k$() || !(this.start_1 == null);
+  protoOf(ShapeTool).s1p = function () {
+    return this.d1r_1.p1q() || !(this.e1r_1 == null);
   };
-  protoOf(ShapeTool).cancel_lxi2wt_k$ = function (ed) {
-    this.drag_1.cancel_2l89ey_k$();
-    this.start_1 = null;
-    this.current_1 = null;
-    ed.set_preview_zhisal_k$(null);
+  protoOf(ShapeTool).i1p = function (ed) {
+    this.d1r_1.u1q();
+    this.e1r_1 = null;
+    this.f1r_1 = null;
+    ed.t1n_1 = null;
   };
-  protoOf(ShapeTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    var existing = ed.findTop_jleozl_k$(p, this.owns_1);
+  protoOf(ShapeTool).k1q = function (ed, p, button) {
+    var existing = ed.j1p(p, this.b1r_1);
     if (!(existing == null)) {
-      this.drag_1.start_lvwrrj_k$(existing, p);
+      this.d1r_1.q1q(existing, p);
     } else {
-      this.start_1 = p;
-      this.current_1 = p;
+      this.e1r_1 = p;
+      this.f1r_1 = p;
     }
   };
-  protoOf(ShapeTool).onMove_580z7b_k$ = function (ed, p) {
-    if (this.drag_1.move_m5bngx_k$(p)) {
-      ed.requestRender_xvw6ob_k$();
-      return Unit_getInstance();
+  protoOf(ShapeTool).l1q = function (ed, p) {
+    if (this.d1r_1.r1q(p)) {
+      ed.j1o();
+      return Unit_instance;
     }
-    var tmp0_elvis_lhs = this.start_1;
+    var tmp0_elvis_lhs = this.e1r_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp = tmp0_elvis_lhs;
     }
     var origin = tmp;
-    this.current_1 = p;
-    ed.set_preview_zhisal_k$(this.create_1(ed, origin, p));
-    ed.requestRender_xvw6ob_k$();
+    this.f1r_1 = p;
+    ed.t1n_1 = this.c1r_1(ed, origin, p);
+    ed.j1o();
   };
-  protoOf(ShapeTool).onUp_lz9rfn_k$ = function (ed) {
-    if (this.drag_1.end_25ln_k$()) {
-      ed.commit_vpt10n_k$();
-      return Unit_getInstance();
+  protoOf(ShapeTool).m1q = function (ed) {
+    if (this.d1r_1.t1q()) {
+      ed.l1p();
+      return Unit_instance;
     }
-    var tmp0_elvis_lhs = this.start_1;
+    var tmp0_elvis_lhs = this.e1r_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp = tmp0_elvis_lhs;
     }
     var origin = tmp;
-    var tmp1_elvis_lhs = this.current_1;
+    var tmp1_elvis_lhs = this.f1r_1;
     var end = tmp1_elvis_lhs == null ? origin : tmp1_elvis_lhs;
-    this.start_1 = null;
-    this.current_1 = null;
-    ed.set_preview_zhisal_k$(null);
-    var tmp0 = end.get_x_1mhr67_k$() - origin.get_x_1mhr67_k$();
+    this.e1r_1 = null;
+    this.f1r_1 = null;
+    ed.t1n_1 = null;
+    var tmp0 = end.z1p_1 - origin.z1p_1;
     // Inline function 'kotlin.math.hypot' call
-    var y = end.get_y_1mhr68_k$() - origin.get_y_1mhr68_k$();
+    var y = end.a1q_1 - origin.a1q_1;
     if (hypot(tmp0, y) > 3.0) {
-      ed.get_items_it823b_k$().add_utx5q5_k$(this.create_1(ed, origin, end));
+      ed.s1n_1.d(this.c1r_1(ed, origin, end));
     }
-    ed.render_dje1iy_k$();
-    ed.commit_vpt10n_k$();
+    ed.x1o();
+    ed.l1p();
   };
-  function _get_drag__d5ksrb_1($this) {
-    return $this.drag_1;
-  }
-  function _set_pending__51snjm($this, _set____db54di) {
-    $this.pending_1 = _set____db54di;
-  }
-  function _get_pending__uo0xwm($this) {
-    return $this.pending_1;
-  }
   function addNew($this, ed, at) {
-    var color = ed.get_color_ipu8u2_k$();
-    var fontSize = ed.get_fontSize_pr9n47_k$();
-    var tmp = TextBox_getInstance();
-    var tmp_0 = ed.get_canvas_bshgm9_k$();
-    tmp.show$default_8t5ky5_k$(tmp_0, at, color, VOID, TextTool$addNew$lambda(ed, at, color, fontSize));
+    var color = ed.u1n_1;
+    var fontSize = ed.x1n_1;
+    var tmp = TextBox_instance;
+    tmp.e1q(ed.q1n_1, at, color, VOID, TextTool$addNew$lambda(ed, at, color, fontSize));
   }
   function edit($this, ed, item) {
-    var tmp = TextBox_getInstance();
-    var tmp_0 = ed.get_canvas_bshgm9_k$();
-    var tmp_1 = new Point(item.get_x_1mhr67_k$(), item.get_y_1mhr68_k$());
-    var tmp_2 = item.get_color_ipu8u2_k$();
-    var tmp_3 = item.get_text_wouvsm_k$();
-    tmp.show_aamyt0_k$(tmp_0, tmp_1, tmp_2, tmp_3, TextTool$edit$lambda(ed, item));
+    var tmp = TextBox_instance;
+    var tmp_0 = new Point(item.g1r_1, item.h1r_1);
+    var tmp_1 = item.i1r_1;
+    var tmp_2 = item.j1r_1;
+    tmp.d1q(ed.q1n_1, tmp_0, tmp_1, tmp_2, TextTool$edit$lambda(ed, item));
   }
   function TextTool$onDown$lambda(it) {
     return it instanceof TextItem;
@@ -1035,51 +852,51 @@
       var tmp;
       // Inline function 'kotlin.text.isNotEmpty' call
       if (charSequenceLength(text) > 0) {
-        $ed.get_items_it823b_k$().add_utx5q5_k$(new TextItem($at.get_x_1mhr67_k$(), $at.get_y_1mhr68_k$(), $color, text, $fontSize));
-        $ed.render_dje1iy_k$();
-        $ed.commit_vpt10n_k$();
-        tmp = Unit_getInstance();
+        $ed.s1n_1.d(new TextItem($at.z1p_1, $at.a1q_1, $color, text, $fontSize));
+        $ed.x1o();
+        $ed.l1p();
+        tmp = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function TextTool$edit$lambda($ed, $item) {
     return function (text) {
       // Inline function 'kotlin.text.isEmpty' call
       if (charSequenceLength(text) === 0) {
-        $ed.get_items_it823b_k$().remove_cedx0m_k$($item);
+        $ed.s1n_1.y1($item);
       } else {
-        $item.set_text_oy06f4_k$(text);
+        $item.j1r_1 = text;
       }
-      $ed.render_dje1iy_k$();
-      $ed.commit_vpt10n_k$();
-      return Unit_getInstance();
+      $ed.x1o();
+      $ed.l1p();
+      return Unit_instance;
     };
   }
   function TextTool() {
-    this.claimsMouse_1 = true;
-    this.drag_1 = new Dragger();
-    this.pending_1 = null;
+    this.l1r_1 = true;
+    this.m1r_1 = new Dragger();
+    this.n1r_1 = null;
   }
-  protoOf(TextTool).get_claimsMouse_54sth7_k$ = function () {
-    return this.claimsMouse_1;
+  protoOf(TextTool).j1q = function () {
+    return this.l1r_1;
   };
-  protoOf(TextTool).get_busy_wojps2_k$ = function () {
-    return this.drag_1.get_active_avldsf_k$() || !(this.pending_1 == null);
+  protoOf(TextTool).s1p = function () {
+    return this.m1r_1.p1q() || !(this.n1r_1 == null);
   };
-  protoOf(TextTool).cancel_lxi2wt_k$ = function (ed) {
-    this.drag_1.cancel_2l89ey_k$();
-    this.pending_1 = null;
+  protoOf(TextTool).i1p = function (ed) {
+    this.m1r_1.u1q();
+    this.n1r_1 = null;
   };
-  protoOf(TextTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    var tmp = ed.findTop_jleozl_k$(p, TextTool$onDown$lambda);
+  protoOf(TextTool).k1q = function (ed, p, button) {
+    var tmp = ed.j1p(p, TextTool$onDown$lambda);
     var existing = tmp instanceof TextItem ? tmp : null;
     switch (button) {
       case 0:
         if (!(existing == null)) {
-          this.drag_1.start_lvwrrj_k$(existing, p);
+          this.m1r_1.q1q(existing, p);
         } else {
-          this.pending_1 = p;
+          this.n1r_1 = p;
         }
 
         break;
@@ -1093,45 +910,45 @@
         break;
     }
   };
-  protoOf(TextTool).onMove_580z7b_k$ = function (ed, p) {
-    if (this.drag_1.move_m5bngx_k$(p)) {
-      ed.requestRender_xvw6ob_k$();
+  protoOf(TextTool).l1q = function (ed, p) {
+    if (this.m1r_1.r1q(p)) {
+      ed.j1o();
     }
   };
-  protoOf(TextTool).onUp_lz9rfn_k$ = function (ed) {
-    if (this.drag_1.end_25ln_k$()) {
-      ed.commit_vpt10n_k$();
-      return Unit_getInstance();
+  protoOf(TextTool).m1q = function (ed) {
+    if (this.m1r_1.t1q()) {
+      ed.l1p();
+      return Unit_instance;
     }
-    var tmp0_elvis_lhs = this.pending_1;
+    var tmp0_elvis_lhs = this.n1r_1;
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp = tmp0_elvis_lhs;
     }
     var at = tmp;
-    this.pending_1 = null;
+    this.n1r_1 = null;
     addNew(this, ed, at);
   };
   function FillTool() {
-    this.claimsMouse_1 = true;
+    this.o1r_1 = true;
   }
-  protoOf(FillTool).get_claimsMouse_54sth7_k$ = function () {
-    return this.claimsMouse_1;
+  protoOf(FillTool).j1q = function () {
+    return this.o1r_1;
   };
-  protoOf(FillTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    var tmp0 = ed.get_items_it823b_k$();
+  protoOf(FillTool).k1q = function (ed, p, button) {
+    var tmp0 = ed.s1n_1;
     var tmp$ret$1;
     $l$block: {
       // Inline function 'kotlin.collections.lastOrNull' call
-      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
-      while (iterator.hasPrevious_qh0629_k$()) {
-        var element = iterator.previous_l2dfd5_k$();
+      var iterator = tmp0.o1(tmp0.l());
+      while (iterator.c4()) {
+        var element = iterator.e4();
         // Inline function 'stickynode.editor.FillTool.onDown.<anonymous>' call
         var tmp;
         if (isInterface(element, Fillable)) {
-          tmp = element.hitTestFill_vfzr9i_k$(p);
+          tmp = element.p1r(p);
         } else {
           tmp = false;
         }
@@ -1145,15 +962,15 @@
     var tmp_0 = tmp$ret$1;
     var native = (!(tmp_0 == null) ? isInterface(tmp_0, Fillable) : false) ? tmp_0 : null;
     if (!(native == null)) {
-      var newFill = button === 2 ? null : ed.get_color_ipu8u2_k$();
+      var newFill = button === 2 ? null : ed.u1n_1;
       var tmp_1;
-      if (newFill == native.get_fill_wom0ng_k$()) {
+      if (newFill == native.q1r()) {
         tmp_1 = true;
       } else {
         var tmp_2;
         if (newFill == null) {
           // Inline function 'kotlin.text.isNullOrEmpty' call
-          var this_0 = native.get_fill_wom0ng_k$();
+          var this_0 = native.q1r();
           tmp_2 = this_0 == null || charSequenceLength(this_0) === 0;
         } else {
           tmp_2 = false;
@@ -1161,23 +978,23 @@
         tmp_1 = tmp_2;
       }
       if (tmp_1)
-        return Unit_getInstance();
-      native.set_fill_sosdnb_k$(newFill);
-      ed.render_dje1iy_k$();
-      ed.commit_vpt10n_k$();
-      return Unit_getInstance();
+        return Unit_instance;
+      native.r1r(newFill);
+      ed.x1o();
+      ed.l1p();
+      return Unit_instance;
     }
-    var tmp3 = ed.get_items_it823b_k$();
+    var tmp3 = ed.s1n_1;
     var tmp$ret$4;
     $l$block_0: {
       // Inline function 'kotlin.collections.lastOrNull' call
-      var iterator_0 = tmp3.listIterator_70e65o_k$(tmp3.get_size_woubt6_k$());
-      while (iterator_0.hasPrevious_qh0629_k$()) {
-        var element_0 = iterator_0.previous_l2dfd5_k$();
+      var iterator_0 = tmp3.o1(tmp3.l());
+      while (iterator_0.c4()) {
+        var element_0 = iterator_0.e4();
         // Inline function 'stickynode.editor.FillTool.onDown.<anonymous>' call
         var tmp_3;
         if (element_0 instanceof RegionFillItem) {
-          tmp_3 = element_0.hitTest_1gxtur_k$(p);
+          tmp_3 = element_0.k1p(p);
         } else {
           tmp_3 = false;
         }
@@ -1191,55 +1008,43 @@
     var old = tmp$ret$4;
     if (button === 2) {
       if (!(old == null)) {
-        ed.get_items_it823b_k$().remove_cedx0m_k$(old);
-        ed.render_dje1iy_k$();
-        ed.commit_vpt10n_k$();
+        ed.s1n_1.y1(old);
+        ed.x1o();
+        ed.l1p();
       }
-      return Unit_getInstance();
+      return Unit_instance;
     }
     var tmp0_elvis_lhs = findEnclosedRegion(ed, p);
     var tmp_4;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp_4 = tmp0_elvis_lhs;
     }
     var runs = tmp_4;
     if (!(old == null)) {
-      ed.get_items_it823b_k$().remove_cedx0m_k$(old);
+      ed.s1n_1.y1(old);
     }
-    ed.get_items_it823b_k$().add_dl6gt3_k$(0, new RegionFillItem(runs, ed.get_color_ipu8u2_k$()));
-    ed.render_dje1iy_k$();
-    ed.commit_vpt10n_k$();
+    ed.s1n_1.b2(0, new RegionFillItem(runs, ed.u1n_1));
+    ed.x1o();
+    ed.l1p();
   };
-  protoOf(FillTool).onMove_580z7b_k$ = function (ed, p) {
-    return Unit_getInstance();
+  protoOf(FillTool).l1q = function (ed, p) {
+    return Unit_instance;
   };
-  protoOf(FillTool).onUp_lz9rfn_k$ = function (ed) {
-    return Unit_getInstance();
+  protoOf(FillTool).m1q = function (ed) {
+    return Unit_instance;
   };
-  function _set_active__h46tap($this, _set____db54di) {
-    $this.active_1 = _set____db54di;
-  }
-  function _get_active__ikxdxh($this) {
-    return $this.active_1;
-  }
-  function _set_erased__bm263d($this, _set____db54di) {
-    $this.erased_1 = _set____db54di;
-  }
-  function _get_erased__d2sqq5($this) {
-    return $this.erased_1;
-  }
   function erase($this, ed, p) {
-    var tmp0 = ed.get_items_it823b_k$();
+    var tmp0 = ed.s1n_1;
     var tmp$ret$1;
     $l$block: {
       // Inline function 'kotlin.collections.indexOfLast' call
-      var iterator = tmp0.listIterator_70e65o_k$(tmp0.get_size_woubt6_k$());
-      while (iterator.hasPrevious_qh0629_k$()) {
+      var iterator = tmp0.o1(tmp0.l());
+      while (iterator.c4()) {
         // Inline function 'stickynode.editor.EraserTool.erase.<anonymous>' call
-        if (iterator.previous_l2dfd5_k$().hitTest_1gxtur_k$(p)) {
-          tmp$ret$1 = iterator.nextIndex_jshxun_k$();
+        if (iterator.e4().k1p(p)) {
+          tmp$ret$1 = iterator.d4();
           break $l$block;
         }
       }
@@ -1247,38 +1052,38 @@
     }
     var index = tmp$ret$1;
     if (index < 0)
-      return Unit_getInstance();
-    ed.get_items_it823b_k$().removeAt_6niowx_k$(index);
-    $this.erased_1 = true;
-    ed.requestRender_xvw6ob_k$();
+      return Unit_instance;
+    ed.s1n_1.c2(index);
+    $this.x1r_1 = true;
+    ed.j1o();
   }
   function EraserTool() {
-    this.active_1 = false;
-    this.erased_1 = false;
+    this.w1r_1 = false;
+    this.x1r_1 = false;
   }
-  protoOf(EraserTool).get_busy_wojps2_k$ = function () {
-    return this.active_1;
+  protoOf(EraserTool).s1p = function () {
+    return this.w1r_1;
   };
-  protoOf(EraserTool).cancel_lxi2wt_k$ = function (ed) {
-    this.active_1 = false;
-    this.erased_1 = false;
+  protoOf(EraserTool).i1p = function (ed) {
+    this.w1r_1 = false;
+    this.x1r_1 = false;
   };
-  protoOf(EraserTool).onDown_sb4qs0_k$ = function (ed, p, button) {
-    this.active_1 = true;
+  protoOf(EraserTool).k1q = function (ed, p, button) {
+    this.w1r_1 = true;
     erase(this, ed, p);
   };
-  protoOf(EraserTool).onMove_580z7b_k$ = function (ed, p) {
-    if (this.active_1) {
+  protoOf(EraserTool).l1q = function (ed, p) {
+    if (this.w1r_1) {
       erase(this, ed, p);
     }
   };
-  protoOf(EraserTool).onUp_lz9rfn_k$ = function (ed) {
-    if (!this.active_1)
-      return Unit_getInstance();
-    this.active_1 = false;
-    if (this.erased_1) {
-      this.erased_1 = false;
-      ed.commit_vpt10n_k$();
+  protoOf(EraserTool).m1q = function (ed) {
+    if (!this.w1r_1)
+      return Unit_instance;
+    this.w1r_1 = false;
+    if (this.x1r_1) {
+      this.x1r_1 = false;
+      ed.l1p();
     }
   };
   function get_json() {
@@ -1291,66 +1096,55 @@
     return prettyJson;
   }
   var prettyJson;
-  function get_APP_ID() {
-    return APP_ID;
-  }
-  var APP_ID;
-  function get_FORMAT_VERSION() {
-    return FORMAT_VERSION;
-  }
-  var FORMAT_VERSION;
-  function _get_$childSerializers__r2zwns($this) {
-    return $this.$childSerializers_1;
-  }
   function Companion() {
-    Companion_instance = this;
+    Companion_instance_0 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [null, null, new ArrayListSerializer(Companion_getInstance_4().serializer_9w0wvi_k$()), null];
+    tmp.z1r_1 = [null, null, new ArrayListSerializer(Companion_getInstance_3().v14()), null];
   }
-  protoOf(Companion).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion).v14 = function () {
     return $serializer_getInstance();
   };
-  var Companion_instance;
-  function Companion_getInstance_0() {
-    if (Companion_instance == null)
+  var Companion_instance_0;
+  function Companion_getInstance() {
+    if (Companion_instance_0 == null)
       new Companion();
-    return Companion_instance;
+    return Companion_instance_0;
   }
   function $serializer() {
     $serializer_instance = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.DrawingFile', this, 4);
-    tmp0_serialDesc.addElement_5pzumi_k$('app', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('version', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('items', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('backgroundColor', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('app', true);
+    tmp0_serialDesc.nt('version', true);
+    tmp0_serialDesc.nt('items', true);
+    tmp0_serialDesc.nt('backgroundColor', true);
+    this.a1s_1 = tmp0_serialDesc;
   }
-  protoOf($serializer).serialize_cc7qi9_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_0().$childSerializers_1;
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 0) ? true : !(value.app_1 === '')) {
-      tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 0, value.app_1);
+  protoOf($serializer).b1s = function (encoder, value) {
+    var tmp0_desc = this.a1s_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    var tmp2_cached = Companion_getInstance().z1r_1;
+    if (tmp1_output.co(tmp0_desc, 0) ? true : !(value.c1s_1 === '')) {
+      tmp1_output.un(tmp0_desc, 0, value.c1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 1) ? true : !(value.version_1 === 1)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 1, value.version_1);
+    if (tmp1_output.co(tmp0_desc, 1) ? true : !(value.d1s_1 === 1)) {
+      tmp1_output.pn(tmp0_desc, 1, value.d1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.items_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.items_1);
+    if (tmp1_output.co(tmp0_desc, 2) ? true : !equals(value.e1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 2, tmp2_cached[2], value.e1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !(value.backgroundColor_1 === '#ffffff')) {
-      tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 3, value.backgroundColor_1);
+    if (tmp1_output.co(tmp0_desc, 3) ? true : !(value.f1s_1 === '#ffffff')) {
+      tmp1_output.un(tmp0_desc, 3, value.f1s_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_cc7qi9_k$(encoder, value instanceof DrawingFile ? value : THROW_CCE());
+  protoOf($serializer).cj = function (encoder, value) {
+    return this.b1s(encoder, value instanceof DrawingFile ? value : THROW_CCE());
   };
-  protoOf($serializer).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer).dj = function (decoder) {
+    var tmp0_desc = this.a1s_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -1358,52 +1152,52 @@
     var tmp5_local1 = 0;
     var tmp6_local2 = null;
     var tmp7_local3 = null;
-    var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp9_cached = Companion_getInstance_0().$childSerializers_1;
-    if (tmp8_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
+    var tmp8_input = decoder.gm(tmp0_desc);
+    var tmp9_cached = Companion_getInstance().z1r_1;
+    if (tmp8_input.wm()) {
+      tmp4_local0 = tmp8_input.qm(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp8_input.lm(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp9_cached[2], tmp6_local2);
+      tmp6_local2 = tmp8_input.sm(tmp0_desc, 2, tmp9_cached[2], tmp6_local2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp8_input.qm(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp8_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp8_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp8_input.qm(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp8_input.lm(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp9_cached[2], tmp6_local2);
+            tmp6_local2 = tmp8_input.sm(tmp0_desc, 2, tmp9_cached[2], tmp6_local2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp8_input.qm(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp8_input.hm(tmp0_desc);
     return DrawingFile_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  protoOf($serializer).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer).bj = function () {
+    return this.a1s_1;
   };
-  protoOf($serializer).childSerializers_5ghqw5_k$ = function () {
-    var tmp0_cached = Companion_getInstance_0().$childSerializers_1;
+  protoOf($serializer).pt = function () {
+    var tmp0_cached = Companion_getInstance().z1r_1;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -1417,82 +1211,50 @@
   }
   function DrawingFile_init_$Init$(seen0, app, version, items, backgroundColor, serializationConstructorMarker, $this) {
     if (!(0 === (0 & seen0))) {
-      throwMissingFieldException(seen0, 0, $serializer_getInstance().descriptor_1);
+      throwMissingFieldException(seen0, 0, $serializer_getInstance().a1s_1);
     }
     if (0 === (seen0 & 1))
-      $this.app_1 = '';
+      $this.c1s_1 = '';
     else
-      $this.app_1 = app;
+      $this.c1s_1 = app;
     if (0 === (seen0 & 2))
-      $this.version_1 = 1;
+      $this.d1s_1 = 1;
     else
-      $this.version_1 = version;
+      $this.d1s_1 = version;
     if (0 === (seen0 & 4))
-      $this.items_1 = emptyList();
+      $this.e1s_1 = emptyList();
     else
-      $this.items_1 = items;
+      $this.e1s_1 = items;
     if (0 === (seen0 & 8))
-      $this.backgroundColor_1 = '#ffffff';
+      $this.f1s_1 = '#ffffff';
     else
-      $this.backgroundColor_1 = backgroundColor;
+      $this.f1s_1 = backgroundColor;
     return $this;
   }
   function DrawingFile_init_$Create$(seen0, app, version, items, backgroundColor, serializationConstructorMarker) {
     return DrawingFile_init_$Init$(seen0, app, version, items, backgroundColor, serializationConstructorMarker, objectCreate(protoOf(DrawingFile)));
   }
   function DrawingFile(app, version, items, backgroundColor) {
-    Companion_getInstance_0();
+    Companion_getInstance();
     app = app === VOID ? '' : app;
     version = version === VOID ? 1 : version;
     items = items === VOID ? emptyList() : items;
     backgroundColor = backgroundColor === VOID ? '#ffffff' : backgroundColor;
-    this.app_1 = app;
-    this.version_1 = version;
-    this.items_1 = items;
-    this.backgroundColor_1 = backgroundColor;
+    this.c1s_1 = app;
+    this.d1s_1 = version;
+    this.e1s_1 = items;
+    this.f1s_1 = backgroundColor;
   }
-  protoOf(DrawingFile).get_app_18j9e0_k$ = function () {
-    return this.app_1;
-  };
-  protoOf(DrawingFile).get_version_72w4j3_k$ = function () {
-    return this.version_1;
-  };
-  protoOf(DrawingFile).get_items_it823b_k$ = function () {
-    return this.items_1;
-  };
-  protoOf(DrawingFile).get_backgroundColor_a0bggk_k$ = function () {
-    return this.backgroundColor_1;
-  };
   function DecodedDrawing(items, backgroundColor) {
-    this.items_1 = items;
-    this.backgroundColor_1 = backgroundColor;
+    this.l1o_1 = items;
+    this.m1o_1 = backgroundColor;
   }
-  protoOf(DecodedDrawing).get_items_it823b_k$ = function () {
-    return this.items_1;
-  };
-  protoOf(DecodedDrawing).get_backgroundColor_a0bggk_k$ = function () {
-    return this.backgroundColor_1;
-  };
-  protoOf(DecodedDrawing).component1_7eebsc_k$ = function () {
-    return this.items_1;
-  };
-  protoOf(DecodedDrawing).component2_7eebsb_k$ = function () {
-    return this.backgroundColor_1;
-  };
-  protoOf(DecodedDrawing).copy_unknco_k$ = function (items, backgroundColor) {
-    return new DecodedDrawing(items, backgroundColor);
-  };
-  protoOf(DecodedDrawing).copy$default_5l0t64_k$ = function (items, backgroundColor, $super) {
-    items = items === VOID ? this.items_1 : items;
-    backgroundColor = backgroundColor === VOID ? this.backgroundColor_1 : backgroundColor;
-    return $super === VOID ? this.copy_unknco_k$(items, backgroundColor) : $super.copy_unknco_k$.call(this, items, backgroundColor);
-  };
   protoOf(DecodedDrawing).toString = function () {
-    return 'DecodedDrawing(items=' + toString(this.items_1) + ', backgroundColor=' + this.backgroundColor_1 + ')';
+    return 'DecodedDrawing(items=' + toString(this.l1o_1) + ', backgroundColor=' + this.m1o_1 + ')';
   };
   protoOf(DecodedDrawing).hashCode = function () {
-    var result = hashCode(this.items_1);
-    result = imul(result, 31) + getStringHashCode(this.backgroundColor_1) | 0;
+    var result = hashCode(this.l1o_1);
+    result = imul(result, 31) + getStringHashCode(this.m1o_1) | 0;
     return result;
   };
   protoOf(DecodedDrawing).equals = function (other) {
@@ -1501,72 +1263,69 @@
     if (!(other instanceof DecodedDrawing))
       return false;
     var tmp0_other_with_cast = other instanceof DecodedDrawing ? other : THROW_CCE();
-    if (!equals(this.items_1, tmp0_other_with_cast.items_1))
+    if (!equals(this.l1o_1, tmp0_other_with_cast.l1o_1))
       return false;
-    if (!(this.backgroundColor_1 === tmp0_other_with_cast.backgroundColor_1))
+    if (!(this.m1o_1 === tmp0_other_with_cast.m1o_1))
       return false;
     return true;
   };
-  function _get_$childSerializers__r2zwns_0($this) {
-    return $this.$childSerializers_1;
-  }
   function Companion_0() {
-    Companion_instance_0 = this;
+    Companion_instance_1 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6()), new ArrayListSerializer($serializer_getInstance_7()), new ArrayListSerializer($serializer_getInstance_8())];
+    tmp.g1s_1 = [new ArrayListSerializer($serializer_getInstance_3()), new ArrayListSerializer($serializer_getInstance_4()), new ArrayListSerializer($serializer_getInstance_5()), new ArrayListSerializer($serializer_getInstance_6()), new ArrayListSerializer($serializer_getInstance_7()), new ArrayListSerializer($serializer_getInstance_8())];
   }
-  protoOf(Companion_0).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_0).v14 = function () {
     return $serializer_getInstance_0();
   };
-  var Companion_instance_0;
-  function Companion_getInstance_1() {
-    if (Companion_instance_0 == null)
+  var Companion_instance_1;
+  function Companion_getInstance_0() {
+    if (Companion_instance_1 == null)
       new Companion_0();
-    return Companion_instance_0;
+    return Companion_instance_1;
   }
   function $serializer_0() {
     $serializer_instance_0 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.LegacyDrawing', this, 6);
-    tmp0_serialDesc.addElement_5pzumi_k$('strokeItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('rectangleItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('circleItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('polygonItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('arrowItems', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('textItems', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('strokeItems', true);
+    tmp0_serialDesc.nt('rectangleItems', true);
+    tmp0_serialDesc.nt('circleItems', true);
+    tmp0_serialDesc.nt('polygonItems', true);
+    tmp0_serialDesc.nt('arrowItems', true);
+    tmp0_serialDesc.nt('textItems', true);
+    this.h1s_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_0).serialize_ovog22_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_1().$childSerializers_1;
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 0) ? true : !equals(value.strokeItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.strokeItems_1);
+  protoOf($serializer_0).i1s = function (encoder, value) {
+    var tmp0_desc = this.h1s_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    var tmp2_cached = Companion_getInstance_0().g1s_1;
+    if (tmp1_output.co(tmp0_desc, 0) ? true : !equals(value.j1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 0, tmp2_cached[0], value.j1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 1) ? true : !equals(value.rectangleItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 1, tmp2_cached[1], value.rectangleItems_1);
+    if (tmp1_output.co(tmp0_desc, 1) ? true : !equals(value.k1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 1, tmp2_cached[1], value.k1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.circleItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 2, tmp2_cached[2], value.circleItems_1);
+    if (tmp1_output.co(tmp0_desc, 2) ? true : !equals(value.l1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 2, tmp2_cached[2], value.l1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !equals(value.polygonItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 3, tmp2_cached[3], value.polygonItems_1);
+    if (tmp1_output.co(tmp0_desc, 3) ? true : !equals(value.m1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 3, tmp2_cached[3], value.m1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !equals(value.arrowItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 4, tmp2_cached[4], value.arrowItems_1);
+    if (tmp1_output.co(tmp0_desc, 4) ? true : !equals(value.n1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 4, tmp2_cached[4], value.n1s_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !equals(value.textItems_1, emptyList())) {
-      tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 5, tmp2_cached[5], value.textItems_1);
+    if (tmp1_output.co(tmp0_desc, 5) ? true : !equals(value.o1s_1, emptyList())) {
+      tmp1_output.wn(tmp0_desc, 5, tmp2_cached[5], value.o1s_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_0).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_ovog22_k$(encoder, value instanceof LegacyDrawing ? value : THROW_CCE());
+  protoOf($serializer_0).cj = function (encoder, value) {
+    return this.i1s(encoder, value instanceof LegacyDrawing ? value : THROW_CCE());
   };
-  protoOf($serializer_0).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_0).dj = function (decoder) {
+    var tmp0_desc = this.h1s_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -1576,64 +1335,64 @@
     var tmp7_local3 = null;
     var tmp8_local4 = null;
     var tmp9_local5 = null;
-    var tmp10_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp11_cached = Companion_getInstance_1().$childSerializers_1;
-    if (tmp10_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+    var tmp10_input = decoder.gm(tmp0_desc);
+    var tmp11_cached = Companion_getInstance_0().g1s_1;
+    if (tmp10_input.wm()) {
+      tmp4_local0 = tmp10_input.sm(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+      tmp5_local1 = tmp10_input.sm(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+      tmp6_local2 = tmp10_input.sm(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+      tmp7_local3 = tmp10_input.sm(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+      tmp8_local4 = tmp10_input.sm(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
+      tmp9_local5 = tmp10_input.sm(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
       tmp3_bitMask0 = tmp3_bitMask0 | 32;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp10_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp10_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
+            tmp4_local0 = tmp10_input.sm(tmp0_desc, 0, tmp11_cached[0], tmp4_local0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
+            tmp5_local1 = tmp10_input.sm(tmp0_desc, 1, tmp11_cached[1], tmp5_local1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
+            tmp6_local2 = tmp10_input.sm(tmp0_desc, 2, tmp11_cached[2], tmp6_local2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
+            tmp7_local3 = tmp10_input.sm(tmp0_desc, 3, tmp11_cached[3], tmp7_local3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
+            tmp8_local4 = tmp10_input.sm(tmp0_desc, 4, tmp11_cached[4], tmp8_local4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           case 5:
-            tmp9_local5 = tmp10_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
+            tmp9_local5 = tmp10_input.sm(tmp0_desc, 5, tmp11_cached[5], tmp9_local5);
             tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp10_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp10_input.hm(tmp0_desc);
     return LegacyDrawing_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
   };
-  protoOf($serializer_0).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_0).bj = function () {
+    return this.h1s_1;
   };
-  protoOf($serializer_0).childSerializers_5ghqw5_k$ = function () {
-    var tmp0_cached = Companion_getInstance_1().$childSerializers_1;
+  protoOf($serializer_0).pt = function () {
+    var tmp0_cached = Companion_getInstance_0().g1s_1;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -1647,119 +1406,101 @@
   }
   function LegacyDrawing_init_$Init$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker, $this) {
     if (!(0 === (0 & seen0))) {
-      throwMissingFieldException(seen0, 0, $serializer_getInstance_0().descriptor_1);
+      throwMissingFieldException(seen0, 0, $serializer_getInstance_0().h1s_1);
     }
     if (0 === (seen0 & 1))
-      $this.strokeItems_1 = emptyList();
+      $this.j1s_1 = emptyList();
     else
-      $this.strokeItems_1 = strokeItems;
+      $this.j1s_1 = strokeItems;
     if (0 === (seen0 & 2))
-      $this.rectangleItems_1 = emptyList();
+      $this.k1s_1 = emptyList();
     else
-      $this.rectangleItems_1 = rectangleItems;
+      $this.k1s_1 = rectangleItems;
     if (0 === (seen0 & 4))
-      $this.circleItems_1 = emptyList();
+      $this.l1s_1 = emptyList();
     else
-      $this.circleItems_1 = circleItems;
+      $this.l1s_1 = circleItems;
     if (0 === (seen0 & 8))
-      $this.polygonItems_1 = emptyList();
+      $this.m1s_1 = emptyList();
     else
-      $this.polygonItems_1 = polygonItems;
+      $this.m1s_1 = polygonItems;
     if (0 === (seen0 & 16))
-      $this.arrowItems_1 = emptyList();
+      $this.n1s_1 = emptyList();
     else
-      $this.arrowItems_1 = arrowItems;
+      $this.n1s_1 = arrowItems;
     if (0 === (seen0 & 32))
-      $this.textItems_1 = emptyList();
+      $this.o1s_1 = emptyList();
     else
-      $this.textItems_1 = textItems;
+      $this.o1s_1 = textItems;
     return $this;
   }
   function LegacyDrawing_init_$Create$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker) {
     return LegacyDrawing_init_$Init$(seen0, strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems, serializationConstructorMarker, objectCreate(protoOf(LegacyDrawing)));
   }
   function LegacyDrawing(strokeItems, rectangleItems, circleItems, polygonItems, arrowItems, textItems) {
-    Companion_getInstance_1();
+    Companion_getInstance_0();
     strokeItems = strokeItems === VOID ? emptyList() : strokeItems;
     rectangleItems = rectangleItems === VOID ? emptyList() : rectangleItems;
     circleItems = circleItems === VOID ? emptyList() : circleItems;
     polygonItems = polygonItems === VOID ? emptyList() : polygonItems;
     arrowItems = arrowItems === VOID ? emptyList() : arrowItems;
     textItems = textItems === VOID ? emptyList() : textItems;
-    this.strokeItems_1 = strokeItems;
-    this.rectangleItems_1 = rectangleItems;
-    this.circleItems_1 = circleItems;
-    this.polygonItems_1 = polygonItems;
-    this.arrowItems_1 = arrowItems;
-    this.textItems_1 = textItems;
+    this.j1s_1 = strokeItems;
+    this.k1s_1 = rectangleItems;
+    this.l1s_1 = circleItems;
+    this.m1s_1 = polygonItems;
+    this.n1s_1 = arrowItems;
+    this.o1s_1 = textItems;
   }
-  protoOf(LegacyDrawing).get_strokeItems_pivh8h_k$ = function () {
-    return this.strokeItems_1;
-  };
-  protoOf(LegacyDrawing).get_rectangleItems_npge3q_k$ = function () {
-    return this.rectangleItems_1;
-  };
-  protoOf(LegacyDrawing).get_circleItems_cgj3on_k$ = function () {
-    return this.circleItems_1;
-  };
-  protoOf(LegacyDrawing).get_polygonItems_rrdxqp_k$ = function () {
-    return this.polygonItems_1;
-  };
-  protoOf(LegacyDrawing).get_arrowItems_lx0j40_k$ = function () {
-    return this.arrowItems_1;
-  };
-  protoOf(LegacyDrawing).get_textItems_8zbevq_k$ = function () {
-    return this.textItems_1;
-  };
-  protoOf(LegacyDrawing).toItems_jfj6d7_k$ = function () {
+  protoOf(LegacyDrawing).p1s = function () {
     // Inline function 'kotlin.collections.buildList' call
     // Inline function 'kotlin.collections.buildListInternal' call
     // Inline function 'kotlin.apply' call
     var this_0 = ArrayList_init_$Create$();
     // Inline function 'stickynode.model.LegacyDrawing.toItems.<anonymous>' call
-    this_0.addAll_4lagoh_k$(this.strokeItems_1);
-    this_0.addAll_4lagoh_k$(this.rectangleItems_1);
-    this_0.addAll_4lagoh_k$(this.circleItems_1);
-    this_0.addAll_4lagoh_k$(this.polygonItems_1);
-    this_0.addAll_4lagoh_k$(this.arrowItems_1);
-    this_0.addAll_4lagoh_k$(this.textItems_1);
-    return this_0.build_nmwvly_k$();
+    this_0.z(this.j1s_1);
+    this_0.z(this.k1s_1);
+    this_0.z(this.l1s_1);
+    this_0.z(this.m1s_1);
+    this_0.z(this.n1s_1);
+    this_0.z(this.o1s_1);
+    return this_0.w4();
   };
   function encodeDrawing(items, pretty, backgroundColor) {
     pretty = pretty === VOID ? false : pretty;
     backgroundColor = backgroundColor === VOID ? '#ffffff' : backgroundColor;
     _init_properties_Drawing_kt__mbw8h8();
     var file = new DrawingFile('sticky-node', 2, items, backgroundColor);
-    return (pretty ? get_prettyJson() : get_json()).encodeToString_k0apqx_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), file);
+    return (pretty ? get_prettyJson() : get_json()).n12(Companion_getInstance().v14(), file);
   }
   function decodeDrawingData(text) {
     _init_properties_Drawing_kt__mbw8h8();
     if (isBlank(text))
       throw IllegalArgumentException_init_$Create$('The file is empty');
-    var file = get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_0().serializer_9w0wvi_k$(), text);
-    if (!(file.app_1 === 'sticky-node'))
+    var file = get_json().o12(Companion_getInstance().v14(), text);
+    if (!(file.c1s_1 === 'sticky-node'))
       throw IllegalArgumentException_init_$Create$('Not a Sticky Node file');
-    if (file.version_1 >= 2) {
-      return new DecodedDrawing(file.items_1, file.backgroundColor_1);
+    if (file.d1s_1 >= 2) {
+      return new DecodedDrawing(file.e1s_1, file.f1s_1);
     }
-    return new DecodedDrawing(get_json().decodeFromString_jwu9sq_k$(Companion_getInstance_1().serializer_9w0wvi_k$(), text).toItems_jfj6d7_k$(), '#ffffff');
+    return new DecodedDrawing(get_json().o12(Companion_getInstance_0().v14(), text).p1s(), '#ffffff');
   }
   function decodeDrawing(text) {
     _init_properties_Drawing_kt__mbw8h8();
-    return decodeDrawingData(text).items_1;
+    return decodeDrawingData(text).l1o_1;
   }
   function json$lambda($this$Json) {
     _init_properties_Drawing_kt__mbw8h8();
-    $this$Json.set_ignoreUnknownKeys_pzvtne_k$(true);
-    $this$Json.set_encodeDefaults_c5evsg_k$(true);
-    $this$Json.set_explicitNulls_mtj2ai_k$(false);
-    return Unit_getInstance();
+    $this$Json.g13_1 = true;
+    $this$Json.e13_1 = true;
+    $this$Json.f13_1 = false;
+    return Unit_instance;
   }
   function prettyJson$lambda($this$Json) {
     _init_properties_Drawing_kt__mbw8h8();
-    $this$Json.set_prettyPrint_v2gnff_k$(true);
-    $this$Json.set_prettyPrintIndent_ab0258_k$('  ');
-    return Unit_getInstance();
+    $this$Json.i13_1 = true;
+    $this$Json.j13_1 = '  ';
+    return Unit_instance;
   }
   var properties_initialized_Drawing_kt_6zzioe;
   function _init_properties_Drawing_kt__mbw8h8() {
@@ -1771,73 +1512,67 @@
     }
   }
   function Companion_1() {
-    Companion_instance_1 = this;
   }
-  protoOf(Companion_1).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_1();
-  };
-  var Companion_instance_1;
-  function Companion_getInstance_2() {
-    if (Companion_instance_1 == null)
-      new Companion_1();
-    return Companion_instance_1;
+  var Companion_instance_2;
+  function Companion_getInstance_1() {
+    return Companion_instance_2;
   }
   function $serializer_1() {
     $serializer_instance_1 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stickynode.model.Point', this, 2);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    this.q1s_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_1).serialize_gsogbp_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+  protoOf($serializer_1).r1s = function (encoder, value) {
+    var tmp0_desc = this.q1s_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.z1p_1);
+    tmp1_output.sn(tmp0_desc, 1, value.a1q_1);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_1).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_gsogbp_k$(encoder, value instanceof Point ? value : THROW_CCE());
+  protoOf($serializer_1).cj = function (encoder, value) {
+    return this.r1s(encoder, value instanceof Point ? value : THROW_CCE());
   };
-  protoOf($serializer_1).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_1).dj = function (decoder) {
+    var tmp0_desc = this.q1s_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
     var tmp4_local0 = 0.0;
     var tmp5_local1 = 0.0;
-    var tmp6_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp6_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp6_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp6_input = decoder.gm(tmp0_desc);
+    if (tmp6_input.wm()) {
+      tmp4_local0 = tmp6_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp6_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp6_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp6_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp6_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp6_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp6_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp6_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp6_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp6_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp6_input.hm(tmp0_desc);
     return Point_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
-  protoOf($serializer_1).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_1).bj = function () {
+    return this.q1s_1;
   };
-  protoOf($serializer_1).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_1).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -1851,52 +1586,31 @@
   }
   function Point_init_$Init$(seen0, x, y, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_1().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_1().q1s_1);
     }
-    $this.x_1 = x;
-    $this.y_1 = y;
+    $this.z1p_1 = x;
+    $this.a1q_1 = y;
     return $this;
   }
   function Point_init_$Create$(seen0, x, y, serializationConstructorMarker) {
     return Point_init_$Init$(seen0, x, y, serializationConstructorMarker, objectCreate(protoOf(Point)));
   }
   function Point(x, y) {
-    Companion_getInstance_2();
-    this.x_1 = x;
-    this.y_1 = y;
+    this.z1p_1 = x;
+    this.a1q_1 = y;
   }
-  protoOf(Point).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(Point).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(Point).distanceTo_kno8q6_k$ = function (other) {
-    var tmp0 = this.x_1 - other.x_1;
+  protoOf(Point).s1s = function (other) {
+    var tmp0 = this.z1p_1 - other.z1p_1;
     // Inline function 'kotlin.math.hypot' call
-    var y = this.y_1 - other.y_1;
+    var y = this.a1q_1 - other.a1q_1;
     return hypot(tmp0, y);
   };
-  protoOf(Point).component1_7eebsc_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(Point).component2_7eebsb_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(Point).copy_6r5gqz_k$ = function (x, y) {
-    return new Point(x, y);
-  };
-  protoOf(Point).copy$default_dadsmd_k$ = function (x, y, $super) {
-    x = x === VOID ? this.x_1 : x;
-    y = y === VOID ? this.y_1 : y;
-    return $super === VOID ? this.copy_6r5gqz_k$(x, y) : $super.copy_6r5gqz_k$.call(this, x, y);
-  };
   protoOf(Point).toString = function () {
-    return 'Point(x=' + this.x_1 + ', y=' + this.y_1 + ')';
+    return 'Point(x=' + this.z1p_1 + ', y=' + this.a1q_1 + ')';
   };
   protoOf(Point).hashCode = function () {
-    var result = getNumberHashCode(this.x_1);
-    result = imul(result, 31) + getNumberHashCode(this.y_1) | 0;
+    var result = getNumberHashCode(this.z1p_1);
+    result = imul(result, 31) + getNumberHashCode(this.a1q_1) | 0;
     return result;
   };
   protoOf(Point).equals = function (other) {
@@ -1905,71 +1619,59 @@
     if (!(other instanceof Point))
       return false;
     var tmp0_other_with_cast = other instanceof Point ? other : THROW_CCE();
-    if (!equals(this.x_1, tmp0_other_with_cast.x_1))
+    if (!equals(this.z1p_1, tmp0_other_with_cast.z1p_1))
       return false;
-    if (!equals(this.y_1, tmp0_other_with_cast.y_1))
+    if (!equals(this.a1q_1, tmp0_other_with_cast.a1q_1))
       return false;
     return true;
   };
   function BoundingBox(x, y, width, height) {
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
+    this.f1q_1 = x;
+    this.g1q_1 = y;
+    this.h1q_1 = width;
+    this.i1q_1 = height;
   }
-  protoOf(BoundingBox).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(BoundingBox).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(BoundingBox).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
-  };
-  protoOf(BoundingBox).get_height_e7t92o_k$ = function () {
-    return this.height_1;
-  };
   function boundingBox(a, b) {
-    var tmp0 = a.x_1;
+    var tmp0 = a.z1p_1;
     // Inline function 'kotlin.math.min' call
-    var b_0 = b.x_1;
+    var b_0 = b.z1p_1;
     var tmp = Math.min(tmp0, b_0);
-    var tmp2 = a.y_1;
+    var tmp2 = a.a1q_1;
     // Inline function 'kotlin.math.min' call
-    var b_1 = b.y_1;
+    var b_1 = b.a1q_1;
     var tmp_0 = Math.min(tmp2, b_1);
     // Inline function 'kotlin.math.abs' call
-    var x = b.x_1 - a.x_1;
+    var x = b.z1p_1 - a.z1p_1;
     var tmp_1 = Math.abs(x);
     // Inline function 'kotlin.math.abs' call
-    var x_0 = b.y_1 - a.y_1;
+    var x_0 = b.a1q_1 - a.a1q_1;
     var tmp$ret$3 = Math.abs(x_0);
     return new BoundingBox(tmp, tmp_0, tmp_1, tmp$ret$3);
   }
   function distanceToSegment(p, a, b) {
-    var dx = b.x_1 - a.x_1;
-    var dy = b.y_1 - a.y_1;
+    var dx = b.z1p_1 - a.z1p_1;
+    var dy = b.a1q_1 - a.a1q_1;
     var lengthSquared = dx * dx + dy * dy;
     if (lengthSquared === 0.0)
-      return p.distanceTo_kno8q6_k$(a);
-    var t = coerceIn(((p.x_1 - a.x_1) * dx + (p.y_1 - a.y_1) * dy) / lengthSquared, 0.0, 1.0);
-    var tmp0 = p.x_1 - (a.x_1 + t * dx);
+      return p.s1s(a);
+    var t = coerceIn(((p.z1p_1 - a.z1p_1) * dx + (p.a1q_1 - a.a1q_1) * dy) / lengthSquared, 0.0, 1.0);
+    var tmp0 = p.z1p_1 - (a.z1p_1 + t * dx);
     // Inline function 'kotlin.math.hypot' call
-    var y = p.y_1 - (a.y_1 + t * dy);
+    var y = p.a1q_1 - (a.a1q_1 + t * dy);
     return hypot(tmp0, y);
   }
   function pointInPolygon(p, polygon) {
     var inside = false;
     var previous = get_lastIndex(polygon);
     var inductionVariable = 0;
-    var last = polygon.get_size_woubt6_k$() - 1 | 0;
+    var last = polygon.l() - 1 | 0;
     if (inductionVariable <= last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var a = polygon.get_c1px32_k$(i);
-        var b = polygon.get_c1px32_k$(previous);
-        if (!(a.y_1 > p.y_1 === b.y_1 > p.y_1) && p.x_1 < (b.x_1 - a.x_1) * (p.y_1 - a.y_1) / (b.y_1 - a.y_1) + a.x_1) {
+        var a = polygon.n(i);
+        var b = polygon.n(previous);
+        if (!(a.a1q_1 > p.a1q_1 === b.a1q_1 > p.a1q_1) && p.z1p_1 < (b.z1p_1 - a.z1p_1) * (p.a1q_1 - a.a1q_1) / (b.a1q_1 - a.a1q_1) + a.z1p_1) {
           inside = !inside;
         }
         previous = i;
@@ -1978,42 +1680,36 @@
     return inside;
   }
   function Companion_2() {
-    Companion_instance_2 = this;
   }
-  protoOf(Companion_2).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_2();
-  };
-  var Companion_instance_2;
-  function Companion_getInstance_3() {
-    if (Companion_instance_2 == null)
-      new Companion_2();
-    return Companion_instance_2;
+  var Companion_instance_3;
+  function Companion_getInstance_2() {
+    return Companion_instance_3;
   }
   function $serializer_2() {
     $serializer_instance_2 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('image', this, 5);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('imageId', false);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    tmp0_serialDesc.nt('width', false);
+    tmp0_serialDesc.nt('height', false);
+    tmp0_serialDesc.nt('imageId', false);
+    this.t1s_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_2).serialize_q12j3v_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.imageId_1);
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+  protoOf($serializer_2).u1s = function (encoder, value) {
+    var tmp0_desc = this.t1s_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.v1s_1);
+    tmp1_output.sn(tmp0_desc, 1, value.w1s_1);
+    tmp1_output.sn(tmp0_desc, 2, value.x1s_1);
+    tmp1_output.sn(tmp0_desc, 3, value.y1s_1);
+    tmp1_output.un(tmp0_desc, 4, value.z1s_1);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_2).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_q12j3v_k$(encoder, value instanceof ImageItem ? value : THROW_CCE());
+  protoOf($serializer_2).cj = function (encoder, value) {
+    return this.u1s(encoder, value instanceof ImageItem ? value : THROW_CCE());
   };
-  protoOf($serializer_2).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_2).dj = function (decoder) {
+    var tmp0_desc = this.t1s_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -2022,56 +1718,56 @@
     var tmp6_local2 = 0.0;
     var tmp7_local3 = 0.0;
     var tmp8_local4 = null;
-    var tmp9_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp9_input = decoder.gm(tmp0_desc);
+    if (tmp9_input.wm()) {
+      tmp4_local0 = tmp9_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp9_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp9_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp9_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp9_input.qm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp9_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp9_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp9_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp9_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp9_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp9_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp9_input.qm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp9_input.hm(tmp0_desc);
     return ImageItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
-  protoOf($serializer_2).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_2).bj = function () {
+    return this.t1s_1;
   };
-  protoOf($serializer_2).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_2).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -2085,114 +1781,90 @@
   }
   function ImageItem_init_$Init$(seen0, x, y, width, height, imageId, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_2().descriptor_1);
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_2().t1s_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.width_1 = width;
-    $this.height_1 = height;
-    $this.imageId_1 = imageId;
+    $this.v1s_1 = x;
+    $this.w1s_1 = y;
+    $this.x1s_1 = width;
+    $this.y1s_1 = height;
+    $this.z1s_1 = imageId;
     return $this;
   }
   function ImageItem_init_$Create$(seen0, x, y, width, height, imageId, serializationConstructorMarker) {
     return ImageItem_init_$Init$(seen0, x, y, width, height, imageId, serializationConstructorMarker, objectCreate(protoOf(ImageItem)));
   }
   function ImageItem(x, y, width, height, imageId) {
-    Companion_getInstance_3();
     Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-    this.imageId_1 = imageId;
+    this.v1s_1 = x;
+    this.w1s_1 = y;
+    this.x1s_1 = width;
+    this.y1s_1 = height;
+    this.z1s_1 = imageId;
   }
-  protoOf(ImageItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
+  protoOf(ImageItem).a1t = function () {
+    return this.v1s_1;
   };
-  protoOf(ImageItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
+  protoOf(ImageItem).b1t = function () {
+    return this.w1s_1;
   };
-  protoOf(ImageItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
+  protoOf(ImageItem).c1t = function () {
+    return this.x1s_1;
   };
-  protoOf(ImageItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
+  protoOf(ImageItem).d1t = function () {
+    return this.y1s_1;
   };
-  protoOf(ImageItem).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
-  };
-  protoOf(ImageItem).get_height_e7t92o_k$ = function () {
-    return this.height_1;
-  };
-  protoOf(ImageItem).get_imageId_wvvawd_k$ = function () {
-    return this.imageId_1;
-  };
-  protoOf(ImageItem).draw_rpid3c_k$ = function (ctx) {
-    var img = ImageCache_getInstance().get_6bo4tg_k$(this.imageId_1);
+  protoOf(ImageItem).k1o = function (ctx) {
+    var img = ImageCache_getInstance().s14(this.z1s_1);
     if (!(img == null)) {
-      ctx.drawImage(img, this.x_1, this.y_1, this.width_1, this.height_1);
+      ctx.drawImage(img, this.v1s_1, this.w1s_1, this.x1s_1, this.y1s_1);
     } else {
       ctx.strokeStyle = '#999999';
       ctx.lineWidth = 1.0;
-      ctx.strokeRect(this.x_1, this.y_1, this.width_1, this.height_1);
+      ctx.strokeRect(this.v1s_1, this.w1s_1, this.x1s_1, this.y1s_1);
       ctx.fillStyle = '#999999';
       ctx.font = '14px sans-serif';
       // Inline function 'kotlin.js.asDynamic' call
       ctx.textBaseline = 'top';
-      ctx.fillText('Loading image...', this.x_1 + 8, this.y_1 + 8);
+      ctx.fillText('Loading image...', this.v1s_1 + 8, this.w1s_1 + 8);
     }
   };
-  protoOf(ImageItem).hitTest_1gxtur_k$ = function (p) {
+  protoOf(ImageItem).k1p = function (p) {
     var tmp;
-    var containsLower = this.x_1;
-    var containsUpper = this.x_1 + this.width_1;
-    var containsArg = p.get_x_1mhr67_k$();
+    var containsLower = this.v1s_1;
+    var containsUpper = this.v1s_1 + this.x1s_1;
+    var containsArg = p.z1p_1;
     if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
-      var containsLower_0 = this.y_1;
-      var containsUpper_0 = this.y_1 + this.height_1;
-      var containsArg_0 = p.get_y_1mhr68_k$();
+      var containsLower_0 = this.w1s_1;
+      var containsUpper_0 = this.w1s_1 + this.y1s_1;
+      var containsArg_0 = p.a1q_1;
       tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
     } else {
       tmp = false;
     }
     return tmp;
   };
-  protoOf(ImageItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
+  protoOf(ImageItem).s1q = function (dx, dy) {
+    this.v1s_1 = this.v1s_1 + dx;
+    this.w1s_1 = this.w1s_1 + dy;
   };
   function get_measureContext() {
     _init_properties_Items_kt__3bnoaa();
     var tmp0 = measureContext$delegate;
     // Inline function 'kotlin.getValue' call
     measureContext$factory();
-    return tmp0.get_value_j01efc_k$();
+    return tmp0.r1();
   }
   var measureContext$delegate;
-  function get_DEFAULT_LINE_WIDTH() {
-    return DEFAULT_LINE_WIDTH;
-  }
-  var DEFAULT_LINE_WIDTH;
-  function get_DEFAULT_FONT_SIZE() {
-    return DEFAULT_FONT_SIZE;
-  }
-  var DEFAULT_FONT_SIZE;
-  function get_MIN_HIT_RADIUS() {
-    return MIN_HIT_RADIUS;
-  }
-  var MIN_HIT_RADIUS;
   function Fillable() {
-  }
-  function Boxed() {
   }
   function get_centerX(_this__u8e3s4) {
     _init_properties_Items_kt__3bnoaa();
-    return _this__u8e3s4.get_x_1mhr67_k$() + _this__u8e3s4.get_width_j0q4yl_k$() / 2;
+    return _this__u8e3s4.a1t() + _this__u8e3s4.c1t() / 2;
   }
   function get_centerY(_this__u8e3s4) {
     _init_properties_Items_kt__3bnoaa();
-    return _this__u8e3s4.get_y_1mhr68_k$() + _this__u8e3s4.get_height_e7t92o_k$() / 2;
+    return _this__u8e3s4.b1t() + _this__u8e3s4.d1t() / 2;
   }
   function lineHeight(fontSize) {
     _init_properties_Items_kt__3bnoaa();
@@ -2223,7 +1895,7 @@
     _this__u8e3s4.stroke();
   }
   function _get_$cachedSerializer__te6jhj($this) {
-    return $this.$cachedSerializer$delegate_1.get_value_j01efc_k$();
+    return $this.y1r_1.r1();
   }
   function Item$Companion$_anonymous__jaim2s() {
     var tmp = getKClass(Item);
@@ -2242,102 +1914,93 @@
     return SealedClassSerializer_init_$Create$('stickynode.model.Item', tmp, tmp_0, tmp_1, tmp$ret$8);
   }
   function Companion_3() {
-    Companion_instance_3 = this;
+    Companion_instance_4 = this;
     var tmp = this;
     var tmp_0 = LazyThreadSafetyMode_PUBLICATION_getInstance();
-    tmp.$cachedSerializer$delegate_1 = lazy(tmp_0, Item$Companion$_anonymous__jaim2s);
+    tmp.y1r_1 = lazy(tmp_0, Item$Companion$_anonymous__jaim2s);
   }
-  protoOf(Companion_3).serializer_9w0wvi_k$ = function () {
+  protoOf(Companion_3).v14 = function () {
     return _get_$cachedSerializer__te6jhj(this);
   };
-  protoOf(Companion_3).serializer_nv39qc_k$ = function (typeParamsSerializers) {
-    return this.serializer_9w0wvi_k$();
+  protoOf(Companion_3).au = function (typeParamsSerializers) {
+    return this.v14();
   };
-  var Companion_instance_3;
-  function Companion_getInstance_4() {
-    if (Companion_instance_3 == null)
+  var Companion_instance_4;
+  function Companion_getInstance_3() {
+    if (Companion_instance_4 == null)
       new Companion_3();
-    return Companion_instance_3;
+    return Companion_instance_4;
   }
   function Item_init_$Init$(seen0, serializationConstructorMarker, $this) {
     return $this;
   }
-  function Item_init_$Create$(seen0, serializationConstructorMarker) {
-    return Item_init_$Init$(seen0, serializationConstructorMarker, objectCreate(protoOf(Item)));
-  }
   function Item() {
-    Companion_getInstance_4();
+    Companion_getInstance_3();
   }
-  protoOf(Item).hitTestFill_vfzr9i_k$ = function (p) {
-    return this.hitTest_1gxtur_k$(p);
+  protoOf(Item).p1r = function (p) {
+    return this.k1p(p);
   };
-  function _get_$childSerializers__r2zwns_1($this) {
-    return $this.$childSerializers_1;
-  }
   function nearLine($this, p) {
-    var radius = hitRadius($this.lineWidth_1);
-    if ($this.points_1.get_size_woubt6_k$() === 1)
-      return p.distanceTo_kno8q6_k$($this.points_1.get_c1px32_k$(0)) <= radius;
+    var radius = hitRadius($this.z1q_1);
+    if ($this.x1q_1.l() === 1)
+      return p.s1s($this.x1q_1.n(0)) <= radius;
     var inductionVariable = 0;
-    var last = $this.points_1.get_size_woubt6_k$() - 1 | 0;
+    var last = $this.x1q_1.l() - 1 | 0;
     if (inductionVariable < last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        if (distanceToSegment(p, $this.points_1.get_c1px32_k$(i), $this.points_1.get_c1px32_k$(i + 1 | 0)) <= radius)
+        if (distanceToSegment(p, $this.x1q_1.n(i), $this.x1q_1.n(i + 1 | 0)) <= radius)
           return true;
       }
        while (inductionVariable < last);
     return false;
   }
   function inside($this, p) {
-    return $this.points_1.get_size_woubt6_k$() >= 3 && pointInPolygon(p, $this.points_1);
+    return $this.x1q_1.l() >= 3 && pointInPolygon(p, $this.x1q_1);
   }
   function Companion_4() {
-    Companion_instance_4 = this;
+    Companion_instance_5 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null, null];
+    tmp.e1t_1 = [new ArrayListSerializer($serializer_getInstance_1()), null, null, null];
   }
-  protoOf(Companion_4).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_3();
-  };
-  var Companion_instance_4;
-  function Companion_getInstance_5() {
-    if (Companion_instance_4 == null)
+  var Companion_instance_5;
+  function Companion_getInstance_4() {
+    if (Companion_instance_5 == null)
       new Companion_4();
-    return Companion_instance_4;
+    return Companion_instance_5;
   }
   function $serializer_3() {
     $serializer_instance_3 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('stroke', this, 4);
-    tmp0_serialDesc.addElement_5pzumi_k$('points', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('points', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('lineWidth', true);
+    tmp0_serialDesc.nt('fill', true);
+    this.f1t_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_3).serialize_j2wkun_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_5().$childSerializers_1;
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.points_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 2, value.lineWidth_1);
+  protoOf($serializer_3).g1t = function (encoder, value) {
+    var tmp0_desc = this.f1t_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    var tmp2_cached = Companion_getInstance_4().e1t_1;
+    tmp1_output.wn(tmp0_desc, 0, tmp2_cached[0], value.x1q_1);
+    tmp1_output.un(tmp0_desc, 1, value.y1q_1);
+    if (tmp1_output.co(tmp0_desc, 2) ? true : !(value.z1q_1 === 3)) {
+      tmp1_output.pn(tmp0_desc, 2, value.z1q_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !(value.fill_1 == null)) {
-      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 3, StringSerializer_getInstance(), value.fill_1);
+    if (tmp1_output.co(tmp0_desc, 3) ? true : !(value.a1r_1 == null)) {
+      tmp1_output.yn(tmp0_desc, 3, StringSerializer_getInstance(), value.a1r_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_3).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_j2wkun_k$(encoder, value instanceof StrokeItem ? value : THROW_CCE());
+  protoOf($serializer_3).cj = function (encoder, value) {
+    return this.g1t(encoder, value instanceof StrokeItem ? value : THROW_CCE());
   };
-  protoOf($serializer_3).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_3).dj = function (decoder) {
+    var tmp0_desc = this.f1t_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -2345,55 +2008,55 @@
     var tmp5_local1 = null;
     var tmp6_local2 = 0;
     var tmp7_local3 = null;
-    var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp9_cached = Companion_getInstance_5().$childSerializers_1;
-    if (tmp8_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
+    var tmp8_input = decoder.gm(tmp0_desc);
+    var tmp9_cached = Companion_getInstance_4().e1t_1;
+    if (tmp8_input.wm()) {
+      tmp4_local0 = tmp8_input.sm(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp8_input.qm(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp8_input.lm(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp8_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+      tmp7_local3 = tmp8_input.um(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp8_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp8_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
+            tmp4_local0 = tmp8_input.sm(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp8_input.qm(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp8_input.decodeIntElement_941u6a_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp8_input.lm(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp8_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
+            tmp7_local3 = tmp8_input.um(tmp0_desc, 3, StringSerializer_getInstance(), tmp7_local3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp8_input.hm(tmp0_desc);
     return StrokeItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  protoOf($serializer_3).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_3).bj = function () {
+    return this.f1t_1;
   };
-  protoOf($serializer_3).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_3).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_5().$childSerializers_1[0], StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
+    return [Companion_getInstance_4().e1t_1[0], StringSerializer_getInstance(), IntSerializer_getInstance(), get_nullable(StringSerializer_getInstance())];
   };
   var $serializer_instance_3;
   function $serializer_getInstance_3() {
@@ -2403,74 +2066,65 @@
   }
   function StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_3().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_3().f1t_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.points_1 = points;
-    $this.color_1 = color;
+    $this.x1q_1 = points;
+    $this.y1q_1 = color;
     if (0 === (seen0 & 4))
-      $this.lineWidth_1 = 3;
+      $this.z1q_1 = 3;
     else
-      $this.lineWidth_1 = lineWidth;
+      $this.z1q_1 = lineWidth;
     if (0 === (seen0 & 8))
-      $this.fill_1 = null;
+      $this.a1r_1 = null;
     else
-      $this.fill_1 = fill;
+      $this.a1r_1 = fill;
     return $this;
   }
   function StrokeItem_init_$Create$(seen0, points, color, lineWidth, fill, serializationConstructorMarker) {
     return StrokeItem_init_$Init$(seen0, points, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(StrokeItem)));
   }
   function StrokeItem(points, color, lineWidth, fill) {
-    Companion_getInstance_5();
+    Companion_getInstance_4();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
-    this.points_1 = points;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-    this.fill_1 = fill;
+    this.x1q_1 = points;
+    this.y1q_1 = color;
+    this.z1q_1 = lineWidth;
+    this.a1r_1 = fill;
   }
-  protoOf(StrokeItem).get_points_i5obn0_k$ = function () {
-    return this.points_1;
+  protoOf(StrokeItem).r1r = function (_set____db54di) {
+    this.a1r_1 = _set____db54di;
   };
-  protoOf(StrokeItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
+  protoOf(StrokeItem).q1r = function () {
+    return this.a1r_1;
   };
-  protoOf(StrokeItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(StrokeItem).set_fill_sosdnb_k$ = function (_set____db54di) {
-    this.fill_1 = _set____db54di;
-  };
-  protoOf(StrokeItem).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(StrokeItem).draw_rpid3c_k$ = function (ctx) {
-    if (this.points_1.get_size_woubt6_k$() < 2)
-      return Unit_getInstance();
+  protoOf(StrokeItem).k1o = function (ctx) {
+    if (this.x1q_1.l() < 2)
+      return Unit_instance;
     roundStroke(ctx);
     ctx.beginPath();
-    ctx.moveTo(this.points_1.get_c1px32_k$(0).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(0).get_y_1mhr68_k$());
+    ctx.moveTo(this.x1q_1.n(0).z1p_1, this.x1q_1.n(0).a1q_1);
     var inductionVariable = 1;
-    var last = this.points_1.get_size_woubt6_k$();
+    var last = this.x1q_1.l();
     if (inductionVariable < last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        ctx.lineTo(this.points_1.get_c1px32_k$(i).get_x_1mhr67_k$(), this.points_1.get_c1px32_k$(i).get_y_1mhr68_k$());
+        ctx.lineTo(this.x1q_1.n(i).z1p_1, this.x1q_1.n(i).a1q_1);
       }
        while (inductionVariable < last);
-    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+    paint(ctx, this.a1r_1, this.y1q_1, this.z1q_1);
   };
-  protoOf(StrokeItem).hitTest_1gxtur_k$ = function (p) {
+  protoOf(StrokeItem).k1p = function (p) {
     var tmp;
     if (nearLine(this, p)) {
       tmp = true;
     } else {
       var tmp_0;
       // Inline function 'kotlin.text.isNullOrEmpty' call
-      var this_0 = this.fill_1;
+      var this_0 = this.a1r_1;
       if (!(this_0 == null || charSequenceLength(this_0) === 0)) {
         tmp_0 = inside(this, p);
       } else {
@@ -2480,66 +2134,60 @@
     }
     return tmp;
   };
-  protoOf(StrokeItem).hitTestFill_vfzr9i_k$ = function (p) {
+  protoOf(StrokeItem).p1r = function (p) {
     return nearLine(this, p) || inside(this, p);
   };
-  protoOf(StrokeItem).moveBy_hp42rs_k$ = function (dx, dy) {
+  protoOf(StrokeItem).s1q = function (dx, dy) {
     var inductionVariable = 0;
-    var last = this.points_1.get_size_woubt6_k$() - 1 | 0;
+    var last = this.x1q_1.l() - 1 | 0;
     if (inductionVariable <= last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var point = this.points_1.get_c1px32_k$(i);
-        this.points_1.set_82063s_k$(i, new Point(point.get_x_1mhr67_k$() + dx, point.get_y_1mhr68_k$() + dy));
+        var point = this.x1q_1.n(i);
+        this.x1q_1.a2(i, new Point(point.z1p_1 + dx, point.a1q_1 + dy));
       }
        while (inductionVariable <= last);
   };
   function Companion_5() {
-    Companion_instance_5 = this;
   }
-  protoOf(Companion_5).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_4();
-  };
-  var Companion_instance_5;
-  function Companion_getInstance_6() {
-    if (Companion_instance_5 == null)
-      new Companion_5();
-    return Companion_instance_5;
+  var Companion_instance_6;
+  function Companion_getInstance_5() {
+    return Companion_instance_6;
   }
   function $serializer_4() {
     $serializer_instance_4 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('rectangle', this, 7);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    tmp0_serialDesc.nt('width', false);
+    tmp0_serialDesc.nt('height', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('lineWidth', true);
+    tmp0_serialDesc.nt('fill', true);
+    this.h1t_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_4).serialize_aff1o_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 5, value.lineWidth_1);
+  protoOf($serializer_4).i1t = function (encoder, value) {
+    var tmp0_desc = this.h1t_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.j1t_1);
+    tmp1_output.sn(tmp0_desc, 1, value.k1t_1);
+    tmp1_output.sn(tmp0_desc, 2, value.l1t_1);
+    tmp1_output.sn(tmp0_desc, 3, value.m1t_1);
+    tmp1_output.un(tmp0_desc, 4, value.n1t_1);
+    if (tmp1_output.co(tmp0_desc, 5) ? true : !(value.o1t_1 === 3)) {
+      tmp1_output.pn(tmp0_desc, 5, value.o1t_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !(value.fill_1 == null)) {
-      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 6, StringSerializer_getInstance(), value.fill_1);
+    if (tmp1_output.co(tmp0_desc, 6) ? true : !(value.p1t_1 == null)) {
+      tmp1_output.yn(tmp0_desc, 6, StringSerializer_getInstance(), value.p1t_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_4).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_aff1o_k$(encoder, value instanceof RectangleItem ? value : THROW_CCE());
+  protoOf($serializer_4).cj = function (encoder, value) {
+    return this.i1t(encoder, value instanceof RectangleItem ? value : THROW_CCE());
   };
-  protoOf($serializer_4).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_4).dj = function (decoder) {
+    var tmp0_desc = this.h1t_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -2550,68 +2198,68 @@
     var tmp8_local4 = null;
     var tmp9_local5 = 0;
     var tmp10_local6 = null;
-    var tmp11_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp11_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp11_input = decoder.gm(tmp0_desc);
+    if (tmp11_input.wm()) {
+      tmp4_local0 = tmp11_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp11_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp11_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp11_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp11_input.qm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+      tmp9_local5 = tmp11_input.lm(tmp0_desc, 5);
       tmp3_bitMask0 = tmp3_bitMask0 | 32;
-      tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+      tmp10_local6 = tmp11_input.um(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
       tmp3_bitMask0 = tmp3_bitMask0 | 64;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp11_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp11_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp11_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp11_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp11_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp11_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp11_input.qm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           case 5:
-            tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+            tmp9_local5 = tmp11_input.lm(tmp0_desc, 5);
             tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           case 6:
-            tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+            tmp10_local6 = tmp11_input.um(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
             tmp3_bitMask0 = tmp3_bitMask0 | 64;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp11_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp11_input.hm(tmp0_desc);
     return RectangleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
   };
-  protoOf($serializer_4).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_4).bj = function () {
+    return this.h1t_1;
   };
-  protoOf($serializer_4).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_4).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -2625,139 +2273,120 @@
   }
   function RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_4().descriptor_1);
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_4().h1t_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.width_1 = width;
-    $this.height_1 = height;
-    $this.color_1 = color;
+    $this.j1t_1 = x;
+    $this.k1t_1 = y;
+    $this.l1t_1 = width;
+    $this.m1t_1 = height;
+    $this.n1t_1 = color;
     if (0 === (seen0 & 32))
-      $this.lineWidth_1 = 3;
+      $this.o1t_1 = 3;
     else
-      $this.lineWidth_1 = lineWidth;
+      $this.o1t_1 = lineWidth;
     if (0 === (seen0 & 64))
-      $this.fill_1 = null;
+      $this.p1t_1 = null;
     else
-      $this.fill_1 = fill;
+      $this.p1t_1 = fill;
     return $this;
   }
   function RectangleItem_init_$Create$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker) {
     return RectangleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(RectangleItem)));
   }
   function RectangleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_6();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-    this.fill_1 = fill;
+    this.j1t_1 = x;
+    this.k1t_1 = y;
+    this.l1t_1 = width;
+    this.m1t_1 = height;
+    this.n1t_1 = color;
+    this.o1t_1 = lineWidth;
+    this.p1t_1 = fill;
   }
-  protoOf(RectangleItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
+  protoOf(RectangleItem).a1t = function () {
+    return this.j1t_1;
   };
-  protoOf(RectangleItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
+  protoOf(RectangleItem).b1t = function () {
+    return this.k1t_1;
   };
-  protoOf(RectangleItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
+  protoOf(RectangleItem).c1t = function () {
+    return this.l1t_1;
   };
-  protoOf(RectangleItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
+  protoOf(RectangleItem).d1t = function () {
+    return this.m1t_1;
   };
-  protoOf(RectangleItem).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
+  protoOf(RectangleItem).r1r = function (_set____db54di) {
+    this.p1t_1 = _set____db54di;
   };
-  protoOf(RectangleItem).get_height_e7t92o_k$ = function () {
-    return this.height_1;
+  protoOf(RectangleItem).q1r = function () {
+    return this.p1t_1;
   };
-  protoOf(RectangleItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(RectangleItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(RectangleItem).set_fill_sosdnb_k$ = function (_set____db54di) {
-    this.fill_1 = _set____db54di;
-  };
-  protoOf(RectangleItem).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(RectangleItem).draw_rpid3c_k$ = function (ctx) {
+  protoOf(RectangleItem).k1o = function (ctx) {
     ctx.beginPath();
-    ctx.rect(this.x_1, this.y_1, this.width_1, this.height_1);
-    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+    ctx.rect(this.j1t_1, this.k1t_1, this.l1t_1, this.m1t_1);
+    paint(ctx, this.p1t_1, this.n1t_1, this.o1t_1);
   };
-  protoOf(RectangleItem).hitTest_1gxtur_k$ = function (p) {
+  protoOf(RectangleItem).k1p = function (p) {
     var tmp;
-    var containsLower = this.x_1;
-    var containsUpper = this.x_1 + this.width_1;
-    var containsArg = p.get_x_1mhr67_k$();
+    var containsLower = this.j1t_1;
+    var containsUpper = this.j1t_1 + this.l1t_1;
+    var containsArg = p.z1p_1;
     if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
-      var containsLower_0 = this.y_1;
-      var containsUpper_0 = this.y_1 + this.height_1;
-      var containsArg_0 = p.get_y_1mhr68_k$();
+      var containsLower_0 = this.k1t_1;
+      var containsUpper_0 = this.k1t_1 + this.m1t_1;
+      var containsArg_0 = p.a1q_1;
       tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
     } else {
       tmp = false;
     }
     return tmp;
   };
-  protoOf(RectangleItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
+  protoOf(RectangleItem).s1q = function (dx, dy) {
+    this.j1t_1 = this.j1t_1 + dx;
+    this.k1t_1 = this.k1t_1 + dy;
   };
   function Companion_6() {
-    Companion_instance_6 = this;
   }
-  protoOf(Companion_6).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_5();
-  };
-  var Companion_instance_6;
-  function Companion_getInstance_7() {
-    if (Companion_instance_6 == null)
-      new Companion_6();
-    return Companion_instance_6;
+  var Companion_instance_7;
+  function Companion_getInstance_6() {
+    return Companion_instance_7;
   }
   function $serializer_5() {
     $serializer_instance_5 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('circle', this, 7);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    tmp0_serialDesc.nt('width', false);
+    tmp0_serialDesc.nt('height', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('lineWidth', true);
+    tmp0_serialDesc.nt('fill', true);
+    this.q1t_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_5).serialize_4h19cz_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 5, value.lineWidth_1);
+  protoOf($serializer_5).r1t = function (encoder, value) {
+    var tmp0_desc = this.q1t_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.s1t_1);
+    tmp1_output.sn(tmp0_desc, 1, value.t1t_1);
+    tmp1_output.sn(tmp0_desc, 2, value.u1t_1);
+    tmp1_output.sn(tmp0_desc, 3, value.v1t_1);
+    tmp1_output.un(tmp0_desc, 4, value.w1t_1);
+    if (tmp1_output.co(tmp0_desc, 5) ? true : !(value.x1t_1 === 3)) {
+      tmp1_output.pn(tmp0_desc, 5, value.x1t_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !(value.fill_1 == null)) {
-      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 6, StringSerializer_getInstance(), value.fill_1);
+    if (tmp1_output.co(tmp0_desc, 6) ? true : !(value.y1t_1 == null)) {
+      tmp1_output.yn(tmp0_desc, 6, StringSerializer_getInstance(), value.y1t_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_5).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_4h19cz_k$(encoder, value instanceof CircleItem ? value : THROW_CCE());
+  protoOf($serializer_5).cj = function (encoder, value) {
+    return this.r1t(encoder, value instanceof CircleItem ? value : THROW_CCE());
   };
-  protoOf($serializer_5).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_5).dj = function (decoder) {
+    var tmp0_desc = this.q1t_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -2768,68 +2397,68 @@
     var tmp8_local4 = null;
     var tmp9_local5 = 0;
     var tmp10_local6 = null;
-    var tmp11_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp11_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp11_input = decoder.gm(tmp0_desc);
+    if (tmp11_input.wm()) {
+      tmp4_local0 = tmp11_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp11_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp11_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp11_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp11_input.qm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+      tmp9_local5 = tmp11_input.lm(tmp0_desc, 5);
       tmp3_bitMask0 = tmp3_bitMask0 | 32;
-      tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+      tmp10_local6 = tmp11_input.um(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
       tmp3_bitMask0 = tmp3_bitMask0 | 64;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp11_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp11_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp11_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp11_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp11_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp11_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp11_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp11_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp11_input.qm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           case 5:
-            tmp9_local5 = tmp11_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+            tmp9_local5 = tmp11_input.lm(tmp0_desc, 5);
             tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           case 6:
-            tmp10_local6 = tmp11_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
+            tmp10_local6 = tmp11_input.um(tmp0_desc, 6, StringSerializer_getInstance(), tmp10_local6);
             tmp3_bitMask0 = tmp3_bitMask0 | 64;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp11_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp11_input.hm(tmp0_desc);
     return CircleItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, null);
   };
-  protoOf($serializer_5).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_5).bj = function () {
+    return this.q1t_1;
   };
-  protoOf($serializer_5).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_5).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -2843,93 +2472,80 @@
   }
   function CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_5().descriptor_1);
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_5().q1t_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.width_1 = width;
-    $this.height_1 = height;
-    $this.color_1 = color;
+    $this.s1t_1 = x;
+    $this.t1t_1 = y;
+    $this.u1t_1 = width;
+    $this.v1t_1 = height;
+    $this.w1t_1 = color;
     if (0 === (seen0 & 32))
-      $this.lineWidth_1 = 3;
+      $this.x1t_1 = 3;
     else
-      $this.lineWidth_1 = lineWidth;
+      $this.x1t_1 = lineWidth;
     if (0 === (seen0 & 64))
-      $this.fill_1 = null;
+      $this.y1t_1 = null;
     else
-      $this.fill_1 = fill;
+      $this.y1t_1 = fill;
     return $this;
   }
   function CircleItem_init_$Create$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker) {
     return CircleItem_init_$Init$(seen0, x, y, width, height, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(CircleItem)));
   }
   function CircleItem(x, y, width, height, color, lineWidth, fill) {
-    Companion_getInstance_7();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-    this.fill_1 = fill;
+    this.s1t_1 = x;
+    this.t1t_1 = y;
+    this.u1t_1 = width;
+    this.v1t_1 = height;
+    this.w1t_1 = color;
+    this.x1t_1 = lineWidth;
+    this.y1t_1 = fill;
   }
-  protoOf(CircleItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
+  protoOf(CircleItem).a1t = function () {
+    return this.s1t_1;
   };
-  protoOf(CircleItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
+  protoOf(CircleItem).b1t = function () {
+    return this.t1t_1;
   };
-  protoOf(CircleItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
+  protoOf(CircleItem).c1t = function () {
+    return this.u1t_1;
   };
-  protoOf(CircleItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
+  protoOf(CircleItem).d1t = function () {
+    return this.v1t_1;
   };
-  protoOf(CircleItem).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
+  protoOf(CircleItem).r1r = function (_set____db54di) {
+    this.y1t_1 = _set____db54di;
   };
-  protoOf(CircleItem).get_height_e7t92o_k$ = function () {
-    return this.height_1;
+  protoOf(CircleItem).q1r = function () {
+    return this.y1t_1;
   };
-  protoOf(CircleItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(CircleItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(CircleItem).set_fill_sosdnb_k$ = function (_set____db54di) {
-    this.fill_1 = _set____db54di;
-  };
-  protoOf(CircleItem).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(CircleItem).draw_rpid3c_k$ = function (ctx) {
+  protoOf(CircleItem).k1o = function (ctx) {
     ctx.beginPath();
-    ctx.ellipse(get_centerX(this), get_centerY(this), this.width_1 / 2, this.height_1 / 2, 0.0, 0.0, 2 * 3.141592653589793);
-    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+    ctx.ellipse(get_centerX(this), get_centerY(this), this.u1t_1 / 2, this.v1t_1 / 2, 0.0, 0.0, 2 * 3.141592653589793);
+    paint(ctx, this.y1t_1, this.w1t_1, this.x1t_1);
   };
-  protoOf(CircleItem).hitTest_1gxtur_k$ = function (p) {
-    var radiusX = this.width_1 / 2;
-    var radiusY = this.height_1 / 2;
+  protoOf(CircleItem).k1p = function (p) {
+    var radiusX = this.u1t_1 / 2;
+    var radiusY = this.v1t_1 / 2;
     if (radiusX === 0.0 || radiusY === 0.0)
       return false;
-    var nx = (p.get_x_1mhr67_k$() - get_centerX(this)) / radiusX;
-    var ny = (p.get_y_1mhr68_k$() - get_centerY(this)) / radiusY;
+    var nx = (p.z1p_1 - get_centerX(this)) / radiusX;
+    var ny = (p.a1q_1 - get_centerY(this)) / radiusY;
     return nx * nx + ny * ny <= 1.0;
   };
-  protoOf(CircleItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
+  protoOf(CircleItem).s1q = function (dx, dy) {
+    this.s1t_1 = this.s1t_1 + dx;
+    this.t1t_1 = this.t1t_1 + dy;
   };
   function vertices($this) {
-    var count = coerceAtLeast($this.sides_1, 3);
-    var tmp0 = $this.width_1;
+    var count = coerceAtLeast($this.d1u_1, 3);
+    var tmp0 = $this.b1u_1;
     // Inline function 'kotlin.math.min' call
-    var b = $this.height_1;
+    var b = $this.c1u_1;
     var radius = Math.min(tmp0, b) / 2;
     var step = 2 * 3.141592653589793 / count;
     // Inline function 'kotlin.collections.List' call
@@ -2951,58 +2567,52 @@
         // Inline function 'kotlin.math.sin' call
         var tmp$ret$2 = Math.sin(angle);
         var tmp$ret$3 = new Point(tmp_0, tmp_1 + radius * tmp$ret$2);
-        list.add_utx5q5_k$(tmp$ret$3);
+        list.d(tmp$ret$3);
       }
        while (inductionVariable < count);
     return list;
   }
   function Companion_7() {
-    Companion_instance_7 = this;
   }
-  protoOf(Companion_7).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_6();
-  };
-  var Companion_instance_7;
-  function Companion_getInstance_8() {
-    if (Companion_instance_7 == null)
-      new Companion_7();
-    return Companion_instance_7;
+  var Companion_instance_8;
+  function Companion_getInstance_7() {
+    return Companion_instance_8;
   }
   function $serializer_6() {
     $serializer_instance_6 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('polygon', this, 8);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('width', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('height', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('sides', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('fill', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    tmp0_serialDesc.nt('width', false);
+    tmp0_serialDesc.nt('height', false);
+    tmp0_serialDesc.nt('sides', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('lineWidth', true);
+    tmp0_serialDesc.nt('fill', true);
+    this.h1u_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_6).serialize_9g6o2x_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.width_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.height_1);
-    tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 4, value.sides_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 5, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 6) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 6, value.lineWidth_1);
+  protoOf($serializer_6).i1u = function (encoder, value) {
+    var tmp0_desc = this.h1u_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.z1t_1);
+    tmp1_output.sn(tmp0_desc, 1, value.a1u_1);
+    tmp1_output.sn(tmp0_desc, 2, value.b1u_1);
+    tmp1_output.sn(tmp0_desc, 3, value.c1u_1);
+    tmp1_output.pn(tmp0_desc, 4, value.d1u_1);
+    tmp1_output.un(tmp0_desc, 5, value.e1u_1);
+    if (tmp1_output.co(tmp0_desc, 6) ? true : !(value.f1u_1 === 3)) {
+      tmp1_output.pn(tmp0_desc, 6, value.f1u_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 7) ? true : !(value.fill_1 == null)) {
-      tmp1_output.encodeNullableSerializableElement_5lquiv_k$(tmp0_desc, 7, StringSerializer_getInstance(), value.fill_1);
+    if (tmp1_output.co(tmp0_desc, 7) ? true : !(value.g1u_1 == null)) {
+      tmp1_output.yn(tmp0_desc, 7, StringSerializer_getInstance(), value.g1u_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_6).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_9g6o2x_k$(encoder, value instanceof PolygonItem ? value : THROW_CCE());
+  protoOf($serializer_6).cj = function (encoder, value) {
+    return this.i1u(encoder, value instanceof PolygonItem ? value : THROW_CCE());
   };
-  protoOf($serializer_6).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_6).dj = function (decoder) {
+    var tmp0_desc = this.h1u_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -3014,74 +2624,74 @@
     var tmp9_local5 = null;
     var tmp10_local6 = 0;
     var tmp11_local7 = null;
-    var tmp12_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp12_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp12_input = decoder.gm(tmp0_desc);
+    if (tmp12_input.wm()) {
+      tmp4_local0 = tmp12_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp12_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp12_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp12_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp12_input.lm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp12_input.decodeStringElement_3oenpg_k$(tmp0_desc, 5);
+      tmp9_local5 = tmp12_input.qm(tmp0_desc, 5);
       tmp3_bitMask0 = tmp3_bitMask0 | 32;
-      tmp10_local6 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 6);
+      tmp10_local6 = tmp12_input.lm(tmp0_desc, 6);
       tmp3_bitMask0 = tmp3_bitMask0 | 64;
-      tmp11_local7 = tmp12_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 7, StringSerializer_getInstance(), tmp11_local7);
+      tmp11_local7 = tmp12_input.um(tmp0_desc, 7, StringSerializer_getInstance(), tmp11_local7);
       tmp3_bitMask0 = tmp3_bitMask0 | 128;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp12_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp12_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp12_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp12_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp12_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp12_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp12_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp12_input.lm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           case 5:
-            tmp9_local5 = tmp12_input.decodeStringElement_3oenpg_k$(tmp0_desc, 5);
+            tmp9_local5 = tmp12_input.qm(tmp0_desc, 5);
             tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           case 6:
-            tmp10_local6 = tmp12_input.decodeIntElement_941u6a_k$(tmp0_desc, 6);
+            tmp10_local6 = tmp12_input.lm(tmp0_desc, 6);
             tmp3_bitMask0 = tmp3_bitMask0 | 64;
             break;
           case 7:
-            tmp11_local7 = tmp12_input.decodeNullableSerializableElement_k2y6ab_k$(tmp0_desc, 7, StringSerializer_getInstance(), tmp11_local7);
+            tmp11_local7 = tmp12_input.um(tmp0_desc, 7, StringSerializer_getInstance(), tmp11_local7);
             tmp3_bitMask0 = tmp3_bitMask0 | 128;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp12_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp12_input.hm(tmp0_desc);
     return PolygonItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, null);
   };
-  protoOf($serializer_6).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_6).bj = function () {
+    return this.h1u_1;
   };
-  protoOf($serializer_6).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_6).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -3095,109 +2705,93 @@
   }
   function PolygonItem_init_$Init$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker, $this) {
     if (!(63 === (63 & seen0))) {
-      throwMissingFieldException(seen0, 63, $serializer_getInstance_6().descriptor_1);
+      throwMissingFieldException(seen0, 63, $serializer_getInstance_6().h1u_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.width_1 = width;
-    $this.height_1 = height;
-    $this.sides_1 = sides;
-    $this.color_1 = color;
+    $this.z1t_1 = x;
+    $this.a1u_1 = y;
+    $this.b1u_1 = width;
+    $this.c1u_1 = height;
+    $this.d1u_1 = sides;
+    $this.e1u_1 = color;
     if (0 === (seen0 & 64))
-      $this.lineWidth_1 = 3;
+      $this.f1u_1 = 3;
     else
-      $this.lineWidth_1 = lineWidth;
+      $this.f1u_1 = lineWidth;
     if (0 === (seen0 & 128))
-      $this.fill_1 = null;
+      $this.g1u_1 = null;
     else
-      $this.fill_1 = fill;
+      $this.g1u_1 = fill;
     return $this;
   }
   function PolygonItem_init_$Create$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker) {
     return PolygonItem_init_$Init$(seen0, x, y, width, height, sides, color, lineWidth, fill, serializationConstructorMarker, objectCreate(protoOf(PolygonItem)));
   }
   function PolygonItem(x, y, width, height, sides, color, lineWidth, fill) {
-    Companion_getInstance_8();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     fill = fill === VOID ? null : fill;
     Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.width_1 = width;
-    this.height_1 = height;
-    this.sides_1 = sides;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
-    this.fill_1 = fill;
+    this.z1t_1 = x;
+    this.a1u_1 = y;
+    this.b1u_1 = width;
+    this.c1u_1 = height;
+    this.d1u_1 = sides;
+    this.e1u_1 = color;
+    this.f1u_1 = lineWidth;
+    this.g1u_1 = fill;
   }
-  protoOf(PolygonItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
+  protoOf(PolygonItem).a1t = function () {
+    return this.z1t_1;
   };
-  protoOf(PolygonItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
+  protoOf(PolygonItem).b1t = function () {
+    return this.a1u_1;
   };
-  protoOf(PolygonItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
+  protoOf(PolygonItem).c1t = function () {
+    return this.b1u_1;
   };
-  protoOf(PolygonItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
+  protoOf(PolygonItem).d1t = function () {
+    return this.c1u_1;
   };
-  protoOf(PolygonItem).get_width_j0q4yl_k$ = function () {
-    return this.width_1;
+  protoOf(PolygonItem).r1r = function (_set____db54di) {
+    this.g1u_1 = _set____db54di;
   };
-  protoOf(PolygonItem).get_height_e7t92o_k$ = function () {
-    return this.height_1;
+  protoOf(PolygonItem).q1r = function () {
+    return this.g1u_1;
   };
-  protoOf(PolygonItem).get_sides_iyiy8j_k$ = function () {
-    return this.sides_1;
-  };
-  protoOf(PolygonItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(PolygonItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(PolygonItem).set_fill_sosdnb_k$ = function (_set____db54di) {
-    this.fill_1 = _set____db54di;
-  };
-  protoOf(PolygonItem).get_fill_wom0ng_k$ = function () {
-    return this.fill_1;
-  };
-  protoOf(PolygonItem).draw_rpid3c_k$ = function (ctx) {
+  protoOf(PolygonItem).k1o = function (ctx) {
     var points = vertices(this);
     ctx.beginPath();
-    ctx.moveTo(points.get_c1px32_k$(0).get_x_1mhr67_k$(), points.get_c1px32_k$(0).get_y_1mhr68_k$());
+    ctx.moveTo(points.n(0).z1p_1, points.n(0).a1q_1);
     var inductionVariable = 1;
-    var last = points.get_size_woubt6_k$();
+    var last = points.l();
     if (inductionVariable < last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        ctx.lineTo(points.get_c1px32_k$(i).get_x_1mhr67_k$(), points.get_c1px32_k$(i).get_y_1mhr68_k$());
+        ctx.lineTo(points.n(i).z1p_1, points.n(i).a1q_1);
       }
        while (inductionVariable < last);
     ctx.closePath();
-    paint(ctx, this.fill_1, this.color_1, this.lineWidth_1);
+    paint(ctx, this.g1u_1, this.e1u_1, this.f1u_1);
   };
-  protoOf(PolygonItem).hitTest_1gxtur_k$ = function (p) {
-    var tmp0 = this.width_1;
+  protoOf(PolygonItem).k1p = function (p) {
+    var tmp0 = this.b1u_1;
     // Inline function 'kotlin.math.min' call
-    var b = this.height_1;
+    var b = this.c1u_1;
     if (Math.min(tmp0, b) === 0.0)
       return false;
     var points = vertices(this);
     var inside = false;
     var previous = get_lastIndex(points);
     var inductionVariable = 0;
-    var last = points.get_size_woubt6_k$() - 1 | 0;
+    var last = points.l() - 1 | 0;
     if (inductionVariable <= last)
       do {
         var i = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
-        var a = points.get_c1px32_k$(i);
-        var b_0 = points.get_c1px32_k$(previous);
-        if (!(a.get_y_1mhr68_k$() > p.get_y_1mhr68_k$() === b_0.get_y_1mhr68_k$() > p.get_y_1mhr68_k$()) && p.get_x_1mhr67_k$() < (b_0.get_x_1mhr67_k$() - a.get_x_1mhr67_k$()) * (p.get_y_1mhr68_k$() - a.get_y_1mhr68_k$()) / (b_0.get_y_1mhr68_k$() - a.get_y_1mhr68_k$()) + a.get_x_1mhr67_k$()) {
+        var a = points.n(i);
+        var b_0 = points.n(previous);
+        if (!(a.a1q_1 > p.a1q_1 === b_0.a1q_1 > p.a1q_1) && p.z1p_1 < (b_0.z1p_1 - a.z1p_1) * (p.a1q_1 - a.a1q_1) / (b_0.a1q_1 - a.a1q_1) + a.z1p_1) {
           inside = !inside;
         }
         previous = i;
@@ -3205,51 +2799,45 @@
        while (inductionVariable <= last);
     return inside;
   };
-  protoOf(PolygonItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
+  protoOf(PolygonItem).s1q = function (dx, dy) {
+    this.z1t_1 = this.z1t_1 + dx;
+    this.a1u_1 = this.a1u_1 + dy;
   };
   function Companion_8() {
-    Companion_instance_8 = this;
   }
-  protoOf(Companion_8).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_7();
-  };
-  var Companion_instance_8;
-  function Companion_getInstance_9() {
-    if (Companion_instance_8 == null)
-      new Companion_8();
-    return Companion_instance_8;
+  var Companion_instance_9;
+  function Companion_getInstance_8() {
+    return Companion_instance_9;
   }
   function $serializer_7() {
     $serializer_instance_7 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('arrow', this, 6);
-    tmp0_serialDesc.addElement_5pzumi_k$('startX', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('startY', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('endX', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('endY', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('lineWidth', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('startX', false);
+    tmp0_serialDesc.nt('startY', false);
+    tmp0_serialDesc.nt('endX', false);
+    tmp0_serialDesc.nt('endY', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('lineWidth', true);
+    this.j1u_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_7).serialize_6xgepf_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.startX_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.startY_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.endX_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.endY_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 4, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 5) ? true : !(value.lineWidth_1 === 3)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 5, value.lineWidth_1);
+  protoOf($serializer_7).k1u = function (encoder, value) {
+    var tmp0_desc = this.j1u_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.l1u_1);
+    tmp1_output.sn(tmp0_desc, 1, value.m1u_1);
+    tmp1_output.sn(tmp0_desc, 2, value.n1u_1);
+    tmp1_output.sn(tmp0_desc, 3, value.o1u_1);
+    tmp1_output.un(tmp0_desc, 4, value.p1u_1);
+    if (tmp1_output.co(tmp0_desc, 5) ? true : !(value.q1u_1 === 3)) {
+      tmp1_output.pn(tmp0_desc, 5, value.q1u_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_7).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_6xgepf_k$(encoder, value instanceof ArrowItem ? value : THROW_CCE());
+  protoOf($serializer_7).cj = function (encoder, value) {
+    return this.k1u(encoder, value instanceof ArrowItem ? value : THROW_CCE());
   };
-  protoOf($serializer_7).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_7).dj = function (decoder) {
+    var tmp0_desc = this.j1u_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -3259,62 +2847,62 @@
     var tmp7_local3 = 0.0;
     var tmp8_local4 = null;
     var tmp9_local5 = 0;
-    var tmp10_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp10_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp10_input = decoder.gm(tmp0_desc);
+    if (tmp10_input.wm()) {
+      tmp4_local0 = tmp10_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp10_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp10_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp10_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp10_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp10_input.qm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
-      tmp9_local5 = tmp10_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+      tmp9_local5 = tmp10_input.lm(tmp0_desc, 5);
       tmp3_bitMask0 = tmp3_bitMask0 | 32;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp10_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp10_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp10_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp10_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp10_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp10_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp10_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp10_input.decodeStringElement_3oenpg_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp10_input.qm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           case 5:
-            tmp9_local5 = tmp10_input.decodeIntElement_941u6a_k$(tmp0_desc, 5);
+            tmp9_local5 = tmp10_input.lm(tmp0_desc, 5);
             tmp3_bitMask0 = tmp3_bitMask0 | 32;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp10_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp10_input.hm(tmp0_desc);
     return ArrowItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, null);
   };
-  protoOf($serializer_7).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_7).bj = function () {
+    return this.j1u_1;
   };
-  protoOf($serializer_7).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_7).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -3328,154 +2916,117 @@
   }
   function ArrowItem_init_$Init$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen0))) {
-      throwMissingFieldException(seen0, 31, $serializer_getInstance_7().descriptor_1);
+      throwMissingFieldException(seen0, 31, $serializer_getInstance_7().j1u_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.startX_1 = startX;
-    $this.startY_1 = startY;
-    $this.endX_1 = endX;
-    $this.endY_1 = endY;
-    $this.color_1 = color;
+    $this.l1u_1 = startX;
+    $this.m1u_1 = startY;
+    $this.n1u_1 = endX;
+    $this.o1u_1 = endY;
+    $this.p1u_1 = color;
     if (0 === (seen0 & 32))
-      $this.lineWidth_1 = 3;
+      $this.q1u_1 = 3;
     else
-      $this.lineWidth_1 = lineWidth;
+      $this.q1u_1 = lineWidth;
     return $this;
   }
   function ArrowItem_init_$Create$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker) {
     return ArrowItem_init_$Init$(seen0, startX, startY, endX, endY, color, lineWidth, serializationConstructorMarker, objectCreate(protoOf(ArrowItem)));
   }
   function ArrowItem(startX, startY, endX, endY, color, lineWidth) {
-    Companion_getInstance_9();
     lineWidth = lineWidth === VOID ? 3 : lineWidth;
     Item.call(this);
-    this.startX_1 = startX;
-    this.startY_1 = startY;
-    this.endX_1 = endX;
-    this.endY_1 = endY;
-    this.color_1 = color;
-    this.lineWidth_1 = lineWidth;
+    this.l1u_1 = startX;
+    this.m1u_1 = startY;
+    this.n1u_1 = endX;
+    this.o1u_1 = endY;
+    this.p1u_1 = color;
+    this.q1u_1 = lineWidth;
   }
-  protoOf(ArrowItem).set_startX_tweqcj_k$ = function (_set____db54di) {
-    this.startX_1 = _set____db54di;
-  };
-  protoOf(ArrowItem).get_startX_jnf4u7_k$ = function () {
-    return this.startX_1;
-  };
-  protoOf(ArrowItem).set_startY_y6xmda_k$ = function (_set____db54di) {
-    this.startY_1 = _set____db54di;
-  };
-  protoOf(ArrowItem).get_startY_jnf4u8_k$ = function () {
-    return this.startY_1;
-  };
-  protoOf(ArrowItem).set_endX_mh4xwk_k$ = function (_set____db54di) {
-    this.endX_1 = _set____db54di;
-  };
-  protoOf(ArrowItem).get_endX_wolh5y_k$ = function () {
-    return this.endX_1;
-  };
-  protoOf(ArrowItem).set_endY_fjd8n9_k$ = function (_set____db54di) {
-    this.endY_1 = _set____db54di;
-  };
-  protoOf(ArrowItem).get_endY_wolh5z_k$ = function () {
-    return this.endY_1;
-  };
-  protoOf(ArrowItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(ArrowItem).get_lineWidth_lbeliv_k$ = function () {
-    return this.lineWidth_1;
-  };
-  protoOf(ArrowItem).draw_rpid3c_k$ = function (ctx) {
+  protoOf(ArrowItem).k1o = function (ctx) {
     // Inline function 'kotlin.math.max' call
-    var b = this.lineWidth_1 * 4.0;
+    var b = this.q1u_1 * 4.0;
     var headLength = Math.max(16.0, b);
-    var tmp2 = this.endY_1 - this.startY_1;
+    var tmp2 = this.o1u_1 - this.m1u_1;
     // Inline function 'kotlin.math.atan2' call
-    var x = this.endX_1 - this.startX_1;
+    var x = this.n1u_1 - this.l1u_1;
     var angle = Math.atan2(tmp2, x);
     var spread = 3.141592653589793 / 6;
-    ctx.strokeStyle = this.color_1;
-    ctx.lineWidth = this.lineWidth_1;
+    ctx.strokeStyle = this.p1u_1;
+    ctx.lineWidth = this.q1u_1;
     roundStroke(ctx);
     ctx.beginPath();
-    ctx.moveTo(this.startX_1, this.startY_1);
-    ctx.lineTo(this.endX_1, this.endY_1);
-    var tmp = this.endX_1;
+    ctx.moveTo(this.l1u_1, this.m1u_1);
+    ctx.lineTo(this.n1u_1, this.o1u_1);
+    var tmp = this.n1u_1;
     // Inline function 'kotlin.math.cos' call
     var x_0 = angle - spread;
     var tmp_0 = tmp - headLength * Math.cos(x_0);
-    var tmp_1 = this.endY_1;
+    var tmp_1 = this.o1u_1;
     // Inline function 'kotlin.math.sin' call
     var x_1 = angle - spread;
     var tmp$ret$3 = Math.sin(x_1);
     ctx.moveTo(tmp_0, tmp_1 - headLength * tmp$ret$3);
-    ctx.lineTo(this.endX_1, this.endY_1);
-    var tmp_2 = this.endX_1;
+    ctx.lineTo(this.n1u_1, this.o1u_1);
+    var tmp_2 = this.n1u_1;
     // Inline function 'kotlin.math.cos' call
     var x_2 = angle + spread;
     var tmp_3 = tmp_2 - headLength * Math.cos(x_2);
-    var tmp_4 = this.endY_1;
+    var tmp_4 = this.o1u_1;
     // Inline function 'kotlin.math.sin' call
     var x_3 = angle + spread;
     var tmp$ret$5 = Math.sin(x_3);
     ctx.lineTo(tmp_3, tmp_4 - headLength * tmp$ret$5);
     ctx.stroke();
   };
-  protoOf(ArrowItem).hitTest_1gxtur_k$ = function (p) {
-    return distanceToSegment(p, new Point(this.startX_1, this.startY_1), new Point(this.endX_1, this.endY_1)) <= hitRadius(this.lineWidth_1);
+  protoOf(ArrowItem).k1p = function (p) {
+    return distanceToSegment(p, new Point(this.l1u_1, this.m1u_1), new Point(this.n1u_1, this.o1u_1)) <= hitRadius(this.q1u_1);
   };
-  protoOf(ArrowItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.startX_1 = this.startX_1 + dx;
-    this.startY_1 = this.startY_1 + dy;
-    this.endX_1 = this.endX_1 + dx;
-    this.endY_1 = this.endY_1 + dy;
+  protoOf(ArrowItem).s1q = function (dx, dy) {
+    this.l1u_1 = this.l1u_1 + dx;
+    this.m1u_1 = this.m1u_1 + dy;
+    this.n1u_1 = this.n1u_1 + dx;
+    this.o1u_1 = this.o1u_1 + dy;
   };
   function fontSpec($this) {
-    return '' + $this.fontSize_1 + 'px sans-serif';
+    return '' + $this.k1r_1 + 'px sans-serif';
   }
   function lines($this) {
-    return split($this.text_1, ['\n']);
+    return split($this.j1r_1, ['\n']);
   }
   function Companion_9() {
-    Companion_instance_9 = this;
   }
-  protoOf(Companion_9).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_8();
-  };
-  var Companion_instance_9;
-  function Companion_getInstance_10() {
-    if (Companion_instance_9 == null)
-      new Companion_9();
-    return Companion_instance_9;
+  var Companion_instance_10;
+  function Companion_getInstance_9() {
+    return Companion_instance_10;
   }
   function $serializer_8() {
     $serializer_instance_8 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('text', this, 5);
-    tmp0_serialDesc.addElement_5pzumi_k$('x', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('y', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('text', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('fontSize', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('x', false);
+    tmp0_serialDesc.nt('y', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('text', false);
+    tmp0_serialDesc.nt('fontSize', true);
+    this.r1u_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_8).serialize_dwuzj_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 0, value.x_1);
-    tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 1, value.y_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 2, value.color_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 3, value.text_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 4) ? true : !(value.fontSize_1 === 20)) {
-      tmp1_output.encodeIntElement_krhhce_k$(tmp0_desc, 4, value.fontSize_1);
+  protoOf($serializer_8).s1u = function (encoder, value) {
+    var tmp0_desc = this.r1u_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    tmp1_output.sn(tmp0_desc, 0, value.g1r_1);
+    tmp1_output.sn(tmp0_desc, 1, value.h1r_1);
+    tmp1_output.un(tmp0_desc, 2, value.i1r_1);
+    tmp1_output.un(tmp0_desc, 3, value.j1r_1);
+    if (tmp1_output.co(tmp0_desc, 4) ? true : !(value.k1r_1 === 20)) {
+      tmp1_output.pn(tmp0_desc, 4, value.k1r_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_8).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_dwuzj_k$(encoder, value instanceof TextItem ? value : THROW_CCE());
+  protoOf($serializer_8).cj = function (encoder, value) {
+    return this.s1u(encoder, value instanceof TextItem ? value : THROW_CCE());
   };
-  protoOf($serializer_8).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_8).dj = function (decoder) {
+    var tmp0_desc = this.r1u_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -3484,56 +3035,56 @@
     var tmp6_local2 = null;
     var tmp7_local3 = null;
     var tmp8_local4 = 0;
-    var tmp9_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    if (tmp9_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+    var tmp9_input = decoder.gm(tmp0_desc);
+    if (tmp9_input.wm()) {
+      tmp4_local0 = tmp9_input.om(tmp0_desc, 0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp9_input.om(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp9_input.qm(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp9_input.qm(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
-      tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
+      tmp8_local4 = tmp9_input.lm(tmp0_desc, 4);
       tmp3_bitMask0 = tmp3_bitMask0 | 16;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp9_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp9_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 0);
+            tmp4_local0 = tmp9_input.om(tmp0_desc, 0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp9_input.decodeDoubleElement_isei84_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp9_input.om(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp9_input.qm(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp9_input.decodeStringElement_3oenpg_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp9_input.qm(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           case 4:
-            tmp8_local4 = tmp9_input.decodeIntElement_941u6a_k$(tmp0_desc, 4);
+            tmp8_local4 = tmp9_input.lm(tmp0_desc, 4);
             tmp3_bitMask0 = tmp3_bitMask0 | 16;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp9_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp9_input.hm(tmp0_desc);
     return TextItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
-  protoOf($serializer_8).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_8).bj = function () {
+    return this.r1u_1;
   };
-  protoOf($serializer_8).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_8).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
@@ -3547,97 +3098,66 @@
   }
   function TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, $this) {
     if (!(15 === (15 & seen0))) {
-      throwMissingFieldException(seen0, 15, $serializer_getInstance_8().descriptor_1);
+      throwMissingFieldException(seen0, 15, $serializer_getInstance_8().r1u_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.x_1 = x;
-    $this.y_1 = y;
-    $this.color_1 = color;
-    $this.text_1 = text;
+    $this.g1r_1 = x;
+    $this.h1r_1 = y;
+    $this.i1r_1 = color;
+    $this.j1r_1 = text;
     if (0 === (seen0 & 16))
-      $this.fontSize_1 = 20;
+      $this.k1r_1 = 20;
     else
-      $this.fontSize_1 = fontSize;
+      $this.k1r_1 = fontSize;
     return $this;
   }
   function TextItem_init_$Create$(seen0, x, y, color, text, fontSize, serializationConstructorMarker) {
     return TextItem_init_$Init$(seen0, x, y, color, text, fontSize, serializationConstructorMarker, objectCreate(protoOf(TextItem)));
   }
   function TextItem(x, y, color, text, fontSize) {
-    Companion_getInstance_10();
     fontSize = fontSize === VOID ? 20 : fontSize;
     Item.call(this);
-    this.x_1 = x;
-    this.y_1 = y;
-    this.color_1 = color;
-    this.text_1 = text;
-    this.fontSize_1 = fontSize;
+    this.g1r_1 = x;
+    this.h1r_1 = y;
+    this.i1r_1 = color;
+    this.j1r_1 = text;
+    this.k1r_1 = fontSize;
   }
-  protoOf(TextItem).set_x_scd9vp_k$ = function (_set____db54di) {
-    this.x_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_x_1mhr67_k$ = function () {
-    return this.x_1;
-  };
-  protoOf(TextItem).set_y_lelkme_k$ = function (_set____db54di) {
-    this.y_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_y_1mhr68_k$ = function () {
-    return this.y_1;
-  };
-  protoOf(TextItem).set_color_ayzg4c_k$ = function (_set____db54di) {
-    this.color_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(TextItem).set_text_oy06f4_k$ = function (_set____db54di) {
-    this.text_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_text_wouvsm_k$ = function () {
-    return this.text_1;
-  };
-  protoOf(TextItem).set_fontSize_6szsfv_k$ = function (_set____db54di) {
-    this.fontSize_1 = _set____db54di;
-  };
-  protoOf(TextItem).get_fontSize_pr9n47_k$ = function () {
-    return this.fontSize_1;
-  };
-  protoOf(TextItem).draw_rpid3c_k$ = function (ctx) {
+  protoOf(TextItem).k1o = function (ctx) {
     // Inline function 'kotlin.js.asDynamic' call
     ctx.textBaseline = 'top';
     ctx.font = fontSpec(this);
-    ctx.fillStyle = this.color_1;
-    var step = lineHeight(this.fontSize_1);
+    ctx.fillStyle = this.i1r_1;
+    var step = lineHeight(this.k1r_1);
     // Inline function 'kotlin.collections.forEachIndexed' call
     var index = 0;
-    var _iterator__ex2g4s = lines(this).iterator_jk1svi_k$();
-    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-      var item = _iterator__ex2g4s.next_20eer_k$();
+    var _iterator__ex2g4s = lines(this).i();
+    while (_iterator__ex2g4s.j()) {
+      var item = _iterator__ex2g4s.k();
       var _unary__edvuaz = index;
       index = _unary__edvuaz + 1 | 0;
       // Inline function 'stickynode.model.TextItem.draw.<anonymous>' call
       var index_0 = checkIndexOverflow(_unary__edvuaz);
-      ctx.fillText(item, this.x_1, this.y_1 + imul(index_0, step));
+      ctx.fillText(item, this.g1r_1, this.h1r_1 + imul(index_0, step));
     }
   };
-  protoOf(TextItem).hitTest_1gxtur_k$ = function (p) {
+  protoOf(TextItem).k1p = function (p) {
     // Inline function 'kotlin.text.isEmpty' call
-    var this_0 = this.text_1;
+    var this_0 = this.j1r_1;
     if (charSequenceLength(this_0) === 0)
       return false;
     get_measureContext().font = fontSpec(this);
     var lines_0 = lines(this);
     // Inline function 'kotlin.collections.maxOf' call
-    var iterator = lines_0.iterator_jk1svi_k$();
-    if (!iterator.hasNext_bitz1p_k$())
+    var iterator = lines_0.i();
+    if (!iterator.j())
       throw NoSuchElementException_init_$Create$();
     // Inline function 'stickynode.model.TextItem.hitTest.<anonymous>' call
-    var it = iterator.next_20eer_k$();
+    var it = iterator.k();
     var maxValue = get_measureContext().measureText(it).width;
-    while (iterator.hasNext_bitz1p_k$()) {
+    while (iterator.j()) {
       // Inline function 'stickynode.model.TextItem.hitTest.<anonymous>' call
-      var it_0 = iterator.next_20eer_k$();
+      var it_0 = iterator.k();
       var v = get_measureContext().measureText(it_0).width;
       // Inline function 'kotlin.comparisons.maxOf' call
       var a = maxValue;
@@ -3646,73 +3166,67 @@
     // Inline function 'kotlin.math.max' call
     var b = maxValue;
     var width = Math.max(1.0, b);
-    var height = imul(lines_0.get_size_woubt6_k$(), lineHeight(this.fontSize_1));
+    var height = imul(lines_0.l(), lineHeight(this.k1r_1));
     var tmp;
-    var containsLower = this.x_1;
-    var containsUpper = this.x_1 + width;
-    var containsArg = p.get_x_1mhr67_k$();
+    var containsLower = this.g1r_1;
+    var containsUpper = this.g1r_1 + width;
+    var containsArg = p.z1p_1;
     if (containsLower <= containsArg ? containsArg <= containsUpper : false) {
-      var containsLower_0 = this.y_1;
-      var containsUpper_0 = this.y_1 + height;
-      var containsArg_0 = p.get_y_1mhr68_k$();
+      var containsLower_0 = this.h1r_1;
+      var containsUpper_0 = this.h1r_1 + height;
+      var containsArg_0 = p.a1q_1;
       tmp = containsLower_0 <= containsArg_0 ? containsArg_0 <= containsUpper_0 : false;
     } else {
       tmp = false;
     }
     return tmp;
   };
-  protoOf(TextItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.x_1 = this.x_1 + dx;
-    this.y_1 = this.y_1 + dy;
+  protoOf(TextItem).s1q = function (dx, dy) {
+    this.g1r_1 = this.g1r_1 + dx;
+    this.h1r_1 = this.h1r_1 + dy;
   };
-  function _get_$childSerializers__r2zwns_2($this) {
-    return $this.$childSerializers_1;
-  }
   function Companion_10() {
-    Companion_instance_10 = this;
+    Companion_instance_11 = this;
     var tmp = this;
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    tmp.$childSerializers_1 = [new ArrayListSerializer(IntSerializer_getInstance()), null, null, null];
+    tmp.t1u_1 = [new ArrayListSerializer(IntSerializer_getInstance()), null, null, null];
   }
-  protoOf(Companion_10).serializer_9w0wvi_k$ = function () {
-    return $serializer_getInstance_9();
-  };
-  var Companion_instance_10;
-  function Companion_getInstance_11() {
-    if (Companion_instance_10 == null)
+  var Companion_instance_11;
+  function Companion_getInstance_10() {
+    if (Companion_instance_11 == null)
       new Companion_10();
-    return Companion_instance_10;
+    return Companion_instance_11;
   }
   function $serializer_9() {
     $serializer_instance_9 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('regionFill', this, 4);
-    tmp0_serialDesc.addElement_5pzumi_k$('runs', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('color', false);
-    tmp0_serialDesc.addElement_5pzumi_k$('offsetX', true);
-    tmp0_serialDesc.addElement_5pzumi_k$('offsetY', true);
-    this.descriptor_1 = tmp0_serialDesc;
+    tmp0_serialDesc.nt('runs', false);
+    tmp0_serialDesc.nt('color', false);
+    tmp0_serialDesc.nt('offsetX', true);
+    tmp0_serialDesc.nt('offsetY', true);
+    this.u1u_1 = tmp0_serialDesc;
   }
-  protoOf($serializer_9).serialize_j32akr_k$ = function (encoder, value) {
-    var tmp0_desc = this.descriptor_1;
-    var tmp1_output = encoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp2_cached = Companion_getInstance_11().$childSerializers_1;
-    tmp1_output.encodeSerializableElement_isqxcl_k$(tmp0_desc, 0, tmp2_cached[0], value.runs_1);
-    tmp1_output.encodeStringElement_1n5wu2_k$(tmp0_desc, 1, value.color_1);
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 2) ? true : !equals(value.offsetX_1, 0.0)) {
-      tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 2, value.offsetX_1);
+  protoOf($serializer_9).v1u = function (encoder, value) {
+    var tmp0_desc = this.u1u_1;
+    var tmp1_output = encoder.gm(tmp0_desc);
+    var tmp2_cached = Companion_getInstance_10().t1u_1;
+    tmp1_output.wn(tmp0_desc, 0, tmp2_cached[0], value.s1r_1);
+    tmp1_output.un(tmp0_desc, 1, value.t1r_1);
+    if (tmp1_output.co(tmp0_desc, 2) ? true : !equals(value.u1r_1, 0.0)) {
+      tmp1_output.sn(tmp0_desc, 2, value.u1r_1);
     }
-    if (tmp1_output.shouldEncodeElementDefault_x8eyid_k$(tmp0_desc, 3) ? true : !equals(value.offsetY_1, 0.0)) {
-      tmp1_output.encodeDoubleElement_a6rqhe_k$(tmp0_desc, 3, value.offsetY_1);
+    if (tmp1_output.co(tmp0_desc, 3) ? true : !equals(value.v1r_1, 0.0)) {
+      tmp1_output.sn(tmp0_desc, 3, value.v1r_1);
     }
-    tmp1_output.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp1_output.hm(tmp0_desc);
   };
-  protoOf($serializer_9).serialize_5ase3y_k$ = function (encoder, value) {
-    return this.serialize_j32akr_k$(encoder, value instanceof RegionFillItem ? value : THROW_CCE());
+  protoOf($serializer_9).cj = function (encoder, value) {
+    return this.v1u(encoder, value instanceof RegionFillItem ? value : THROW_CCE());
   };
-  protoOf($serializer_9).deserialize_sy6x50_k$ = function (decoder) {
-    var tmp0_desc = this.descriptor_1;
+  protoOf($serializer_9).dj = function (decoder) {
+    var tmp0_desc = this.u1u_1;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -3720,55 +3234,55 @@
     var tmp5_local1 = null;
     var tmp6_local2 = 0.0;
     var tmp7_local3 = 0.0;
-    var tmp8_input = decoder.beginStructure_yljocp_k$(tmp0_desc);
-    var tmp9_cached = Companion_getInstance_11().$childSerializers_1;
-    if (tmp8_input.decodeSequentially_xlblqy_k$()) {
-      tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
+    var tmp8_input = decoder.gm(tmp0_desc);
+    var tmp9_cached = Companion_getInstance_10().t1u_1;
+    if (tmp8_input.wm()) {
+      tmp4_local0 = tmp8_input.sm(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
       tmp3_bitMask0 = tmp3_bitMask0 | 1;
-      tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+      tmp5_local1 = tmp8_input.qm(tmp0_desc, 1);
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
-      tmp6_local2 = tmp8_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+      tmp6_local2 = tmp8_input.om(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp8_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp8_input.om(tmp0_desc, 3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
     } else
       while (tmp1_flag) {
-        tmp2_index = tmp8_input.decodeElementIndex_bstkhp_k$(tmp0_desc);
+        tmp2_index = tmp8_input.xm(tmp0_desc);
         switch (tmp2_index) {
           case -1:
             tmp1_flag = false;
             break;
           case 0:
-            tmp4_local0 = tmp8_input.decodeSerializableElement_uahnnv_k$(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
+            tmp4_local0 = tmp8_input.sm(tmp0_desc, 0, tmp9_cached[0], tmp4_local0);
             tmp3_bitMask0 = tmp3_bitMask0 | 1;
             break;
           case 1:
-            tmp5_local1 = tmp8_input.decodeStringElement_3oenpg_k$(tmp0_desc, 1);
+            tmp5_local1 = tmp8_input.qm(tmp0_desc, 1);
             tmp3_bitMask0 = tmp3_bitMask0 | 2;
             break;
           case 2:
-            tmp6_local2 = tmp8_input.decodeDoubleElement_isei84_k$(tmp0_desc, 2);
+            tmp6_local2 = tmp8_input.om(tmp0_desc, 2);
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp8_input.decodeDoubleElement_isei84_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp8_input.om(tmp0_desc, 3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           default:
             throw UnknownFieldException_init_$Create$(tmp2_index);
         }
       }
-    tmp8_input.endStructure_1xqz0n_k$(tmp0_desc);
+    tmp8_input.hm(tmp0_desc);
     return RegionFillItem_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
-  protoOf($serializer_9).get_descriptor_wjt6a0_k$ = function () {
-    return this.descriptor_1;
+  protoOf($serializer_9).bj = function () {
+    return this.u1u_1;
   };
-  protoOf($serializer_9).childSerializers_5ghqw5_k$ = function () {
+  protoOf($serializer_9).pt = function () {
     // Inline function 'kotlin.arrayOf' call
     // Inline function 'kotlin.js.unsafeCast' call
     // Inline function 'kotlin.js.asDynamic' call
-    return [Companion_getInstance_11().$childSerializers_1[0], StringSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance()];
+    return [Companion_getInstance_10().t1u_1[0], StringSerializer_getInstance(), DoubleSerializer_getInstance(), DoubleSerializer_getInstance()];
   };
   var $serializer_instance_9;
   function $serializer_getInstance_9() {
@@ -3778,83 +3292,65 @@
   }
   function RegionFillItem_init_$Init$(seen0, runs, color, offsetX, offsetY, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen0))) {
-      throwMissingFieldException(seen0, 3, $serializer_getInstance_9().descriptor_1);
+      throwMissingFieldException(seen0, 3, $serializer_getInstance_9().u1u_1);
     }
     Item_init_$Init$(seen0, serializationConstructorMarker, $this);
-    $this.runs_1 = runs;
-    $this.color_1 = color;
+    $this.s1r_1 = runs;
+    $this.t1r_1 = color;
     if (0 === (seen0 & 4))
-      $this.offsetX_1 = 0.0;
+      $this.u1r_1 = 0.0;
     else
-      $this.offsetX_1 = offsetX;
+      $this.u1r_1 = offsetX;
     if (0 === (seen0 & 8))
-      $this.offsetY_1 = 0.0;
+      $this.v1r_1 = 0.0;
     else
-      $this.offsetY_1 = offsetY;
+      $this.v1r_1 = offsetY;
     return $this;
   }
   function RegionFillItem_init_$Create$(seen0, runs, color, offsetX, offsetY, serializationConstructorMarker) {
     return RegionFillItem_init_$Init$(seen0, runs, color, offsetX, offsetY, serializationConstructorMarker, objectCreate(protoOf(RegionFillItem)));
   }
   function RegionFillItem(runs, color, offsetX, offsetY) {
-    Companion_getInstance_11();
+    Companion_getInstance_10();
     offsetX = offsetX === VOID ? 0.0 : offsetX;
     offsetY = offsetY === VOID ? 0.0 : offsetY;
     Item.call(this);
-    this.runs_1 = runs;
-    this.color_1 = color;
-    this.offsetX_1 = offsetX;
-    this.offsetY_1 = offsetY;
+    this.s1r_1 = runs;
+    this.t1r_1 = color;
+    this.u1r_1 = offsetX;
+    this.v1r_1 = offsetY;
   }
-  protoOf(RegionFillItem).get_runs_wotxg1_k$ = function () {
-    return this.runs_1;
-  };
-  protoOf(RegionFillItem).get_color_ipu8u2_k$ = function () {
-    return this.color_1;
-  };
-  protoOf(RegionFillItem).set_offsetX_z3ocr6_k$ = function (_set____db54di) {
-    this.offsetX_1 = _set____db54di;
-  };
-  protoOf(RegionFillItem).get_offsetX_ocbsn8_k$ = function () {
-    return this.offsetX_1;
-  };
-  protoOf(RegionFillItem).set_offsetY_s5wnhv_k$ = function (_set____db54di) {
-    this.offsetY_1 = _set____db54di;
-  };
-  protoOf(RegionFillItem).get_offsetY_ocbsn7_k$ = function () {
-    return this.offsetY_1;
-  };
-  protoOf(RegionFillItem).draw_rpid3c_k$ = function (ctx) {
-    ctx.fillStyle = this.color_1;
+  protoOf(RegionFillItem).k1o = function (ctx) {
+    ctx.fillStyle = this.t1r_1;
     var i = 0;
-    while (i < this.runs_1.get_size_woubt6_k$()) {
-      var y = this.runs_1.get_c1px32_k$(i);
-      var x0 = this.runs_1.get_c1px32_k$(i + 1 | 0);
-      var x1 = this.runs_1.get_c1px32_k$(i + 2 | 0);
-      ctx.fillRect(x0 + this.offsetX_1 - 1, y + this.offsetY_1 - 1, (x1 - x0 | 0) + 2 | 0, 3.0);
+    while (i < this.s1r_1.l()) {
+      var y = this.s1r_1.n(i);
+      var x0 = this.s1r_1.n(i + 1 | 0);
+      var x1 = this.s1r_1.n(i + 2 | 0);
+      ctx.fillRect(x0 + this.u1r_1 - 1, y + this.v1r_1 - 1, (x1 - x0 | 0) + 2 | 0, 3.0);
       i = i + 3 | 0;
     }
   };
-  protoOf(RegionFillItem).hitTest_1gxtur_k$ = function (p) {
+  protoOf(RegionFillItem).k1p = function (p) {
     // Inline function 'kotlin.math.floor' call
-    var x = p.get_y_1mhr68_k$() - this.offsetY_1;
+    var x = p.a1q_1 - this.v1r_1;
     var tmp$ret$0 = Math.floor(x);
     var y = numberToInt(tmp$ret$0);
     // Inline function 'kotlin.math.floor' call
-    var x_0 = p.get_x_1mhr67_k$() - this.offsetX_1;
+    var x_0 = p.z1p_1 - this.u1r_1;
     var tmp$ret$1 = Math.floor(x_0);
     var x_1 = numberToInt(tmp$ret$1);
     var i = 0;
-    while (i < this.runs_1.get_size_woubt6_k$()) {
-      if (this.runs_1.get_c1px32_k$(i) === y && x_1 >= this.runs_1.get_c1px32_k$(i + 1 | 0) && x_1 < this.runs_1.get_c1px32_k$(i + 2 | 0))
+    while (i < this.s1r_1.l()) {
+      if (this.s1r_1.n(i) === y && x_1 >= this.s1r_1.n(i + 1 | 0) && x_1 < this.s1r_1.n(i + 2 | 0))
         return true;
       i = i + 3 | 0;
     }
     return false;
   };
-  protoOf(RegionFillItem).moveBy_hp42rs_k$ = function (dx, dy) {
-    this.offsetX_1 = this.offsetX_1 + dx;
-    this.offsetY_1 = this.offsetY_1 + dy;
+  protoOf(RegionFillItem).s1q = function (dx, dy) {
+    this.u1r_1 = this.u1r_1 + dx;
+    this.v1r_1 = this.v1r_1 + dy;
   };
   function measureContext$delegate$lambda() {
     _init_properties_Items_kt__3bnoaa();
@@ -3877,15 +3373,15 @@
   function saveToFile(content, suggestedName, $completion) {
     suggestedName = suggestedName === VOID ? 'drawing.sticky.json' : suggestedName;
     var tmp = new $saveToFileCOROUTINE$0(content, suggestedName, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   }
   function pickFileText($completion) {
     var tmp = new $pickFileTextCOROUTINE$1($completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   }
   function pickImageFile($completion) {
     return pickFile('image/png,image/jpeg,image/gif,image/webp', $completion);
@@ -3901,13 +3397,13 @@
     input.addEventListener('change', pickFile$lambda(safe, input));
     input.addEventListener('cancel', pickFile$lambda_0(safe));
     input.click();
-    return safe.getOrThrow_23gqzp_k$();
+    return safe.u8();
   }
   function saveToFile$lambda($url) {
     return function () {
       // Inline function 'kotlin.js.asDynamic' call
       window.URL.revokeObjectURL($url);
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function pickFile$lambda($continuation, $input) {
@@ -3915,12 +3411,11 @@
       var tmp0 = $continuation;
       var tmp0_safe_receiver = $input.files;
       // Inline function 'kotlin.coroutines.resume' call
-      var value = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.item(0);
       // Inline function 'kotlin.Companion.success' call
-      Companion_getInstance();
+      var value = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.item(0);
       var tmp$ret$0 = _Result___init__impl__xyqfz8(value);
-      tmp0.resumeWith_dtxwbr_k$(tmp$ret$0);
-      return Unit_getInstance();
+      tmp0.n8(tmp$ret$0);
+      return Unit_instance;
     };
   }
   function pickFile$lambda_0($continuation) {
@@ -3928,73 +3423,72 @@
       // Inline function 'kotlin.coroutines.resume' call
       var this_0 = $continuation;
       // Inline function 'kotlin.Companion.success' call
-      Companion_getInstance();
       var tmp$ret$0 = _Result___init__impl__xyqfz8(null);
-      this_0.resumeWith_dtxwbr_k$(tmp$ret$0);
-      return Unit_getInstance();
+      this_0.n8(tmp$ret$0);
+      return Unit_instance;
     };
   }
   function $saveToFileCOROUTINE$0(content, suggestedName, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
-    this.content_1 = content;
-    this.suggestedName_1 = suggestedName;
+    this.e1v_1 = content;
+    this.f1v_1 = suggestedName;
   }
-  protoOf($saveToFileCOROUTINE$0).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($saveToFileCOROUTINE$0).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(7);
+            this.d8_1 = 7;
             if (window.showSaveFilePicker != undefined) {
-              this.set_exceptionState_fex74n_k$(6);
-              this.accept1__1 = {};
+              this.d8_1 = 6;
+              this.h1v_1 = {};
               var this_0 = ['.json'];
-              this.accept1__1['application/json'] = this_0;
-              this.type2__1 = {};
-              this.type2__1.description = 'Sticky Node drawing';
-              this.type2__1.accept = this.accept1__1;
-              this.options3__1 = {};
-              this.options3__1.suggestedName = this.suggestedName_1;
-              var this_1 = [this.type2__1];
-              this.options3__1.types = this_1;
-              this.set_state_rjd8d0_k$(2);
-              var this_2 = window.showSaveFilePicker(this.options3__1);
+              this.h1v_1['application/json'] = this_0;
+              this.i1v_1 = {};
+              this.i1v_1.description = 'Sticky Node drawing';
+              this.i1v_1.accept = this.h1v_1;
+              this.j1v_1 = {};
+              this.j1v_1.suggestedName = this.f1v_1;
+              var this_1 = [this.i1v_1];
+              this.j1v_1.types = this_1;
+              this.c8_1 = 2;
+              var this_2 = window.showSaveFilePicker(this.j1v_1);
               suspendResult = await_0(this_2, this);
               if (suspendResult === get_COROUTINE_SUSPENDED()) {
                 return suspendResult;
               }
               continue $sm;
             } else {
-              this.set_state_rjd8d0_k$(1);
+              this.c8_1 = 1;
               continue $sm;
             }
 
           case 1:
             var tmp_0 = this;
-            var this_3 = [this.content_1];
+            var this_3 = [this.e1v_1];
             var type = 'application/json';
             var o = {};
             o['type'] = type;
-            tmp_0.blob4__1 = new Blob(this_3, o);
+            tmp_0.k1v_1 = new Blob(this_3, o);
             var tmp_1 = this;
-            tmp_1.url5__1 = window.URL.createObjectURL(this.blob4__1);
+            tmp_1.l1v_1 = window.URL.createObjectURL(this.k1v_1);
             var tmp_2 = this;
             var tmp_3 = document.createElement('a');
-            tmp_2.link6__1 = tmp_3 instanceof HTMLAnchorElement ? tmp_3 : THROW_CCE();
-            this.link6__1.href = this.url5__1;
-            this.link6__1.download = this.suggestedName_1;
-            ensureNotNull(document.body).appendChild(this.link6__1);
-            this.link6__1.click();
-            this.link6__1.remove();
+            tmp_2.m1v_1 = tmp_3 instanceof HTMLAnchorElement ? tmp_3 : THROW_CCE();
+            this.m1v_1.href = this.l1v_1;
+            this.m1v_1.download = this.f1v_1;
+            ensureNotNull(document.body).appendChild(this.m1v_1);
+            this.m1v_1.click();
+            this.m1v_1.remove();
             var tmp_4 = window;
-            tmp_4.setTimeout(saveToFile$lambda(this.url5__1), 1000);
-            return Unit_getInstance();
+            tmp_4.setTimeout(saveToFile$lambda(this.l1v_1), 1000);
+            return Unit_instance;
           case 2:
-            this.handle7__1 = suspendResult;
-            this.set_state_rjd8d0_k$(3);
-            var this_4 = this.handle7__1.createWritable();
+            this.n1v_1 = suspendResult;
+            this.c8_1 = 3;
+            var this_4 = this.n1v_1.createWritable();
             suspendResult = await_0(this_4, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4002,9 +3496,9 @@
 
             continue $sm;
           case 3:
-            this.writable8__1 = suspendResult;
-            this.set_state_rjd8d0_k$(4);
-            var this_5 = this.writable8__1.write(this.content_1);
+            this.o1v_1 = suspendResult;
+            this.c8_1 = 4;
+            var this_5 = this.o1v_1.write(this.e1v_1);
             suspendResult = await_0(this_5, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4012,8 +3506,8 @@
 
             continue $sm;
           case 4:
-            this.set_state_rjd8d0_k$(5);
-            var this_6 = this.writable8__1.close();
+            this.c8_1 = 5;
+            var this_6 = this.o1v_1.close();
             suspendResult = await_0(this_6, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4021,38 +3515,38 @@
 
             continue $sm;
           case 5:
-            this.TRY_RESULT0__1 = suspendResult;
-            this.set_exceptionState_fex74n_k$(7);
-            this.set_state_rjd8d0_k$(8);
+            this.g1v_1 = suspendResult;
+            this.d8_1 = 7;
+            this.c8_1 = 8;
             continue $sm;
           case 6:
-            this.set_exceptionState_fex74n_k$(7);
-            var tmp_5 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 7;
+            var tmp_5 = this.f8_1;
             if (tmp_5 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               var tmp_6 = this;
               if (error.name != 'AbortError')
                 throw error;
-              tmp_6.TRY_RESULT0__1 = Unit_getInstance();
-              this.set_state_rjd8d0_k$(8);
+              tmp_6.g1v_1 = Unit_instance;
+              this.c8_1 = 8;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 7:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 8:
-            this.set_exceptionState_fex74n_k$(7);
-            return Unit_getInstance();
+            this.d8_1 = 7;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 7) {
+        if (this.d8_1 === 7) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
@@ -4060,15 +3554,15 @@
   function $pickFileTextCOROUTINE$1(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf($pickFileTextCOROUTINE$1).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($pickFileTextCOROUTINE$1).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(1);
+            this.d8_1 = 3;
+            this.c8_1 = 1;
             suspendResult = pickFile('.json,application/json', this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4076,18 +3570,18 @@
 
             continue $sm;
           case 1:
-            this.tmp0_elvis_lhs0__1 = suspendResult;
+            this.x1v_1 = suspendResult;
             var tmp_0 = this;
             var tmp_1;
-            if (this.tmp0_elvis_lhs0__1 == null) {
+            if (this.x1v_1 == null) {
               return null;
             } else {
-              tmp_1 = this.tmp0_elvis_lhs0__1;
+              tmp_1 = this.x1v_1;
             }
 
-            tmp_0.file1__1 = tmp_1;
-            this.set_state_rjd8d0_k$(2);
-            var this_0 = this.file1__1.text();
+            tmp_0.y1v_1 = tmp_1;
+            this.c8_1 = 2;
+            var this_0 = this.y1v_1.text();
             suspendResult = await_0(this_0, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4097,28 +3591,19 @@
           case 2:
             return suspendResult;
           case 3:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
+        if (this.d8_1 === 3) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  function _get_images__1m5xt9($this) {
-    return $this.images_1;
-  }
-  function _get_loading__5c531n($this) {
-    return $this.loading_1;
-  }
-  function _get_scope__bi2zur($this) {
-    return $this.scope_1;
-  }
   function decode($this, blob, $completion) {
     // Inline function 'kotlin.coroutines.suspendCoroutine.<anonymous>' call
     var safe = SafeContinuation_init_$Create$(intercepted($completion));
@@ -4131,46 +3616,46 @@
     img.addEventListener('load', ImageCache$decode$lambda(url, safe, img));
     img.addEventListener('error', ImageCache$decode$lambda_0(url, safe));
     img.src = url;
-    return safe.getOrThrow_23gqzp_k$();
+    return safe.u8();
   }
   function ImageCache$get$slambda($id, resultContinuation) {
-    this.$id_1 = $id;
+    this.h1w_1 = $id;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(ImageCache$get$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(ImageCache$get$slambda).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(ImageCache$get$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(ImageCache$get$slambda).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(ImageCache$get$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(ImageCache$get$slambda).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(4);
-            this.set_exceptionState_fex74n_k$(3);
+            this.d8_1 = 4;
+            this.d8_1 = 3;
             var tmp_0 = this;
-            tmp_0.tmp01__1 = ImageCache_getInstance().images_1;
+            tmp_0.k1w_1 = ImageCache_getInstance().f1o_1;
             var tmp_1 = this;
-            tmp_1.tmp12__1 = this.$id_1;
-            this.ARGUMENT3__1 = ImageCache_getInstance();
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = fetchImageBlob(this.$id_1, this);
+            tmp_1.l1w_1 = this.h1w_1;
+            this.m1w_1 = ImageCache_getInstance();
+            this.c8_1 = 1;
+            suspendResult = fetchImageBlob(this.h1w_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            this.ARGUMENT4__1 = suspendResult;
-            this.set_state_rjd8d0_k$(2);
-            suspendResult = decode(this.ARGUMENT3__1, this.ARGUMENT4__1, this);
+            this.n1w_1 = suspendResult;
+            this.c8_1 = 2;
+            suspendResult = decode(this.m1w_1, this.n1w_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4178,58 +3663,55 @@
             continue $sm;
           case 2:
             var tmp2 = suspendResult;
-            var this_0 = this.tmp01__1;
-            var key = this.tmp12__1;
-            this_0.put_4fpzoq_k$(key, tmp2);
+            var this_0 = this.k1w_1;
+            var key = this.l1w_1;
+            this_0.d2(key, tmp2);
             var tmp_2 = this;
-            var tmp0_safe_receiver = ImageCache_getInstance().onLoaded_1;
-            tmp_2.TRY_RESULT0__1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver();
-            this.set_exceptionState_fex74n_k$(4);
-            this.set_state_rjd8d0_k$(5);
+            var tmp0_safe_receiver = ImageCache_getInstance().i1o_1;
+            tmp_2.j1w_1 = tmp0_safe_receiver == null ? null : tmp0_safe_receiver();
+            this.d8_1 = 4;
+            this.c8_1 = 5;
             continue $sm;
           case 3:
-            this.set_exceptionState_fex74n_k$(4);
-            var tmp_3 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 4;
+            var tmp_3 = this.f8_1;
             if (tmp_3 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               var tmp_4 = this;
-              console.warn("Couldn't load image " + this.$id_1, error);
-              tmp_4.TRY_RESULT0__1 = Unit_getInstance();
-              this.set_state_rjd8d0_k$(5);
+              console.warn("Couldn't load image " + this.h1w_1, error);
+              tmp_4.j1w_1 = Unit_instance;
+              this.c8_1 = 5;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 4:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 5:
-            this.set_exceptionState_fex74n_k$(4);
-            return Unit_getInstance();
+            this.d8_1 = 4;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 4) {
+        if (this.d8_1 === 4) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(ImageCache$get$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new ImageCache$get$slambda(this.$id_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(ImageCache$get$slambda).p1w = function ($this$launch, completion) {
+    var i = new ImageCache$get$slambda(this.h1w_1, completion);
+    i.i1w_1 = $this$launch;
     return i;
-  };
-  protoOf(ImageCache$get$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function ImageCache$get$slambda_0($id, resultContinuation) {
     var i = new ImageCache$get$slambda($id, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -4240,12 +3722,11 @@
       window.URL.revokeObjectURL($url);
       var tmp1 = $c;
       // Inline function 'kotlin.coroutines.resume' call
-      var value = $img;
       // Inline function 'kotlin.Companion.success' call
-      Companion_getInstance();
+      var value = $img;
       var tmp$ret$1 = _Result___init__impl__xyqfz8(value);
-      tmp1.resumeWith_dtxwbr_k$(tmp$ret$1);
-      return Unit_getInstance();
+      tmp1.n8(tmp$ret$1);
+      return Unit_instance;
     };
   }
   function ImageCache$decode$lambda_0($url, $c) {
@@ -4254,30 +3735,29 @@
       window.URL.revokeObjectURL($url);
       var tmp1 = $c;
       // Inline function 'kotlin.coroutines.resumeWithException' call
-      var exception = IllegalStateException_init_$Create$('Not a readable image');
       // Inline function 'kotlin.Companion.failure' call
-      Companion_getInstance();
+      var exception = IllegalStateException_init_$Create$('Not a readable image');
       var tmp$ret$1 = _Result___init__impl__xyqfz8(createFailure(exception));
-      tmp1.resumeWith_dtxwbr_k$(tmp$ret$1);
-      return Unit_getInstance();
+      tmp1.n8(tmp$ret$1);
+      return Unit_instance;
     };
   }
   function $addCOROUTINE$2(_this__u8e3s4, id, file, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
-    this._this__u8e3s4__1 = _this__u8e3s4;
-    this.id_1 = id;
-    this.file_1 = file;
+    this.y1w_1 = _this__u8e3s4;
+    this.z1w_1 = id;
+    this.a1x_1 = file;
   }
-  protoOf($addCOROUTINE$2).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($addCOROUTINE$2).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = decode(this._this__u8e3s4__1, this.file_1, this);
+            this.d8_1 = 2;
+            this.c8_1 = 1;
+            suspendResult = decode(this.y1w_1, this.a1x_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4285,55 +3765,49 @@
             continue $sm;
           case 1:
             var this_0 = suspendResult;
-            var tmp0 = ImageCache_getInstance().images_1;
-            var key = this.id_1;
-            tmp0.put_4fpzoq_k$(key, this_0);
+            var tmp0 = ImageCache_getInstance().f1o_1;
+            var key = this.z1w_1;
+            tmp0.d2(key, this_0);
             return this_0;
           case 2:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 2) {
+        if (this.d8_1 === 2) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
   function ImageCache() {
     ImageCache_instance = this;
-    this.images_1 = HashMap_init_$Create$();
-    this.loading_1 = HashSet_init_$Create$();
-    this.scope_1 = MainScope();
-    this.onLoaded_1 = null;
+    this.f1o_1 = HashMap_init_$Create$();
+    this.g1o_1 = HashSet_init_$Create$();
+    this.h1o_1 = MainScope();
+    this.i1o_1 = null;
   }
-  protoOf(ImageCache).set_onLoaded_3u02fu_k$ = function (_set____db54di) {
-    this.onLoaded_1 = _set____db54di;
-  };
-  protoOf(ImageCache).get_onLoaded_aaf4hf_k$ = function () {
-    return this.onLoaded_1;
-  };
-  protoOf(ImageCache).get_6bo4tg_k$ = function (id) {
-    var tmp0_safe_receiver = this.images_1.get_wei43m_k$(id);
+  protoOf(ImageCache).s14 = function (id) {
+    var tmp0_safe_receiver = this.f1o_1.u1(id);
     if (tmp0_safe_receiver == null)
       null;
     else {
       // Inline function 'kotlin.let' call
       return tmp0_safe_receiver;
     }
-    if (!isConfigured() || !this.loading_1.add_utx5q5_k$(id))
+    if (!isConfigured() || !this.g1o_1.d(id))
       return null;
-    launch(this.scope_1, VOID, VOID, ImageCache$get$slambda_0(id, null));
+    launch(this.h1o_1, VOID, VOID, ImageCache$get$slambda_0(id, null));
     return null;
   };
-  protoOf(ImageCache).add_iat429_k$ = function (id, file, $completion) {
+  protoOf(ImageCache).b1x = function (id, file, $completion) {
     var tmp = new $addCOROUTINE$2(this, id, file, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
   var ImageCache_instance;
   function ImageCache_getInstance() {
@@ -4341,14 +3815,6 @@
       new ImageCache();
     return ImageCache_instance;
   }
-  function get_URL_KEY() {
-    return URL_KEY;
-  }
-  var URL_KEY;
-  function get_TOKEN_KEY() {
-    return TOKEN_KEY;
-  }
-  var TOKEN_KEY;
   function configureServer() {
     var tmp0_elvis_lhs = localStorage.getItem('stickyNode.serverUrl');
     var currentUrl = tmp0_elvis_lhs == null ? 'https://table.tail964c8c.ts.net' : tmp0_elvis_lhs;
@@ -4402,9 +3868,9 @@
     body = body === VOID ? null : body;
     contentType = contentType === VOID ? null : contentType;
     var tmp = new $sendAndReadCOROUTINE$3(path, method, body, contentType, read, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   }
   function request(path, method, body, $completion) {
     method = method === VOID ? 'GET' : method;
@@ -4421,38 +3887,38 @@
   }
   function $sendAndReadCOROUTINE$3(path, method, body, contentType, read, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
-    this.path_1 = path;
-    this.method_1 = method;
-    this.body_1 = body;
-    this.contentType_1 = contentType;
-    this.read_1 = read;
+    this.k1x_1 = path;
+    this.l1x_1 = method;
+    this.m1x_1 = body;
+    this.n1x_1 = contentType;
+    this.o1x_1 = read;
   }
-  protoOf($sendAndReadCOROUTINE$3).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($sendAndReadCOROUTINE$3).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(3);
+            this.d8_1 = 3;
             if (!ensureConfigured())
               throw IllegalStateException_init_$Create$('Server not configured');
-            this.base0__1 = localStorage.getItem('stickyNode.serverUrl');
-            this.token1__1 = localStorage.getItem('stickyNode.serverToken');
-            this.headers2__1 = {};
-            this.headers2__1['Authorization'] = '******';
-            this.options3__1 = {};
-            this.options3__1.method = this.method_1;
-            this.options3__1.headers = this.headers2__1;
-            if (this.body_1 != null) {
-              if (!(this.contentType_1 == null)) {
-                this.headers2__1['Content-Type'] = this.contentType_1;
+            this.p1x_1 = localStorage.getItem('stickyNode.serverUrl');
+            this.q1x_1 = localStorage.getItem('stickyNode.serverToken');
+            this.r1x_1 = {};
+            this.r1x_1['Authorization'] = 'Bearer ' + this.q1x_1;
+            this.s1x_1 = {};
+            this.s1x_1.method = this.l1x_1;
+            this.s1x_1.headers = this.r1x_1;
+            if (this.m1x_1 != null) {
+              if (!(this.n1x_1 == null)) {
+                this.r1x_1['Content-Type'] = this.n1x_1;
               }
-              this.options3__1.body = this.body_1;
+              this.s1x_1.body = this.m1x_1;
             }
 
-            this.set_state_rjd8d0_k$(1);
-            var this_0 = window.fetch(plus(this.base0__1, this.path_1), this.options3__1);
+            this.c8_1 = 1;
+            var this_0 = window.fetch(plus(this.p1x_1, this.k1x_1), this.s1x_1);
             suspendResult = await_0(this_0, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4460,15 +3926,15 @@
 
             continue $sm;
           case 1:
-            this.response4__1 = suspendResult;
-            if (this.response4__1.ok != true) {
-              if (this.response4__1.status == 401)
+            this.t1x_1 = suspendResult;
+            if (this.t1x_1.ok != true) {
+              if (this.t1x_1.status == 401)
                 throw IllegalStateException_init_$Create$('Wrong token (use Server Settings)');
-              throw IllegalStateException_init_$Create$('Server error ' + this.response4__1.status);
+              throw IllegalStateException_init_$Create$('Server error ' + this.t1x_1.status);
             }
 
-            this.set_state_rjd8d0_k$(2);
-            suspendResult = await_0(this.read_1(this.response4__1), this);
+            this.c8_1 = 2;
+            suspendResult = await_0(this.o1x_1(this.t1x_1), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -4477,48 +3943,48 @@
           case 2:
             return suspendResult;
           case 3:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
+        if (this.d8_1 === 3) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
   function listServerDrawings($completion) {
     var tmp = new $listServerDrawingsCOROUTINE$4($completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   }
   function loadFromServer(name, $completion) {
     return request('/api/drawings/' + encodePathSegment(name), VOID, VOID, $completion);
   }
   function saveToServer(name, content, $completion) {
     var tmp = new $saveToServerCOROUTINE$5(name, content, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   }
   function $listServerDrawingsCOROUTINE$4(resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf($listServerDrawingsCOROUTINE$4).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($listServerDrawingsCOROUTINE$4).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(2);
+            this.d8_1 = 2;
             var tmp_0 = this;
-            tmp_0.tmp00__1 = Default_getInstance();
-            this.set_state_rjd8d0_k$(1);
+            tmp_0.c1y_1 = Default_getInstance();
+            this.c8_1 = 1;
             suspendResult = request('/api/drawings', VOID, VOID, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -4527,56 +3993,56 @@
             continue $sm;
           case 1:
             var tmp1 = suspendResult;
-            var this_0 = this.tmp00__1;
-            var this_1 = this_0.get_serializersModule_piitvg_k$();
-            var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().get_stringClass_bik2gy_k$(), arrayOf([]), false))]), false));
-            return this_0.decodeFromString_jwu9sq_k$(isInterface(this_2, KSerializer) ? this_2 : THROW_CCE(), tmp1);
+            var this_0 = this.c1y_1;
+            var this_1 = this_0.vm();
+            var this_2 = serializer(this_1, createKType(getKClass(KtList), arrayOf([createInvariantKTypeProjection(createKType(PrimitiveClasses_getInstance().wa(), arrayOf([]), false))]), false));
+            return this_0.o12(isInterface(this_2, KSerializer) ? this_2 : THROW_CCE(), tmp1);
           case 2:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 2) {
+        if (this.d8_1 === 2) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
   function $saveToServerCOROUTINE$5(name, content, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);
-    this.name_1 = name;
-    this.content_1 = content;
+    this.l1y_1 = name;
+    this.m1y_1 = content;
   }
-  protoOf($saveToServerCOROUTINE$5).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf($saveToServerCOROUTINE$5).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = request('/api/drawings/' + encodePathSegment(this.name_1), 'PUT', this.content_1, this);
+            this.d8_1 = 2;
+            this.c8_1 = 1;
+            suspendResult = request('/api/drawings/' + encodePathSegment(this.l1y_1), 'PUT', this.m1y_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            return Unit_getInstance();
+            return Unit_instance;
           case 2:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 2) {
+        if (this.d8_1 === 2) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
@@ -4591,47 +4057,20 @@
     return sendAndRead(tmp, VOID, VOID, VOID, fetchImageBlob$lambda, $completion);
   }
   function uploadImage$lambda(it) {
-    return Promise.resolve(Unit_getInstance());
+    return Promise.resolve(Unit_instance);
   }
   function fetchImageBlob$lambda(it) {
     // Inline function 'kotlin.js.unsafeCast' call
     return it.blob();
   }
-  function _get_KEY__e5qd6a($this) {
-    return $this.KEY_1;
-  }
-  function _get_LEGACY_PNG__v3l8ko($this) {
-    return $this.LEGACY_PNG_1;
-  }
-  function _get_LEGACY_STROKES__2abn5m($this) {
-    return $this.LEGACY_STROKES_1;
-  }
-  function _get_LEGACY_RECTANGLES__orwuwn($this) {
-    return $this.LEGACY_RECTANGLES_1;
-  }
-  function _get_LEGACY_CIRCLES__e6r926($this) {
-    return $this.LEGACY_CIRCLES_1;
-  }
-  function _get_LEGACY_POLYGONS__4dkk3m($this) {
-    return $this.LEGACY_POLYGONS_1;
-  }
-  function _get_LEGACY_ARROWS__ud09ox($this) {
-    return $this.LEGACY_ARROWS_1;
-  }
-  function _get_LEGACY_TEXT__uec6j2($this) {
-    return $this.LEGACY_TEXT_1;
-  }
-  function _get_legacyKeys__3ixary($this) {
-    return $this.legacyKeys_1;
-  }
   function migrateLegacy($this) {
-    var tmp0 = $this.legacyKeys_1;
+    var tmp0 = $this.v1o_1;
     var tmp$ret$0;
     $l$block_0: {
       // Inline function 'kotlin.collections.all' call
       var tmp;
       if (isInterface(tmp0, Collection)) {
-        tmp = tmp0.isEmpty_y1axqb_k$();
+        tmp = tmp0.m();
       } else {
         tmp = false;
       }
@@ -4639,9 +4078,9 @@
         tmp$ret$0 = true;
         break $l$block_0;
       }
-      var _iterator__ex2g4s = tmp0.iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
+      var _iterator__ex2g4s = tmp0.i();
+      while (_iterator__ex2g4s.j()) {
+        var element = _iterator__ex2g4s.k();
         // Inline function 'stickynode.storage.Storage.migrateLegacy.<anonymous>' call
         if (!(localStorage.getItem(element) == null)) {
           tmp$ret$0 = false;
@@ -4655,11 +4094,11 @@
     }
     var v1 = '{"app":"sticky-node","version":1,' + ('"strokeItems":' + migrateLegacy$list('drawingCanvasStrokes') + ',"rectangleItems":' + migrateLegacy$list('drawingCanvasRectangles') + ',') + ('"circleItems":' + migrateLegacy$list('drawingCanvasCircles') + ',"polygonItems":' + migrateLegacy$list('drawingCanvasPolygons') + ',') + ('"arrowItems":' + migrateLegacy$list('drawingCanvasArrows') + ',"textItems":' + migrateLegacy$list('drawingCanvasText') + '}');
     var drawing = decodeDrawingData(v1);
-    $this.save_kr09ot_k$(encodeDrawing(drawing.get_items_it823b_k$(), VOID, drawing.get_backgroundColor_a0bggk_k$()));
+    $this.w1o(encodeDrawing(drawing.l1o_1, VOID, drawing.m1o_1));
     // Inline function 'kotlin.collections.forEach' call
-    var _iterator__ex2g4s_0 = $this.legacyKeys_1.iterator_jk1svi_k$();
-    while (_iterator__ex2g4s_0.hasNext_bitz1p_k$()) {
-      var element_0 = _iterator__ex2g4s_0.next_20eer_k$();
+    var _iterator__ex2g4s_0 = $this.v1o_1.i();
+    while (_iterator__ex2g4s_0.j()) {
+      var element_0 = _iterator__ex2g4s_0.k();
       // Inline function 'stickynode.storage.Storage.migrateLegacy.<anonymous>' call
       localStorage.removeItem(element_0);
     }
@@ -4671,17 +4110,17 @@
   }
   function Storage() {
     Storage_instance = this;
-    this.KEY_1 = 'stickyNode.drawing';
-    this.LEGACY_PNG_1 = 'drawingCanvas';
-    this.LEGACY_STROKES_1 = 'drawingCanvasStrokes';
-    this.LEGACY_RECTANGLES_1 = 'drawingCanvasRectangles';
-    this.LEGACY_CIRCLES_1 = 'drawingCanvasCircles';
-    this.LEGACY_POLYGONS_1 = 'drawingCanvasPolygons';
-    this.LEGACY_ARROWS_1 = 'drawingCanvasArrows';
-    this.LEGACY_TEXT_1 = 'drawingCanvasText';
-    this.legacyKeys_1 = listOf(['drawingCanvas', 'drawingCanvasStrokes', 'drawingCanvasRectangles', 'drawingCanvasCircles', 'drawingCanvasPolygons', 'drawingCanvasArrows', 'drawingCanvasText']);
+    this.n1o_1 = 'stickyNode.drawing';
+    this.o1o_1 = 'drawingCanvas';
+    this.p1o_1 = 'drawingCanvasStrokes';
+    this.q1o_1 = 'drawingCanvasRectangles';
+    this.r1o_1 = 'drawingCanvasCircles';
+    this.s1o_1 = 'drawingCanvasPolygons';
+    this.t1o_1 = 'drawingCanvasArrows';
+    this.u1o_1 = 'drawingCanvasText';
+    this.v1o_1 = listOf(['drawingCanvas', 'drawingCanvasStrokes', 'drawingCanvasRectangles', 'drawingCanvasCircles', 'drawingCanvasPolygons', 'drawingCanvasArrows', 'drawingCanvasText']);
   }
-  protoOf(Storage).load_1zbae_k$ = function () {
+  protoOf(Storage).g1p = function () {
     var tmp;
     try {
       var saved = localStorage.getItem('stickyNode.drawing');
@@ -4699,7 +4138,7 @@
     }
     return tmp;
   };
-  protoOf(Storage).save_kr09ot_k$ = function (snapshot) {
+  protoOf(Storage).w1o = function (snapshot) {
     try {
       localStorage.setItem('stickyNode.drawing', snapshot);
     } catch ($p) {
@@ -4717,16 +4156,8 @@
       new Storage();
     return Storage_instance;
   }
-  function get_LEFT_BUTTON() {
-    return LEFT_BUTTON;
-  }
-  var LEFT_BUTTON;
-  function get_RIGHT_BUTTON() {
-    return RIGHT_BUTTON;
-  }
-  var RIGHT_BUTTON;
   function setupCanvasEvents(editor) {
-    var canvas = editor.get_canvas_bshgm9_k$();
+    var canvas = editor.q1n_1;
     canvas.addEventListener('contextmenu', setupCanvasEvents$lambda(editor));
     canvas.addEventListener('mousedown', setupCanvasEvents$lambda_0(editor, canvas));
     var tmp = window;
@@ -4741,60 +4172,60 @@
   function setupCanvasEvents$lambda($editor) {
     return function (event) {
       var tmp;
-      if ($editor.get_tool_wov2zl_k$().get_claimsMouse_54sth7_k$()) {
+      if ($editor.a1o_1.j1q()) {
         event.preventDefault();
-        tmp = Unit_getInstance();
+        tmp = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupCanvasEvents$lambda_0($editor, $canvas) {
     return function (e) {
       var event = e instanceof MouseEvent ? e : THROW_CCE();
       var button = event.button;
-      var tool = $editor.get_tool_wov2zl_k$();
-      var allowed = button === 0 || (button === 2 && tool.get_claimsMouse_54sth7_k$());
+      var tool = $editor.a1o_1;
+      var allowed = button === 0 || (button === 2 && tool.j1q());
       var tmp;
       if (!allowed) {
-        return Unit_getInstance();
+        return Unit_instance;
       }
       var tmp_0;
-      if (tool.get_claimsMouse_54sth7_k$()) {
+      if (tool.j1q()) {
         event.preventDefault();
-        tmp_0 = Unit_getInstance();
+        tmp_0 = Unit_instance;
       }
       var tmp_1;
-      if (tool.get_busy_wojps2_k$()) {
-        tool.onUp_lz9rfn_k$($editor);
-        tmp_1 = Unit_getInstance();
+      if (tool.s1p()) {
+        tool.m1q($editor);
+        tmp_1 = Unit_instance;
       }
-      tool.onDown_sb4qs0_k$($editor, setupCanvasEvents$position($canvas, event), button);
-      return Unit_getInstance();
+      tool.k1q($editor, setupCanvasEvents$position($canvas, event), button);
+      return Unit_instance;
     };
   }
   function setupCanvasEvents$lambda_1($editor, $canvas) {
     return function (e) {
       var event = e instanceof MouseEvent ? e : THROW_CCE();
-      var tool = $editor.get_tool_wov2zl_k$();
+      var tool = $editor.a1o_1;
       var tmp;
-      if (!tool.get_busy_wojps2_k$()) {
-        return Unit_getInstance();
+      if (!tool.s1p()) {
+        return Unit_instance;
       }
       var tmp_0;
       if (event.buttons === 0) {
-        tool.onUp_lz9rfn_k$($editor);
-        tmp_0 = Unit_getInstance();
+        tool.m1q($editor);
+        tmp_0 = Unit_instance;
       } else {
-        tool.onMove_580z7b_k$($editor, setupCanvasEvents$position($canvas, event));
-        tmp_0 = Unit_getInstance();
+        tool.l1q($editor, setupCanvasEvents$position($canvas, event));
+        tmp_0 = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupCanvasEvents$lambda_2($editor) {
     return function (it) {
-      $editor.get_tool_wov2zl_k$().onUp_lz9rfn_k$($editor);
-      return Unit_getInstance();
+      $editor.a1o_1.m1q($editor);
+      return Unit_instance;
     };
   }
   function get_scope() {
@@ -4823,7 +4254,7 @@
     var tmp0_elvis_lhs = tmp instanceof HTMLInputElement ? tmp : null;
     var tmp_0;
     if (tmp0_elvis_lhs == null) {
-      return Unit_getInstance();
+      return Unit_instance;
     } else {
       tmp_0 = tmp0_elvis_lhs;
     }
@@ -4847,7 +4278,7 @@
     } else {
       var tmp_1;
       if (element instanceof HTMLInputElement) {
-        tmp_1 = get_TEXT_INPUT_TYPES().contains_aljjnj_k$(element.type);
+        tmp_1 = get_TEXT_INPUT_TYPES().n1(element.type);
       } else {
         tmp_1 = false;
       }
@@ -4857,7 +4288,7 @@
   }
   function setupControls(editor) {
     _init_properties_Controls_kt__wbvoru();
-    var tools = editor.get_tools_iz6t2q_k$();
+    var tools = editor.z1n_1;
     onClick('drawButton', setupControls$lambda(editor, tools));
     onClick('rectangleButton', setupControls$lambda_0(editor, tools));
     onClick('circleButton', setupControls$lambda_1(editor, tools));
@@ -4866,12 +4297,13 @@
     onClick('fillButton', setupControls$lambda_4(editor, tools));
     onClick('eraserButton', setupControls$lambda_5(editor, tools));
     onClick('polygonButton', setupControls$lambda_6(editor, tools));
-    var toolButtons = mapOf([to(tools.get_freehand_dsmxlw_k$(), 'drawButton'), to(tools.get_rectangle_r245om_k$(), 'rectangleButton'), to(tools.get_circle_bwxzh5_k$(), 'circleButton'), to(tools.get_polygon_5b4a0f_k$(), 'polygonButton'), to(tools.get_arrow_iosp28_k$(), 'arrowButton'), to(tools.get_text_wouvsm_k$(), 'textButton'), to(tools.get_fill_wom0ng_k$(), 'fillButton'), to(tools.get_eraser_czouj9_k$(), 'eraserButton')]);
-    editor.set_onToolChanged_3f4ytg_k$(setupControls$lambda_7(toolButtons));
+    var toolButtons = mapOf([to(tools.y1o_1, 'drawButton'), to(tools.c1p_1, 'rectangleButton'), to(tools.d1p_1, 'circleButton'), to(tools.e1p_1, 'polygonButton'), to(tools.f1p_1, 'arrowButton'), to(tools.a1p_1, 'textButton'), to(tools.b1p_1, 'fillButton'), to(tools.z1o_1, 'eraserButton')]);
+    var tmp = editor;
+    tmp.b1o_1 = setupControls$lambda_7(toolButtons);
     // Inline function 'stickynode.ui.byId' call
     var id = 'colorPicker';
-    var tmp = document.getElementById(id);
-    var tmp0_safe_receiver = tmp instanceof HTMLInputElement ? tmp : null;
+    var tmp_0 = document.getElementById(id);
+    var tmp0_safe_receiver = tmp_0 instanceof HTMLInputElement ? tmp_0 : null;
     if (tmp0_safe_receiver == null)
       null;
     else {
@@ -4881,14 +4313,14 @@
     }
     // Inline function 'stickynode.ui.byId' call
     var id_0 = 'backgroundColorPicker';
-    var tmp_0 = document.getElementById(id_0);
-    var tmp1_safe_receiver = tmp_0 instanceof HTMLInputElement ? tmp_0 : null;
+    var tmp_1 = document.getElementById(id_0);
+    var tmp1_safe_receiver = tmp_1 instanceof HTMLInputElement ? tmp_1 : null;
     if (tmp1_safe_receiver == null)
       null;
     else {
       // Inline function 'kotlin.let' call
       // Inline function 'stickynode.ui.setupControls.<anonymous>' call
-      tmp1_safe_receiver.value = editor.get_backgroundColor_a0bggk_k$();
+      tmp1_safe_receiver.value = editor.v1n_1;
       tmp1_safe_receiver.addEventListener('input', setupControls$lambda_9(editor, tmp1_safe_receiver));
     }
     bindRange('lineWidthInput', 'lineWidthValue', setupControls$lambda_10(editor));
@@ -4900,13 +4332,13 @@
     onClick('openFileButton', setupControls$lambda_16(editor));
     setupServerControls(editor, get_scope());
     setupImageControls(editor, get_scope());
-    var tmp_1 = document;
-    tmp_1.addEventListener('keydown', setupControls$lambda_17(editor));
+    var tmp_2 = document;
+    tmp_2.addEventListener('keydown', setupControls$lambda_17(editor));
   }
   function onClick$lambda($action) {
     return function (it) {
       $action();
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function bindRange$lambda($input, $onChange, $label) {
@@ -4924,49 +4356,49 @@
       else {
         tmp1_safe_receiver.textContent = $input.value;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupControls$lambda($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_freehand_dsmxlw_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.y1o_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_0($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_rectangle_r245om_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.c1p_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_1($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_circle_bwxzh5_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.d1p_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_2($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_arrow_iosp28_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.f1p_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_3($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_text_wouvsm_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.a1p_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_4($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($tools.get_fill_wom0ng_k$());
-      return Unit_getInstance();
+      $editor.h1p($tools.b1p_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_5($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($editor.get_tool_wov2zl_k$() === $tools.get_eraser_czouj9_k$() ? $tools.get_freehand_dsmxlw_k$() : $tools.get_eraser_czouj9_k$());
-      return Unit_getInstance();
+      $editor.h1p($editor.a1o_1 === $tools.z1o_1 ? $tools.y1o_1 : $tools.z1o_1);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_6($editor, $tools) {
@@ -4980,24 +4412,24 @@
       var sides = tmp2_safe_receiver == null ? null : numberToInt(tmp2_safe_receiver);
       var tmp_0;
       if (!(sides == null) && sides >= 3) {
-        $editor.set_polygonSides_7fzqbb_k$(sides);
-        $editor.selectTool_nfpv6_k$($tools.get_polygon_5b4a0f_k$());
-        tmp_0 = Unit_getInstance();
+        $editor.y1n_1 = sides;
+        $editor.h1p($tools.e1p_1);
+        tmp_0 = Unit_instance;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupControls$lambda_7($toolButtons) {
     return function (tool) {
       // Inline function 'kotlin.collections.iterator' call
-      var _iterator__ex2g4s = $toolButtons.get_entries_p20ztl_k$().iterator_jk1svi_k$();
-      while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
-        var element = _iterator__ex2g4s.next_20eer_k$();
+      var _iterator__ex2g4s = $toolButtons.x1().i();
+      while (_iterator__ex2g4s.j()) {
+        var element = _iterator__ex2g4s.k();
         // Inline function 'stickynode.ui.setupControls.<anonymous>.<anonymous>' call
         // Inline function 'kotlin.collections.component1' call
-        var t = element.get_key_18j28a_k$();
+        var t = element.q1();
         // Inline function 'kotlin.collections.component2' call
-        var id = element.get_value_j01efc_k$();
+        var id = element.r1();
         var tmp0_safe_receiver = document.getElementById(id);
         var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.classList;
         if (tmp1_safe_receiver == null)
@@ -5005,125 +4437,122 @@
         else
           tmp1_safe_receiver.toggle('active', t === tool);
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupControls$lambda_8($editor, $picker) {
     return function (it) {
-      $editor.set_color_ayzg4c_k$($picker.value);
-      return Unit_getInstance();
+      $editor.u1n_1 = $picker.value;
+      return Unit_instance;
     };
   }
   function setupControls$lambda_9($editor, $picker) {
     return function (it) {
-      $editor.setBackgroundColor_91fdqh_k$($picker.value);
-      return Unit_getInstance();
+      $editor.y1p($picker.value);
+      return Unit_instance;
     };
   }
   function setupControls$lambda_10($editor) {
     return function (it) {
-      $editor.set_lineWidth_97ta37_k$(it);
-      return Unit_getInstance();
+      $editor.w1n_1 = it;
+      return Unit_instance;
     };
   }
   function setupControls$lambda_11($editor) {
     return function (it) {
-      $editor.set_fontSize_6szsfv_k$(it);
-      return Unit_getInstance();
+      $editor.x1n_1 = it;
+      return Unit_instance;
     };
   }
   function setupControls$lambda_12($editor) {
     return function () {
-      $editor.undo_t6j8bw_k$();
-      return Unit_getInstance();
+      $editor.q1p();
+      return Unit_instance;
     };
   }
   function setupControls$lambda_13($editor) {
     return function () {
-      $editor.redo_p9k3wy_k$();
-      return Unit_getInstance();
+      $editor.t1p();
+      return Unit_instance;
     };
   }
   function setupControls$lambda_14($editor) {
     return function () {
-      $editor.clear_j9egeb_k$();
-      return Unit_getInstance();
+      $editor.z1();
+      return Unit_instance;
     };
   }
   function setupControls$lambda$slambda($editor, resultContinuation) {
-    this.$editor_1 = $editor;
+    this.v1y_1 = $editor;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(setupControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(setupControls$lambda$slambda).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(setupControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(setupControls$lambda$slambda).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(setupControls$lambda$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(setupControls$lambda$slambda).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = saveToFile(this.$editor_1.exportJson_3gdc58_k$(), VOID, this);
+            this.d8_1 = 3;
+            this.d8_1 = 2;
+            this.c8_1 = 1;
+            suspendResult = saveToFile(this.v1y_1.x1p(), VOID, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(4);
+            this.d8_1 = 3;
+            this.c8_1 = 4;
             continue $sm;
           case 2:
-            this.set_exceptionState_fex74n_k$(3);
-            var tmp_0 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 3;
+            var tmp_0 = this.f8_1;
             if (tmp_0 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               window.alert("Couldn't save the file: " + error.message);
-              this.set_state_rjd8d0_k$(4);
+              this.c8_1 = 4;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 3:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 4:
-            this.set_exceptionState_fex74n_k$(3);
-            return Unit_getInstance();
+            this.d8_1 = 3;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
+        if (this.d8_1 === 3) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(setupControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new setupControls$lambda$slambda(this.$editor_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(setupControls$lambda$slambda).p1w = function ($this$launch, completion) {
+    var i = new setupControls$lambda$slambda(this.v1y_1, completion);
+    i.w1y_1 = $this$launch;
     return i;
-  };
-  protoOf(setupControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function setupControls$lambda$slambda_0($editor, resultContinuation) {
     var i = new setupControls$lambda$slambda($editor, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -5132,32 +4561,32 @@
     return function () {
       var tmp = get_scope();
       launch(tmp, VOID, VOID, setupControls$lambda$slambda_0($editor, null));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupControls$lambda$slambda_1($editor, resultContinuation) {
-    this.$editor_1 = $editor;
+    this.f1z_1 = $editor;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(setupControls$lambda$slambda_1).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(setupControls$lambda$slambda_1).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(setupControls$lambda$slambda_1).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(setupControls$lambda$slambda_1).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(setupControls$lambda$slambda_1).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(setupControls$lambda$slambda_1).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
+            this.d8_1 = 3;
+            this.d8_1 = 2;
+            this.c8_1 = 1;
             suspendResult = pickFileText(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -5168,58 +4597,55 @@
             var tmp0_elvis_lhs = suspendResult;
             var tmp_0;
             if (tmp0_elvis_lhs == null) {
-              return Unit_getInstance();
+              return Unit_instance;
             } else {
               tmp_0 = tmp0_elvis_lhs;
             }
 
             var text = tmp_0;
             var drawing = decodeDrawingData(text);
-            this.$editor_1.load_5aoc2h_k$(drawing.get_items_it823b_k$(), drawing.get_backgroundColor_a0bggk_k$());
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(4);
+            this.f1z_1.v1p(drawing.l1o_1, drawing.m1o_1);
+            this.d8_1 = 3;
+            this.c8_1 = 4;
             continue $sm;
           case 2:
-            this.set_exceptionState_fex74n_k$(3);
-            var tmp_1 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 3;
+            var tmp_1 = this.f8_1;
             if (tmp_1 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               window.alert("Couldn't open that file: " + error.message);
-              this.set_state_rjd8d0_k$(4);
+              this.c8_1 = 4;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 3:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 4:
-            this.set_exceptionState_fex74n_k$(3);
-            return Unit_getInstance();
+            this.d8_1 = 3;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
+        if (this.d8_1 === 3) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(setupControls$lambda$slambda_1).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new setupControls$lambda$slambda_1(this.$editor_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(setupControls$lambda$slambda_1).p1w = function ($this$launch, completion) {
+    var i = new setupControls$lambda$slambda_1(this.f1z_1, completion);
+    i.g1z_1 = $this$launch;
     return i;
-  };
-  protoOf(setupControls$lambda$slambda_1).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function setupControls$lambda$slambda_2($editor, resultContinuation) {
     var i = new setupControls$lambda$slambda_1($editor, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -5228,7 +4654,7 @@
     return function () {
       var tmp = get_scope();
       launch(tmp, VOID, VOID, setupControls$lambda$slambda_2($editor, null));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupControls$lambda_17($editor) {
@@ -5236,7 +4662,7 @@
       var event = e instanceof KeyboardEvent ? e : THROW_CCE();
       var tmp;
       if (!(event.ctrlKey || event.metaKey) || isTyping(event.target)) {
-        return Unit_getInstance();
+        return Unit_instance;
       }
       // Inline function 'kotlin.text.lowercase' call
       // Inline function 'kotlin.js.asDynamic' call
@@ -5246,25 +4672,25 @@
           event.preventDefault();
           var tmp_1;
           if (event.shiftKey) {
-            $editor.redo_p9k3wy_k$();
-            tmp_1 = Unit_getInstance();
+            $editor.t1p();
+            tmp_1 = Unit_instance;
           } else {
-            $editor.undo_t6j8bw_k$();
-            tmp_1 = Unit_getInstance();
+            $editor.q1p();
+            tmp_1 = Unit_instance;
           }
 
           tmp_0 = tmp_1;
           break;
         case 'y':
           event.preventDefault();
-          $editor.redo_p9k3wy_k$();
-          tmp_0 = Unit_getInstance();
+          $editor.t1p();
+          tmp_0 = Unit_instance;
           break;
         default:
-          tmp_0 = Unit_getInstance();
+          tmp_0 = Unit_instance;
           break;
       }
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   var properties_initialized_Controls_kt_mopnlk;
@@ -5279,28 +4705,28 @@
     onClick('addImageButton', setupImageControls$lambda(scope, editor));
   }
   function setupImageControls$lambda$slambda($editor, resultContinuation) {
-    this.$editor_1 = $editor;
+    this.p1z_1 = $editor;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(setupImageControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(setupImageControls$lambda$slambda).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(setupImageControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(setupImageControls$lambda$slambda).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(setupImageControls$lambda$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(setupImageControls$lambda$slambda).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(5);
-            this.set_exceptionState_fex74n_k$(4);
-            this.set_state_rjd8d0_k$(1);
+            this.d8_1 = 5;
+            this.d8_1 = 4;
+            this.c8_1 = 1;
             suspendResult = pickImageFile(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -5308,19 +4734,19 @@
 
             continue $sm;
           case 1:
-            this.tmp0_elvis_lhs0__1 = suspendResult;
+            this.r1z_1 = suspendResult;
             var tmp_0 = this;
             var tmp_1;
-            if (this.tmp0_elvis_lhs0__1 == null) {
-              return Unit_getInstance();
+            if (this.r1z_1 == null) {
+              return Unit_instance;
             } else {
-              tmp_1 = this.tmp0_elvis_lhs0__1;
+              tmp_1 = this.r1z_1;
             }
 
-            tmp_0.file1__1 = tmp_1;
+            tmp_0.s1z_1 = tmp_1;
             var tmp_2 = this;
             var tmp_3;
-            switch (this.file1__1.type) {
+            switch (this.s1z_1.type) {
               case 'image/png':
                 tmp_3 = 'png';
                 break;
@@ -5337,22 +4763,22 @@
                 throw IllegalArgumentException_init_$Create$('Use a PNG, JPEG, GIF or WebP image');
             }
 
-            tmp_2.ext2__1 = tmp_3;
-            if (numberToDouble(this.file1__1.size) > 20971520) {
+            tmp_2.t1z_1 = tmp_3;
+            if (numberToDouble(this.s1z_1.size) > 20971520) {
               throw IllegalArgumentException_init_$Create$('Image is larger than 20 MB');
             }
 
-            this.id3__1 = toString_0(Default_getInstance_0().nextLong_njwv0v_k$().ushr_z7nmq8_k$(1), 36) + '.' + this.ext2__1;
-            this.set_state_rjd8d0_k$(2);
-            suspendResult = uploadImage(this.id3__1, this.file1__1, this);
+            this.u1z_1 = toString_0(Default_getInstance_0().yd().u2(1), 36) + '.' + this.t1z_1;
+            this.c8_1 = 2;
+            suspendResult = uploadImage(this.u1z_1, this.s1z_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 2:
-            this.set_state_rjd8d0_k$(3);
-            suspendResult = ImageCache_getInstance().add_iat429_k$(this.id3__1, this.file1__1, this);
+            this.c8_1 = 3;
+            suspendResult = ImageCache_getInstance().b1x(this.u1z_1, this.s1z_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5366,53 +4792,50 @@
             var scale = Math.min(1.0, b_0);
             var w = img.naturalWidth * scale;
             var h = img.naturalHeight * scale;
-            this.$editor_1.get_items_it823b_k$().add_utx5q5_k$(new ImageItem((this.$editor_1.get_canvas_bshgm9_k$().width - w) / 2, (this.$editor_1.get_canvas_bshgm9_k$().height - h) / 2, w, h, this.id3__1));
-            this.$editor_1.render_dje1iy_k$();
-            this.$editor_1.commit_vpt10n_k$();
-            this.set_exceptionState_fex74n_k$(5);
-            this.set_state_rjd8d0_k$(6);
+            this.p1z_1.s1n_1.d(new ImageItem((this.p1z_1.q1n_1.width - w) / 2, (this.p1z_1.q1n_1.height - h) / 2, w, h, this.u1z_1));
+            this.p1z_1.x1o();
+            this.p1z_1.l1p();
+            this.d8_1 = 5;
+            this.c8_1 = 6;
             continue $sm;
           case 4:
-            this.set_exceptionState_fex74n_k$(5);
-            var tmp_4 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 5;
+            var tmp_4 = this.f8_1;
             if (tmp_4 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               window.alert("Couldn't add the image: " + error.message);
-              this.set_state_rjd8d0_k$(6);
+              this.c8_1 = 6;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 5:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 6:
-            this.set_exceptionState_fex74n_k$(5);
-            return Unit_getInstance();
+            this.d8_1 = 5;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 5) {
+        if (this.d8_1 === 5) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(setupImageControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new setupImageControls$lambda$slambda(this.$editor_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(setupImageControls$lambda$slambda).p1w = function ($this$launch, completion) {
+    var i = new setupImageControls$lambda$slambda(this.p1z_1, completion);
+    i.q1z_1 = $this$launch;
     return i;
-  };
-  protoOf(setupImageControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function setupImageControls$lambda$slambda_0($editor, resultContinuation) {
     var i = new setupImageControls$lambda$slambda($editor, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -5420,7 +4843,7 @@
   function setupImageControls$lambda($scope, $editor) {
     return function () {
       launch($scope, VOID, VOID, setupImageControls$lambda$slambda_0($editor, null));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupServerControls(editor, scope) {
@@ -5430,84 +4853,81 @@
   }
   function setupServerControls$lambda() {
     configureServer();
-    return Unit_getInstance();
+    return Unit_instance;
   }
   function setupServerControls$lambda$slambda($name, $editor, resultContinuation) {
-    this.$name_1 = $name;
-    this.$editor_1 = $editor;
+    this.d20_1 = $name;
+    this.e20_1 = $editor;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(setupServerControls$lambda$slambda).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(setupServerControls$lambda$slambda).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(setupServerControls$lambda$slambda).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(setupServerControls$lambda$slambda).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(setupServerControls$lambda$slambda).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(setupServerControls$lambda$slambda).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_exceptionState_fex74n_k$(2);
-            this.set_state_rjd8d0_k$(1);
-            suspendResult = saveToServer(this.$name_1, this.$editor_1.exportJson_3gdc58_k$(), this);
+            this.d8_1 = 3;
+            this.d8_1 = 2;
+            this.c8_1 = 1;
+            suspendResult = saveToServer(this.d20_1, this.e20_1.x1p(), this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
 
             continue $sm;
           case 1:
-            window.alert('Saved "' + this.$name_1 + '" to the server.');
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(4);
+            window.alert('Saved "' + this.d20_1 + '" to the server.');
+            this.d8_1 = 3;
+            this.c8_1 = 4;
             continue $sm;
           case 2:
-            this.set_exceptionState_fex74n_k$(3);
-            var tmp_0 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 3;
+            var tmp_0 = this.f8_1;
             if (tmp_0 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               window.alert("Couldn't save to the server: " + error.message);
-              this.set_state_rjd8d0_k$(4);
+              this.c8_1 = 4;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 3:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 4:
-            this.set_exceptionState_fex74n_k$(3);
-            return Unit_getInstance();
+            this.d8_1 = 3;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 3) {
+        if (this.d8_1 === 3) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(setupServerControls$lambda$slambda).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new setupServerControls$lambda$slambda(this.$name_1, this.$editor_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(setupServerControls$lambda$slambda).p1w = function ($this$launch, completion) {
+    var i = new setupServerControls$lambda$slambda(this.d20_1, this.e20_1, completion);
+    i.f20_1 = $this$launch;
     return i;
-  };
-  protoOf(setupServerControls$lambda$slambda).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function setupServerControls$lambda$slambda_0($name, $editor, resultContinuation) {
     var i = new setupServerControls$lambda$slambda($name, $editor, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -5526,35 +4946,35 @@
       var tmp_0;
       // Inline function 'kotlin.text.isNullOrEmpty' call
       if (name == null || charSequenceLength(name) === 0) {
-        return Unit_getInstance();
+        return Unit_instance;
       }
       launch($scope, VOID, VOID, setupServerControls$lambda$slambda_0(name, $editor, null));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   function setupServerControls$lambda$slambda_1($editor, resultContinuation) {
-    this.$editor_1 = $editor;
+    this.o20_1 = $editor;
     CoroutineImpl.call(this, resultContinuation);
   }
-  protoOf(setupServerControls$lambda$slambda_1).invoke_d9fzmj_k$ = function ($this$launch, $completion) {
-    var tmp = this.create_rcuf4x_k$($this$launch, $completion);
-    tmp.set_result_xj64lm_k$(Unit_getInstance());
-    tmp.set_exception_px07aa_k$(null);
-    return tmp.doResume_5yljmg_k$();
+  protoOf(setupServerControls$lambda$slambda_1).o1w = function ($this$launch, $completion) {
+    var tmp = this.p1w($this$launch, $completion);
+    tmp.e8_1 = Unit_instance;
+    tmp.f8_1 = null;
+    return tmp.k8();
   };
-  protoOf(setupServerControls$lambda$slambda_1).invoke_qns8j1_k$ = function (p1, $completion) {
-    return this.invoke_d9fzmj_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
+  protoOf(setupServerControls$lambda$slambda_1).y8 = function (p1, $completion) {
+    return this.o1w((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $completion);
   };
-  protoOf(setupServerControls$lambda$slambda_1).doResume_5yljmg_k$ = function () {
-    var suspendResult = this.get_result_iyg5d2_k$();
+  protoOf(setupServerControls$lambda$slambda_1).k8 = function () {
+    var suspendResult = this.e8_1;
     $sm: do
       try {
-        var tmp = this.get_state_iypx7s_k$();
+        var tmp = this.c8_1;
         switch (tmp) {
           case 0:
-            this.set_exceptionState_fex74n_k$(4);
-            this.set_exceptionState_fex74n_k$(3);
-            this.set_state_rjd8d0_k$(1);
+            this.d8_1 = 4;
+            this.d8_1 = 3;
+            this.c8_1 = 1;
             suspendResult = listServerDrawings(this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
@@ -5562,14 +4982,14 @@
 
             continue $sm;
           case 1:
-            this.names0__1 = suspendResult;
-            if (this.names0__1.isEmpty_y1axqb_k$()) {
+            this.q20_1 = suspendResult;
+            if (this.q20_1.m()) {
               window.alert('No saved drawings on the server yet.');
-              return Unit_getInstance();
+              return Unit_instance;
             }
 
             var tmp_0 = this;
-            var tmp0_safe_receiver = window.prompt('Open which drawing?\n\n' + joinToString(this.names0__1, '\n'), first(this.names0__1));
+            var tmp0_safe_receiver = window.prompt('Open which drawing?\n\n' + joinToString(this.q20_1, '\n'), first(this.q20_1));
             var tmp_1;
             if (tmp0_safe_receiver == null) {
               tmp_1 = null;
@@ -5577,12 +4997,12 @@
               tmp_1 = toString(trim(isCharSequence(tmp0_safe_receiver) ? tmp0_safe_receiver : THROW_CCE()));
             }
 
-            tmp_0.name1__1 = tmp_1;
-            var this_0 = this.name1__1;
+            tmp_0.r20_1 = tmp_1;
+            var this_0 = this.r20_1;
             if (this_0 == null || charSequenceLength(this_0) === 0)
-              return Unit_getInstance();
-            this.set_state_rjd8d0_k$(2);
-            suspendResult = loadFromServer(this.name1__1, this);
+              return Unit_instance;
+            this.c8_1 = 2;
+            suspendResult = loadFromServer(this.r20_1, this);
             if (suspendResult === get_COROUTINE_SUSPENDED()) {
               return suspendResult;
             }
@@ -5591,51 +5011,48 @@
           case 2:
             var ARGUMENT = suspendResult;
             var ARGUMENT_0 = decodeDrawing(ARGUMENT);
-            this.$editor_1.load$default_5zymnb_k$(ARGUMENT_0);
-            this.set_exceptionState_fex74n_k$(4);
-            this.set_state_rjd8d0_k$(5);
+            this.o20_1.w1p(ARGUMENT_0);
+            this.d8_1 = 4;
+            this.c8_1 = 5;
             continue $sm;
           case 3:
-            this.set_exceptionState_fex74n_k$(4);
-            var tmp_2 = this.get_exception_x0n6w6_k$();
+            this.d8_1 = 4;
+            var tmp_2 = this.f8_1;
             if (tmp_2 instanceof Error) {
-              var error = this.get_exception_x0n6w6_k$();
+              var error = this.f8_1;
               window.alert("Couldn't open that drawing: " + error.message);
-              this.set_state_rjd8d0_k$(5);
+              this.c8_1 = 5;
               continue $sm;
             } else {
-              throw this.get_exception_x0n6w6_k$();
+              throw this.f8_1;
             }
 
           case 4:
-            throw this.get_exception_x0n6w6_k$();
+            throw this.f8_1;
           case 5:
-            this.set_exceptionState_fex74n_k$(4);
-            return Unit_getInstance();
+            this.d8_1 = 4;
+            return Unit_instance;
         }
       } catch ($p) {
         var e = $p;
-        if (this.get_exceptionState_wflpxn_k$() === 4) {
+        if (this.d8_1 === 4) {
           throw e;
         } else {
-          this.set_state_rjd8d0_k$(this.get_exceptionState_wflpxn_k$());
-          this.set_exception_px07aa_k$(e);
+          this.c8_1 = this.d8_1;
+          this.f8_1 = e;
         }
       }
      while (true);
   };
-  protoOf(setupServerControls$lambda$slambda_1).create_rcuf4x_k$ = function ($this$launch, completion) {
-    var i = new setupServerControls$lambda$slambda_1(this.$editor_1, completion);
-    i.$this$launch_1 = $this$launch;
+  protoOf(setupServerControls$lambda$slambda_1).p1w = function ($this$launch, completion) {
+    var i = new setupServerControls$lambda$slambda_1(this.o20_1, completion);
+    i.p20_1 = $this$launch;
     return i;
-  };
-  protoOf(setupServerControls$lambda$slambda_1).create_wyq9v6_k$ = function (value, completion) {
-    return this.create_rcuf4x_k$((!(value == null) ? isInterface(value, CoroutineScope) : false) ? value : THROW_CCE(), completion);
   };
   function setupServerControls$lambda$slambda_2($editor, resultContinuation) {
     var i = new setupServerControls$lambda$slambda_1($editor, resultContinuation);
     var l = function ($this$launch, $completion) {
-      return i.invoke_d9fzmj_k$($this$launch, $completion);
+      return i.o1w($this$launch, $completion);
     };
     l.$arity = 1;
     return l;
@@ -5643,38 +5060,36 @@
   function setupServerControls$lambda_1($scope, $editor) {
     return function () {
       launch($scope, VOID, VOID, setupServerControls$lambda$slambda_2($editor, null));
-      return Unit_getInstance();
+      return Unit_instance;
     };
   }
   //region block: post-declaration
-  protoOf(FreehandTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
-  protoOf(ShapeTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
-  protoOf(FillTool).get_busy_wojps2_k$ = get_busy;
-  protoOf(FillTool).cancel_lxi2wt_k$ = cancel;
-  protoOf(EraserTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
-  protoOf($serializer).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_0).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_1).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_2).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_3).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_4).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_5).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_6).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_7).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_8).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
-  protoOf($serializer_9).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
+  protoOf(FreehandTool).j1q = get_claimsMouse;
+  protoOf(ShapeTool).j1q = get_claimsMouse;
+  protoOf(FillTool).s1p = get_busy;
+  protoOf(FillTool).i1p = cancel;
+  protoOf(EraserTool).j1q = get_claimsMouse;
+  protoOf($serializer).qt = typeParametersSerializers;
+  protoOf($serializer_0).qt = typeParametersSerializers;
+  protoOf($serializer_1).qt = typeParametersSerializers;
+  protoOf($serializer_2).qt = typeParametersSerializers;
+  protoOf($serializer_3).qt = typeParametersSerializers;
+  protoOf($serializer_4).qt = typeParametersSerializers;
+  protoOf($serializer_5).qt = typeParametersSerializers;
+  protoOf($serializer_6).qt = typeParametersSerializers;
+  protoOf($serializer_7).qt = typeParametersSerializers;
+  protoOf($serializer_8).qt = typeParametersSerializers;
+  protoOf($serializer_9).qt = typeParametersSerializers;
   //endregion
   //region block: init
-  MIN_SHAPE_DRAG = 3.0;
-  APP_ID = 'sticky-node';
-  FORMAT_VERSION = 2;
-  DEFAULT_LINE_WIDTH = 3;
-  DEFAULT_FONT_SIZE = 20;
-  MIN_HIT_RADIUS = 8.0;
-  URL_KEY = 'stickyNode.serverUrl';
-  TOKEN_KEY = 'stickyNode.serverToken';
-  LEFT_BUTTON = 0;
-  RIGHT_BUTTON = 2;
+  TextBox_instance = new TextBox();
+  Companion_instance_2 = new Companion_1();
+  Companion_instance_3 = new Companion_2();
+  Companion_instance_6 = new Companion_5();
+  Companion_instance_7 = new Companion_6();
+  Companion_instance_8 = new Companion_7();
+  Companion_instance_9 = new Companion_8();
+  Companion_instance_10 = new Companion_9();
   //endregion
   mainWrapper();
   return _;
