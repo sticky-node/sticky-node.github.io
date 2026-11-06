@@ -5,6 +5,7 @@ import org.w3c.dom.CanvasRenderingContext2D
 import org.w3c.dom.HTMLCanvasElement
 import stickynode.model.DEFAULT_FONT_SIZE
 import stickynode.model.DEFAULT_LINE_WIDTH
+import stickynode.model.ImageItem
 import stickynode.model.Item
 import stickynode.model.Point
 import stickynode.model.decodeDrawingData
@@ -23,6 +24,9 @@ class Editor(val canvas: HTMLCanvasElement) {
 
     /** In-progress item (e.g. the shape being dragged out), drawn above everything but not yet part of the drawing. */
     var preview: Item? = null
+
+    /** Currently selected item (only images can be selected, for now). */
+    var selected: Item? = null
 
     var color = "#000000"
     var backgroundColor = "#ffffff"
@@ -48,6 +52,7 @@ class Editor(val canvas: HTMLCanvasElement) {
     fun selectTool(next: Tool) {
         tool.cancel(this)
         preview = null
+        selected = null
         tool = next
         onToolChanged?.invoke(next)
         requestRender()
@@ -63,6 +68,20 @@ class Editor(val canvas: HTMLCanvasElement) {
         ctx.fillRect(0.0, 0.0, canvas.width.toDouble(), canvas.height.toDouble())
         for (item in items) drawItem(item)
         preview?.let { drawItem(it) }
+        (selected as? ImageItem)?.takeIf { it in items }?.let { drawHandles(it) }
+    }
+
+    private fun drawHandles(img: ImageItem) {
+        ctx.save()
+        ctx.strokeStyle = "#1a73e8"
+        ctx.lineWidth = 1.0
+        ctx.strokeRect(img.x, img.y, img.width, img.height)
+        ctx.fillStyle = "white"
+        for (c in img.corners()) {
+            ctx.fillRect(c.x - HANDLE_SIZE / 2, c.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE)
+            ctx.strokeRect(c.x - HANDLE_SIZE / 2, c.y - HANDLE_SIZE / 2, HANDLE_SIZE, HANDLE_SIZE)
+        }
+        ctx.restore()
     }
 
     /** Coalesces bursts of mouse events into at most one render per animation frame. */
@@ -135,6 +154,7 @@ class Editor(val canvas: HTMLCanvasElement) {
 
     private fun replaceItems(newItems: List<Item>) {
         preview = null
+        selected = null
         items.clear()
         items.addAll(newItems)
     }

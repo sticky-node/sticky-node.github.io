@@ -30,4 +30,6 @@ class ToolSet {
     val arrow = ShapeTool(owns = { it is ArrowItem }) { ed, start, end ->
         ArrowItem(start.x, start.y, end.x, end.y, ed.color, ed.lineWidth)
     }
+    
+    val image = ImageTool()
 }

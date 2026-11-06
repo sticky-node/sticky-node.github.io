@@ -63,6 +63,7 @@
   var DoubleSerializer_getInstance = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.m;
   var getNumberHashCode = kotlin_kotlin.$_$.c8;
   var coerceIn = kotlin_kotlin.$_$.p9;
+  var listOf = kotlin_kotlin.$_$.b6;
   var roundToInt = kotlin_kotlin.$_$.l9;
   var getKClass = kotlin_kotlin.$_$.e;
   var SealedClassSerializer_init_$Create$ = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.a;
@@ -108,7 +109,6 @@
   var serializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.n2;
   var KSerializer = kotlin_org_jetbrains_kotlinx_kotlinx_serialization_core.$_$.f2;
   var Collection = kotlin_kotlin.$_$.k4;
-  var listOf = kotlin_kotlin.$_$.b6;
   var to = kotlin_kotlin.$_$.xc;
   var mapOf = kotlin_kotlin.$_$.d6;
   var toIntOrNull = kotlin_kotlin.$_$.ta;
@@ -141,6 +141,7 @@
   initMetadataForClass(TextTool, 'TextTool', TextTool, VOID, [Tool]);
   initMetadataForClass(FillTool, 'FillTool', FillTool, VOID, [Tool]);
   initMetadataForClass(EraserTool, 'EraserTool', EraserTool, VOID, [Tool]);
+  initMetadataForClass(ImageTool, 'ImageTool', ImageTool, VOID, [Tool]);
   initMetadataForCompanion(Companion);
   initMetadataForObject($serializer, '$serializer', VOID, VOID, [GeneratedSerializer]);
   initMetadataForClass(DrawingFile, 'DrawingFile', DrawingFile, VOID, VOID, VOID, VOID, {0: $serializer_getInstance});
@@ -237,6 +238,20 @@
   function _get_renderQueued__87d6bi($this) {
     return $this.renderQueued_1;
   }
+  function drawHandles($this, img) {
+    $this.ctx_1.save();
+    $this.ctx_1.strokeStyle = '#1a73e8';
+    $this.ctx_1.lineWidth = 1.0;
+    $this.ctx_1.strokeRect(img.get_x_1mhr67_k$(), img.get_y_1mhr68_k$(), img.get_width_j0q4yl_k$(), img.get_height_e7t92o_k$());
+    $this.ctx_1.fillStyle = 'white';
+    var _iterator__ex2g4s = img.corners_fsly9q_k$().iterator_jk1svi_k$();
+    while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+      var c = _iterator__ex2g4s.next_20eer_k$();
+      $this.ctx_1.fillRect(c.get_x_1mhr67_k$() - 10.0 / 2, c.get_y_1mhr68_k$() - 10.0 / 2, 10.0, 10.0);
+      $this.ctx_1.strokeRect(c.get_x_1mhr67_k$() - 10.0 / 2, c.get_y_1mhr68_k$() - 10.0 / 2, 10.0, 10.0);
+    }
+    $this.ctx_1.restore();
+  }
   function drawItem($this, item) {
     $this.ctx_1.save();
     item.draw_rpid3c_k$($this.ctx_1);
@@ -253,6 +268,7 @@
   }
   function replaceItems($this, newItems) {
     $this.preview_1 = null;
+    $this.selected_1 = null;
     $this.items_1.clear_j9egeb_k$();
     $this.items_1.addAll_4lagoh_k$(newItems);
   }
@@ -275,6 +291,7 @@
     // Inline function 'kotlin.collections.mutableListOf' call
     tmp_1.items_1 = ArrayList_init_$Create$();
     this.preview_1 = null;
+    this.selected_1 = null;
     this.color_1 = '#000000';
     this.backgroundColor_1 = '#ffffff';
     this.lineWidth_1 = 3;
@@ -300,6 +317,12 @@
   };
   protoOf(Editor).get_preview_3zvuox_k$ = function () {
     return this.preview_1;
+  };
+  protoOf(Editor).set_selected_prlqi2_k$ = function (_set____db54di) {
+    this.selected_1 = _set____db54di;
+  };
+  protoOf(Editor).get_selected_c3i7q4_k$ = function () {
+    return this.selected_1;
   };
   protoOf(Editor).set_color_ayzg4c_k$ = function (_set____db54di) {
     this.color_1 = _set____db54di;
@@ -346,6 +369,7 @@
   protoOf(Editor).selectTool_nfpv6_k$ = function (next) {
     this.tool_1.cancel_lxi2wt_k$(this);
     this.preview_1 = null;
+    this.selected_1 = null;
     this.tool_1 = next;
     var tmp0_safe_receiver = this.onToolChanged_1;
     if (tmp0_safe_receiver == null)
@@ -398,6 +422,30 @@
       // Inline function 'kotlin.let' call
       // Inline function 'stickynode.editor.Editor.render.<anonymous>' call
       drawItem(this, tmp0_safe_receiver);
+    }
+    var tmp = this.selected_1;
+    var tmp1_safe_receiver = tmp instanceof ImageItem ? tmp : null;
+    var tmp_0;
+    if (tmp1_safe_receiver == null) {
+      tmp_0 = null;
+    } else {
+      // Inline function 'kotlin.takeIf' call
+      var tmp_1;
+      // Inline function 'stickynode.editor.Editor.render.<anonymous>' call
+      if (this.items_1.contains_aljjnj_k$(tmp1_safe_receiver)) {
+        tmp_1 = tmp1_safe_receiver;
+      } else {
+        tmp_1 = null;
+      }
+      tmp_0 = tmp_1;
+    }
+    var tmp2_safe_receiver = tmp_0;
+    if (tmp2_safe_receiver == null)
+      null;
+    else {
+      // Inline function 'kotlin.let' call
+      // Inline function 'stickynode.editor.Editor.render.<anonymous>' call
+      drawHandles(this, tmp2_safe_receiver);
     }
   };
   protoOf(Editor).requestRender_xvw6ob_k$ = function () {
@@ -765,6 +813,7 @@
     var tmp_5 = this;
     var tmp_6 = ToolSet$arrow$lambda;
     tmp_5.arrow_1 = new ShapeTool(tmp_6, ToolSet$arrow$lambda_0);
+    this.image_1 = new ImageTool();
   }
   protoOf(ToolSet).get_freehand_dsmxlw_k$ = function () {
     return this.freehand_1;
@@ -789,6 +838,9 @@
   };
   protoOf(ToolSet).get_arrow_iosp28_k$ = function () {
     return this.arrow_1;
+  };
+  protoOf(ToolSet).get_image_it3i2a_k$ = function () {
+    return this.image_1;
   };
   function get_MIN_SHAPE_DRAG() {
     return MIN_SHAPE_DRAG;
@@ -1278,6 +1330,131 @@
     this.active_1 = false;
     if (this.erased_1) {
       this.erased_1 = false;
+      ed.commit_vpt10n_k$();
+    }
+  };
+  function get_HANDLE_SIZE() {
+    return HANDLE_SIZE;
+  }
+  var HANDLE_SIZE;
+  function get_HANDLE_HIT() {
+    return HANDLE_HIT;
+  }
+  var HANDLE_HIT;
+  function get_MIN_IMAGE_SIZE() {
+    return MIN_IMAGE_SIZE;
+  }
+  var MIN_IMAGE_SIZE;
+  function _get_drag__d5ksrb_2($this) {
+    return $this.drag_1;
+  }
+  function _set_resizing__1qssxy($this, _set____db54di) {
+    $this.resizing_1 = _set____db54di;
+  }
+  function _get_resizing__b23iiu($this) {
+    return $this.resizing_1;
+  }
+  function _set_anchor__m2bdoi($this, _set____db54di) {
+    $this.anchor_1 = _set____db54di;
+  }
+  function _get_anchor__nj1yba($this) {
+    return $this.anchor_1;
+  }
+  function _set_dirX__9lnej0($this, _set____db54di) {
+    $this.dirX_1 = _set____db54di;
+  }
+  function _get_dirX__d5fe4g($this) {
+    return $this.dirX_1;
+  }
+  function _set_dirY__9lnejv($this, _set____db54di) {
+    $this.dirY_1 = _set____db54di;
+  }
+  function _get_dirY__d5fe5b($this) {
+    return $this.dirY_1;
+  }
+  function _set_aspect__ommnjz($this, _set____db54di) {
+    $this.aspect_1 = _set____db54di;
+  }
+  function _get_aspect__q3d86r($this) {
+    return $this.aspect_1;
+  }
+  function ImageTool$onDown$lambda(it) {
+    return it instanceof ImageItem;
+  }
+  function ImageTool() {
+    this.drag_1 = new Dragger();
+    this.resizing_1 = null;
+    this.anchor_1 = new Point(0.0, 0.0);
+    this.dirX_1 = 1.0;
+    this.dirY_1 = 1.0;
+    this.aspect_1 = 1.0;
+  }
+  protoOf(ImageTool).get_busy_wojps2_k$ = function () {
+    return this.drag_1.get_active_avldsf_k$() || !(this.resizing_1 == null);
+  };
+  protoOf(ImageTool).onDown_sb4qs0_k$ = function (ed, p, button) {
+    var tmp = ed.get_selected_c3i7q4_k$();
+    var sel = tmp instanceof ImageItem ? tmp : null;
+    if (!(sel == null) && ed.get_items_it823b_k$().contains_aljjnj_k$(sel)) {
+      var corners = sel.corners_fsly9q_k$();
+      var tmp$ret$1;
+      $l$block: {
+        // Inline function 'kotlin.collections.indexOfFirst' call
+        var index = 0;
+        var _iterator__ex2g4s = corners.iterator_jk1svi_k$();
+        while (_iterator__ex2g4s.hasNext_bitz1p_k$()) {
+          var item = _iterator__ex2g4s.next_20eer_k$();
+          // Inline function 'stickynode.editor.ImageTool.onDown.<anonymous>' call
+          if (item.distanceTo_kno8q6_k$(p) <= 12.0) {
+            tmp$ret$1 = index;
+            break $l$block;
+          }
+          index = index + 1 | 0;
+        }
+        tmp$ret$1 = -1;
+      }
+      var i = tmp$ret$1;
+      if (i >= 0) {
+        this.anchor_1 = corners.get_c1px32_k$(3 - i | 0);
+        this.dirX_1 = (i % 2 | 0) === 1 ? 1.0 : -1.0;
+        this.dirY_1 = i >= 2 ? 1.0 : -1.0;
+        this.aspect_1 = sel.get_width_j0q4yl_k$() > 0 ? sel.get_height_e7t92o_k$() / sel.get_width_j0q4yl_k$() : 1.0;
+        this.resizing_1 = sel;
+        return Unit_getInstance();
+      }
+    }
+    var hit = ed.findTop_jleozl_k$(p, ImageTool$onDown$lambda);
+    ed.set_selected_prlqi2_k$(hit);
+    if (!(hit == null)) {
+      this.drag_1.start_lvwrrj_k$(hit, p);
+    }
+    ed.requestRender_xvw6ob_k$();
+  };
+  protoOf(ImageTool).onMove_580z7b_k$ = function (ed, p) {
+    var img = this.resizing_1;
+    if (!(img == null)) {
+      // Inline function 'kotlin.comparisons.maxOf' call
+      var b = (p.get_x_1mhr67_k$() - this.anchor_1.get_x_1mhr67_k$()) * this.dirX_1;
+      var w = Math.max(20.0, b);
+      var h = w * this.aspect_1;
+      img.set_width_rr6tzn_k$(w);
+      img.set_height_pz0b6a_k$(h);
+      img.set_x_scd9vp_k$(this.dirX_1 > 0 ? this.anchor_1.get_x_1mhr67_k$() : this.anchor_1.get_x_1mhr67_k$() - w);
+      img.set_y_lelkme_k$(this.dirY_1 > 0 ? this.anchor_1.get_y_1mhr68_k$() : this.anchor_1.get_y_1mhr68_k$() - h);
+      ed.requestRender_xvw6ob_k$();
+      return Unit_getInstance();
+    }
+    if (this.drag_1.move_m5bngx_k$(p)) {
+      ed.requestRender_xvw6ob_k$();
+    }
+  };
+  protoOf(ImageTool).onUp_lz9rfn_k$ = function (ed) {
+    if (!(this.resizing_1 == null)) {
+      this.resizing_1 = null;
+      ed.commit_vpt10n_k$();
+      return Unit_getInstance();
+    }
+    if (this.drag_1.end_25ln_k$()) {
       ed.commit_vpt10n_k$();
     }
   };
@@ -2119,14 +2296,23 @@
   protoOf(ImageItem).get_y_1mhr68_k$ = function () {
     return this.y_1;
   };
+  protoOf(ImageItem).set_width_rr6tzn_k$ = function (_set____db54di) {
+    this.width_1 = _set____db54di;
+  };
   protoOf(ImageItem).get_width_j0q4yl_k$ = function () {
     return this.width_1;
+  };
+  protoOf(ImageItem).set_height_pz0b6a_k$ = function (_set____db54di) {
+    this.height_1 = _set____db54di;
   };
   protoOf(ImageItem).get_height_e7t92o_k$ = function () {
     return this.height_1;
   };
   protoOf(ImageItem).get_imageId_wvvawd_k$ = function () {
     return this.imageId_1;
+  };
+  protoOf(ImageItem).corners_fsly9q_k$ = function () {
+    return listOf([new Point(this.x_1, this.y_1), new Point(this.x_1 + this.width_1, this.y_1), new Point(this.x_1, this.y_1 + this.height_1), new Point(this.x_1 + this.width_1, this.y_1 + this.height_1)]);
   };
   protoOf(ImageItem).draw_rpid3c_k$ = function (ctx) {
     var img = ImageCache_getInstance().get_6bo4tg_k$(this.imageId_1);
@@ -4864,10 +5050,11 @@
     onClick('arrowButton', setupControls$lambda_2(editor, tools));
     onClick('textButton', setupControls$lambda_3(editor, tools));
     onClick('fillButton', setupControls$lambda_4(editor, tools));
-    onClick('eraserButton', setupControls$lambda_5(editor, tools));
-    onClick('polygonButton', setupControls$lambda_6(editor, tools));
+    onClick('imageToolButton', setupControls$lambda_5(editor, tools));
+    onClick('eraserButton', setupControls$lambda_6(editor, tools));
+    onClick('polygonButton', setupControls$lambda_7(editor, tools));
     var toolButtons = mapOf([to(tools.get_freehand_dsmxlw_k$(), 'drawButton'), to(tools.get_rectangle_r245om_k$(), 'rectangleButton'), to(tools.get_circle_bwxzh5_k$(), 'circleButton'), to(tools.get_polygon_5b4a0f_k$(), 'polygonButton'), to(tools.get_arrow_iosp28_k$(), 'arrowButton'), to(tools.get_text_wouvsm_k$(), 'textButton'), to(tools.get_fill_wom0ng_k$(), 'fillButton'), to(tools.get_eraser_czouj9_k$(), 'eraserButton')]);
-    editor.set_onToolChanged_3f4ytg_k$(setupControls$lambda_7(toolButtons));
+    editor.set_onToolChanged_3f4ytg_k$(setupControls$lambda_8(toolButtons));
     // Inline function 'stickynode.ui.byId' call
     var id = 'colorPicker';
     var tmp = document.getElementById(id);
@@ -4877,7 +5064,7 @@
     else {
       // Inline function 'kotlin.let' call
       // Inline function 'stickynode.ui.setupControls.<anonymous>' call
-      tmp0_safe_receiver.addEventListener('input', setupControls$lambda_8(editor, tmp0_safe_receiver));
+      tmp0_safe_receiver.addEventListener('input', setupControls$lambda_9(editor, tmp0_safe_receiver));
     }
     // Inline function 'stickynode.ui.byId' call
     var id_0 = 'backgroundColorPicker';
@@ -4889,19 +5076,19 @@
       // Inline function 'kotlin.let' call
       // Inline function 'stickynode.ui.setupControls.<anonymous>' call
       tmp1_safe_receiver.value = editor.get_backgroundColor_a0bggk_k$();
-      tmp1_safe_receiver.addEventListener('input', setupControls$lambda_9(editor, tmp1_safe_receiver));
+      tmp1_safe_receiver.addEventListener('input', setupControls$lambda_10(editor, tmp1_safe_receiver));
     }
-    bindRange('lineWidthInput', 'lineWidthValue', setupControls$lambda_10(editor));
-    bindRange('fontSizeInput', 'fontSizeValue', setupControls$lambda_11(editor));
-    onClick('undoButton', setupControls$lambda_12(editor));
-    onClick('redoButton', setupControls$lambda_13(editor));
-    onClick('clearButton', setupControls$lambda_14(editor));
-    onClick('saveFileButton', setupControls$lambda_15(editor));
-    onClick('openFileButton', setupControls$lambda_16(editor));
+    bindRange('lineWidthInput', 'lineWidthValue', setupControls$lambda_11(editor));
+    bindRange('fontSizeInput', 'fontSizeValue', setupControls$lambda_12(editor));
+    onClick('undoButton', setupControls$lambda_13(editor));
+    onClick('redoButton', setupControls$lambda_14(editor));
+    onClick('clearButton', setupControls$lambda_15(editor));
+    onClick('saveFileButton', setupControls$lambda_16(editor));
+    onClick('openFileButton', setupControls$lambda_17(editor));
     setupServerControls(editor, get_scope());
     setupImageControls(editor, get_scope());
     var tmp_1 = document;
-    tmp_1.addEventListener('keydown', setupControls$lambda_17(editor));
+    tmp_1.addEventListener('keydown', setupControls$lambda_18(editor));
   }
   function onClick$lambda($action) {
     return function (it) {
@@ -4965,11 +5152,17 @@
   }
   function setupControls$lambda_5($editor, $tools) {
     return function () {
-      $editor.selectTool_nfpv6_k$($editor.get_tool_wov2zl_k$() === $tools.get_eraser_czouj9_k$() ? $tools.get_freehand_dsmxlw_k$() : $tools.get_eraser_czouj9_k$());
+      $editor.selectTool_nfpv6_k$($tools.get_image_it3i2a_k$());
       return Unit_getInstance();
     };
   }
   function setupControls$lambda_6($editor, $tools) {
+    return function () {
+      $editor.selectTool_nfpv6_k$($editor.get_tool_wov2zl_k$() === $tools.get_eraser_czouj9_k$() ? $tools.get_freehand_dsmxlw_k$() : $tools.get_eraser_czouj9_k$());
+      return Unit_getInstance();
+    };
+  }
+  function setupControls$lambda_7($editor, $tools) {
     return function () {
       // Inline function 'stickynode.ui.byId' call
       var id = 'polygonSidesInput';
@@ -4987,7 +5180,7 @@
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_7($toolButtons) {
+  function setupControls$lambda_8($toolButtons) {
     return function (tool) {
       // Inline function 'kotlin.collections.iterator' call
       var _iterator__ex2g4s = $toolButtons.get_entries_p20ztl_k$().iterator_jk1svi_k$();
@@ -5008,43 +5201,43 @@
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_8($editor, $picker) {
+  function setupControls$lambda_9($editor, $picker) {
     return function (it) {
       $editor.set_color_ayzg4c_k$($picker.value);
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_9($editor, $picker) {
+  function setupControls$lambda_10($editor, $picker) {
     return function (it) {
       $editor.setBackgroundColor_91fdqh_k$($picker.value);
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_10($editor) {
+  function setupControls$lambda_11($editor) {
     return function (it) {
       $editor.set_lineWidth_97ta37_k$(it);
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_11($editor) {
+  function setupControls$lambda_12($editor) {
     return function (it) {
       $editor.set_fontSize_6szsfv_k$(it);
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_12($editor) {
+  function setupControls$lambda_13($editor) {
     return function () {
       $editor.undo_t6j8bw_k$();
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_13($editor) {
+  function setupControls$lambda_14($editor) {
     return function () {
       $editor.redo_p9k3wy_k$();
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_14($editor) {
+  function setupControls$lambda_15($editor) {
     return function () {
       $editor.clear_j9egeb_k$();
       return Unit_getInstance();
@@ -5128,7 +5321,7 @@
     l.$arity = 1;
     return l;
   }
-  function setupControls$lambda_15($editor) {
+  function setupControls$lambda_16($editor) {
     return function () {
       var tmp = get_scope();
       launch(tmp, VOID, VOID, setupControls$lambda$slambda_0($editor, null));
@@ -5224,14 +5417,14 @@
     l.$arity = 1;
     return l;
   }
-  function setupControls$lambda_16($editor) {
+  function setupControls$lambda_17($editor) {
     return function () {
       var tmp = get_scope();
       launch(tmp, VOID, VOID, setupControls$lambda$slambda_2($editor, null));
       return Unit_getInstance();
     };
   }
-  function setupControls$lambda_17($editor) {
+  function setupControls$lambda_18($editor) {
     return function (e) {
       var event = e instanceof KeyboardEvent ? e : THROW_CCE();
       var tmp;
@@ -5366,7 +5559,10 @@
             var scale = Math.min(1.0, b_0);
             var w = img.naturalWidth * scale;
             var h = img.naturalHeight * scale;
-            this.$editor_1.get_items_it823b_k$().add_utx5q5_k$(new ImageItem((this.$editor_1.get_canvas_bshgm9_k$().width - w) / 2, (this.$editor_1.get_canvas_bshgm9_k$().height - h) / 2, w, h, this.id3__1));
+            var item = new ImageItem((this.$editor_1.get_canvas_bshgm9_k$().width - w) / 2, (this.$editor_1.get_canvas_bshgm9_k$().height - h) / 2, w, h, this.id3__1);
+            this.$editor_1.get_items_it823b_k$().add_utx5q5_k$(item);
+            this.$editor_1.selectTool_nfpv6_k$(this.$editor_1.get_tools_iz6t2q_k$().get_image_it3i2a_k$());
+            this.$editor_1.set_selected_prlqi2_k$(item);
             this.$editor_1.render_dje1iy_k$();
             this.$editor_1.commit_vpt10n_k$();
             this.set_exceptionState_fex74n_k$(5);
@@ -5652,6 +5848,8 @@
   protoOf(FillTool).get_busy_wojps2_k$ = get_busy;
   protoOf(FillTool).cancel_lxi2wt_k$ = cancel;
   protoOf(EraserTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
+  protoOf(ImageTool).get_claimsMouse_54sth7_k$ = get_claimsMouse;
+  protoOf(ImageTool).cancel_lxi2wt_k$ = cancel;
   protoOf($serializer).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_0).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
   protoOf($serializer_1).typeParametersSerializers_fr94fx_k$ = typeParametersSerializers;
@@ -5666,6 +5864,9 @@
   //endregion
   //region block: init
   MIN_SHAPE_DRAG = 3.0;
+  HANDLE_SIZE = 10.0;
+  HANDLE_HIT = 12.0;
+  MIN_IMAGE_SIZE = 20.0;
   APP_ID = 'sticky-node';
   FORMAT_VERSION = 2;
   DEFAULT_LINE_WIDTH = 3;

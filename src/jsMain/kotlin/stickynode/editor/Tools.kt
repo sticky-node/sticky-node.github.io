@@ -10,6 +10,7 @@ import stickynode.model.StrokeItem
 import stickynode.model.TextItem
 import kotlin.math.hypot
 import stickynode.model.RegionFillItem
+import stickynode.model.ImageItem
 
 private const val MIN_SHAPE_DRAG = 3.0
 
@@ -307,5 +308,65 @@ class EraserTool : Tool {
         ed.items.removeAt(index)
         erased = true
         ed.requestRender()
+    }
+}
+
+const val HANDLE_SIZE = 10.0
+private const val HANDLE_HIT = 12.0
+private const val MIN_IMAGE_SIZE = 20.0
+
+class ImageTool : Tool {
+    private val drag = Dragger()
+    private var resizing: ImageItem? = null
+    private var anchor = Point(0.0, 0.0)
+    private var dirX = 1.0
+    private var dirY = 1.0
+    private var aspect = 1.0
+
+    override val busy: Boolean get() = drag.active || resizing != null
+
+    override fun onDown(ed: Editor, p: Point, button: Int) {
+        val sel = ed.selected as? ImageItem
+        if (sel != null && sel in ed.items) {
+            val corners = sel.corners()
+            val i = corners.indexOfFirst { it.distanceTo(p) <= HANDLE_HIT }
+            if (i >= 0) {
+                anchor = corners[3 - i] // the opposite corner stays fixed
+                dirX = if (i % 2 == 1) 1.0 else -1.0
+                dirY = if (i >= 2) 1.0 else -1.0
+                aspect = if (sel.width > 0) sel.height / sel.width else 1.0
+                resizing = sel
+                return
+            }
+        }
+
+        val hit = ed.findTop(p) { it is ImageItem }
+        ed.selected = hit
+        if (hit != null) drag.start(hit, p)
+        ed.requestRender()
+    }
+
+    override fun onMove(ed: Editor, p: Point) {
+        val img = resizing
+        if (img != null) {
+            val w = maxOf(MIN_IMAGE_SIZE, (p.x - anchor.x) * dirX)
+            val h = w * aspect
+            img.width = w
+            img.height = h
+            img.x = if (dirX > 0) anchor.x else anchor.x - w
+            img.y = if (dirY > 0) anchor.y else anchor.y - h
+            ed.requestRender()
+            return
+        }
+        if (drag.move(p)) ed.requestRender()
+    }
+
+    override fun onUp(ed: Editor) {
+        if (resizing != null) {
+            resizing = null
+            ed.commit()
+            return
+        }
+        if (drag.end()) ed.commit()
     }
 }

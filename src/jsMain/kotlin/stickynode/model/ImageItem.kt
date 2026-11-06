@@ -10,10 +10,16 @@ import stickynode.storage.ImageCache
 class ImageItem(
     override var x: Double,
     override var y: Double,
-    override val width: Double,
-    override val height: Double,
+    override var width: Double,
+    override var height: Double,
     val imageId: String
 ) : Item(), Boxed {
+    /** Corners in order: top-left, top-right, bottom-left, bottom-right. */
+    fun corners(): List<Point> = listOf(
+        Point(x, y), Point(x + width, y),
+        Point(x, y + height), Point(x + width, y + height)
+    )
+
     override fun draw(ctx: CanvasRenderingContext2D) {
         val img = ImageCache.get(imageId)
         if (img != null) {

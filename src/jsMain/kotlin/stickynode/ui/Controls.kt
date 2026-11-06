@@ -47,6 +47,7 @@ fun setupControls(editor: Editor) {
     onClick("arrowButton") { editor.selectTool(tools.arrow) }
     onClick("textButton") { editor.selectTool(tools.text) }
     onClick("fillButton") { editor.selectTool(tools.fill) }
+    onClick("imageToolButton") { editor.selectTool(tools.image) }
     onClick("eraserButton") {
         editor.selectTool(if (editor.tool === tools.eraser) tools.freehand else tools.eraser)
     }
