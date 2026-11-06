@@ -76,5 +76,3 @@ fun decodeDrawingData(text: String): DecodedDrawing {
     }
     return DecodedDrawing(json.decodeFromString(LegacyDrawing.serializer(), text).toItems(), "#ffffff")
 }
-
-fun decodeDrawing(text: String): List<Item> = decodeDrawingData(text).items

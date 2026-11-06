@@ -4,7 +4,7 @@ import kotlinx.browser.window
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import stickynode.editor.Editor
-import stickynode.model.decodeDrawing
+import stickynode.model.decodeDrawingData
 import stickynode.storage.configureServer
 import stickynode.storage.listServerDrawings
 import stickynode.storage.loadFromServer
@@ -39,7 +39,8 @@ fun setupServerControls(editor: Editor, scope: CoroutineScope) {
                     names.first()
                 )?.trim()
                 if (name.isNullOrEmpty()) return@launch
-                editor.load(decodeDrawing(loadFromServer(name)))
+                val drawing = decodeDrawingData(loadFromServer(name))
+                editor.load(drawing.items, drawing.backgroundColor)
             } catch (error: Throwable) {
                 window.alert("Couldn't open that drawing: ${error.message}")
             }

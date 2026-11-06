@@ -3,3 +3,5 @@ build/
 .kotlin/
 .idea/
 local.properties
+node_modules/
+.yarn-integrity

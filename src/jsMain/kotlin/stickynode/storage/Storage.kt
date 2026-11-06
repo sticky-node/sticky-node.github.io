@@ -3,7 +3,6 @@ package stickynode.storage
 import kotlinx.browser.localStorage
 import stickynode.model.APP_ID
 import stickynode.model.DecodedDrawing
-import stickynode.model.decodeDrawing
 import stickynode.model.decodeDrawingData
 import stickynode.model.encodeDrawing
 

@@ -12,7 +12,7 @@ Built with Kotlin/JS and Gradle, and deployed to GitHub Pages.
 
 ## Highlights
 
-- **Draw naturally** with adjustable stroke width and color
+- **Draw naturally** with adjustable stroke width, stroke color, and background color
 - **Build diagrams** with rectangles, circles, regular polygons, and arrows
 - **Add context** with multi-line text and adjustable font size
 - **Edit in place** by moving any drawn item after creating it
@@ -55,6 +55,7 @@ The production output is written to `build/dist/js/productionExecutable`.
 | Text | Click empty space to place a text box, then press Enter to commit (Shift+Enter for a new line, Esc to cancel). Drag existing text to move it, and right-click it to edit. |
 | Eraser | Toggle on, then click or drag over items to remove them. |
 | Undo / Redo | Buttons, or Ctrl/Cmd+Z and Ctrl/Cmd+Shift+Z (or Ctrl/Cmd+Y). |
+| Stroke / Background color | Use the two color swatches in the toolbar. Background color changes are included in autosaves and exported files. |
 | Save File / Open File | Export or import the drawing as JSON. Uses the File System Access API where available, with a normal download as the fallback. |
 | Clear Canvas | Removes everything, including the autosaved copy. |
 
@@ -69,6 +70,7 @@ The production output is written to `build/dist/js/productionExecutable`.
 
 ```text
 src/jsMain/kotlin/stickynode/  Kotlin/JS application code
+  ui/                         UI wiring split by tools, settings, documents, and shortcuts
 src/jsMain/resources/          HTML and CSS resources
 server side/                   Optional local server utilities
 ```

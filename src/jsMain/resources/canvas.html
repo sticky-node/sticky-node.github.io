@@ -19,12 +19,15 @@
         <button id="fillButton" class="tool" title="Fill (right-click removes)">▨ <span>Fill</span></button>
         <button id="eraserButton" class="tool" title="Eraser">⌫ <span>Eraser</span></button>
         <button id="addImageButton" class="tool" title="Add image">▣ <span>Image</span></button>
-        <button id="imageToolButton">Move/Resize Image</button>
+        <button id="imageToolButton" class="tool" title="Move or resize image">Move/Resize Image</button>
       </div>
 
       <div class="group" role="group" aria-label="Brush settings">
-        <label class="swatch" title="Color">
-          <input type="color" id="colorPicker" value="#000000">
+        <label class="swatch" title="Stroke color">
+          <input type="color" id="colorPicker" value="#000000" aria-label="Stroke color">
+        </label>
+        <label class="swatch" title="Background color">
+          <input type="color" id="backgroundColorPicker" value="#ffffff" aria-label="Background color">
         </label>
         <label class="slider" for="lineWidthInput">Stroke
           <input type="range" id="lineWidthInput" min="1" max="30" step="1" value="3">
