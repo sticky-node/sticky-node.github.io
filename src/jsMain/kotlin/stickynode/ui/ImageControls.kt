@@ -33,9 +33,11 @@ fun setupImageControls(editor: Editor, scope: CoroutineScope) {
                 val scale = min(1.0, 400.0 / maxOf(img.naturalWidth, img.naturalHeight))
                 val w = img.naturalWidth * scale
                 val h = img.naturalHeight * scale
-                editor.items.add(
-                    ImageItem((editor.canvas.width - w) / 2, (editor.canvas.height - h) / 2, w, h, id)
-                )
+
+                val item = ImageItem((editor.canvas.width - w) / 2, (editor.canvas.height - h) / 2, w, h, id)
+                editor.items.add(item)
+                editor.selectTool(editor.tools.image)
+                editor.selected = item
                 editor.render()
                 editor.commit()
             } catch (error: Throwable) {
