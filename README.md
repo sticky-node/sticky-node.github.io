@@ -1,11 +1,3 @@
-# Sticky Node
-
-> A lightweight drawing canvas for quick ideas, diagrams, and visual notes.
-
-Sticky Node runs entirely in your browser. Sketch freehand, add shapes and arrows, place text, and save your work as a portable file. Your work stays on your device: no account, backend, or server is required.
-
-Built with Kotlin/JS and Gradle, and deployed to GitHub Pages.
-
 ## Preview
 
 ![Sticky Node canvas with drawing tools and a sample sketch](Screenshot_20261102_141904.png)

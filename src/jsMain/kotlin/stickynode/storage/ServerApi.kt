@@ -8,20 +8,26 @@ import kotlin.js.Promise
 private const val URL_KEY = "stickyNode.serverUrl"
 private const val TOKEN_KEY = "stickyNode.serverToken"
 
-/** Asks for the server address and token. Returns false if the user cancels. */
+/** The signed-in account's token, falling back to the old manually entered server token. */
+private fun currentToken(): String? = Accounts.active()?.token ?: localStorage.getItem(TOKEN_KEY)
+
+/** Asks for the server address (and the shared token, if nobody is signed in). Returns false if cancelled. */
 fun configureServer(): Boolean {
     val currentUrl = localStorage.getItem(URL_KEY) ?: "https://table.tail964c8c.ts.net"
     val url = window.prompt("Server URL:", currentUrl)
         ?.trim()?.trimEnd('/') ?: return false
-    val token = window.prompt("Server token:", localStorage.getItem(TOKEN_KEY) ?: "")
-        ?.trim() ?: return false
     localStorage.setItem(URL_KEY, url)
-    localStorage.setItem(TOKEN_KEY, token)
+
+    if (Accounts.active() == null) {
+        val token = window.prompt("Server token:", localStorage.getItem(TOKEN_KEY) ?: "")
+            ?.trim() ?: return false
+        localStorage.setItem(TOKEN_KEY, token)
+    }
     return true
 }
 
 fun isConfigured(): Boolean =
-    localStorage.getItem(URL_KEY) != null && localStorage.getItem(TOKEN_KEY) != null
+    localStorage.getItem(URL_KEY) != null && currentToken() != null
 
 private fun ensureConfigured(): Boolean = isConfigured() || configureServer()
 
@@ -38,7 +44,7 @@ internal suspend fun <T> sendAndRead(
 ): T {
     if (!ensureConfigured()) throw IllegalStateException("Server not configured")
     val base = localStorage.getItem(URL_KEY)
-    val token = localStorage.getItem(TOKEN_KEY)
+    val token = currentToken()
 
     val headers = js("({})")
     headers["Authorization"] = "Bearer $token"
