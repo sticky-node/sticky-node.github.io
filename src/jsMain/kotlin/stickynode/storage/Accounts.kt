@@ -3,6 +3,7 @@ package stickynode.storage
 import kotlinx.browser.localStorage
 import kotlinx.browser.window
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
 import org.khronos.webgl.Uint8Array
 import org.khronos.webgl.get
@@ -17,15 +18,18 @@ object Accounts {
 
     private val validName = Regex("^[\\w\\- ]{1,64}$")
     private val validToken = Regex("^[A-Za-z0-9_\\-]{16,128}$")
+    private val listSerializer = ListSerializer(Account.serializer())
 
     fun all(): List<Account> = try {
-        localStorage.getItem(LIST_KEY)?.let { Json.decodeFromString<List<Account>>(it) } ?: emptyList()
+        localStorage.getItem(LIST_KEY)
+            ?.let { Json.decodeFromString(listSerializer, it) }
+            ?: emptyList()
     } catch (error: Throwable) {
         emptyList()
     }
 
     private fun saveAll(accounts: List<Account>) =
-        localStorage.setItem(LIST_KEY, Json.encodeToString(accounts))
+        localStorage.setItem(LIST_KEY, Json.encodeToString(listSerializer, accounts))
 
     fun active(): Account? {
         val name = localStorage.getItem(ACTIVE_KEY) ?: return null
